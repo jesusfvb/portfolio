@@ -19,7 +19,7 @@ function App() {
       </main>
       <footer className="footer">
         <div className="container">
-          <p>&copy; {new Date().getFullYear()} Jesús FVB. Todos los derechos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Jesús Francisco Vázquez Biltre. Todos los derechos reservados.</p>
         </div>
       </footer>
     </div>

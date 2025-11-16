@@ -27,7 +27,7 @@ const Header = () => {
       <div className="container">
         <div className="header-content">
           <div className="logo" onClick={() => scrollToSection('hero')}>
-            <span>JFVB</span>
+            <span>Jesús Francisco Vázquez Biltre</span>
           </div>
           <nav className={`nav ${isMobileMenuOpen ? 'open' : ''}`}>
             <a href="#hero" onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}>Inicio</a>

@@ -20,7 +20,7 @@ const Hero = () => {
           <div className="hero-text">
             <h1 className="hero-title">
               <span className="greeting">Hola, soy</span>
-              <span className="name">Jesús FVB</span>
+              <span className="name">Jesús Francisco Vázquez Biltre</span>
               <span className="role">Desarrollador Full Stack</span>
             </h1>
             <p className="hero-description">
