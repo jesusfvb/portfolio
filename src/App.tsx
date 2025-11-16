@@ -4,21 +4,20 @@ import About from '@/presentation/components/sections/About'
 import Projects from '@/presentation/components/sections/Projects'
 import Skills from '@/presentation/components/sections/Skills'
 import Contact from '@/presentation/components/sections/Contact'
-import '@/presentation/styles/App.css'
 
 function App() {
   return (
-    <div className="App">
+    <div className="w-full min-h-screen">
       <Header />
-      <main>
+      <main className="w-full">
         <Hero />
         <About />
         <Projects />
         <Skills />
         <Contact />
       </main>
-      <footer className="footer">
-        <div className="container">
+      <footer className="py-8 text-center border-t border-white/10 text-[#a0a0a0] text-sm">
+        <div className="max-w-[1200px] mx-auto px-8 md:px-4">
           <p>&copy; {new Date().getFullYear()} Jesús Francisco Vázquez Biltre. Todos los derechos reservados.</p>
         </div>
       </footer>

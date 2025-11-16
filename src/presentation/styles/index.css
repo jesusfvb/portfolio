@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* Colores principales */
+  /* Colores principales - se mantienen para compatibilidad con componentes CSS */
   --primary-color: #6366f1;
   --secondary-color: #8b5cf6;
   --accent-color: #ec4899;
@@ -16,26 +16,10 @@
   
   /* Bordes */
   --border-color: rgba(255, 255, 255, 0.1);
-  
-  /* Fuentes */
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  
-  /* Configuración */
-  color-scheme: dark;
-  color: var(--text-primary);
-  background-color: var(--bg-primary);
-  
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Reset básico - Tailwind ya incluye la mayoría, solo agregamos lo específico */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -44,12 +28,15 @@ html {
 }
 
 body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  overflow-x: hidden;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Container class - se mantiene porque los componentes aún la usan */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -62,6 +49,7 @@ body {
   }
 }
 
+/* Links base - se pueden sobrescribir en componentes con Tailwind */
 a {
   color: var(--primary-color);
   text-decoration: none;
@@ -74,12 +62,4 @@ a:hover {
 
 button {
   font-family: inherit;
-}
-
-.footer {
-  padding: 2rem 0;
-  text-align: center;
-  border-top: 1px solid var(--border-color);
-  color: var(--text-secondary);
-  font-size: 0.875rem;
 }

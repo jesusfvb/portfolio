@@ -1,5 +1,4 @@
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { HiMail } from 'react-icons/hi';
 import type { SocialLink } from '../interfaces/contact.interface';
 
 export const EMAIL_ADDRESS = 'jfvazquezbiltre@gmail.com';
