@@ -1,5 +1,3 @@
-import './Hero.css';
-
 const Hero = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -9,58 +7,60 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="hero">
-      <div className="hero-background">
-        <div className="gradient-orb orb-1"></div>
-        <div className="gradient-orb orb-2"></div>
-        <div className="gradient-orb orb-3"></div>
+    <section id="hero" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute w-[500px] h-[500px] bg-[#6366f1] rounded-full blur-[80px] opacity-30 -top-[200px] -left-[200px] animate-float"></div>
+        <div className="absolute w-[400px] h-[400px] bg-[#8b5cf6] rounded-full blur-[80px] opacity-30 -bottom-[150px] -right-[150px] animate-float" style={{ animationDelay: '5s' }}></div>
+        <div className="absolute w-[300px] h-[300px] bg-[#ec4899] rounded-full blur-[80px] opacity-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-float" style={{ animationDelay: '10s' }}></div>
       </div>
       <div className="container">
-        <div className="hero-content">
-          <div className="hero-text">
-            <h1 className="hero-title">
-              <span className="greeting">Hola, soy</span>
-              <span className="name">Jesús Francisco Vázquez Biltre</span>
-              <span className="role">Desarrollador Full Stack</span>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center w-full">
+          <div className="z-10 md:order-1 order-2">
+            <h1 className="flex flex-col gap-2 mb-6">
+              <span className="text-2xl text-[#a0a0a0] font-normal">Hola, soy</span>
+              <span className="text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent leading-tight">
+                Jesús Francisco Vázquez Biltre
+              </span>
+              <span className="text-2xl md:text-3xl text-white font-semibold">Desarrollador Full Stack</span>
             </h1>
-            <p className="hero-description">
+            <p className="text-lg text-[#a0a0a0] leading-relaxed mb-8 max-w-[600px]">
               Apasionado por crear soluciones digitales innovadoras y experiencias de usuario excepcionales.
               Especializado en desarrollo web moderno con tecnologías de vanguardia.
             </p>
-            <div className="hero-buttons">
+            <div className="flex gap-4 flex-wrap md:justify-start justify-center">
               <button 
-                className="btn btn-primary"
+                className="px-8 py-3.5 rounded-lg text-base font-semibold cursor-pointer transition-all duration-300 border-none font-inherit bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] text-white hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(99,102,241,0.4)] w-full md:w-auto"
                 onClick={() => scrollToSection('projects')}
               >
                 Ver Proyectos
               </button>
               <button 
-                className="btn btn-secondary"
+                className="px-8 py-3.5 rounded-lg text-base font-semibold cursor-pointer transition-all duration-300 font-inherit bg-transparent text-white border-2 border-[rgba(255,255,255,0.1)] hover:bg-[#1a1a1a] hover:border-[#6366f1] w-full md:w-auto"
                 onClick={() => scrollToSection('contact')}
               >
                 Contactar
               </button>
             </div>
           </div>
-          <div className="hero-image">
-            <div className="profile-placeholder">
-              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div className="flex justify-center items-center md:order-2 order-1">
+            <div className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] relative">
+              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-[#6366f1] drop-shadow-[0_20px_40px_rgba(99,102,241,0.3)]">
                 <circle cx="100" cy="100" r="80" fill="url(#gradient)" />
                 <circle cx="100" cy="80" r="30" fill="currentColor" opacity="0.3" />
                 <path d="M60 160 Q100 140 140 160" stroke="currentColor" strokeWidth="8" fill="none" opacity="0.3" />
                 <defs>
                   <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="var(--primary-color)" />
-                    <stop offset="100%" stopColor="var(--secondary-color)" />
+                    <stop offset="0%" stopColor="#6366f1" />
+                    <stop offset="100%" stopColor="#8b5cf6" />
                   </linearGradient>
                 </defs>
               </svg>
             </div>
           </div>
         </div>
-        <div className="scroll-indicator">
-          <div className="mouse">
-            <div className="wheel"></div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#a0a0a0]">
+          <div className="w-6 h-10 border-2 border-[#a0a0a0] rounded-xl relative">
+            <div className="w-1 h-2 bg-[#a0a0a0] rounded-sm absolute top-2 left-1/2 -translate-x-1/2 animate-scroll"></div>
           </div>
         </div>
       </div>

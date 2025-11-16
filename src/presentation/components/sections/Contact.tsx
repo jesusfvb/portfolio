@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import './Contact.css';
 import { FaCopy, FaCheck } from 'react-icons/fa';
 import { HiMail } from 'react-icons/hi';
 import type { FormErrors, FormData } from '@/domain/interfaces';
@@ -129,56 +128,58 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="contact">
+    <section id="contact" className="py-24">
       <div className="container">
-        <h2 className="section-title">Contacto</h2>
-        <p className="section-subtitle">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent">
+          Contacto
+        </h2>
+        <p className="text-xl text-center text-[#a0a0a0] mb-12">
           ¿Tienes un proyecto en mente? ¡Hablemos!
         </p>
-        <div className="contact-content">
-          <div className="contact-info">
-            <h3>Conectemos</h3>
-            <p>
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-16 mt-12">
+          <div>
+            <h3 className="text-2xl font-semibold mb-4 text-white">Conectemos</h3>
+            <p className="text-[#a0a0a0] leading-relaxed mb-8">
               Estoy siempre abierto a discutir nuevos proyectos, ideas creativas 
               o oportunidades para ser parte de tus visiones.
             </p>
-            <div className="social-links">
+            <div className="flex flex-col gap-4">
               {SOCIAL_LINKS.map((social) => (
                 <a
                   key={social.name}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="social-link"
+                  className="flex items-center gap-4 p-4 bg-[#1a1a1a] border border-[rgba(255,255,255,0.1)] rounded-lg text-white transition-all duration-300 hover:bg-[#121212] hover:border-[#6366f1] hover:translate-x-1"
                   aria-label={social.name}
                 >
-                  <span className="social-icon">{social.icon}</span>
-                  <span className="social-name">{social.name}</span>
+                  <span className="flex items-center justify-center text-2xl">{social.icon}</span>
+                  <span className="font-medium">{social.name}</span>
                 </a>
               ))}
-            </div>
-            <div className="email-container">
-              <a
-                href={`mailto:${EMAIL_ADDRESS}`}
-                className="email-link"
-                aria-label="Enviar email"
-              >
-                <span className="social-icon"><HiMail /></span>
-                <span className="email-address">{EMAIL_ADDRESS}</span>
-              </a>
-              <button
-                onClick={copyEmailToClipboard}
-                className="copy-email-btn"
-                aria-label="Copiar email"
-                title="Copiar email"
-              >
-                {emailCopied ? <FaCheck /> : <FaCopy />}
-              </button>
+              <div className="flex items-center gap-2 p-4 bg-[#1a1a1a] border border-[rgba(255,255,255,0.1)] rounded-lg">
+                <a
+                  href={`mailto:${EMAIL_ADDRESS}`}
+                  className="flex items-center gap-4 flex-1 text-white transition-colors duration-300 hover:text-[#6366f1]"
+                  aria-label="Enviar email"
+                >
+                  <span className="flex items-center justify-center text-2xl"><HiMail /></span>
+                  <span className="font-medium select-all cursor-text">{EMAIL_ADDRESS}</span>
+                </a>
+                <button
+                  onClick={copyEmailToClipboard}
+                  className="flex items-center justify-center p-2 bg-transparent border border-[rgba(255,255,255,0.1)] rounded-md text-white cursor-pointer transition-all duration-300 hover:bg-[#121212] hover:border-[#6366f1] hover:text-[#6366f1] active:scale-95 text-base"
+                  aria-label="Copiar email"
+                  title="Copiar email"
+                >
+                  {emailCopied ? <FaCheck /> : <FaCopy />}
+                </button>
+              </div>
             </div>
           </div>
-          <form className="contact-form" onSubmit={handleSubmit} noValidate>
-            <div className="form-group">
-              <label htmlFor="name">Nombre</label>
+          <form className="flex flex-col gap-6" onSubmit={handleSubmit} noValidate>
+            <div className="flex flex-col gap-2">
+              <label htmlFor="name" className="font-medium text-white">Nombre</label>
               <input
                 type="text"
                 id="name"
@@ -187,18 +188,22 @@ const Contact = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 placeholder="Tu nombre"
-                className={touched.name && errors.name ? 'input-error' : ''}
+                className={`px-3.5 py-3.5 bg-[#1a1a1a] border rounded-lg text-white font-inherit text-base transition-colors duration-300 focus:outline-none ${
+                  touched.name && errors.name
+                    ? 'border-[#ef4444] focus:border-[#ef4444] focus:ring-[3px] focus:ring-[rgba(239,68,68,0.1)]'
+                    : 'border-[rgba(255,255,255,0.1)] focus:border-[#6366f1]'
+                }`}
                 aria-invalid={touched.name && errors.name ? 'true' : 'false'}
                 aria-describedby={touched.name && errors.name ? 'name-error' : undefined}
               />
               {touched.name && errors.name && (
-                <span id="name-error" className="error-message" role="alert">
+                <span id="name-error" className="text-[#ef4444] text-sm mt-1 flex items-center gap-1" role="alert">
                   {errors.name}
                 </span>
               )}
             </div>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
+            <div className="flex flex-col gap-2">
+              <label htmlFor="email" className="font-medium text-white">Email</label>
               <input
                 type="email"
                 id="email"
@@ -207,18 +212,22 @@ const Contact = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 placeholder="nombre.apellido@correo.com"
-                className={touched.email && errors.email ? 'input-error' : ''}
+                className={`px-3.5 py-3.5 bg-[#1a1a1a] border rounded-lg text-white font-inherit text-base transition-colors duration-300 focus:outline-none ${
+                  touched.email && errors.email
+                    ? 'border-[#ef4444] focus:border-[#ef4444] focus:ring-[3px] focus:ring-[rgba(239,68,68,0.1)]'
+                    : 'border-[rgba(255,255,255,0.1)] focus:border-[#6366f1]'
+                }`}
                 aria-invalid={touched.email && errors.email ? 'true' : 'false'}
                 aria-describedby={touched.email && errors.email ? 'email-error' : undefined}
               />
               {touched.email && errors.email && (
-                <span id="email-error" className="error-message" role="alert">
+                <span id="email-error" className="text-[#ef4444] text-sm mt-1 flex items-center gap-1" role="alert">
                   {errors.email}
                 </span>
               )}
             </div>
-            <div className="form-group">
-              <label htmlFor="message">Mensaje</label>
+            <div className="flex flex-col gap-2">
+              <label htmlFor="message" className="font-medium text-white">Mensaje</label>
               <textarea
                 id="message"
                 name="message"
@@ -227,17 +236,24 @@ const Contact = () => {
                 onBlur={handleBlur}
                 rows={5}
                 placeholder="Tu mensaje..."
-                className={touched.message && errors.message ? 'input-error' : ''}
+                className={`px-3.5 py-3.5 bg-[#1a1a1a] border rounded-lg text-white font-inherit text-base transition-colors duration-300 focus:outline-none resize-y min-h-[120px] ${
+                  touched.message && errors.message
+                    ? 'border-[#ef4444] focus:border-[#ef4444] focus:ring-[3px] focus:ring-[rgba(239,68,68,0.1)]'
+                    : 'border-[rgba(255,255,255,0.1)] focus:border-[#6366f1]'
+                }`}
                 aria-invalid={touched.message && errors.message ? 'true' : 'false'}
                 aria-describedby={touched.message && errors.message ? 'message-error' : undefined}
               ></textarea>
               {touched.message && errors.message && (
-                <span id="message-error" className="error-message" role="alert">
+                <span id="message-error" className="text-[#ef4444] text-sm mt-1 flex items-center gap-1" role="alert">
                   {errors.message}
                 </span>
               )}
             </div>
-            <button type="submit" className="btn btn-primary">
+            <button
+              type="submit"
+              className="self-start px-8 py-3.5 rounded-lg text-base font-semibold cursor-pointer transition-all duration-300 border-none font-inherit bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] text-white hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(99,102,241,0.4)]"
+            >
               Enviar Mensaje
             </button>
           </form>
