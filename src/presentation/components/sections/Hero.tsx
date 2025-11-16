@@ -1,3 +1,5 @@
+import profileImage from '@/assets/1000001843.JPG';
+
 const Hero = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -44,17 +46,15 @@ const Hero = () => {
           </div>
           <div className="flex justify-center items-center md:order-2 order-1">
             <div className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] relative">
-              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-[#6366f1] drop-shadow-[0_20px_40px_rgba(99,102,241,0.3)]">
-                <circle cx="100" cy="100" r="80" fill="url(#gradient)" />
-                <circle cx="100" cy="80" r="30" fill="currentColor" opacity="0.3" />
-                <path d="M60 160 Q100 140 140 160" stroke="currentColor" strokeWidth="8" fill="none" opacity="0.3" />
-                <defs>
-                  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#6366f1" />
-                    <stop offset="100%" stopColor="#8b5cf6" />
-                  </linearGradient>
-                </defs>
-              </svg>
+              <div className="relative w-full h-full rounded-full p-1 bg-linear-to-r from-[#6366f1] to-[#8b5cf6] shadow-[0_20px_40px_rgba(99,102,241,0.3)]">
+                <div className="w-full h-full rounded-full overflow-hidden bg-[#1a1a1a]">
+                  <img 
+                    src={profileImage} 
+                    alt="Jesús Francisco Vázquez Biltre" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
