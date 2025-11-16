@@ -130,7 +130,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-24">
       <div className="container">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent">
           Contacto
         </h2>
         <p className="text-xl text-center text-[#a0a0a0] mb-12">
@@ -252,7 +252,7 @@ const Contact = () => {
             </div>
             <button
               type="submit"
-              className="self-start px-8 py-3.5 rounded-lg text-base font-semibold cursor-pointer transition-all duration-300 border-none font-inherit bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] text-white hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(99,102,241,0.4)]"
+              className="self-start px-8 py-3.5 rounded-lg text-base font-semibold cursor-pointer transition-all duration-300 border-none font-inherit bg-linear-to-r from-[#6366f1] to-[#8b5cf6] text-white hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(99,102,241,0.4)]"
             >
               Enviar Mensaje
             </button>

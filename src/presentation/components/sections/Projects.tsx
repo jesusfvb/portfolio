@@ -39,7 +39,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-24">
       <div className="container">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent">
           Proyectos
         </h2>
         <p className="text-center text-[#a0a0a0] text-lg mb-12">
@@ -70,7 +70,7 @@ const Projects = () => {
                         href={project.link} 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="w-12 h-12 rounded-full bg-[#121212] flex items-center justify-center text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6]"
+                        className="w-12 h-12 rounded-full bg-[#121212] flex items-center justify-center text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6]"
                       >
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -84,7 +84,7 @@ const Projects = () => {
                         href={project.github} 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="w-12 h-12 rounded-full bg-[#121212] flex items-center justify-center text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6]"
+                        className="w-12 h-12 rounded-full bg-[#121212] flex items-center justify-center text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6]"
                       >
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
@@ -94,16 +94,16 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
-              <div className="p-8 flex flex-col flex-grow">
+              <div className="p-8 flex flex-col grow">
                 <h3 className="text-2xl font-semibold mb-4 text-white">{project.title}</h3>
-                <p className="text-[#a0a0a0] leading-relaxed mb-6 flex-grow">{project.description}</p>
+                <p className="text-[#a0a0a0] leading-relaxed mb-6 grow">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mt-auto">
                   {project.technologies.map((tech, index) => {
                     const icon = getTechIcon(tech);
                     return (
                       <span 
                         key={index} 
-                        className="px-3.5 py-1.5 bg-[#121212] border border-[rgba(255,255,255,0.1)] rounded-full text-sm text-[#a0a0a0] transition-all duration-300 hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white hover:border-transparent flex items-center gap-2"
+                        className="px-3.5 py-1.5 bg-[#121212] border border-[rgba(255,255,255,0.1)] rounded-full text-sm text-[#a0a0a0] transition-all duration-300 hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white hover:border-transparent flex items-center gap-2"
                       >
                         {icon && <span className="text-base">{icon}</span>}
                         <span>{tech}</span>

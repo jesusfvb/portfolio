@@ -18,7 +18,7 @@ const Hero = () => {
           <div className="z-10 md:order-1 order-2">
             <h1 className="flex flex-col gap-2 mb-6">
               <span className="text-2xl text-[#a0a0a0] font-normal">Hola, soy</span>
-              <span className="text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent leading-tight">
+              <span className="text-5xl md:text-6xl lg:text-7xl font-bold bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent leading-tight">
                 Jesús Francisco Vázquez Biltre
               </span>
               <span className="text-2xl md:text-3xl text-white font-semibold">Desarrollador Full Stack</span>
@@ -29,7 +29,7 @@ const Hero = () => {
             </p>
             <div className="flex gap-4 flex-wrap md:justify-start justify-center">
               <button 
-                className="px-8 py-3.5 rounded-lg text-base font-semibold cursor-pointer transition-all duration-300 border-none font-inherit bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] text-white hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(99,102,241,0.4)] w-full md:w-auto"
+                className="px-8 py-3.5 rounded-lg text-base font-semibold cursor-pointer transition-all duration-300 border-none font-inherit bg-linear-to-r from-[#6366f1] to-[#8b5cf6] text-white hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(99,102,241,0.4)] w-full md:w-auto"
                 onClick={() => scrollToSection('projects')}
               >
                 Ver Proyectos

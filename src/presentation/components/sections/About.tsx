@@ -2,7 +2,7 @@ const About = () => {
   return (
     <section id="about" className="py-24 bg-[#1a1a1a]">
       <div className="container">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent">
           Sobre Mí
         </h2>
         <div className="max-w-3xl mx-auto">
@@ -19,7 +19,7 @@ const About = () => {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
               <div className="flex flex-col items-center gap-2 p-8 bg-[#121212] rounded-xl border border-[rgba(255,255,255,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
-                <span className="text-4xl font-bold bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent">
+                <span className="text-4xl font-bold bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent">
                   50+
                 </span>
                 <span className="text-base text-[#a0a0a0] font-medium">
@@ -27,7 +27,7 @@ const About = () => {
                 </span>
               </div>
               <div className="flex flex-col items-center gap-2 p-8 bg-[#121212] rounded-xl border border-[rgba(255,255,255,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
-                <span className="text-4xl font-bold bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent">
+                <span className="text-4xl font-bold bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent">
                   3+
                 </span>
                 <span className="text-base text-[#a0a0a0] font-medium">
@@ -35,7 +35,7 @@ const About = () => {
                 </span>
               </div>
               <div className="flex flex-col items-center gap-2 p-8 bg-[#121212] rounded-xl border border-[rgba(255,255,255,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
-                <span className="text-4xl font-bold bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent">
+                <span className="text-4xl font-bold bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent">
                   100%
                 </span>
                 <span className="text-base text-[#a0a0a0] font-medium">
