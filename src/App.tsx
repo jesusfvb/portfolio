@@ -1,10 +1,10 @@
-import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About'
-import Projects from './components/Projects'
-import Skills from './components/Skills'
-import Contact from './components/Contact'
-import './App.css'
+import Header from '@/presentation/components/layout/Header'
+import Hero from '@/presentation/components/sections/Hero'
+import About from '@/presentation/components/sections/About'
+import Projects from '@/presentation/components/sections/Projects'
+import Skills from '@/presentation/components/sections/Skills'
+import Contact from '@/presentation/components/sections/Contact'
+import '@/presentation/styles/App.css'
 
 function App() {
   return (

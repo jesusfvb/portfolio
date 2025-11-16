@@ -1,20 +1,7 @@
 import './Skills.css';
+import { SKILLS } from '@/domain/constants';
 
 const Skills = () => {
-  const skills = [
-    'Java',
-    'JavaScript',
-    'TypeScript',
-    'HTML',
-    'CSS',
-    'React',
-    'React Native',
-    'Spring Boot',
-    'MongoDB',
-    'PostgreSQL',
-    'Docker',
-    'Git',
-  ];
 
   return (
     <section id="skills" className="skills">
@@ -24,9 +11,10 @@ const Skills = () => {
           Tecnologías y herramientas que domino
         </p>
         <div className="skills-container">
-          {skills.map((skill, index) => (
+          {SKILLS.map((skill, index) => (
             <div key={index} className="skill-badge">
-              {skill}
+              <span className="skill-icon">{skill.icon}</span>
+              <span className="skill-name">{skill.name}</span>
             </div>
           ))}
         </div>
