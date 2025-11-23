@@ -64,22 +64,16 @@ const Projects = () => {
   const goToPrevious = () => {
     setCurrentIndex((prev) => (prev > 0 ? prev - 1 : maxIndex));
     setIsPaused(true);
-    // Reanudar después de 5 segundos sin interacción
-    setTimeout(() => setIsPaused(false), 5000);
   };
 
   const goToNext = () => {
     setCurrentIndex((prev) => (prev < maxIndex ? prev + 1 : 0));
     setIsPaused(true);
-    // Reanudar después de 5 segundos sin interacción
-    setTimeout(() => setIsPaused(false), 5000);
   };
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
     setIsPaused(true);
-    // Reanudar después de 5 segundos sin interacción
-    setTimeout(() => setIsPaused(false), 5000);
   };
 
   // Manejo de scroll del carrusel
@@ -91,28 +85,36 @@ const Projects = () => {
     let scrollTimeout: ReturnType<typeof setTimeout>;
 
     const handleWheel = (e: WheelEvent) => {
+      // Solo procesar si el evento está dentro del carrusel
       if (!carousel.contains(e.target as Node)) return;
 
-      e.preventDefault();
-      setIsPaused(true);
-
-      if (isScrolling) return;
-      isScrolling = true;
-
-      if (e.deltaY > 0) {
-        // Scroll hacia abajo/derecha - siguiente
-        setCurrentIndex((prev) => (prev < maxIndex ? prev + 1 : 0));
-      } else {
-        // Scroll hacia arriba/izquierda - anterior
-        setCurrentIndex((prev) => (prev > 0 ? prev - 1 : maxIndex));
+      // Solo procesar scroll horizontal - ignorar completamente el scroll vertical
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        return; // Si hay más scroll vertical que horizontal, permitir scroll normal de la página
       }
 
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        isScrolling = false;
-        // Reanudar auto-play después de 3 segundos sin scroll
-        setTimeout(() => setIsPaused(false), 3000);
-      }, 150);
+      // Solo procesar si hay scroll horizontal significativo
+      if (Math.abs(e.deltaX) > 10) {
+        e.preventDefault();
+        setIsPaused(true);
+
+        if (isScrolling) return;
+        isScrolling = true;
+
+        // Usar solo deltaX (scroll horizontal)
+        if (e.deltaX > 0) {
+          // Scroll horizontal hacia la derecha - siguiente proyecto
+          setCurrentIndex((prev) => (prev < maxIndex ? prev + 1 : 0));
+        } else if (e.deltaX < 0) {
+          // Scroll horizontal hacia la izquierda - proyecto anterior
+          setCurrentIndex((prev) => (prev > 0 ? prev - 1 : maxIndex));
+        }
+
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          isScrolling = false;
+        }, 200);
+      }
     };
 
     // Manejo de touch para dispositivos móviles
@@ -138,8 +140,8 @@ const Projects = () => {
         setCurrentIndex((prev) => (prev > 0 ? prev - 1 : maxIndex));
       }
 
-      // Reanudar auto-play después de 3 segundos
-      setTimeout(() => setIsPaused(false), 3000);
+      // No reanudar auto-play automáticamente después de touch
+      // Solo se reanudará cuando el usuario salga del área
     };
 
     carousel.addEventListener('wheel', handleWheel, { passive: false });
