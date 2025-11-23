@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { PROJECTS } from '@/domain/constants';
 import { FaReact, FaCss3Alt } from 'react-icons/fa';
 import { SiTypescript, SiNodedotjs, SiMongodb, SiNextdotjs, SiStripe, SiPostgresql } from 'react-icons/si';
@@ -39,6 +39,7 @@ const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(1);
   const [isPaused, setIsPaused] = useState(false);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   // Calcular cuántos items mostrar según el tamaño de pantalla
   useEffect(() => {
@@ -81,6 +82,78 @@ const Projects = () => {
     setTimeout(() => setIsPaused(false), 5000);
   };
 
+  // Manejo de scroll del carrusel
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (!carousel || !hasMoreItems) return;
+
+    let isScrolling = false;
+    let scrollTimeout: ReturnType<typeof setTimeout>;
+
+    const handleWheel = (e: WheelEvent) => {
+      if (!carousel.contains(e.target as Node)) return;
+
+      e.preventDefault();
+      setIsPaused(true);
+
+      if (isScrolling) return;
+      isScrolling = true;
+
+      if (e.deltaY > 0) {
+        // Scroll hacia abajo/derecha - siguiente
+        setCurrentIndex((prev) => (prev < maxIndex ? prev + 1 : 0));
+      } else {
+        // Scroll hacia arriba/izquierda - anterior
+        setCurrentIndex((prev) => (prev > 0 ? prev - 1 : maxIndex));
+      }
+
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        isScrolling = false;
+        // Reanudar auto-play después de 3 segundos sin scroll
+        setTimeout(() => setIsPaused(false), 3000);
+      }, 150);
+    };
+
+    // Manejo de touch para dispositivos móviles
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    const handleTouchStart = (e: TouchEvent) => {
+      if (!carousel.contains(e.target as Node)) return;
+      touchStartX = e.changedTouches[0].screenX;
+      setIsPaused(true);
+    };
+
+    const handleTouchEnd = (e: TouchEvent) => {
+      if (!carousel.contains(e.target as Node)) return;
+      touchEndX = e.changedTouches[0].screenX;
+      const swipeThreshold = 50;
+
+      if (touchStartX - touchEndX > swipeThreshold) {
+        // Swipe izquierda - siguiente
+        setCurrentIndex((prev) => (prev < maxIndex ? prev + 1 : 0));
+      } else if (touchEndX - touchStartX > swipeThreshold) {
+        // Swipe derecha - anterior
+        setCurrentIndex((prev) => (prev > 0 ? prev - 1 : maxIndex));
+      }
+
+      // Reanudar auto-play después de 3 segundos
+      setTimeout(() => setIsPaused(false), 3000);
+    };
+
+    carousel.addEventListener('wheel', handleWheel, { passive: false });
+    carousel.addEventListener('touchstart', handleTouchStart, { passive: true });
+    carousel.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+    return () => {
+      carousel.removeEventListener('wheel', handleWheel);
+      carousel.removeEventListener('touchstart', handleTouchStart);
+      carousel.removeEventListener('touchend', handleTouchEnd);
+      clearTimeout(scrollTimeout);
+    };
+  }, [hasMoreItems, maxIndex]);
+
   // Auto-play del carrusel
   useEffect(() => {
     if (!hasMoreItems || isPaused) return;
@@ -102,7 +175,12 @@ const Projects = () => {
           Algunos de mis trabajos más recientes y destacados
         </p>
         
-        <div className="relative" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
+        <div 
+          ref={carouselRef}
+          className="relative" 
+          onMouseEnter={() => setIsPaused(true)} 
+          onMouseLeave={() => setIsPaused(false)}
+        >
           {/* Carrusel Container */}
           <div className="overflow-hidden">
             <div 
