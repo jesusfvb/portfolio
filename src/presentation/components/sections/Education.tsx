@@ -12,7 +12,7 @@ const Education = () => {
         </p>
         <div className="max-w-4xl mx-auto">
           <div className="space-y-8">
-            {EDUCATIONS.map((education, index) => (
+            {EDUCATIONS.map((education) => (
               <div
                 key={education.id}
                 className="relative pl-8 md:pl-12 pb-8 border-l-2 border-[rgba(255,255,255,0.1)] last:border-l-0 last:pb-0"
