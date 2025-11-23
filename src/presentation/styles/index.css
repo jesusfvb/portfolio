@@ -80,11 +80,14 @@ button {
 @keyframes scroll {
   0% {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(-50%);
+  }
+  50% {
+    opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translateX(-50%) translateY(12px);
+    transform: translateY(calc(50% + 8px));
   }
 }
 
