@@ -36,7 +36,7 @@ const Education = () => {
                         </p>
                       )}
                     </div>
-                    <div className="flex-shrink-0">
+                    <div className="shrink-0">
                       <span className="inline-block px-4 py-2 bg-[#121212] border border-[rgba(255,255,255,0.1)] rounded-full text-sm text-[#a0a0a0]">
                         {education.period}
                       </span>
