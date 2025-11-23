@@ -3,6 +3,7 @@ import Hero from '@/presentation/components/sections/Hero'
 import About from '@/presentation/components/sections/About'
 import Projects from '@/presentation/components/sections/Projects'
 import Skills from '@/presentation/components/sections/Skills'
+import Education from '@/presentation/components/sections/Education'
 import Contact from '@/presentation/components/sections/Contact'
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <About />
         <Projects />
         <Skills />
+        <Education />
         <Contact />
       </main>
       <footer className="py-8 text-center border-t border-white/10 text-[#a0a0a0] text-sm">

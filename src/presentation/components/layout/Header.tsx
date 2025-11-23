@@ -67,6 +67,13 @@ const Header = () => {
               Habilidades
             </a>
             <a 
+              href="#education" 
+              onClick={(e) => { e.preventDefault(); scrollToSection('education'); }}
+              className="text-[#a0a0a0] no-underline font-medium transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-linear-to-r after:from-[#6366f1] after:to-[#8b5cf6] after:transition-all after:duration-300 hover:after:w-full"
+            >
+              Educación
+            </a>
+            <a 
               href="#contact" 
               onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}
               className="text-[#a0a0a0] no-underline font-medium transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-linear-to-r after:from-[#6366f1] after:to-[#8b5cf6] after:transition-all after:duration-300 hover:after:w-full"
@@ -126,6 +133,13 @@ const Header = () => {
             className="text-[#a0a0a0] no-underline font-medium transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-linear-to-r after:from-[#6366f1] after:to-[#8b5cf6] after:transition-all after:duration-300 hover:after:w-full"
           >
             Habilidades
+          </a>
+          <a 
+            href="#education" 
+            onClick={(e) => { e.preventDefault(); scrollToSection('education'); }}
+            className="text-[#a0a0a0] no-underline font-medium transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-linear-to-r after:from-[#6366f1] after:to-[#8b5cf6] after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Educación
           </a>
           <a 
             href="#contact" 
