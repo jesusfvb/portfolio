@@ -38,6 +38,7 @@ const getTechIcon = (tech: string) => {
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(1);
+  const [isPaused, setIsPaused] = useState(false);
 
   // Calcular cuántos items mostrar según el tamaño de pantalla
   useEffect(() => {
@@ -57,18 +58,39 @@ const Projects = () => {
   }, []);
 
   const maxIndex = Math.max(0, PROJECTS.length - itemsPerView);
+  const hasMoreItems = PROJECTS.length > itemsPerView;
 
   const goToPrevious = () => {
     setCurrentIndex((prev) => (prev > 0 ? prev - 1 : maxIndex));
+    setIsPaused(true);
+    // Reanudar después de 5 segundos sin interacción
+    setTimeout(() => setIsPaused(false), 5000);
   };
 
   const goToNext = () => {
     setCurrentIndex((prev) => (prev < maxIndex ? prev + 1 : 0));
+    setIsPaused(true);
+    // Reanudar después de 5 segundos sin interacción
+    setTimeout(() => setIsPaused(false), 5000);
   };
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
+    setIsPaused(true);
+    // Reanudar después de 5 segundos sin interacción
+    setTimeout(() => setIsPaused(false), 5000);
   };
+
+  // Auto-play del carrusel
+  useEffect(() => {
+    if (!hasMoreItems || isPaused) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev < maxIndex ? prev + 1 : 0));
+    }, 4000); // Cambia cada 4 segundos
+
+    return () => clearInterval(interval);
+  }, [hasMoreItems, isPaused, maxIndex]);
 
   return (
     <section id="projects" className="py-24">
@@ -80,7 +102,7 @@ const Projects = () => {
           Algunos de mis trabajos más recientes y destacados
         </p>
         
-        <div className="relative">
+        <div className="relative" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
           {/* Carrusel Container */}
           <div className="overflow-hidden">
             <div 
