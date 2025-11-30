@@ -1,8 +1,6 @@
-import { useState, useEffect } from "react";
 import profileImage from "@/assets/1000001843.JPG";
 
 const Hero = () => {
-  const [showScrollIndicator, setShowScrollIndicator] = useState(true);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -10,31 +8,6 @@ const Hero = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
-
-      // Mostrar indicador si no hemos llegado al final de la página
-      // Con un margen de 100px para que desaparezca antes de llegar completamente al final
-      const isNearBottom = scrollTop + windowHeight >= documentHeight - 100;
-      setShowScrollIndicator(!isNearBottom);
-    };
-
-    // Verificar inicialmente
-    handleScroll();
-
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
-    };
-  }, []);
 
   return (
     <section
@@ -100,18 +73,6 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        {showScrollIndicator && (
-          <div className="fixed bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#a0a0a0] z-50 transition-opacity duration-300">
-            <div
-              className="flex flex-col items-center gap-2 transition-all duration-300 hover:opacity-70 active:opacity-50 hover:scale-110"
-              aria-label="Desplazarse hacia abajo"
-            >
-              <div className="w-5 h-8 md:w-6 md:h-10 border-2 border-[#a0a0a0] rounded-xl relative flex items-center justify-center">
-                <div className="w-1 h-1.5 md:h-2 bg-[#a0a0a0] rounded-sm animate-scroll"></div>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );

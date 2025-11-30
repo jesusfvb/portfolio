@@ -234,7 +234,6 @@ const Contact = () => {
                 value={formData.message}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                rows={5}
                 placeholder="Tu mensaje..."
                 className={`px-3.5 py-3.5 bg-[#1a1a1a] border rounded-lg text-white font-inherit text-base transition-colors duration-300 focus:outline-none resize-y min-h-[120px] ${
                   touched.message && errors.message
