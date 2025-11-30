@@ -6,5 +6,6 @@ export interface Education {
   period: string;
   description?: string;
   location?: string;
+  website?: string;
 }
 

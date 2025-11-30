@@ -3,21 +3,22 @@ import type { Education } from '../interfaces/education.interface';
 export const EDUCATIONS: Education[] = [
   {
     id: 1,
-    institution: 'Universidad Ejemplo',
-    degree: 'Ingeniería en Sistemas Computacionales',
+    institution: 'Universidad de las Ciencias Informáticas (UCI)',
+    degree: 'Ingeniería en Ciencias Informáticas',
     field: 'Ingeniería de Software',
-    period: '2018 - 2022',
-    description: 'Especialización en desarrollo de software, arquitectura de sistemas y gestión de proyectos tecnológicos.',
-    location: 'Ciudad, País',
+    period: '2018 - 2023',
+    description: 'Formación integral en ciencias informáticas con especialización en desarrollo de software, arquitectura de sistemas, bases de datos y gestión de proyectos tecnológicos. Enfoque en tecnologías modernas y mejores prácticas de la industria.',
+    location: 'La Habana, Cuba',
+    website: 'https://www.uci.cu',
   },
   {
     id: 2,
-    institution: 'Instituto Tecnológico',
-    degree: 'Técnico en Programación',
-    field: 'Desarrollo Web',
-    period: '2016 - 2018',
-    description: 'Formación técnica en tecnologías web modernas, bases de datos y metodologías ágiles.',
-    location: 'Ciudad, País',
+    institution: 'Aprendizaje Autodidacta',
+    degree: 'Desarrollo Continuo',
+    field: 'Tecnologías Web Modernas',
+    period: '2018 - Presente',
+    description: 'Aprendizaje continuo y autodidacta en tecnologías web modernas, frameworks de JavaScript, cloud computing, DevOps y mejores prácticas de desarrollo. Participación activa en comunidades de desarrolladores, cursos online, documentación técnica y proyectos personales.',
+    location: 'Online',
   },
 ];
 

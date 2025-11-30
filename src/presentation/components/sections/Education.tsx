@@ -27,9 +27,25 @@ const Education = () => {
                       <h3 className="text-2xl font-semibold text-white mb-2">
                         {education.degree}
                       </h3>
-                      <p className="text-lg text-[#6366f1] font-medium mb-1">
-                        {education.institution}
-                      </p>
+                      {education.website ? (
+                        <a
+                          href={education.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-lg text-[#6366f1] font-medium mb-1 hover:text-[#8b5cf6] transition-colors duration-300 inline-flex items-center gap-2"
+                        >
+                          {education.institution}
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="opacity-70">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                          </svg>
+                        </a>
+                      ) : (
+                        <p className="text-lg text-[#6366f1] font-medium mb-1">
+                          {education.institution}
+                        </p>
+                      )}
                       {education.location && (
                         <p className="text-sm text-[#a0a0a0]">
                           📍 {education.location}
