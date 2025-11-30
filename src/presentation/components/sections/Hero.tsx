@@ -1,4 +1,5 @@
-import profileImage from "@/assets/1000001843.JPG";
+// Imagen optimizada desde public
+const profileImage = "/images/1000001843.webp";
 
 const Hero = () => {
 
