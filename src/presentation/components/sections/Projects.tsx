@@ -71,9 +71,6 @@ const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(1);
   const [isPaused, setIsPaused] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState<{
-    [key: number]: number;
-  }>({});
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isDetailOpen, setIsDetailOpen] = useState(false);
   const carouselRef = useRef<HTMLDivElement>(null);
