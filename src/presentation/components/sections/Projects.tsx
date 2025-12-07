@@ -237,11 +237,13 @@ const Projects = () => {
                   key={project.id}
                   className={`${
                     shouldCenter
-                      ? "w-full md:w-[400px] lg:w-[380px]"
+                      ? "w-full md:w-[432px] lg:w-[412px]"
                       : "min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1.333rem)]"
                   } px-4`}
                 >
-                  <div className="bg-[#1a1a1a] rounded-xl overflow-hidden border border-[rgba(255,255,255,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] group flex flex-col w-full md:w-[400px] lg:w-[380px] h-[600px]">
+                  <div className={`bg-[#1a1a1a] rounded-xl overflow-hidden border border-[rgba(255,255,255,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] group flex flex-col h-[600px] ${
+                    shouldCenter ? "w-full" : "w-full md:w-[400px] lg:w-[380px]"
+                  }`}>
                     <div className="relative w-full h-[200px] overflow-hidden bg-[#121212] shrink-0">
                       <div className="w-full h-full">
                         {project.banner ? (

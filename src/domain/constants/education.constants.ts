@@ -11,14 +11,6 @@ export const EDUCATIONS: Education[] = [
     location: 'La Habana, Cuba',
     website: 'https://www.uci.cu',
   },
-  {
-    id: 2,
-    institution: 'Aprendizaje Autodidacta',
-    degree: 'Desarrollo Continuo',
-    field: 'Tecnologías Web Modernas',
-    period: '2018 - Presente',
-    description: 'Aprendizaje continuo y autodidacta en tecnologías web modernas, frameworks de JavaScript, cloud computing, DevOps y mejores prácticas de desarrollo. Participación activa en comunidades de desarrolladores, cursos online, documentación técnica y proyectos personales.',
-    location: 'Online',
-  },
+
 ];
 
