@@ -4,7 +4,8 @@ import About from '@/presentation/components/sections/about/About'
 import Projects from '@/presentation/components/sections/Projects'
 import Skills from '@/presentation/components/sections/Skills'
 import Education from '@/presentation/components/sections/education/Education'
-import Contact from '@/presentation/components/sections/Contact'
+import { Contact } from './presentation/components/sections'
+
 
 function App() {
   return (
