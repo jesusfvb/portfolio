@@ -1,5 +1,5 @@
 import Header from '@/presentation/components/layout/header/Header'
-import Hero from '@/presentation/components/sections/Hero'
+import Hero from '@/presentation/components/sections/hero/Hero'
 import About from '@/presentation/components/sections/about/About'
 import Projects from '@/presentation/components/sections/Projects'
 import Skills from '@/presentation/components/sections/Skills'
