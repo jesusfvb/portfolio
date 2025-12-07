@@ -1,4 +1,4 @@
-import Header from '@/presentation/components/layout/Header'
+import Header from '@/presentation/components/layout/header/Header'
 import Hero from '@/presentation/components/sections/Hero'
 import About from '@/presentation/components/sections/About'
 import Projects from '@/presentation/components/sections/Projects'
