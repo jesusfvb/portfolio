@@ -94,6 +94,7 @@ const Projects = () => {
 
   const maxIndex = Math.max(0, PROJECTS.length - itemsPerView);
   const hasMoreItems = PROJECTS.length > itemsPerView;
+  const shouldCenter = PROJECTS.length <= itemsPerView;
 
   const goToPrevious = () => {
     setCurrentIndex((prev) => (prev > 0 ? prev - 1 : maxIndex));
@@ -222,17 +223,23 @@ const Projects = () => {
           {/* Carrusel Container */}
           <div className="overflow-hidden">
             <div
-              className="flex transition-transform duration-500 ease-in-out"
+              className={`flex transition-transform duration-500 ease-in-out ${
+                shouldCenter ? "justify-center gap-8" : ""
+              }`}
               style={{
-                transform: `translateX(-${
-                  currentIndex * (100 / itemsPerView)
-                }%)`,
+                transform: shouldCenter
+                  ? "translateX(0%)"
+                  : `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
               }}
             >
               {PROJECTS.map((project) => (
                 <div
                   key={project.id}
-                  className="min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1.333rem)] px-4"
+                  className={`${
+                    shouldCenter
+                      ? "w-full md:w-[400px] lg:w-[380px]"
+                      : "min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1.333rem)]"
+                  } px-4`}
                 >
                   <div className="bg-[#1a1a1a] rounded-xl overflow-hidden border border-[rgba(255,255,255,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] group flex flex-col w-full md:w-[400px] lg:w-[380px] h-[600px]">
                     <div className="relative w-full h-[200px] overflow-hidden bg-[#121212] shrink-0">
