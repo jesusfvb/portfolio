@@ -1,7 +1,7 @@
 export { default as Hero } from './Hero';
-export { default as About } from './About';
+export { default as About } from './about/About';
 export { default as Projects } from './Projects';
 export { default as Skills } from './Skills';
 export { default as Education } from './Education';
-export { Contact } from './contact';
+export { default as Contact } from './contact/Contact';
 
