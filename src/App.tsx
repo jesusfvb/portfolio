@@ -3,7 +3,7 @@ import About from "@/presentation/components/sections/about/About";
 import Education from "@/presentation/components/sections/education/Education";
 import Hero from "@/presentation/components/sections/hero/Hero";
 
-import Skills from "@/presentation/components/sections/Skills";
+import Skills from "@/presentation/components/sections/skills/Skills";
 import { Contact, Projects } from "./presentation/components/sections";
 
 function App() {
