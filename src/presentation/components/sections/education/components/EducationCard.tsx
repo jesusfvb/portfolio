@@ -13,7 +13,9 @@ const EducationCard = ({ education, isLast = false }: EducationCardProps) => {
       }`}
     >
       {/* Punto decorativo */}
-      <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-linear-to-r from-[#6366f1] to-[#8b5cf6] border-2 border-[#121212]"></div>
+      {isLast ? null : (
+        <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-linear-to-r from-[#6366f1] to-[#8b5cf6] border-2 border-[#121212]"></div>
+      )}
 
       {/* Contenido */}
       <div className="bg-[#1a1a1a] rounded-xl p-6 md:p-8 border border-[rgba(255,255,255,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)]">
