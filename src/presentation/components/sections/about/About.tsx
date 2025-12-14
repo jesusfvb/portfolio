@@ -1,8 +1,8 @@
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-[#1a1a1a]">
+    <section id="about" className="py-24 bg-[#1a1a1a] scroll-mt-20">
       <div className="container">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 pt-4 bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent">
           Sobre Mí
         </h2>
         <div className="max-w-3xl mx-auto">
