@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { getTechInfo } from '@/domain/constants/skills.constants';
+import SkillBadge from '@/presentation/components/sections/skills/components/SkillBadge';
 import type { Project } from '@/domain/interfaces';
 
 interface ProjectDetailProps {
@@ -150,14 +152,28 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
               <div className="mb-6">
                 <h3 className="text-xl font-semibold text-white mb-3">Tecnologías</h3>
                 <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, index) => (
-                    <span 
-                      key={index}
-                      className="px-4 py-2 bg-[#121212] border border-[rgba(255,255,255,0.1)] rounded-full text-sm text-[#a0a0a0] transition-all duration-300 hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white hover:border-transparent"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                  {project.technologies.map((tech, index) => {
+                    const techInfo = getTechInfo(tech);
+                    if (techInfo) {
+                      return (
+                        <SkillBadge
+                          key={index}
+                          icon={techInfo.icon}
+                          displayName={techInfo.displayName}
+                          url={techInfo.url}
+                        />
+                      );
+                    }
+                    // Fallback si no se encuentra la tecnología en las skills
+                    return (
+                      <span 
+                        key={index}
+                        className="px-4 py-2 bg-[#121212] border border-[rgba(255,255,255,0.1)] rounded-full text-sm text-[#a0a0a0] transition-all duration-300 hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white hover:border-transparent"
+                      >
+                        {tech}
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
 

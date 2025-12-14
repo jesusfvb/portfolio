@@ -654,7 +654,8 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
   },
 };
 
-export const getTechIcon = (tech: string): ReactElement | null => {
+// Función auxiliar para obtener la información completa de una tecnología
+const getTechInfoInternal = (tech: string): { icon: ReactElement; displayName: string; url?: string } | null => {
   const techLower = tech.toLowerCase();
 
   // Ordenar por especificidad: primero los casos más específicos
@@ -683,7 +684,7 @@ export const getTechIcon = (tech: string): ReactElement | null => {
     return 0;
   });
 
-  for (const [key, { icon, keywords }] of orderedEntries) {
+  for (const [key, { icon, keywords, displayName, url }] of orderedEntries) {
     const matches = keywords.some((keyword) => techLower.includes(keyword));
 
     if (matches) {
@@ -694,7 +695,7 @@ export const getTechIcon = (tech: string): ReactElement | null => {
           techLower.includes("react-native-gesture-handler") ||
           techLower.includes("gesture handler")
         ) {
-          return icon;
+          return { icon, displayName, url };
         }
         continue;
       }
@@ -707,7 +708,7 @@ export const getTechIcon = (tech: string): ReactElement | null => {
             techLower.includes("react-native-reanimated") ||
             techLower.includes("reanimated"))
         ) {
-          return icon;
+          return { icon, displayName, url };
         }
         continue;
       }
@@ -718,7 +719,7 @@ export const getTechIcon = (tech: string): ReactElement | null => {
           techLower.includes("react-navigation") ||
           techLower.includes("@react-navigation")
         ) {
-          return icon;
+          return { icon, displayName, url };
         }
         continue;
       }
@@ -730,7 +731,7 @@ export const getTechIcon = (tech: string): ReactElement | null => {
           !techLower.includes("gesture handler") &&
           techLower.includes("react native")
         ) {
-          return icon;
+          return { icon, displayName, url };
         }
         continue;
       }
@@ -741,7 +742,7 @@ export const getTechIcon = (tech: string): ReactElement | null => {
           techLower.includes("react-query") ||
           techLower.includes("tanstack query")
         ) {
-          return icon;
+          return { icon, displayName, url };
         }
         continue;
       }
@@ -752,7 +753,7 @@ export const getTechIcon = (tech: string): ReactElement | null => {
           techLower.includes("react-router") ||
           techLower.includes("@remix-run/react-router")
         ) {
-          return icon;
+          return { icon, displayName, url };
         }
         continue;
       }
@@ -770,21 +771,21 @@ export const getTechIcon = (tech: string): ReactElement | null => {
           !techLower.includes("native") &&
           !techLower.includes("reanimated")
         ) {
-          return icon;
+          return { icon, displayName, url };
         }
         continue;
       }
 
       if (key === "spring security") {
         if (techLower.includes("security")) {
-          return icon;
+          return { icon, displayName, url };
         }
         continue;
       }
 
       if (key === "spring cloud") {
         if (techLower.includes("microservice") || techLower.includes("cloud")) {
-          return icon;
+          return { icon, displayName, url };
         }
         continue;
       }
@@ -796,15 +797,24 @@ export const getTechIcon = (tech: string): ReactElement | null => {
           !techLower.includes("microservice") &&
           !techLower.includes("cloud")
         ) {
-          return icon;
+          return { icon, displayName, url };
         }
         continue;
       }
 
-      // Para el resto, devolver el icono directamente
-      return icon;
+      // Para el resto, devolver la información completa
+      return { icon, displayName, url };
     }
   }
 
   return null;
+};
+
+export const getTechIcon = (tech: string): ReactElement | null => {
+  const info = getTechInfoInternal(tech);
+  return info ? info.icon : null;
+};
+
+export const getTechInfo = (tech: string): { icon: ReactElement; displayName: string; url?: string } | null => {
+  return getTechInfoInternal(tech);
 };
