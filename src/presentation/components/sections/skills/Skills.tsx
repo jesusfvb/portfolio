@@ -1,5 +1,9 @@
 import React from "react";
-import { SKILLS_ICONS, type SkillCategory as SkillCategoryType, type SkillType } from "@/domain/constants";
+import {
+  SKILLS_ICONS,
+  type SkillCategory as SkillCategoryType,
+  type SkillType,
+} from "@/domain/constants";
 import FrontendMobileCategory from "./components/FrontendMobileCategory";
 import SkillCategoryComponent from "./components/SkillCategory";
 
@@ -24,7 +28,12 @@ const Skills = () => {
     },
     {} as Record<
       SkillCategoryType,
-      Array<{ key: string; icon: React.ReactElement; displayName: string; type: SkillType }>
+      Array<{
+        key: string;
+        icon: React.ReactElement;
+        displayName: string;
+        type: SkillType;
+      }>
     >
   );
 
@@ -38,7 +47,8 @@ const Skills = () => {
   const otherCategories: SkillCategoryType[] = ["backend", "database", "tools"];
 
   const availableOtherCategories = otherCategories.filter(
-    (category) => skillsByCategory[category] && skillsByCategory[category].length > 0
+    (category) =>
+      skillsByCategory[category] && skillsByCategory[category].length > 0
   );
 
   return (

@@ -30,10 +30,21 @@ const SkillCategory = ({ category, title, skills }: SkillCategoryProps) => {
         {title}
       </h3>
       {shouldGroupByType ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <SkillTypeGroup title="Lenguajes" skills={languages} />
-          <SkillTypeGroup title="Frameworks" skills={frameworks} />
-          <SkillTypeGroup title="Otros" skills={others} />
+        <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <SkillTypeGroup title="Lenguajes" skills={languages} />
+            <SkillTypeGroup title="Frameworks" skills={frameworks} />
+          </div>
+          {others.length > 0 && (
+            <div>
+              <h4 className="text-sm font-medium text-[#a0a0a0] mb-2">Otros</h4>
+              <div className="flex flex-wrap gap-3">
+                {others.map((skill) => (
+                  <SkillBadge key={skill.key} icon={skill.icon} displayName={skill.displayName} />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       ) : (
         <div className="flex flex-wrap gap-3">

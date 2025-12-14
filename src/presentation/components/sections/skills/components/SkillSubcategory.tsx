@@ -20,6 +20,7 @@ const SkillSubcategory = ({ title, skills, columns = 2 }: SkillSubcategoryProps)
 
   const languages = skills.filter((s) => s.type === "language");
   const frameworks = skills.filter((s) => s.type === "framework");
+  const others = skills.filter((s) => s.type === "other");
 
   const gridCols = columns === 3 ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3" : "grid-cols-1 md:grid-cols-2";
 
@@ -30,6 +31,11 @@ const SkillSubcategory = ({ title, skills, columns = 2 }: SkillSubcategoryProps)
         <SkillTypeGroup title="Lenguajes" skills={languages} />
         <SkillTypeGroup title="Frameworks" skills={frameworks} />
       </div>
+      {others.length > 0 && (
+        <div className="mt-2">
+          <SkillTypeGroup title="Otros" skills={others} />
+        </div>
+      )}
     </div>
   );
 };
