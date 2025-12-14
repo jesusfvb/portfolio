@@ -33,6 +33,7 @@ interface TechIconMap {
   category: SkillCategory;
   displayName: string;
   type: SkillType;
+  url?: string;
 }
 
 export const SKILLS_ICONS: Record<string, TechIconMap> = {
@@ -42,6 +43,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "mobile",
     displayName: "React Native",
     type: "framework",
+    url: "https://reactnative.dev",
   },
   expo: {
     icon: (
@@ -59,6 +61,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "mobile",
     displayName: "Expo",
     type: "framework",
+    url: "https://expo.dev",
   },
   "react navigation": {
     icon: (
@@ -76,6 +79,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "mobile",
     displayName: "React Navigation",
     type: "framework",
+    url: "https://reactnavigation.org",
   },
   "react native reanimated": {
     icon: (
@@ -93,6 +97,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "mobile",
     displayName: "React Native Reanimated",
     type: "other",
+    url: "https://docs.swmansion.com/react-native-reanimated",
   },
   "react native gesture handler": {
     icon: (
@@ -110,6 +115,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "mobile",
     displayName: "React Native Gesture Handler",
     type: "other",
+    url: "https://docs.swmansion.com/react-native-gesture-handler",
   },
   nativewind: {
     icon: (
@@ -127,6 +133,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "mobile",
     displayName: "NativeWind",
     type: "other",
+    url: "https://www.nativewind.dev",
   },
   react: {
     icon: <FaReact style={{ color: "#61DAFB" }} />,
@@ -134,6 +141,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "frontend",
     displayName: "React",
     type: "framework",
+    url: "https://react.dev",
   },
   typescript: {
     icon: <SiTypescript style={{ color: "#3178C6" }} />,
@@ -141,6 +149,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "frontend",
     displayName: "TypeScript",
     type: "language",
+    url: "https://www.typescriptlang.org",
   },
   css: {
     icon: <FaCss3Alt style={{ color: "#1572B6" }} />,
@@ -148,6 +157,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "frontend",
     displayName: "CSS",
     type: "language",
+    url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
   },
   mongodb: {
     icon: <SiMongodb style={{ color: "#47A248" }} />,
@@ -155,6 +165,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "database",
     displayName: "MongoDB",
     type: "other",
+    url: "https://www.mongodb.com",
   },
   postgresql: {
     icon: <SiPostgresql style={{ color: "#336791" }} />,
@@ -162,6 +173,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "database",
     displayName: "PostgreSQL",
     type: "other",
+    url: "https://www.postgresql.org",
   },
   axios: {
     icon: (
@@ -179,6 +191,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "frontend",
     displayName: "Axios",
     type: "other",
+    url: "https://axios-http.com",
   },
   "react query": {
     icon: (
@@ -201,6 +214,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "frontend",
     displayName: "React Query",
     type: "other",
+    url: "https://tanstack.com/query",
   },
   jest: {
     icon: (
@@ -218,6 +232,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "frontend",
     displayName: "Jest",
     type: "framework",
+    url: "https://jestjs.io",
   },
   "react router": {
     icon: (
@@ -235,6 +250,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "frontend",
     displayName: "React Router",
     type: "framework",
+    url: "https://reactrouter.com",
   },
   zustand: {
     icon: (
@@ -252,6 +268,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "frontend",
     displayName: "Zustand",
     type: "other",
+    url: "https://zustand-demo.pmnd.rs",
   },
   redux: {
     icon: (
@@ -269,6 +286,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "frontend",
     displayName: "Redux",
     type: "other",
+    url: "https://redux.js.org",
   },
   tailwind: {
     icon: <SiTailwindcss style={{ color: "#06B6D4" }} />,
@@ -276,6 +294,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "frontend",
     displayName: "Tailwind CSS",
     type: "framework",
+    url: "https://tailwindcss.com",
   },
   vite: {
     icon: (
@@ -325,6 +344,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "frontend",
     displayName: "Vite",
     type: "framework",
+    url: "https://vite.dev",
   },
   java: {
     icon: <FaJava style={{ color: "#ED8B00" }} />,
@@ -332,6 +352,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "backend",
     displayName: "Java",
     type: "language",
+    url: "https://www.java.com",
   },
   spring: {
     icon: <SiSpring style={{ color: "#6DB33F" }} />,
@@ -339,6 +360,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "backend",
     displayName: "Spring Boot",
     type: "framework",
+    url: "https://spring.io/projects/spring-boot",
   },
   "spring security": {
     icon: (
@@ -357,6 +379,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "backend",
     displayName: "Spring Security",
     type: "framework",
+    url: "https://spring.io/projects/spring-security",
   },
   "spring cloud": {
     icon: (
@@ -380,6 +403,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "backend",
     displayName: "Spring Cloud",
     type: "framework",
+    url: "https://spring.io/projects/spring-cloud",
   },
   lombok: {
     icon: (
@@ -397,6 +421,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "backend",
     displayName: "Lombok",
     type: "other",
+    url: "https://projectlombok.org",
   },
   junit: {
     icon: (
@@ -459,6 +484,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "backend",
     displayName: "JUnit",
     type: "framework",
+    url: "https://junit.org",
   },
   mockito: {
     icon: (
@@ -476,6 +502,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "backend",
     displayName: "Mockito",
     type: "framework",
+    url: "https://site.mockito.org",
   },
   mapstruct: {
     icon: (
@@ -493,6 +520,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "backend",
     displayName: "MapStruct",
     type: "other",
+    url: "https://mapstruct.org",
   },
   html: {
     icon: <FaHtml5 style={{ color: "#E34F26" }} />,
@@ -500,6 +528,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "frontend",
     displayName: "HTML",
     type: "language",
+    url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
   },
   git: {
     icon: <FaGitAlt style={{ color: "#F05032" }} />,
@@ -507,6 +536,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "tools",
     displayName: "Git",
     type: "other",
+    url: "https://git-scm.com",
   },
   github: {
     icon: <FaGithub style={{ color: "#FFFFFF" }} />,
@@ -514,6 +544,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "tools",
     displayName: "GitHub",
     type: "other",
+    url: "https://github.com",
   },
   docker: {
     icon: <FaDocker style={{ color: "#2496ED" }} />,
@@ -521,6 +552,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "tools",
     displayName: "Docker",
     type: "other",
+    url: "https://www.docker.com",
   },
   vscode: {
     icon: (
@@ -538,6 +570,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "tools",
     displayName: "Visual Studio Code",
     type: "other",
+    url: "https://code.visualstudio.com",
   },
   cursor: {
     icon: (
@@ -555,6 +588,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "tools",
     displayName: "Cursor",
     type: "other",
+    url: "https://cursor.sh",
   },
   "intellij idea": {
     icon: (
@@ -572,6 +606,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "tools",
     displayName: "IntelliJ IDEA",
     type: "other",
+    url: "https://www.jetbrains.com/idea",
   },
   neovim: {
     icon: (
@@ -589,6 +624,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "tools",
     displayName: "Neovim",
     type: "other",
+    url: "https://neovim.io",
   },
   vim: {
     icon: (
@@ -606,6 +642,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "tools",
     displayName: "Vim",
     type: "other",
+    url: "https://www.vim.org",
   },
   javascript: {
     icon: <FaJs style={{ color: "#F05032" }} />,
@@ -613,6 +650,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     category: "frontend",
     displayName: "JavaScript",
     type: "language",
+    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
   },
 };
 

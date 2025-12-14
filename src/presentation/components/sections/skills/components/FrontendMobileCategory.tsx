@@ -7,6 +7,7 @@ interface Skill {
   icon: React.ReactElement;
   displayName: string;
   type: SkillType;
+  url?: string;
 }
 
 interface FrontendMobileCategoryProps {

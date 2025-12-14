@@ -33,6 +33,7 @@ const Skills = () => {
         icon: React.ReactElement;
         displayName: string;
         type: SkillType;
+        url?: string;
       }>
     >
   );

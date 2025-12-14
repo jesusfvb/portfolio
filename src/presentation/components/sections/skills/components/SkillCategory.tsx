@@ -8,6 +8,7 @@ interface Skill {
   icon: React.ReactElement;
   displayName: string;
   type: SkillType;
+  url?: string;
 }
 
 interface SkillCategoryProps {
@@ -40,7 +41,12 @@ const SkillCategory = ({ category, title, skills }: SkillCategoryProps) => {
               <h4 className="text-sm font-medium text-[#a0a0a0] mb-2">Otros</h4>
               <div className="flex flex-wrap gap-3">
                 {others.map((skill) => (
-                  <SkillBadge key={skill.key} icon={skill.icon} displayName={skill.displayName} />
+                  <SkillBadge
+                    key={skill.key}
+                    icon={skill.icon}
+                    displayName={skill.displayName}
+                    url={skill.url}
+                  />
                 ))}
               </div>
             </div>
@@ -49,7 +55,12 @@ const SkillCategory = ({ category, title, skills }: SkillCategoryProps) => {
       ) : (
         <div className="flex flex-wrap gap-3">
           {skills.map((skill) => (
-            <SkillBadge key={skill.key} icon={skill.icon} displayName={skill.displayName} />
+            <SkillBadge
+              key={skill.key}
+              icon={skill.icon}
+              displayName={skill.displayName}
+              url={skill.url}
+            />
           ))}
         </div>
       )}
