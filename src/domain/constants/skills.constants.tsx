@@ -7,11 +7,10 @@ import {
   FaHtml5,
   FaJava,
   FaJs,
-  FaReact
+  FaReact,
 } from "react-icons/fa";
 import {
   SiMongodb,
-  SiMongoose,
   SiNextdotjs,
   SiNodedotjs,
   SiPostgresql,
@@ -20,16 +19,24 @@ import {
   SiStripe,
   SiTailwindcss,
   SiTypescript,
-  SiVite
+  SiVite,
 } from "react-icons/si";
 
-export type SkillCategory = "frontend" | "backend" | "database" | "tools" | "mobile";
+export type SkillCategory =
+  | "frontend"
+  | "backend"
+  | "database"
+  | "tools"
+  | "mobile";
+
+export type SkillType = "language" | "framework" | "other";
 
 interface TechIconMap {
   icon: ReactElement;
   keywords: string[];
   category: SkillCategory;
   displayName: string;
+  type: SkillType;
 }
 
 export const SKILLS_ICONS: Record<string, TechIconMap> = {
@@ -38,108 +45,126 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     keywords: ["react native", "reactnative"],
     category: "mobile",
     displayName: "React Native",
+    type: "framework",
   },
   react: {
     icon: <FaReact style={{ color: "#61DAFB" }} />,
     keywords: ["react"],
     category: "frontend",
     displayName: "React",
+    type: "framework",
   },
   typescript: {
     icon: <SiTypescript style={{ color: "#3178C6" }} />,
     keywords: ["typescript", "ts"],
     category: "frontend",
     displayName: "TypeScript",
+    type: "language",
   },
   css: {
     icon: <FaCss3Alt style={{ color: "#1572B6" }} />,
     keywords: ["css"],
     category: "frontend",
     displayName: "CSS",
+    type: "language",
   },
   node: {
     icon: <SiNodedotjs style={{ color: "#339933" }} />,
     keywords: ["node"],
     category: "backend",
     displayName: "Node.js",
+    type: "framework",
   },
   mongodb: {
     icon: <SiMongodb style={{ color: "#47A248" }} />,
     keywords: ["mongodb", "mongo"],
     category: "database",
     displayName: "MongoDB",
-  },
-  next: {
-    icon: <SiNextdotjs style={{ color: "#FFFFFF" }} />,
-    keywords: ["next"],
-    category: "frontend",
-    displayName: "Next.js",
-  },
-  stripe: {
-    icon: <SiStripe style={{ color: "#635BFF" }} />,
-    keywords: ["stripe"],
-    category: "tools",
-    displayName: "Stripe",
+    type: "other",
   },
   postgresql: {
     icon: <SiPostgresql style={{ color: "#336791" }} />,
     keywords: ["postgresql", "postgres"],
     category: "database",
     displayName: "PostgreSQL",
+    type: "other",
+  },
+  next: {
+    icon: <SiNextdotjs style={{ color: "#FFFFFF" }} />,
+    keywords: ["next"],
+    category: "frontend",
+    displayName: "Next.js",
+    type: "framework",
+  },
+  stripe: {
+    icon: <SiStripe style={{ color: "#635BFF" }} />,
+    keywords: ["stripe"],
+    category: "tools",
+    displayName: "Stripe",
+    type: "other",
   },
   tailwind: {
     icon: <SiTailwindcss style={{ color: "#06B6D4" }} />,
     keywords: ["tailwind"],
     category: "frontend",
     displayName: "Tailwind CSS",
+    type: "framework",
   },
   vite: {
     icon: <SiVite style={{ color: "#41D1FF" }} />,
     keywords: ["vite"],
     category: "frontend",
     displayName: "Vite",
+    type: "framework",
   },
   java: {
     icon: <FaJava style={{ color: "#ED8B00" }} />,
     keywords: ["java"],
     category: "backend",
     displayName: "Java",
+    type: "language",
   },
   spring: {
     icon: <SiSpring style={{ color: "#6DB33F" }} />,
     keywords: ["spring", "spring boot"],
     category: "backend",
     displayName: "Spring Boot",
+    type: "framework",
   },
   html: {
     icon: <FaHtml5 style={{ color: "#E34F26" }} />,
     keywords: ["html"],
     category: "frontend",
     displayName: "HTML",
+    type: "language",
   },
   git: {
     icon: <FaGitAlt style={{ color: "#F05032" }} />,
     keywords: ["git"],
     category: "tools",
     displayName: "Git",
+    type: "other",
   },
   github: {
     icon: <FaGithub style={{ color: "#FFFFFF" }} />,
     keywords: ["github"],
     category: "tools",
     displayName: "GitHub",
+    type: "other",
   },
   docker: {
     icon: <FaDocker style={{ color: "#2496ED" }} />,
     keywords: ["docker"],
     category: "tools",
     displayName: "Docker",
+    type: "other",
   },
   javascript: {
     icon: <FaJs style={{ color: "#F05032" }} />,
     keywords: ["javascript"],
     category: "frontend",
     displayName: "JavaScript",
+    type: "language",
   },
 };
 

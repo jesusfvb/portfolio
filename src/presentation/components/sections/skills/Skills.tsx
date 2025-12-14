@@ -1,7 +1,9 @@
 import React from "react";
-import { SKILLS_ICONS, type SkillCategory } from "@/domain/constants";
+import { SKILLS_ICONS, type SkillCategory as SkillCategoryType, type SkillType } from "@/domain/constants";
+import FrontendMobileCategory from "./components/FrontendMobileCategory";
+import SkillCategoryComponent from "./components/SkillCategory";
 
-const categoryLabels: Record<SkillCategory, string> = {
+const categoryLabels: Record<SkillCategoryType, string> = {
   frontend: "Frontend",
   backend: "Backend",
   database: "Base de Datos",
@@ -21,22 +23,21 @@ const Skills = () => {
       return acc;
     },
     {} as Record<
-      SkillCategory,
-      Array<{ key: string; icon: React.ReactElement; displayName: string }>
+      SkillCategoryType,
+      Array<{ key: string; icon: React.ReactElement; displayName: string; type: SkillType }>
     >
   );
 
-  // Orden de las categorías
-  const categoryOrder: SkillCategory[] = [
-    "frontend",
-    "backend",
-    "database",
-    "mobile",
-    "tools",
-  ];
+  // Combinar frontend y mobile en una categoría unificada
+  const frontendMobileSkills = {
+    frontend: skillsByCategory.frontend || [],
+    mobile: skillsByCategory.mobile || [],
+  };
 
-  // Filtrar categorías que tienen habilidades
-  const availableCategories = categoryOrder.filter(
+  // Otras categorías (sin frontend y mobile)
+  const otherCategories: SkillCategoryType[] = ["backend", "database", "tools"];
+
+  const availableOtherCategories = otherCategories.filter(
     (category) => skillsByCategory[category] && skillsByCategory[category].length > 0
   );
 
@@ -49,32 +50,20 @@ const Skills = () => {
         <p className="text-center text-[#a0a0a0] text-lg mb-12">
           Tecnologías y herramientas que domino
         </p>
-        <div className="flex flex-wrap justify-center gap-8 max-w-[1200px] mx-auto px-4 md:px-0">
-          {availableCategories.map((category) => {
-            const skills = skillsByCategory[category];
-            if (!skills || skills.length === 0) return null;
+        <div className="flex flex-col gap-8 max-w-[1200px] mx-auto px-4 md:px-0">
+          <FrontendMobileCategory
+            frontendSkills={frontendMobileSkills.frontend}
+            mobileSkills={frontendMobileSkills.mobile}
+          />
 
-            return (
-              <div key={category} className="flex flex-col w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.333rem)] max-w-[350px]">
-                <h3 className="text-xl font-semibold text-white mb-4 pb-2 border-b border-[rgba(255,255,255,0.1)]">
-                  {categoryLabels[category]}
-                </h3>
-                <div className="flex flex-wrap gap-3">
-                  {skills.map((skill) => (
-                    <div
-                      key={skill.key}
-                      className="flex items-center gap-2 px-4 py-2 bg-[#121212] border border-[rgba(255,255,255,0.1)] rounded-full text-sm font-medium text-white transition-all duration-300 cursor-default hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:border-transparent hover:-translate-y-0.5 hover:shadow-[0_5px_15px_rgba(99,102,241,0.3)]"
-                    >
-                      <span className="flex items-center justify-center text-lg">
-                        {skill.icon}
-                      </span>
-                      <span>{skill.displayName}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
+          {availableOtherCategories.map((category) => (
+            <SkillCategoryComponent
+              key={category}
+              category={category}
+              title={categoryLabels[category]}
+              skills={skillsByCategory[category]}
+            />
+          ))}
         </div>
       </div>
     </section>
