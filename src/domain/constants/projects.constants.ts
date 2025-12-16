@@ -11,7 +11,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 2,
-    title: "App de Manga",
+    title: "NeoManga",
     description:
       "Aplicación móvil multiplataforma para lectura y gestión de mangas. Backend robusto desarrollado con Java y Spring Boot, API REST completa. Frontend móvil en React Native con TypeScript. Incluye catálogo de mangas, sistema de favoritos, lectura online, búsqueda avanzada y recomendaciones personalizadas.",
     technologies: [
