@@ -1,8 +1,7 @@
 // Imagen optimizada desde public
-const profileImage = "/images/1000001843.webp";
+const profileImage = "/images/foto_de_perfil.png";
 
 const Hero = () => {
-
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -59,14 +58,13 @@ const Hero = () => {
           </div>
           <div className="flex justify-center items-center md:order-2 order-1">
             <div className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] relative">
-              <div className="relative w-full h-full rounded-full p-1 bg-linear-to-r from-[#6366f1] to-[#8b5cf6] shadow-[0_20px_40px_rgba(99,102,241,0.3)]">
-                <div className="w-full h-full rounded-full overflow-hidden bg-[#1a1a1a]">
-                  <img
-                    src={profileImage}
-                    alt="Jesús Francisco Vázquez Biltre"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+              <div className="relative w-full h-full overflow-hidden rounded-3xl">
+                <img
+                  src={profileImage}
+                  alt="Jesús Francisco Vázquez Biltre"
+                  className="relative w-full h-full object-cover mix-blend-lighten opacity-85"
+                />
+                <div className="absolute inset-0 rounded-3xl ring-1 ring-[#121212]/60"></div>
               </div>
             </div>
           </div>
