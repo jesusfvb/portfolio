@@ -2,6 +2,13 @@ import { useState, useEffect } from "react";
 import { getTechInfo } from "@/domain/constants/skills.constants";
 import SkillBadge from "@/presentation/components/sections/skills/components/SkillBadge";
 import type { Project } from "@/domain/interfaces";
+import {
+  CloseIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  ExternalLinkIcon,
+  GitHubIcon,
+} from "@/presentation/components/shared/icons";
 
 interface ProjectDetailProps {
   project: Project | null;
@@ -65,17 +72,7 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
           className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-[#121212] border border-[rgba(255,255,255,0.1)] flex items-center justify-center text-white transition-all duration-300 hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:border-transparent hover:scale-110"
           aria-label="Cerrar"
         >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
+          <CloseIcon size={20} />
         </button>
 
         <div className="flex flex-col md:flex-row max-h-[90vh] overflow-hidden">
@@ -99,16 +96,7 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
                     className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white transition-all duration-300 hover:bg-black/80 hover:scale-110"
                     aria-label="Imagen anterior"
                   >
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <polyline points="15 18 9 12 15 6"></polyline>
-                    </svg>
+                    <ChevronLeftIcon size={20} />
                   </button>
                   <button
                     onClick={(e) => {
@@ -118,16 +106,7 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
                     className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white transition-all duration-300 hover:bg-black/80 hover:scale-110"
                     aria-label="Siguiente imagen"
                   >
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
+                    <ChevronRightIcon size={20} />
                   </button>
 
                   {/* Indicadores de imágenes */}
@@ -213,18 +192,7 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-[#6366f1] to-[#8b5cf6] text-white rounded-lg font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(99,102,241,0.4)] no-underline w-fit"
                   >
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
+                    <ExternalLinkIcon size={20} />
                     Ver Proyecto
                   </a>
                 )}
@@ -244,16 +212,7 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 bg-[#121212] border border-[rgba(255,255,255,0.1)] text-white rounded-lg font-semibold transition-all duration-300 hover:bg-[#1a1a1a] hover:border-[#6366f1] no-underline"
                       >
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        >
-                          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                        </svg>
+                        <GitHubIcon size={20} />
                         Frontend
                       </a>
                     )}
@@ -265,16 +224,7 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 bg-[#121212] border border-[rgba(255,255,255,0.1)] text-white rounded-lg font-semibold transition-all duration-300 hover:bg-[#1a1a1a] hover:border-[#6366f1] no-underline"
                       >
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        >
-                          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                        </svg>
+                        <GitHubIcon size={20} />
                         Backend
                       </a>
                     )}
@@ -290,16 +240,7 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-6 py-3 bg-[#121212] border border-[rgba(255,255,255,0.1)] text-white rounded-lg font-semibold transition-all duration-300 hover:bg-[#1a1a1a] hover:border-[#6366f1] no-underline"
                     >
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                      </svg>
+                      <GitHubIcon size={20} />
                       GitHub
                     </a>
                   )}

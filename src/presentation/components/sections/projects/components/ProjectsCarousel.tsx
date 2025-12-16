@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import type { Project } from "@/domain/interfaces";
+import { ChevronLeftIcon, ChevronRightIcon } from "@/presentation/components/shared/icons";
 
 interface ProjectsCarouselProps {
   projects: Project[];
@@ -180,32 +181,14 @@ const ProjectsCarousel = ({ projects, onViewDetails }: ProjectsCarouselProps) =>
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 z-10 w-12 h-12 rounded-full bg-[#1a1a1a] border border-[rgba(255,255,255,0.1)] flex items-center justify-center text-white transition-all duration-300 hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:border-transparent hover:scale-110"
             aria-label="Proyecto anterior"
           >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
+            <ChevronLeftIcon size={24} />
           </button>
           <button
             onClick={goToNext}
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 z-10 w-12 h-12 rounded-full bg-[#1a1a1a] border border-[rgba(255,255,255,0.1)] flex items-center justify-center text-white transition-all duration-300 hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:border-transparent hover:scale-110"
             aria-label="Siguiente proyecto"
           >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
+            <ChevronRightIcon size={24} />
           </button>
         </>
       )}
