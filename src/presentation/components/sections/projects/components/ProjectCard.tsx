@@ -8,7 +8,11 @@ interface ProjectCardProps {
   onViewDetails: (project: Project) => void;
 }
 
-const ProjectCard = ({ project, shouldCenter, onViewDetails }: ProjectCardProps) => {
+const ProjectCard = ({
+  project,
+  shouldCenter,
+  onViewDetails,
+}: ProjectCardProps) => {
   return (
     <div
       className={`${
@@ -47,16 +51,8 @@ const ProjectCard = ({ project, shouldCenter, onViewDetails }: ProjectCardProps)
                     x2="100%"
                     y2="100%"
                   >
-                    <stop
-                      offset="0%"
-                      stopColor="#6366f1"
-                      stopOpacity="0.1"
-                    />
-                    <stop
-                      offset="100%"
-                      stopColor="#8b5cf6"
-                      stopOpacity="0.1"
-                    />
+                    <stop offset="0%" stopColor="#6366f1" stopOpacity="0.1" />
+                    <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.1" />
                   </linearGradient>
                 </defs>
                 <rect
@@ -68,7 +64,7 @@ const ProjectCard = ({ project, shouldCenter, onViewDetails }: ProjectCardProps)
             )}
           </div>
           <div className="absolute inset-0 bg-black/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="flex gap-4 flex-col items-center">
+            <div className="flex gap-4 flex-col items-center w-full px-4">
               {project.link && (
                 <a
                   href={project.link}
@@ -93,7 +89,13 @@ const ProjectCard = ({ project, shouldCenter, onViewDetails }: ProjectCardProps)
                 </a>
               )}
               {project.githubFrontend || project.githubBackend ? (
-                <div className="flex gap-3">
+                <div
+                  className={`flex ${
+                    project.githubFrontend && project.githubBackend
+                      ? "justify-around w-full px-4"
+                      : "gap-3 justify-center"
+                  }`}
+                >
                   {project.githubFrontend && (
                     <a
                       href={project.githubFrontend}
@@ -229,4 +231,3 @@ const ProjectCard = ({ project, shouldCenter, onViewDetails }: ProjectCardProps)
 };
 
 export default ProjectCard;
-
