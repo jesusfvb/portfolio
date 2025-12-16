@@ -12,7 +12,7 @@ function App() {
       <Header />
       <main className="w-full">
         <Hero />
-        <About />
+        {/* <About /> */}
         <Projects />
         <Skills />
         <Education />

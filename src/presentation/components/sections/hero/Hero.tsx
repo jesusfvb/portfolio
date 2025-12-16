@@ -1,3 +1,6 @@
+import { getTechInfo } from "@/domain/constants/skills";
+import SkillBadge from "@/presentation/components/sections/skills/components/SkillBadge";
+
 // Imagen optimizada desde public
 const profileImage = "/images/foto_de_perfil.png";
 
@@ -8,6 +11,16 @@ const Hero = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  // Herramientas principales que uso
+  const mainTools = [
+    "React",
+    "React Native",
+    "Spring Boot",
+    "MongoDB",
+    "PostgreSQL",
+    "Docker",
+  ];
 
   return (
     <section
@@ -36,11 +49,40 @@ const Hero = () => {
                 Jesús Francisco Vázquez Biltre
               </span>
             </h1>
-            <p className="text-lg text-[#a0a0a0] leading-relaxed mb-8 max-w-[600px]">
+            <p className="text-lg text-[#a0a0a0] leading-relaxed mb-6 max-w-[600px]">
               Apasionado por crear soluciones digitales innovadoras y
               experiencias de usuario excepcionales. Especializado en desarrollo
               web moderno con tecnologías de vanguardia.
             </p>
+            
+            {/* Resumen de herramientas */}
+            <div className="mb-8">
+              <p className="text-sm text-[#a0a0a0] mb-3">Tecnologías principales:</p>
+              <div className="flex flex-wrap gap-2 items-center">
+                {mainTools.map((tool) => {
+                  const techInfo = getTechInfo(tool);
+                  if (techInfo) {
+                    return (
+                      <SkillBadge
+                        key={tool}
+                        icon={techInfo.icon}
+                        displayName={techInfo.displayName}
+                        url={techInfo.url}
+                      />
+                    );
+                  }
+                  return null;
+                })}
+                <button
+                  onClick={() => scrollToSection("skills")}
+                  className="group flex items-center gap-2 px-4 py-2 bg-[#121212] border border-[rgba(255,255,255,0.1)] rounded-full text-sm font-medium text-white transition-all duration-300 hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:border-transparent hover:text-white hover:-translate-y-0.5 hover:shadow-[0_5px_15px_rgba(99,102,241,0.3)] cursor-pointer"
+                >
+                  <span>Ver más</span>
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </button>
+              </div>
+            </div>
+
             <div className="flex gap-6 md:gap-20 flex-wrap md:justify-start justify-center">
               <button
                 className="px-6 py-3 rounded-lg text-sm font-medium cursor-pointer transition-all duration-300 font-inherit bg-transparent text-white border-2 border-[rgba(255,255,255,0.1)] hover:bg-[#1a1a1a] hover:border-[#6366f1] w-full md:w-auto"
