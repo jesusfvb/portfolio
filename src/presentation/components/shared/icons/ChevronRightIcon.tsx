@@ -6,7 +6,7 @@ interface ChevronRightIconProps {
 }
 
 const ChevronRightIcon = ({ size = 24, className = "" }: ChevronRightIconProps) => {
-  return <FaChevronRight size={size} className={className} />;
+  return <FaChevronRight size={size} className={`text-current ${className}`} />;
 };
 
 export default ChevronRightIcon;

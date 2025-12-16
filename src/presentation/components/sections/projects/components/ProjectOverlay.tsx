@@ -16,11 +16,11 @@ const ProjectOverlay = ({ project }: ProjectOverlayProps) => {
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-12 h-12 rounded-full bg-[#121212] flex items-center justify-center text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6]"
+            className="w-12 h-12 rounded-full bg-[#121212] flex items-center justify-center text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white"
             aria-label="Ver proyecto"
             onClick={(e) => e.stopPropagation()}
           >
-            <ExternalLinkIcon size={20} />
+            <ExternalLinkIcon size={20} className="text-white" />
           </a>
         )}
 
@@ -37,12 +37,12 @@ const ProjectOverlay = ({ project }: ProjectOverlayProps) => {
                 href={project.githubFrontend}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full bg-[#121212] flex items-center justify-center text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] group/github"
+                className="w-12 h-12 rounded-full bg-[#121212] flex items-center justify-center text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white group/github"
                 aria-label="GitHub Frontend"
                 title="Frontend"
                 onClick={(e) => e.stopPropagation()}
               >
-                <GitHubIcon size={20} />
+                <GitHubIcon size={20} className="text-white" />
                 <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-[#1a1a1a] text-xs text-white px-2 py-1 rounded opacity-0 group-hover/github:opacity-100 transition-opacity whitespace-nowrap">
                   Frontend
                 </span>
@@ -54,12 +54,12 @@ const ProjectOverlay = ({ project }: ProjectOverlayProps) => {
                 href={project.githubBackend}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full bg-[#121212] flex items-center justify-center text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] group/github"
+                className="w-12 h-12 rounded-full bg-[#121212] flex items-center justify-center text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white group/github"
                 aria-label="GitHub Backend"
                 title="Backend"
                 onClick={(e) => e.stopPropagation()}
               >
-                <GitHubIcon size={20} />
+                <GitHubIcon size={20} className="text-white" />
                 <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-[#1a1a1a] text-xs text-white px-2 py-1 rounded opacity-0 group-hover/github:opacity-100 transition-opacity whitespace-nowrap">
                   Backend
                 </span>
@@ -72,11 +72,11 @@ const ProjectOverlay = ({ project }: ProjectOverlayProps) => {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full bg-[#121212] flex items-center justify-center text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6]"
+              className="w-12 h-12 rounded-full bg-[#121212] flex items-center justify-center text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white"
               aria-label="GitHub"
               onClick={(e) => e.stopPropagation()}
             >
-              <GitHubIcon size={20} />
+              <GitHubIcon size={20} className="text-white" />
             </a>
           )
         )}

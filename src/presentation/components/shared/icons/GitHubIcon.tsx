@@ -6,7 +6,7 @@ interface GitHubIconProps {
 }
 
 const GitHubIcon = ({ size = 20, className = "" }: GitHubIconProps) => {
-  return <FaGithub size={size} className={className} />;
+  return <FaGithub size={size} className={`text-current ${className}`} />;
 };
 
 export default GitHubIcon;

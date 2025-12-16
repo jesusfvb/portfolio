@@ -6,7 +6,7 @@ interface ExternalLinkIconProps {
 }
 
 const ExternalLinkIcon = ({ size = 20, className = "" }: ExternalLinkIconProps) => {
-  return <FaExternalLinkAlt size={size} className={className} />;
+  return <FaExternalLinkAlt size={size} className={`text-current ${className}`} />;
 };
 
 export default ExternalLinkIcon;

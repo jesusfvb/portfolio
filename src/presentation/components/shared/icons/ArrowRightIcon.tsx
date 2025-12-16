@@ -6,7 +6,7 @@ interface ArrowRightIconProps {
 }
 
 const ArrowRightIcon = ({ size = 18, className = "" }: ArrowRightIconProps) => {
-  return <FaArrowRight size={size} className={className} />;
+  return <FaArrowRight size={size} className={`text-current ${className}`} />;
 };
 
 export default ArrowRightIcon;

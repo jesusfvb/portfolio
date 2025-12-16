@@ -6,7 +6,7 @@ interface CloseIconProps {
 }
 
 const CloseIcon = ({ size = 20, className = "" }: CloseIconProps) => {
-  return <FaXmark size={size} className={className} />;
+  return <FaXmark size={size} className={`text-current ${className}`} />;
 };
 
 export default CloseIcon;
