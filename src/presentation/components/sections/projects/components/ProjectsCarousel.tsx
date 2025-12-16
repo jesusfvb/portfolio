@@ -150,7 +150,7 @@ const ProjectsCarousel = ({ projects, onViewDetails }: ProjectsCarouselProps) =>
       onMouseLeave={() => setIsPaused(false)}
     >
       {/* Carrusel Container */}
-      <div className="overflow-hidden">
+      <div className="overflow-hidden pt-4">
         <div
           className={`flex transition-transform duration-500 ease-in-out ${
             shouldCenter ? "justify-center gap-8" : ""
