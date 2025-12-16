@@ -1,0 +1,388 @@
+import {
+  FaCss3Alt,
+  FaDocker,
+  FaGitAlt,
+  FaGithub,
+  FaHtml5,
+  FaJava,
+  FaJs,
+  FaReact,
+} from "react-icons/fa";
+import {
+  SiMongodb,
+  SiPostgresql,
+  SiReact,
+  SiSpring,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
+import type { TechIconMap } from "./types";
+import { createImageIcon } from "./helpers";
+import { ViteIcon, SpringSecurityIcon, SpringCloudIcon, JUnitIcon } from "./icons";
+
+export const SKILLS_ICONS: Record<string, TechIconMap> = {
+  "react native": {
+    icon: <SiReact style={{ color: "#61DAFB" }} />,
+    keywords: ["react native", "reactnative"],
+    category: "mobile",
+    displayName: "React Native",
+    type: "framework",
+    url: "https://reactnative.dev",
+  },
+  expo: {
+    icon: createImageIcon(
+      "https://docs.expo.dev/static/images/favicon.ico",
+      "Expo"
+    ),
+    keywords: ["expo", "expo-dev"],
+    category: "mobile",
+    displayName: "Expo",
+    type: "framework",
+    url: "https://expo.dev",
+  },
+  "react navigation": {
+    icon: createImageIcon(
+      "https://reactnavigation.org/img/favicon.ico",
+      "React Navigation"
+    ),
+    keywords: ["react navigation", "react-navigation", "@react-navigation"],
+    category: "mobile",
+    displayName: "React Navigation",
+    type: "framework",
+    url: "https://reactnavigation.org",
+  },
+  "react native reanimated": {
+    icon: createImageIcon(
+      "https://docs.swmansion.com/react-native-reanimated/img/favicon.ico",
+      "React Native Reanimated"
+    ),
+    keywords: ["react native reanimated", "react-native-reanimated", "reanimated"],
+    category: "mobile",
+    displayName: "React Native Reanimated",
+    type: "other",
+    url: "https://docs.swmansion.com/react-native-reanimated",
+  },
+  "react native gesture handler": {
+    icon: createImageIcon(
+      "https://docs.swmansion.com/react-native-gesture-handler/img/favicon.ico",
+      "React Native Gesture Handler"
+    ),
+    keywords: ["react native gesture handler", "react-native-gesture-handler", "gesture handler"],
+    category: "mobile",
+    displayName: "React Native Gesture Handler",
+    type: "other",
+    url: "https://docs.swmansion.com/react-native-gesture-handler",
+  },
+  nativewind: {
+    icon: createImageIcon(
+      "https://www.nativewind.dev/favicon.svg",
+      "NativeWind"
+    ),
+    keywords: ["nativewind", "native-wind"],
+    category: "mobile",
+    displayName: "NativeWind",
+    type: "other",
+    url: "https://www.nativewind.dev",
+  },
+  react: {
+    icon: <FaReact style={{ color: "#61DAFB" }} />,
+    keywords: ["react"],
+    category: "frontend",
+    displayName: "React",
+    type: "framework",
+    url: "https://react.dev",
+  },
+  typescript: {
+    icon: <SiTypescript style={{ color: "#3178C6" }} />,
+    keywords: ["typescript", "ts"],
+    category: "frontend",
+    displayName: "TypeScript",
+    type: "language",
+    url: "https://www.typescriptlang.org",
+  },
+  css: {
+    icon: <FaCss3Alt style={{ color: "#1572B6" }} />,
+    keywords: ["css"],
+    category: "frontend",
+    displayName: "CSS",
+    type: "language",
+    url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+  },
+  mongodb: {
+    icon: <SiMongodb style={{ color: "#47A248" }} />,
+    keywords: ["mongodb", "mongo"],
+    category: "database",
+    displayName: "MongoDB",
+    type: "other",
+    url: "https://www.mongodb.com",
+  },
+  postgresql: {
+    icon: <SiPostgresql style={{ color: "#336791" }} />,
+    keywords: ["postgresql", "postgres"],
+    category: "database",
+    displayName: "PostgreSQL",
+    type: "other",
+    url: "https://www.postgresql.org",
+  },
+  axios: {
+    icon: createImageIcon(
+      "https://axios-http.com/assets/favicon.ico",
+      "Axios"
+    ),
+    keywords: ["axios"],
+    category: "frontend",
+    displayName: "Axios",
+    type: "other",
+    url: "https://axios-http.com",
+  },
+  "react query": {
+    icon: createImageIcon(
+      "https://tanstack.com/favicon.ico",
+      "React Query"
+    ),
+    keywords: [
+      "react query",
+      "react-query",
+      "tanstack query",
+      "@tanstack/react-query",
+    ],
+    category: "frontend",
+    displayName: "React Query",
+    type: "other",
+    url: "https://tanstack.com/query",
+  },
+  jest: {
+    icon: createImageIcon(
+      "https://jestjs.io/img/favicon/favicon.ico",
+      "Jest"
+    ),
+    keywords: ["jest"],
+    category: "frontend",
+    displayName: "Jest",
+    type: "framework",
+    url: "https://jestjs.io",
+  },
+  "react router": {
+    icon: createImageIcon(
+      "https://reactrouter.com/favicon.ico",
+      "React Router"
+    ),
+    keywords: ["react router", "react-router", "@remix-run/react-router"],
+    category: "frontend",
+    displayName: "React Router",
+    type: "framework",
+    url: "https://reactrouter.com",
+  },
+  zustand: {
+    icon: createImageIcon(
+      "https://zustand-demo.pmnd.rs/favicon.ico",
+      "Zustand"
+    ),
+    keywords: ["zustand"],
+    category: "frontend",
+    displayName: "Zustand",
+    type: "other",
+    url: "https://zustand-demo.pmnd.rs",
+  },
+  redux: {
+    icon: createImageIcon(
+      "https://redux.js.org/img/favicon/favicon.ico",
+      "Redux"
+    ),
+    keywords: ["redux", "@reduxjs/toolkit"],
+    category: "frontend",
+    displayName: "Redux",
+    type: "other",
+    url: "https://redux.js.org",
+  },
+  tailwind: {
+    icon: <SiTailwindcss style={{ color: "#06B6D4" }} />,
+    keywords: ["tailwind"],
+    category: "frontend",
+    displayName: "Tailwind CSS",
+    type: "framework",
+    url: "https://tailwindcss.com",
+  },
+  vite: {
+    icon: <ViteIcon />,
+    keywords: ["vite"],
+    category: "frontend",
+    displayName: "Vite",
+    type: "framework",
+    url: "https://vite.dev",
+  },
+  java: {
+    icon: <FaJava style={{ color: "#ED8B00" }} />,
+    keywords: ["java"],
+    category: "backend",
+    displayName: "Java",
+    type: "language",
+    url: "https://www.java.com",
+  },
+  spring: {
+    icon: <SiSpring style={{ color: "#6DB33F" }} />,
+    keywords: ["spring boot", "springboot"],
+    category: "backend",
+    displayName: "Spring Boot",
+    type: "framework",
+    url: "https://spring.io/projects/spring-boot",
+  },
+  "spring security": {
+    icon: <SpringSecurityIcon />,
+    keywords: ["spring security", "springsecurity"],
+    category: "backend",
+    displayName: "Spring Security",
+    type: "framework",
+    url: "https://spring.io/projects/spring-security",
+  },
+  "spring cloud": {
+    icon: <SpringCloudIcon />,
+    keywords: [
+      "spring microservices",
+      "spring microservice",
+      "microservices",
+      "spring cloud",
+    ],
+    category: "backend",
+    displayName: "Spring Cloud",
+    type: "framework",
+    url: "https://spring.io/projects/spring-cloud",
+  },
+  lombok: {
+    icon: createImageIcon(
+      "https://projectlombok.org/favicon.ico",
+      "Lombok"
+    ),
+    keywords: ["lombok"],
+    category: "backend",
+    displayName: "Lombok",
+    type: "other",
+    url: "https://projectlombok.org",
+  },
+  junit: {
+    icon: <JUnitIcon />,
+    keywords: ["junit"],
+    category: "backend",
+    displayName: "JUnit",
+    type: "framework",
+    url: "https://junit.org",
+  },
+  mockito: {
+    icon: createImageIcon(
+      "https://site.mockito.org/favicon.ico",
+      "Mockito"
+    ),
+    keywords: ["mockito"],
+    category: "backend",
+    displayName: "Mockito",
+    type: "framework",
+    url: "https://site.mockito.org",
+  },
+  mapstruct: {
+    icon: createImageIcon(
+      "https://mapstruct.org/images/favicon.ico",
+      "MapStruct"
+    ),
+    keywords: ["mapstruct", "map struct"],
+    category: "backend",
+    displayName: "MapStruct",
+    type: "other",
+    url: "https://mapstruct.org",
+  },
+  html: {
+    icon: <FaHtml5 style={{ color: "#E34F26" }} />,
+    keywords: ["html"],
+    category: "frontend",
+    displayName: "HTML",
+    type: "language",
+    url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+  },
+  git: {
+    icon: <FaGitAlt style={{ color: "#F05032" }} />,
+    keywords: ["git"],
+    category: "tools",
+    displayName: "Git",
+    type: "other",
+    url: "https://git-scm.com",
+  },
+  github: {
+    icon: <FaGithub style={{ color: "#FFFFFF" }} />,
+    keywords: ["github"],
+    category: "tools",
+    displayName: "GitHub",
+    type: "other",
+    url: "https://github.com",
+  },
+  docker: {
+    icon: <FaDocker style={{ color: "#2496ED" }} />,
+    keywords: ["docker"],
+    category: "tools",
+    displayName: "Docker",
+    type: "other",
+    url: "https://www.docker.com",
+  },
+  vscode: {
+    icon: createImageIcon(
+      "https://code.visualstudio.com/favicon.ico",
+      "Visual Studio Code"
+    ),
+    keywords: ["vscode", "visual studio code", "vs code"],
+    category: "tools",
+    displayName: "Visual Studio Code",
+    type: "other",
+    url: "https://code.visualstudio.com",
+  },
+  cursor: {
+    icon: createImageIcon(
+      "https://cursor.sh/favicon.ico",
+      "Cursor"
+    ),
+    keywords: ["cursor"],
+    category: "tools",
+    displayName: "Cursor",
+    type: "other",
+    url: "https://cursor.sh",
+  },
+  "intellij idea": {
+    icon: createImageIcon(
+      "https://www.jetbrains.com/favicon.ico",
+      "IntelliJ IDEA"
+    ),
+    keywords: ["intellij idea", "intellij", "idea", "jetbrains intellij"],
+    category: "tools",
+    displayName: "IntelliJ IDEA",
+    type: "other",
+    url: "https://www.jetbrains.com/idea",
+  },
+  neovim: {
+    icon: createImageIcon(
+      "https://neovim.io/favicon.ico",
+      "Neovim"
+    ),
+    keywords: ["neovim", "nvim"],
+    category: "tools",
+    displayName: "Neovim",
+    type: "other",
+    url: "https://neovim.io",
+  },
+  vim: {
+    icon: createImageIcon(
+      "https://www.vim.org/images/vim_shortcut.ico",
+      "Vim"
+    ),
+    keywords: ["vim"],
+    category: "tools",
+    displayName: "Vim",
+    type: "other",
+    url: "https://www.vim.org",
+  },
+  javascript: {
+    icon: <FaJs style={{ color: "#F05032" }} />,
+    keywords: ["javascript"],
+    category: "frontend",
+    displayName: "JavaScript",
+    type: "language",
+    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  },
+};
+

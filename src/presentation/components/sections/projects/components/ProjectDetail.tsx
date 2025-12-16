@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getTechInfo } from "@/domain/constants/skills.constants";
+import { getTechInfo } from "@/domain/constants/skills";
 import SkillBadge from "@/presentation/components/sections/skills/components/SkillBadge";
 import type { Project } from "@/domain/interfaces";
 import {
