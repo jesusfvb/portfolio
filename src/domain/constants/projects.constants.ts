@@ -3,14 +3,6 @@ import type { Project } from "../interfaces/project.interface";
 export const PROJECTS: Project[] = [
   {
     id: 1,
-    title: "Portfolio Personal",
-    description:
-      "Portfolio web personal desarrollado con React y TypeScript. Incluye diseño moderno con Tailwind CSS v4, arquitectura limpia, carrusel de proyectos interactivo, secciones de habilidades, educación y contacto. Totalmente responsive y optimizado para rendimiento.",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    github: "https://github.com/jesusfv/porfolio_jesusfvb",
-  },
-  {
-    id: 2,
     title: "NeoManga",
     description:
       "Aplicación móvil multiplataforma para lectura y gestión de mangas. Backend robusto desarrollado con Java y Spring Boot, API REST completa. Frontend móvil en React Native con TypeScript. Incluye catálogo de mangas, sistema de favoritos, lectura online, búsqueda avanzada y recomendaciones personalizadas.",
@@ -32,5 +24,14 @@ export const PROJECTS: Project[] = [
     ],
     githubFrontend: "https://github.com/jesusfv/manga-app-frontend",
     githubBackend: "https://github.com/jesusfv/manga-app-backend",
+  },
+  {
+    id: 2,
+    title: "Portfolio Personal",
+    description:
+      "Portfolio web personal desarrollado con React y TypeScript. Incluye diseño moderno con Tailwind CSS v4, arquitectura limpia, carrusel de proyectos interactivo, secciones de habilidades, educación y contacto. Totalmente responsive y optimizado para rendimiento.",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    banner: "/images/portfolio/portfolio_banner.webp",
+    github: "https://github.com/jesusfv/porfolio_jesusfvb",
   },
 ];
