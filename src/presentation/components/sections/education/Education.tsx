@@ -3,7 +3,7 @@ import EducationCard from './components/EducationCard';
 
 const Education = () => {
   return (
-    <section id="education" className="py-24 bg-[#121212] scroll-mt-20">
+    <section id="education" className="py-24 bg-[#1a1a1a]  scroll-mt-20">
       <div className="container">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 pt-4 bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent">
           Educación
