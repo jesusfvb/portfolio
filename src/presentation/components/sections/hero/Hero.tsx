@@ -30,14 +30,11 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center w-full">
           <div className="z-10 md:order-1 order-2">
             <h1 className="flex flex-col gap-2 mb-6">
-              <span className="text-2xl text-[#a0a0a0] font-normal">
-                Hola, soy
-              </span>
-              <span className="text-5xl md:text-6xl lg:text-7xl font-bold bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent leading-tight">
-                Jesús Francisco Vázquez Biltre
-              </span>
-              <span className="text-2xl md:text-3xl text-white font-semibold">
+              <span className="text-4xl md:text-5xl lg:text-6xl font-bold bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent leading-tight">
                 Desarrollador Full Stack
+              </span>
+              <span className="text-xl md:text-2xl text-[#a0a0a0] font-normal">
+                Jesús Francisco Vázquez Biltre
               </span>
             </h1>
             <p className="text-lg text-[#a0a0a0] leading-relaxed mb-8 max-w-[600px]">
