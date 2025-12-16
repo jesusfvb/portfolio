@@ -41,18 +41,29 @@ const Hero = () => {
               experiencias de usuario excepcionales. Especializado en desarrollo
               web moderno con tecnologías de vanguardia.
             </p>
-            <div className="flex gap-4 flex-wrap md:justify-start justify-center">
+            <div className="flex gap-6 md:gap-20 flex-wrap md:justify-start justify-center">
               <button
-                className="px-8 py-3.5 rounded-lg text-base font-semibold cursor-pointer transition-all duration-300 border-none font-inherit bg-linear-to-r from-[#6366f1] to-[#8b5cf6] text-white hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(99,102,241,0.4)] w-full md:w-auto"
+                className="px-6 py-3 rounded-lg text-sm font-medium cursor-pointer transition-all duration-300 font-inherit bg-transparent text-white border-2 border-[rgba(255,255,255,0.1)] hover:bg-[#1a1a1a] hover:border-[#6366f1] w-full md:w-auto"
                 onClick={() => scrollToSection("projects")}
               >
                 Ver Proyectos
               </button>
               <button
-                className="px-8 py-3.5 rounded-lg text-base font-semibold cursor-pointer transition-all duration-300 font-inherit bg-transparent text-white border-2 border-[rgba(255,255,255,0.1)] hover:bg-[#1a1a1a] hover:border-[#6366f1] w-full md:w-auto"
+                className="px-10 py-4 rounded-xl text-lg font-bold cursor-pointer transition-all duration-300 border-none font-inherit bg-linear-to-r from-[#6366f1] to-[#8b5cf6] text-white hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(99,102,241,0.5)] hover:scale-105 w-full md:w-auto relative overflow-hidden group animate-pulse-glow"
                 onClick={() => scrollToSection("contact")}
               >
-                Contactar
+                <span className="relative z-10">Contactar</span>
+                <div className="absolute inset-0 bg-linear-to-r from-[#8b5cf6] to-[#ec4899] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                {/* Efecto shimmer */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)",
+                    backgroundSize: "200% auto",
+                    animation: "shimmer 3s linear infinite",
+                  }}
+                ></div>
               </button>
             </div>
           </div>
