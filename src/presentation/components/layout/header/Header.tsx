@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import NavLink from "./components/NavLink";
 
-const Header = () => {
+interface HeaderProps {
+  onOpenSkillsModal: () => void;
+}
+
+const Header = ({ onOpenSkillsModal }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -20,6 +24,11 @@ const Header = () => {
       element.scrollIntoView({ behavior: "smooth" });
       setIsMobileMenuOpen(false);
     }
+  };
+
+  const handleSkillsClick = () => {
+    onOpenSkillsModal();
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -44,15 +53,18 @@ const Header = () => {
             <NavLink sectionId="hero" scrollToSection={scrollToSection}>
               Inicio
             </NavLink>
-            <NavLink sectionId="about" scrollToSection={scrollToSection}>
+            {/* <NavLink sectionId="about" scrollToSection={scrollToSection}>
               Sobre mí
-            </NavLink>
+            </NavLink> */}
             <NavLink sectionId="projects" scrollToSection={scrollToSection}>
               Proyectos
             </NavLink>
-            <NavLink sectionId="skills" scrollToSection={scrollToSection}>
+            {/* <button
+              onClick={handleSkillsClick}
+              className="text-[#a0a0a0] hover:text-white transition-colors duration-300 font-medium"
+            >
               Habilidades
-            </NavLink>
+            </button> */}
             <NavLink sectionId="education" scrollToSection={scrollToSection}>
               Educación
             </NavLink>
@@ -116,9 +128,12 @@ const Header = () => {
           <NavLink sectionId="projects" scrollToSection={scrollToSection}>
             Proyectos
           </NavLink>
-          <NavLink sectionId="skills" scrollToSection={scrollToSection}>
+          <button
+            onClick={handleSkillsClick}
+            className="text-[#a0a0a0] hover:text-white transition-colors duration-300 font-medium text-left"
+          >
             Habilidades
-          </NavLink>
+          </button>
           <NavLink sectionId="education" scrollToSection={scrollToSection}>
             Educación
           </NavLink>
