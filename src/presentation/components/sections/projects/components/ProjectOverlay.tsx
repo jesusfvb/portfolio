@@ -1,5 +1,8 @@
 import type { Project } from "@/domain/interfaces";
-import { ExternalLinkIcon, GitHubIcon } from "@/presentation/components/shared/icons";
+import {
+  ExternalLinkIcon,
+  GitHubIcon,
+} from "@/presentation/components/shared/icons";
 
 interface ProjectOverlayProps {
   project: Project;
@@ -86,4 +89,3 @@ const ProjectOverlay = ({ project }: ProjectOverlayProps) => {
 };
 
 export default ProjectOverlay;
-
