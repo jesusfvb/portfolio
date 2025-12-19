@@ -88,7 +88,7 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
               </div>
             </div>
 
-            <div className="flex gap-6 md:gap-20 flex-wrap md:justify-start justify-center">
+            <div className="flex gap-4 flex-wrap md:justify-start justify-center">
               <button
                 className="px-6 py-3 rounded-lg text-sm font-medium cursor-pointer transition-all duration-300 font-inherit bg-transparent text-white border-2 border-[rgba(255,255,255,0.1)] hover:bg-[#1a1a1a] hover:border-[#6366f1] w-full md:w-auto"
                 onClick={() => scrollToSection("projects")}
