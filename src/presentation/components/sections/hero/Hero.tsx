@@ -115,7 +115,7 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
             </div>
           </div>
           <div className="flex justify-center items-center md:order-2 order-1">
-            <div className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] relative">
+            <div className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] relative md:-translate-y-20">
               <div className="relative w-full h-full overflow-hidden rounded-3xl">
                 <img
                   src={profileImage}
