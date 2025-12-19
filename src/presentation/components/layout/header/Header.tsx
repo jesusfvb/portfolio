@@ -42,10 +42,20 @@ const Header = ({ onOpenSkillsModal }: HeaderProps) => {
       <div className="container">
         <div className="flex justify-between items-center py-4">
           <div
-            className="text-2xl md:text-lg font-bold bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent cursor-pointer transition-transform duration-300 hover:scale-[1.02] whitespace-nowrap"
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-[#6366f1] flex items-center justify-center text-lg md:text-xl font-bold cursor-pointer transition-all duration-300 hover:scale-110 hover:border-[#8b5cf6] hover:shadow-[0_0_15px_rgba(99,102,241,0.5)]"
             onClick={() => scrollToSection("hero")}
           >
-            <span>Jesús Francisco Vázquez Biltre</span>
+            <span 
+              className="font-bold"
+              style={{
+                background: 'linear-gradient(to right, #6366f1, #8b5cf6)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
+              JV
+            </span>
           </div>
 
           {/* Desktop Navigation */}
