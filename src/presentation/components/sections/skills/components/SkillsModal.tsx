@@ -134,7 +134,7 @@ const SkillsModal = ({ isOpen, onClose }: SkillsModalProps) => {
             onClick={scrollToContact}
             className="px-6 py-3 rounded-xl text-sm font-bold cursor-pointer transition-all duration-300 border-none font-inherit bg-linear-to-r from-[#6366f1] to-[#8b5cf6] text-white hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(99,102,241,0.5)] hover:scale-105 relative overflow-hidden group animate-pulse-glow"
           >
-            <span className="relative z-10">Contactar</span>
+            <span className="relative z-10">Hablemos</span>
             <div className="absolute inset-0 bg-linear-to-r from-[#8b5cf6] to-[#ec4899] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             {/* Efecto shimmer */}
             <div
