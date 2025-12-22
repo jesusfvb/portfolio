@@ -47,14 +47,14 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center w-full">
           <div className="z-10 md:order-1 order-2">
             <h1 className="flex flex-col gap-2 mb-6">
-              <span className="text-4xl md:text-5xl lg:text-6xl font-bold bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent leading-tight">
-                Desarrollador Full Stack
+              <span className="text-4xl md:text-5xl lg:text-6xl font-bold bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent leading-tight" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                Desarrollador Full-Stack
               </span>
-              <span className="text-xl md:text-2xl text-[#d0d0d0] font-normal">
+              <span className="text-xl md:text-2xl text-[#a0a0a0] font-normal">
                 Jesús Francisco Vázquez Biltre
               </span>
             </h1>
-            <p className="text-lg text-[#d0d0d0] leading-relaxed mb-6 max-w-[600px]">
+            <p className="text-lg text-[#a0a0a0] leading-relaxed mb-6 max-w-[600px]">
               Apasionado por crear soluciones digitales innovadoras y
               experiencias de usuario excepcionales. Especializado en desarrollo
               web moderno con tecnologías de vanguardia.
@@ -62,7 +62,7 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
             
             {/* Resumen de herramientas */}
             <div className="mb-8">
-              <p className="text-sm text-[#d0d0d0] mb-3">Tecnologías principales:</p>
+              <p className="text-sm text-[#a0a0a0] mb-3">Tecnologías principales:</p>
               <div className="flex flex-wrap gap-2 items-center">
                 {mainTools.map((tool) => {
                   const techInfo = getTechInfo(tool);
@@ -88,7 +88,7 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
               </div>
             </div>
 
-            <div className="flex gap-4 flex-wrap md:justify-start justify-center">
+            <div className="flex gap-6 md:gap-20 flex-wrap md:justify-start justify-center">
               <button
                 className="px-6 py-3 rounded-lg text-sm font-medium cursor-pointer transition-all duration-300 font-inherit bg-transparent text-white border-2 border-[rgba(255,255,255,0.1)] hover:bg-[#1a1a1a] hover:border-[#6366f1] w-full md:w-auto"
                 onClick={() => scrollToSection("projects")}
@@ -99,7 +99,7 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
                 className="px-10 py-4 rounded-xl text-lg font-bold cursor-pointer transition-all duration-300 border-none font-inherit bg-linear-to-r from-[#6366f1] to-[#8b5cf6] text-white hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(99,102,241,0.5)] hover:scale-105 w-full md:w-auto relative overflow-hidden group animate-pulse-glow"
                 onClick={() => scrollToSection("contact")}
               >
-                <span className="relative z-10">Hablemos</span>
+                <span className="relative z-10">Contactar</span>
                 <div className="absolute inset-0 bg-linear-to-r from-[#8b5cf6] to-[#ec4899] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 {/* Efecto shimmer */}
                 <div
@@ -115,7 +115,7 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
             </div>
           </div>
           <div className="flex justify-center items-center md:order-2 order-1">
-            <div className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] relative md:-translate-y-20">
+            <div className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] relative">
               <div className="relative w-full h-full overflow-hidden rounded-3xl">
                 <img
                   src={profileImage}
