@@ -1,5 +1,6 @@
 import { getTechInfo } from "@/domain/constants/skills";
 import SkillBadge from "@/presentation/components/sections/skills/components/SkillBadge";
+import ContactButton from "@/presentation/components/shared/ContactButton";
 
 // Imagen optimizada desde public
 const profileImage = "/images/foto_de_perfil.png";
@@ -95,23 +96,11 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
               >
                 Ver Proyectos
               </button>
-              <button
-                className="px-10 py-4 rounded-xl text-lg font-bold cursor-pointer transition-all duration-300 border-none font-inherit bg-linear-to-r from-[#6366f1] to-[#8b5cf6] text-white hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(99,102,241,0.5)] hover:scale-105 w-full md:w-auto relative overflow-hidden group animate-pulse-glow"
-                onClick={() => scrollToSection("contact")}
-              >
-                <span className="relative z-10">Contactar</span>
-                <div className="absolute inset-0 bg-linear-to-r from-[#8b5cf6] to-[#ec4899] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                {/* Efecto shimmer */}
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{
-                    background:
-                      "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)",
-                    backgroundSize: "200% auto",
-                    animation: "shimmer 3s linear infinite",
-                  }}
-                ></div>
-              </button>
+              <ContactButton 
+                text="Contactar" 
+                variant="large" 
+                className="w-full md:w-auto hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(99,102,241,0.5)]"
+              />
             </div>
           </div>
           <div className="flex justify-center items-center md:order-2 order-1">

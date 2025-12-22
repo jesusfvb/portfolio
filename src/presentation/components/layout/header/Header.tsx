@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import NavLink from "./components/NavLink";
+import ContactButton from "@/presentation/components/shared/ContactButton";
 
 interface HeaderProps {
   onOpenSkillsModal: () => void;
@@ -75,23 +76,7 @@ const Header = ({ onOpenSkillsModal }: HeaderProps) => {
             <NavLink sectionId="education" scrollToSection={scrollToSection}>
               Educación
             </NavLink>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="px-6 py-2.5 rounded-lg text-sm font-semibold cursor-pointer transition-all duration-300 border-none font-inherit bg-linear-to-r from-[#6366f1] to-[#8b5cf6] text-white hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(99,102,241,0.4)] hover:scale-105 relative overflow-hidden group animate-pulse-glow"
-            >
-              <span className="relative z-10">Contacto</span>
-              <div className="absolute inset-0 bg-linear-to-r from-[#8b5cf6] to-[#ec4899] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              {/* Efecto shimmer */}
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                style={{
-                  background:
-                    "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)",
-                  backgroundSize: "200% auto",
-                  animation: "shimmer 3s linear infinite",
-                }}
-              ></div>
-            </button>
+            <ContactButton variant="small" />
           </nav>
 
           {/* Mobile Menu Button */}
@@ -144,17 +129,11 @@ const Header = ({ onOpenSkillsModal }: HeaderProps) => {
           <NavLink sectionId="education" scrollToSection={scrollToSection}>
             Educación
           </NavLink>
-          <button
+          <ContactButton 
+            variant="default" 
+            className="rounded-full mt-2"
             onClick={() => scrollToSection("contact")}
-            className="px-6 py-3 rounded-full text-base font-semibold cursor-pointer transition-all duration-300 border-none font-inherit bg-linear-to-r from-[#6366f1] to-[#8b5cf6] text-white hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(99,102,241,0.4)] hover:scale-105 relative overflow-hidden group animate-pulse-glow mt-2"
-          >
-            <span className="relative z-10">Contacto</span>
-            <div className="absolute inset-0 bg-linear-to-r from-[#8b5cf6] to-[#ec4899] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            {/* Efecto shimmer */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="absolute inset-0 animate-shimmer bg-linear-to-r from-transparent via-white/20 to-transparent"></div>
-            </div>
-          </button>
+          />
         </nav>
       </div>
     </header>
