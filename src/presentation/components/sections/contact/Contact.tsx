@@ -21,7 +21,7 @@ const Contact = () => {
     <section id="contact" className="py-24 scroll-mt-20">
       <div className="container">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 pt-4 bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent">
-          Contacto
+          Hablemos
         </h2>
         <p className="text-xl text-center text-[#d0d0d0] mb-12">
           ¿Tienes un proyecto en mente? ¡Hablemos!

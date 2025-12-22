@@ -97,7 +97,6 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
                 Ver Proyectos
               </button>
               <ContactButton 
-                text="Contactar" 
                 variant="large" 
                 className="w-full md:w-auto hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(99,102,241,0.5)]"
               />
