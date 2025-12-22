@@ -45,7 +45,7 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
         ></div>
       </div>
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start w-full">
           <div className="z-10 md:order-1 order-2">
             <h1 className="flex flex-col gap-2 mb-6">
               <span className="text-4xl md:text-5xl lg:text-6xl font-bold bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent leading-tight" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
@@ -103,7 +103,7 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
               />
             </div>
           </div>
-          <div className="flex justify-center items-center md:order-2 order-1">
+          <div className="flex justify-center items-start md:order-2 order-1 md:-mt-8 md:pt-0 pt-4">
             <div className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] relative">
               <div className="relative w-full h-full overflow-hidden rounded-3xl">
                 <img
