@@ -14,7 +14,8 @@ interface NavLinkProps {
       <a 
         href={`#${sectionId}`}
         onClick={handleClick}
-        className="text-[#d0d0d0] no-underline font-medium transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-linear-to-r after:from-[#6366f1] after:to-[#8b5cf6] after:transition-all after:duration-300 hover:after:w-full"
+        className="no-underline font-medium transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-linear-to-r after:from-[#6366f1] after:to-[#8b5cf6] after:transition-all after:duration-300 hover:after:w-full"
+        style={{ color: '#d0d0d0' }}
       >
         {children}
       </a>

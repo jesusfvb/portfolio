@@ -35,23 +35,20 @@ const Header = ({ onOpenSkillsModal }: HeaderProps) => {
     <header
       className={`fixed top-0 left-0 right-0 z-1000 transition-all duration-300 backdrop-blur-md ${
         isScrolled
-          ? "bg-[rgba(18,18,18,0.95)] border-b border-white/10 shadow-lg"
-          : "bg-[rgba(18,18,18,0.8)] border-b border-transparent"
+          ? "bg-linear-to-r from-[rgba(18,18,18,0.95)] via-[#4338ca]/70 to-[rgba(18,18,18,0.95)] border-b border-[#6366f1]/50 shadow-lg"
+          : "bg-linear-to-r from-[rgba(18,18,18,0.85)] via-[#4338ca]/60 to-[rgba(18,18,18,0.85)] border-b border-transparent"
       }`}
     >
       <div className="container">
         <div className="flex justify-between items-center py-4">
           <div
-            className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-[#6366f1] flex items-center justify-center text-lg md:text-xl font-bold cursor-pointer transition-all duration-300 hover:scale-110 hover:border-[#8b5cf6] hover:shadow-[0_0_15px_rgba(99,102,241,0.5)]"
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-[#d0d0d0] flex items-center justify-center text-lg md:text-xl font-bold cursor-pointer transition-all duration-300 hover:scale-110 hover:border-white hover:shadow-[0_0_15px_rgba(208,208,208,0.3)]"
             onClick={() => scrollToSection("hero")}
           >
             <span 
               className="font-bold"
               style={{
-                background: 'linear-gradient(to right, #6366f1, #8b5cf6)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
+                color: '#d0d0d0',
               }}
             >
               JV
@@ -149,7 +146,7 @@ const Header = ({ onOpenSkillsModal }: HeaderProps) => {
           </NavLink>
           <button
             onClick={() => scrollToSection("contact")}
-            className="px-6 py-3 rounded-lg text-base font-semibold cursor-pointer transition-all duration-300 border-none font-inherit bg-linear-to-r from-[#6366f1] to-[#8b5cf6] text-white hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(99,102,241,0.4)] hover:scale-105 relative overflow-hidden group animate-pulse-glow mt-2"
+            className="px-6 py-3 rounded-full text-base font-semibold cursor-pointer transition-all duration-300 border-none font-inherit bg-linear-to-r from-[#6366f1] to-[#8b5cf6] text-white hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(99,102,241,0.4)] hover:scale-105 relative overflow-hidden group animate-pulse-glow mt-2"
           >
             <span className="relative z-10">Contacto</span>
             <div className="absolute inset-0 bg-linear-to-r from-[#8b5cf6] to-[#ec4899] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
