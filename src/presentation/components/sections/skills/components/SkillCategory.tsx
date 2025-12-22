@@ -38,7 +38,7 @@ const SkillCategory = ({ category, title, skills }: SkillCategoryProps) => {
           </div>
           {others.length > 0 && (
             <div>
-              <h4 className="text-sm font-medium text-[#a0a0a0] mb-2">Otros</h4>
+              <h4 className="text-sm font-medium text-[#d0d0d0] mb-2">Otros</h4>
               <div className="flex flex-wrap gap-3">
                 {others.map((skill) => (
                   <SkillBadge

@@ -50,11 +50,11 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
               <span className="text-4xl md:text-5xl lg:text-6xl font-bold bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent leading-tight">
                 Desarrollador Full Stack
               </span>
-              <span className="text-xl md:text-2xl text-[#a0a0a0] font-normal">
+              <span className="text-xl md:text-2xl text-[#d0d0d0] font-normal">
                 Jesús Francisco Vázquez Biltre
               </span>
             </h1>
-            <p className="text-lg text-[#a0a0a0] leading-relaxed mb-6 max-w-[600px]">
+            <p className="text-lg text-[#d0d0d0] leading-relaxed mb-6 max-w-[600px]">
               Apasionado por crear soluciones digitales innovadoras y
               experiencias de usuario excepcionales. Especializado en desarrollo
               web moderno con tecnologías de vanguardia.
@@ -62,7 +62,7 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
             
             {/* Resumen de herramientas */}
             <div className="mb-8">
-              <p className="text-sm text-[#a0a0a0] mb-3">Tecnologías principales:</p>
+              <p className="text-sm text-[#d0d0d0] mb-3">Tecnologías principales:</p>
               <div className="flex flex-wrap gap-2 items-center">
                 {mainTools.map((tool) => {
                   const techInfo = getTechInfo(tool);

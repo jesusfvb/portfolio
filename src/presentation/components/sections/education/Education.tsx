@@ -8,7 +8,7 @@ const Education = () => {
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 pt-4 bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent">
           Educación
         </h2>
-        <p className="text-center text-[#a0a0a0] text-lg mb-12">
+        <p className="text-center text-[#d0d0d0] text-lg mb-12">
           Mi formación académica y profesional
         </p>
         <div className="max-w-4xl mx-auto">

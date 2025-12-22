@@ -23,13 +23,13 @@ const Contact = () => {
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 pt-4 bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent">
           Contacto
         </h2>
-        <p className="text-xl text-center text-[#a0a0a0] mb-12">
+        <p className="text-xl text-center text-[#d0d0d0] mb-12">
           ¿Tienes un proyecto en mente? ¡Hablemos!
         </p>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-16 mt-12">
           <div>
             <h3 className="text-2xl font-semibold mb-4 text-white">Conectemos</h3>
-            <p className="text-[#a0a0a0] leading-relaxed mb-8">
+            <p className="text-[#d0d0d0] leading-relaxed mb-8">
               Estoy siempre abierto a discutir nuevos proyectos, ideas creativas 
               o oportunidades para ser parte de tus visiones.
             </p>

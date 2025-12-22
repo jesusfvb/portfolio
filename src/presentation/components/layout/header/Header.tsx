@@ -71,7 +71,7 @@ const Header = ({ onOpenSkillsModal }: HeaderProps) => {
             </NavLink>
             {/* <button
               onClick={handleSkillsClick}
-              className="text-[#a0a0a0] hover:text-white transition-colors duration-300 font-medium"
+              className="text-[#d0d0d0] hover:text-white transition-colors duration-300 font-medium"
             >
               Habilidades
             </button> */}

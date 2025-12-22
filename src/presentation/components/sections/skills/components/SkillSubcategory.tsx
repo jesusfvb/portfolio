@@ -27,7 +27,7 @@ const SkillSubcategory = ({ title, skills, columns = 2 }: SkillSubcategoryProps)
 
   return (
     <div>
-      <h4 className="text-sm font-medium text-[#a0a0a0] mb-2">{title}</h4>
+      <h4 className="text-sm font-medium text-[#d0d0d0] mb-2">{title}</h4>
       <div className={`grid ${gridCols} gap-4`}>
         <SkillTypeGroup title="Lenguajes" skills={languages} />
         <SkillTypeGroup title="Frameworks" skills={frameworks} />

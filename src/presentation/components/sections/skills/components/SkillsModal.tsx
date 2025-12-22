@@ -107,7 +107,7 @@ const SkillsModal = ({ isOpen, onClose }: SkillsModalProps) => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent">
             Habilidades
           </h2>
-          <p className="text-[#a0a0a0] text-lg mb-8">
+          <p className="text-[#d0d0d0] text-lg mb-8">
             Tecnologías y herramientas que domino
           </p>
           <div className="flex flex-col gap-8">

@@ -23,7 +23,7 @@ function App() {
         isOpen={isSkillsModalOpen}
         onClose={() => setIsSkillsModalOpen(false)}
       />
-      <footer className="py-8 text-center border-t border-white/10 text-[#a0a0a0] text-sm">
+      <footer className="py-8 text-center border-t border-white/10 text-[#d0d0d0] text-sm">
         <div className="max-w-[1200px] mx-auto px-8 md:px-4">
           <p>
             &copy; {new Date().getFullYear()} Jesús Francisco Vázquez Biltre.

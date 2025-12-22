@@ -41,11 +41,11 @@ const EducationCard = ({ education, isLast = false }: EducationCardProps) => {
               </p>
             )}
             {education.location && (
-              <p className="text-sm text-[#a0a0a0]">📍 {education.location}</p>
+              <p className="text-sm text-[#d0d0d0]">📍 {education.location}</p>
             )}
           </div>
           <div className="shrink-0">
-            <span className="inline-block px-4 py-2 bg-[#121212] border border-[rgba(255,255,255,0.1)] rounded-full text-sm text-[#a0a0a0]">
+            <span className="inline-block px-4 py-2 bg-[#121212] border border-[rgba(255,255,255,0.1)] rounded-full text-sm text-[#d0d0d0]">
               {education.period}
             </span>
           </div>
@@ -54,7 +54,7 @@ const EducationCard = ({ education, isLast = false }: EducationCardProps) => {
         <div className="mb-4 border-b border-[rgba(255,255,255,0.1)]" />
 
         {education.description && (
-          <p className="text-[#a0a0a0] leading-relaxed">
+          <p className="text-[#d0d0d0] leading-relaxed">
             {education.description}
           </p>
         )}

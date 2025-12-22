@@ -148,7 +148,7 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
                 {project.title}
               </h2>
 
-              <p className="text-lg text-[#a0a0a0] leading-relaxed mb-6">
+              <p className="text-lg text-[#d0d0d0] leading-relaxed mb-6">
                 {project.description}
               </p>
 
@@ -174,7 +174,7 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
                     return (
                       <span
                         key={index}
-                        className="px-4 py-2 bg-[#121212] border border-[rgba(255,255,255,0.1)] rounded-full text-sm text-[#a0a0a0] transition-all duration-300 hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white hover:border-transparent"
+                        className="px-4 py-2 bg-[#121212] border border-[rgba(255,255,255,0.1)] rounded-full text-sm text-[#d0d0d0] transition-all duration-300 hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white hover:border-transparent"
                       >
                         {tech}
                       </span>
