@@ -22,8 +22,8 @@ export const PROJECTS: Project[] = [
       "/images/app_manga/android/Screenshot_1764505197.webp",
       "/images/app_manga/android/Screenshot_1764505228.webp",
     ],
-    githubFrontend: "https://github.com/jesusfv/manga-app-frontend",
-    githubBackend: "https://github.com/jesusfv/manga-app-backend",
+    githubFrontend: "https://github.com/jesusfvb/manga.app",
+    githubBackend: "https://github.com/jesusfvb/manga.backend.showcase",
   },
   {
     id: 2,
@@ -32,6 +32,6 @@ export const PROJECTS: Project[] = [
       "Portfolio web personal desarrollado con React y TypeScript. Incluye diseño moderno con Tailwind CSS v4, arquitectura limpia, carrusel de proyectos interactivo, secciones de habilidades, educación y contacto. Totalmente responsive y optimizado para rendimiento.",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     banner: "/images/portfolio/portfolio_banner.webp",
-    github: "https://github.com/jesusfv/porfolio_jesusfvb",
+    github: "https://github.com/jesusfv/portfolio",
   },
 ];
