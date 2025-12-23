@@ -1,5 +1,3 @@
-# Portfolio Personal - Jesús Francisco Vázquez Biltre
-
 Portfolio web profesional desarrollado con tecnologías modernas que presenta mis habilidades, proyectos y experiencia como Desarrollador Full Stack.
 
 ## 🚀 Características Principales
