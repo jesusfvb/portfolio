@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { useContactButtonAnimation } from './useContactButtonAnimation';
+import { useContactButtonStore } from './contactButtonStore';
 
 interface ContactButtonProps {
   text?: string;
@@ -7,91 +9,34 @@ interface ContactButtonProps {
   onClick?: () => void;
 }
 
-const ROTATING_TEXTS = [
-  'Hablemos',
-  '¿Tienes una idea?',
-  'Trabajemos juntos'
-];
-
 const ContactButton = ({ 
   text,
   variant = 'default',
   className = '',
   onClick
 }: ContactButtonProps) => {
-  const [textIndex, setTextIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [animationType, setAnimationType] = useState(0);
-  const currentText = text || ROTATING_TEXTS[textIndex];
+  const [isHovered, setIsHovered] = useState(false);
+  const incrementHover = useContactButtonStore((state) => state.incrementHover);
+  const decrementHover = useContactButtonStore((state) => state.decrementHover);
+  const { currentText, isAnimating, currentAnimation } = useContactButtonAnimation({ 
+    text
+  });
 
-  // Efectos de animación aleatorios
-  const animationEffects = [
-    // Fade con slide up
-    {
-      out: 'opacity-0 transform translate-y-[-15px] scale-95',
-      in: 'opacity-100 transform translate-y-0 scale-100'
-    },
-    // Fade con slide down
-    {
-      out: 'opacity-0 transform translate-y-[15px] scale-95',
-      in: 'opacity-100 transform translate-y-0 scale-100'
-    },
-    // Fade con slide left
-    {
-      out: 'opacity-0 transform translate-x-[-20px] scale-95',
-      in: 'opacity-100 transform translate-x-0 scale-100'
-    },
-    // Fade con slide right
-    {
-      out: 'opacity-0 transform translate-x-[20px] scale-95',
-      in: 'opacity-100 transform translate-x-0 scale-100'
-    },
-    // Scale con rotate
-    {
-      out: 'opacity-0 transform scale-0 rotate-[-180deg]',
-      in: 'opacity-100 transform scale-100 rotate-0'
-    },
-    // Scale bounce
-    {
-      out: 'opacity-0 transform scale-0',
-      in: 'opacity-100 transform scale-100'
-    },
-    // Fade con blur
-    {
-      out: 'opacity-0 transform blur-sm scale-90',
-      in: 'opacity-100 transform blur-0 scale-100'
-    },
-    // Fade con zoom
-    {
-      out: 'opacity-0 transform scale-150',
-      in: 'opacity-100 transform scale-100'
-    }
-  ];
-
-  // Rotar textos solo si no se proporciona un texto explícito
+  // Actualizar el store cuando cambia el hover
   useEffect(() => {
-    if (text) {
-      return;
+    if (isHovered) {
+      incrementHover();
+    } else {
+      decrementHover();
     }
 
-    const interval = setInterval(() => {
-      // Seleccionar un efecto aleatorio
-      const randomEffect = Math.floor(Math.random() * animationEffects.length);
-      setAnimationType(randomEffect);
-      setIsAnimating(true);
-      
-      // Cambiar el texto después de que termine el fade out
-      setTimeout(() => {
-        setTextIndex((prevIndex) => (prevIndex + 1) % ROTATING_TEXTS.length);
-        // Restaurar la animación después de un breve momento para el fade in
-        setTimeout(() => {
-          setIsAnimating(false);
-        }, 50);
-      }, 300); // Tiempo para el fade out
-    }, 5000); // Cambia cada 7 segundos
-
-    return () => clearInterval(interval);
-  }, [text]);
+    // Limpiar al desmontar
+    return () => {
+      if (isHovered) {
+        decrementHover();
+      }
+    };
+  }, [isHovered, incrementHover, decrementHover]);
 
   const scrollToContact = () => {
     const element = document.getElementById('contact');
@@ -119,13 +64,15 @@ const ContactButton = ({
   return (
     <button
       onClick={handleClick}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       className={`${baseClasses} ${variantClasses[variant]} ${className}`}
     >
       <span 
-        className={`relative z-10 inline-block transition-all duration-700 ease-in-out ${
+        className={`relative z-10 inline-block transition-all duration-300 ease-in-out ${
           isAnimating 
-            ? animationEffects[animationType].out
-            : animationEffects[animationType].in
+            ? currentAnimation.out
+            : currentAnimation.in
         }`}
       >
         {currentText}
