@@ -28,37 +28,37 @@ const Contact = () => {
         <div className="max-w-2xl mx-auto mt-12">
           <h3 className="text-2xl font-semibold mb-4 text-white text-center">Conectemos</h3>
           <p className="text-[#d0d0d0] leading-relaxed mb-8 text-center">
-            Estoy siempre abierto a discutir nuevos proyectos, ideas creativas 
-            o oportunidades para ser parte de tus visiones.
-          </p>
-          <div className="flex flex-col gap-4">
-            {SOCIAL_LINKS.map((social) => (
-              <a
-                key={social.name}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
+              Estoy siempre abierto a discutir nuevos proyectos, ideas creativas 
+              o oportunidades para ser parte de tus visiones.
+            </p>
+            <div className="flex flex-col gap-4">
+              {SOCIAL_LINKS.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-[#1a1a1a] border border-[rgba(255,255,255,0.1)] rounded-lg text-[#d0d0d0] transition-all duration-300 hover:bg-[#121212] hover:border-[#6366f1] hover:translate-x-1"
-                aria-label={social.name}
-              >
+                  aria-label={social.name}
+                >
                 <span className="flex items-center justify-center text-2xl text-[#d0d0d0] [&>svg]:text-[#d0d0d0]">
                   {social.icon}
                 </span>
                 <span className="font-medium text-[#d0d0d0]">{social.name}</span>
-              </a>
-            ))}
-            <button
-              onClick={copyEmailToClipboard}
+                </a>
+              ))}
+                <button
+                  onClick={copyEmailToClipboard}
               className="flex items-center gap-4 p-4 bg-[#1a1a1a] border border-[rgba(255,255,255,0.1)] rounded-lg text-[#d0d0d0] transition-all duration-300 hover:bg-[#121212] hover:border-[#6366f1] hover:translate-x-1 w-full cursor-pointer"
-              aria-label="Copiar email"
-              title="Copiar email"
-            >
+                  aria-label="Copiar email"
+                  title="Copiar email"
+                >
               <span className="flex items-center justify-center text-2xl text-[#d0d0d0] [&>svg]:text-[#d0d0d0]"><HiMail /></span>
               <span className="font-medium select-all flex-1 text-left">{EMAIL_ADDRESS}</span>
               <span className="flex items-center justify-center text-xl text-[#d0d0d0]">
                 {emailCopied ? <FaCheck className="text-[#d0d0d0]" /> : <FaCopy className="text-[#d0d0d0]" />}
               </span>
-            </button>
+                </button>
             <a
               href={`mailto:${EMAIL_ADDRESS}?subject=Contacto desde Portfolio`}
               className="flex items-center justify-center gap-3 p-4 bg-linear-to-r from-[#6366f1] to-[#8b5cf6] border-none rounded-lg text-white font-bold text-lg transition-all duration-300 hover:from-[#8b5cf6] hover:to-[#ec4899] hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(99,102,241,0.4)] hover:scale-105 cursor-pointer"
