@@ -52,15 +52,50 @@ src/
 ├── presentation/              # Capa de Presentación
 │   ├── components/           # Componentes React
 │   │   ├── layout/           # Componentes de layout
-│   │   │   ├── Header.tsx
+│   │   │   ├── header/
+│   │   │   │   └── Header.tsx
 │   │   │   └── index.ts
-│   │   └── sections/         # Secciones del portafolio
-│   │       ├── Hero.tsx
-│   │       ├── About.tsx
-│   │       ├── Projects.tsx
-│   │       ├── Skills.tsx
-│   │       ├── Contact.tsx
-│   │       └── index.ts
+│   │   ├── sections/         # Secciones del portafolio
+│   │   │   ├── hero/
+│   │   │   │   └── Hero.tsx
+│   │   │   ├── about/
+│   │   │   │   └── About.tsx
+│   │   │   ├── projects/      # Sección de proyectos
+│   │   │   │   ├── components/
+│   │   │   │   │   ├── card/          # Componentes de tarjeta
+│   │   │   │   │   │   ├── ProjectCard.tsx
+│   │   │   │   │   │   ├── ProjectCardContent.tsx
+│   │   │   │   │   │   ├── ProjectBanner.tsx
+│   │   │   │   │   │   ├── ProjectOverlay.tsx
+│   │   │   │   │   │   └── ProjectTechStack.tsx
+│   │   │   │   │   ├── carousel/      # Componente del carrusel
+│   │   │   │   │   │   └── ProjectsCarousel.tsx
+│   │   │   │   │   └── detail/        # Componentes del modal de detalle
+│   │   │   │   │       ├── ProjectDetail.tsx
+│   │   │   │   │       ├── ProjectImageSection.tsx
+│   │   │   │   │       ├── ProjectContentSection.tsx
+│   │   │   │   │       ├── ProjectHeader.tsx
+│   │   │   │   │       ├── ProjectTechnologies.tsx
+│   │   │   │   │       ├── ProjectLinks.tsx
+│   │   │   │   │       ├── ProjectImageNavigation.tsx
+│   │   │   │   │       ├── ProjectImageIndicators.tsx
+│   │   │   │   │       ├── ProjectImageCounter.tsx
+│   │   │   │   │       └── CloseButton.tsx
+│   │   │   │   ├── hooks/             # Hooks personalizados
+│   │   │   │   │   ├── useCarouselAutoPlay.ts
+│   │   │   │   │   ├── useCarouselNavigation.ts
+│   │   │   │   │   ├── useCarouselScroll.ts
+│   │   │   │   │   ├── useItemsPerView.ts
+│   │   │   │   │   └── index.ts
+│   │   │   │   └── Projects.tsx
+│   │   │   ├── skills/
+│   │   │   │   └── Skills.tsx
+│   │   │   ├── contact/
+│   │   │   │   └── Contact.tsx
+│   │   │   └── index.ts
+│   │   └── shared/           # Componentes compartidos
+│   │       ├── icons/
+│   │       └── ContactButton.tsx
 │   └── styles/               # Estilos globales
 │       └── index.css
 │
@@ -134,7 +169,11 @@ Información personal, experiencia y estadísticas destacadas.
 
 ### 💼 Proyectos
 
-Galería de proyectos realizados con tecnologías utilizadas y enlaces.
+Galería de proyectos realizados con tecnologías utilizadas y enlaces. Incluye:
+- **Carrusel interactivo**: Navegación fluida entre proyectos
+- **Tarjetas de proyecto**: Vista previa con imagen, título, descripción y tecnologías
+- **Modal de detalle**: Vista completa con imágenes, descripción extendida, tecnologías y enlaces
+- **Navegación de imágenes**: Para proyectos con múltiples capturas de pantalla
 
 ### 🛠️ Habilidades
 
@@ -150,7 +189,10 @@ Formulario de contacto con validación y enlaces a redes sociales.
 
 1. **Foto de perfil**: Reemplaza `src/assets/1000001843.JPG` con tu propia imagen
 2. **Datos personales**: Edita los componentes en `src/presentation/components/sections/`
-3. **Proyectos**: Actualiza `src/domain/constants/projects.constants.ts`
+3. **Proyectos**: 
+   - Actualiza `src/domain/constants/projects.constants.ts` para agregar/modificar proyectos
+   - Personaliza los componentes de tarjeta en `src/presentation/components/sections/projects/components/card/`
+   - Modifica el modal de detalle en `src/presentation/components/sections/projects/components/detail/`
 4. **Habilidades**: Modifica `src/domain/constants/skills.constants.tsx`
 5. **Información de contacto**: Edita `src/domain/constants/contact.constants.tsx`
 
@@ -176,6 +218,17 @@ Las dependencias fluyen en una sola dirección:
 ```
 Presentation → Application → Domain
 ```
+
+### Organización de Componentes
+
+Los componentes están organizados de forma modular y por funcionalidad:
+
+- **`card/`**: Componentes relacionados con las tarjetas de proyecto (banner, contenido, overlay, etc.)
+- **`carousel/`**: Componente del carrusel de proyectos
+- **`detail/`**: Componentes del modal de detalle (imágenes, contenido, navegación, etc.)
+- **`hooks/`**: Hooks personalizados para la lógica del carrusel
+
+Esta organización facilita el mantenimiento, la reutilización y la escalabilidad del código.
 
 Para más información, consulta [ARCHITECTURE.md](./ARCHITECTURE.md).
 
