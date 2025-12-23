@@ -1,7 +1,7 @@
 export interface Project {
   id: number;
   title: string;
-  description: string;
+  description: ProjectDescription;
   technologies: string[];
   banner?: string;
   images?: string[];
@@ -9,4 +9,9 @@ export interface Project {
   github?: string;
   githubFrontend?: string;
   githubBackend?: string;
+}
+
+export interface ProjectDescription {
+  short: string;
+  full: string;
 }

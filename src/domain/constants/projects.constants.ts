@@ -4,8 +4,10 @@ export const PROJECTS: Project[] = [
   {
     id: 1,
     title: "NeoManga",
-    description:
-      "Aplicación móvil multiplataforma para lectura y gestión de mangas. Backend robusto desarrollado con Java y Spring Boot, API REST completa. Frontend móvil en React Native con TypeScript. Incluye catálogo de mangas, sistema de favoritos, lectura online, búsqueda avanzada y recomendaciones personalizadas.",
+    description: {
+      short: "",
+      full: "",
+    },
     technologies: [
       "React Native",
       "TypeScript",
@@ -28,8 +30,10 @@ export const PROJECTS: Project[] = [
   {
     id: 2,
     title: "Portfolio Personal",
-    description:
-      "Portfolio web personal desarrollado con React y TypeScript. Incluye diseño moderno con Tailwind CSS v4, arquitectura limpia, carrusel de proyectos interactivo, secciones de habilidades, educación y contacto. Totalmente responsive y optimizado para rendimiento.",
+    description: {
+      short: "/projects_descriptions/portfolio/short.md",
+      full: "/projects_descriptions/portfolio/full.md",
+    },
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     banner: "/images/portfolio/portfolio_banner.webp",
     github: "https://github.com/jesusfv/portfolio",
