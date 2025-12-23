@@ -35,7 +35,7 @@ const Skills = () => {
         type: SkillType;
         url?: string;
       }>
-    >
+    >,
   );
 
   // Combinar frontend y mobile en una categoría unificada
@@ -49,19 +49,19 @@ const Skills = () => {
 
   const availableOtherCategories = otherCategories.filter(
     (category) =>
-      skillsByCategory[category] && skillsByCategory[category].length > 0
+      skillsByCategory[category] && skillsByCategory[category].length > 0,
   );
 
   return (
-    <section id="skills" className="py-24 bg-[#1a1a1a] scroll-mt-20">
+    <section id="skills" className="scroll-mt-20 bg-[#1a1a1a] py-24">
       <div className="container">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 pt-4 bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent">
+        <h2 className="mb-4 bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text pt-4 text-center text-4xl font-bold text-transparent md:text-5xl">
           Habilidades
         </h2>
-        <p className="text-center text-[#a0a0a0] text-lg mb-12">
+        <p className="mb-12 text-center text-lg text-[#a0a0a0]">
           Tecnologías y herramientas que domino
         </p>
-        <div className="flex flex-col gap-8 max-w-[1200px] mx-auto px-4 md:px-0">
+        <div className="mx-auto flex max-w-[1200px] flex-col gap-8 px-4 md:px-0">
           <FrontendMobileCategory
             frontendSkills={frontendMobileSkills.frontend}
             mobileSkills={frontendMobileSkills.mobile}

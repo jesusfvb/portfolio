@@ -58,4 +58,3 @@ const JUnitIcon = () => {
 };
 
 export default JUnitIcon;
-

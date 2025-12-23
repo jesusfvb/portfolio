@@ -167,4 +167,3 @@ export const getTechIcon = (tech: string): ReactElement | null => {
 export const getTechInfo = (tech: string): TechInfo | null => {
   return getTechInfoInternal(tech);
 };
-

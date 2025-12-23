@@ -10,4 +10,3 @@ const ArrowRightIcon = ({ size = 18, className = "" }: ArrowRightIconProps) => {
 };
 
 export default ArrowRightIcon;
-

@@ -5,9 +5,11 @@ interface ChevronLeftIconProps {
   className?: string;
 }
 
-const ChevronLeftIcon = ({ size = 24, className = "" }: ChevronLeftIconProps) => {
+const ChevronLeftIcon = ({
+  size = 24,
+  className = "",
+}: ChevronLeftIconProps) => {
   return <FaChevronLeft size={size} className={`text-current ${className}`} />;
 };
 
 export default ChevronLeftIcon;
-

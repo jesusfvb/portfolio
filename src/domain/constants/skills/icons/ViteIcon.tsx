@@ -45,4 +45,3 @@ const ViteIcon = () => {
 };
 
 export default ViteIcon;
-

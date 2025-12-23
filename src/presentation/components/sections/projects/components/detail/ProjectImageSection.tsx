@@ -23,13 +23,13 @@ const ProjectImageSection = ({
   const hasMultipleImages = hasImages && images.length > 1;
 
   return (
-    <div className="relative flex-1 bg-[#121212] overflow-hidden flex items-center justify-center p-10">
+    <div className="relative flex flex-1 items-center justify-center overflow-hidden bg-[#121212] p-10">
       {hasImages ? (
         <>
           <img
             src={images[currentImageIndex]}
             alt={`${projectTitle} - Imagen ${currentImageIndex + 1}`}
-            className="max-w-full max-h-full object-contain"
+            className="max-h-full max-w-full object-contain"
           />
 
           {hasMultipleImages && (
@@ -60,4 +60,3 @@ const ProjectImageSection = ({
 };
 
 export default ProjectImageSection;
-

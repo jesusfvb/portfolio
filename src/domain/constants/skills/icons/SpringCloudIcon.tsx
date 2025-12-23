@@ -14,4 +14,3 @@ const SpringCloudIcon = () => {
 };
 
 export default SpringCloudIcon;
-

@@ -16,18 +16,25 @@ interface SkillSubcategoryProps {
   columns?: 2 | 3;
 }
 
-const SkillSubcategory = ({ title, skills, columns = 2 }: SkillSubcategoryProps) => {
+const SkillSubcategory = ({
+  title,
+  skills,
+  columns = 2,
+}: SkillSubcategoryProps) => {
   if (skills.length === 0) return null;
 
   const languages = skills.filter((s) => s.type === "language");
   const frameworks = skills.filter((s) => s.type === "framework");
   const others = skills.filter((s) => s.type === "other");
 
-  const gridCols = columns === 3 ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3" : "grid-cols-1 md:grid-cols-2";
+  const gridCols =
+    columns === 3
+      ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+      : "grid-cols-1 md:grid-cols-2";
 
   return (
     <div>
-      <h4 className="text-sm font-medium text-[#d0d0d0] mb-2">{title}</h4>
+      <h4 className="mb-2 text-sm font-medium text-[#d0d0d0]">{title}</h4>
       <div className={`grid ${gridCols} gap-4`}>
         <SkillTypeGroup title="Lenguajes" skills={languages} />
         <SkillTypeGroup title="Frameworks" skills={frameworks} />
@@ -42,4 +49,3 @@ const SkillSubcategory = ({ title, skills, columns = 2 }: SkillSubcategoryProps)
 };
 
 export default SkillSubcategory;
-

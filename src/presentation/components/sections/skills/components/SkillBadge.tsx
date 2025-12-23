@@ -9,7 +9,9 @@ interface SkillBadgeProps {
 const SkillBadge = ({ icon, displayName, url }: SkillBadgeProps) => {
   const badgeContent = (
     <>
-      <span className="flex items-center justify-center text-lg group-hover:brightness-150 group-hover:contrast-125 transition-all duration-300">{icon}</span>
+      <span className="flex items-center justify-center text-lg transition-all duration-300 group-hover:brightness-150 group-hover:contrast-125">
+        {icon}
+      </span>
       <span className="text-white">{displayName}</span>
     </>
   );
@@ -30,10 +32,7 @@ const SkillBadge = ({ icon, displayName, url }: SkillBadgeProps) => {
     );
   }
 
-  return (
-    <div className={`${badgeClasses} cursor-default`}>{badgeContent}</div>
-  );
+  return <div className={`${badgeClasses} cursor-default`}>{badgeContent}</div>;
 };
 
 export default SkillBadge;
-

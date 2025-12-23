@@ -8,7 +8,7 @@ interface ProjectTechStackProps {
 
 const ProjectTechStack = ({ technologies }: ProjectTechStackProps) => {
   return (
-    <div className="flex flex-wrap gap-2 mb-4">
+    <div className="mb-4 flex flex-wrap gap-2">
       {technologies.map((tech, index) => {
         const techInfo = getTechInfo(tech);
         if (techInfo) {
@@ -32,7 +32,7 @@ const ProjectTechStack = ({ technologies }: ProjectTechStackProps) => {
           <span
             key={index}
             onClick={(e) => e.stopPropagation()}
-            className="px-3.5 py-1.5 bg-[#121212] border border-[rgba(255,255,255,0.1)] rounded-full text-sm text-[#d0d0d0] transition-all duration-300 hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white hover:border-transparent flex items-center gap-2"
+            className="flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.1)] bg-[#121212] px-3.5 py-1.5 text-sm text-[#d0d0d0] transition-all duration-300 hover:border-transparent hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white"
             data-no-card-click
           >
             <span>{tech}</span>
@@ -44,4 +44,3 @@ const ProjectTechStack = ({ technologies }: ProjectTechStackProps) => {
 };
 
 export default ProjectTechStack;
-

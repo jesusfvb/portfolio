@@ -51,6 +51,7 @@ src/
 ## Principios de Clean Architecture
 
 ### 1. **Domain Layer** (Dominio)
+
 - Contiene la lógica de negocio pura
 - No depende de ninguna otra capa
 - Incluye:
@@ -58,6 +59,7 @@ src/
   - **Constants**: Datos constantes del dominio (proyectos, habilidades, etc.)
 
 ### 2. **Application Layer** (Aplicación)
+
 - Contiene la lógica de aplicación y casos de uso
 - Depende solo del dominio
 - Incluye:
@@ -66,6 +68,7 @@ src/
   - **Use Cases**: Casos de uso específicos de la aplicación
 
 ### 3. **Infrastructure Layer** (Infraestructura)
+
 - Implementaciones concretas de servicios externos
 - Depende del dominio y aplicación
 - Incluye:
@@ -73,6 +76,7 @@ src/
   - **Utils**: Utilidades y helpers
 
 ### 4. **Presentation Layer** (Presentación)
+
 - Componentes UI y lógica de presentación
 - Depende del dominio y aplicación
 - Incluye:
@@ -90,6 +94,7 @@ Infrastructure → Application → Domain
 ```
 
 **Nunca:**
+
 - Domain no debe depender de ninguna otra capa
 - Application no debe depender de Presentation o Infrastructure directamente
 - Presentation puede usar Application y Domain
@@ -97,20 +102,23 @@ Infrastructure → Application → Domain
 ## Ejemplos de Uso
 
 ### Importar desde Domain
+
 ```typescript
-import { Project } from '@/domain/interfaces';
-import { PROJECTS, SKILLS } from '@/domain/constants';
+import { Project } from "@/domain/interfaces";
+import { PROJECTS, SKILLS } from "@/domain/constants";
 ```
 
 ### Importar desde Application
+
 ```typescript
-import { ValidationService } from '@/application/services/validation.service';
+import { ValidationService } from "@/application/services/validation.service";
 ```
 
 ### Importar Componentes
+
 ```typescript
-import { Header } from '@/presentation/components/layout';
-import { Hero, About, Projects } from '@/presentation/components/sections';
+import { Header } from "@/presentation/components/layout";
+import { Hero, About, Projects } from "@/presentation/components/sections";
 ```
 
 ## Beneficios
@@ -120,4 +128,3 @@ import { Hero, About, Projects } from '@/presentation/components/sections';
 3. **Mantenibilidad**: Código organizado y fácil de mantener
 4. **Escalabilidad**: Fácil agregar nuevas funcionalidades sin afectar otras partes
 5. **Reutilización**: Lógica de negocio reutilizable en diferentes contextos
-

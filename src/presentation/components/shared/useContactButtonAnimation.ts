@@ -1,10 +1,7 @@
-import { useState, useEffect, useRef } from 'react';
-import { useContactButtonStore } from './contactButtonStore';
+import { useState, useEffect, useRef } from "react";
+import { useContactButtonStore } from "./contactButtonStore";
 
-export const ROTATING_TEXTS = [
-  '¿Tienes una idea?',
-  'Trabajemos juntos'  
-];
+export const ROTATING_TEXTS = ["¿Tienes una idea?", "Trabajemos juntos"];
 
 export interface AnimationEffect {
   out: string;
@@ -14,51 +11,53 @@ export interface AnimationEffect {
 export const ANIMATION_EFFECTS: AnimationEffect[] = [
   // Fade con slide up
   {
-    out: 'opacity-0 transform translate-y-[-15px] scale-95',
-    in: 'opacity-100 transform translate-y-0 scale-100'
+    out: "opacity-0 transform translate-y-[-15px] scale-95",
+    in: "opacity-100 transform translate-y-0 scale-100",
   },
   // Fade con slide down
   {
-    out: 'opacity-0 transform translate-y-[15px] scale-95',
-    in: 'opacity-100 transform translate-y-0 scale-100'
+    out: "opacity-0 transform translate-y-[15px] scale-95",
+    in: "opacity-100 transform translate-y-0 scale-100",
   },
   // Fade con slide left
   {
-    out: 'opacity-0 transform translate-x-[-20px] scale-95',
-    in: 'opacity-100 transform translate-x-0 scale-100'
+    out: "opacity-0 transform translate-x-[-20px] scale-95",
+    in: "opacity-100 transform translate-x-0 scale-100",
   },
   // Fade con slide right
   {
-    out: 'opacity-0 transform translate-x-[20px] scale-95',
-    in: 'opacity-100 transform translate-x-0 scale-100'
+    out: "opacity-0 transform translate-x-[20px] scale-95",
+    in: "opacity-100 transform translate-x-0 scale-100",
   },
   // Scale con rotate
   {
-    out: 'opacity-0 transform scale-0 rotate-[-180deg]',
-    in: 'opacity-100 transform scale-100 rotate-0'
+    out: "opacity-0 transform scale-0 rotate-[-180deg]",
+    in: "opacity-100 transform scale-100 rotate-0",
   },
   // Scale bounce
   {
-    out: 'opacity-0 transform scale-0',
-    in: 'opacity-100 transform scale-100'
+    out: "opacity-0 transform scale-0",
+    in: "opacity-100 transform scale-100",
   },
   // Fade con blur
   {
-    out: 'opacity-0 transform blur-sm scale-90',
-    in: 'opacity-100 transform blur-0 scale-100'
+    out: "opacity-0 transform blur-sm scale-90",
+    in: "opacity-100 transform blur-0 scale-100",
   },
   // Fade con zoom
   {
-    out: 'opacity-0 transform scale-150',
-    in: 'opacity-100 transform scale-100'
-  }
+    out: "opacity-0 transform scale-150",
+    in: "opacity-100 transform scale-100",
+  },
 ];
 
 interface UseContactButtonAnimationProps {
   text?: string;
 }
 
-export const useContactButtonAnimation = ({ text }: UseContactButtonAnimationProps) => {
+export const useContactButtonAnimation = ({
+  text,
+}: UseContactButtonAnimationProps) => {
   const [textIndex, setTextIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [animationType, setAnimationType] = useState(0);
@@ -76,7 +75,7 @@ export const useContactButtonAnimation = ({ text }: UseContactButtonAnimationPro
       if (isAnimating) {
         setIsAnimating(false);
       }
-      timeoutRefs.current.forEach(id => clearTimeout(id));
+      timeoutRefs.current.forEach((id) => clearTimeout(id));
       timeoutRefs.current = [];
       return;
     }
@@ -94,7 +93,7 @@ export const useContactButtonAnimation = ({ text }: UseContactButtonAnimationPro
       const randomEffect = Math.floor(Math.random() * ANIMATION_EFFECTS.length);
       setAnimationType(randomEffect);
       setIsAnimating(true);
-      
+
       // Cambiar el texto y terminar la animación después de que termine el fade out (300ms)
       const changeTextTimeout = setTimeout(() => {
         // Verificar si hay hover antes de cambiar el texto
@@ -125,7 +124,7 @@ export const useContactButtonAnimation = ({ text }: UseContactButtonAnimationPro
       if (intervalId !== null) {
         clearInterval(intervalId);
       }
-      timeoutRefs.current.forEach(id => clearTimeout(id));
+      timeoutRefs.current.forEach((id) => clearTimeout(id));
       timeoutRefs.current = [];
     };
   }, [text, hasHover]);
@@ -133,7 +132,6 @@ export const useContactButtonAnimation = ({ text }: UseContactButtonAnimationPro
   return {
     currentText,
     isAnimating,
-    currentAnimation
+    currentAnimation,
   };
 };
-

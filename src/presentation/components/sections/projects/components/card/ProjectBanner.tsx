@@ -6,10 +6,10 @@ interface ProjectBannerProps {
 
 const ProjectBanner = ({ project }: ProjectBannerProps) => {
   return (
-    <div className="relative w-full h-[200px] overflow-hidden bg-[#121212] shrink-0">
-      <div className="w-full h-full">
+    <div className="relative h-[200px] w-full shrink-0 overflow-hidden bg-[#121212]">
+      <div className="h-full w-full">
         {project.banner ? (
-          <div className="relative w-full h-full">
+          <div className="relative h-full w-full">
             <img
               src={project.banner}
               alt={`${project.title} banner`}
@@ -21,7 +21,7 @@ const ProjectBanner = ({ project }: ProjectBannerProps) => {
             viewBox="0 0 400 300"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="w-full h-full"
+            className="h-full w-full"
           >
             <defs>
               <linearGradient
@@ -48,4 +48,3 @@ const ProjectBanner = ({ project }: ProjectBannerProps) => {
 };
 
 export default ProjectBanner;
-

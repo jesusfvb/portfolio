@@ -14,4 +14,3 @@ const SpringSecurityIcon = () => {
 };
 
 export default SpringSecurityIcon;
-

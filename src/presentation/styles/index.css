@@ -5,15 +5,15 @@
   --primary-color: #6366f1;
   --secondary-color: #8b5cf6;
   --accent-color: #ec4899;
-  
+
   /* Colores de fondo */
   --bg-primary: #121212;
   --bg-secondary: #1a1a1a;
-  
+
   /* Colores de texto */
   --text-primary: #ffffff;
   --text-secondary: #d0d0d0;
-  
+
   /* Bordes */
   --border-color: rgba(255, 255, 255, 0.1);
 }
@@ -28,7 +28,17 @@ html {
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    sans-serif;
   color-scheme: dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -66,7 +76,8 @@ button {
 
 /* Animaciones personalizadas para Hero */
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
   }
   33% {
@@ -101,11 +112,16 @@ button {
 
 /* Animaciones para botones CTA */
 @keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(99, 102, 241, 0.4), 0 0 40px rgba(99, 102, 241, 0.2);
+  0%,
+  100% {
+    box-shadow:
+      0 0 20px rgba(99, 102, 241, 0.4),
+      0 0 40px rgba(99, 102, 241, 0.2);
   }
   50% {
-    box-shadow: 0 0 30px rgba(99, 102, 241, 0.6), 0 0 60px rgba(99, 102, 241, 0.3);
+    box-shadow:
+      0 0 30px rgba(99, 102, 241, 0.6),
+      0 0 60px rgba(99, 102, 241, 0.3);
   }
 }
 
@@ -119,7 +135,8 @@ button {
 }
 
 @keyframes gradient-shift {
-  0%, 100% {
+  0%,
+  100% {
     background-position: 0% 50%;
   }
   50% {

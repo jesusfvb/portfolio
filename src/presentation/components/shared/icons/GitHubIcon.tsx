@@ -10,4 +10,3 @@ const GitHubIcon = ({ size = 20, className = "" }: GitHubIconProps) => {
 };
 
 export default GitHubIcon;
-

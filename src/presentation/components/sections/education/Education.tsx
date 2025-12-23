@@ -1,17 +1,17 @@
-import { EDUCATIONS } from '@/domain/constants';
-import EducationCard from './components/EducationCard';
+import { EDUCATIONS } from "@/domain/constants";
+import EducationCard from "./components/EducationCard";
 
 const Education = () => {
   return (
-    <section id="education" className="py-24 bg-[#1a1a1a]  scroll-mt-20">
+    <section id="education" className="scroll-mt-20 bg-[#1a1a1a] py-24">
       <div className="container">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 pt-4 bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent">
+        <h2 className="mb-4 bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text pt-4 text-center text-4xl font-bold text-transparent md:text-5xl">
           Educación
         </h2>
-        <p className="text-center text-[#d0d0d0] text-lg mb-12">
+        <p className="mb-12 text-center text-lg text-[#d0d0d0]">
           Mi formación académica y profesional
         </p>
-        <div className="max-w-4xl mx-auto">
+        <div className="mx-auto max-w-4xl">
           <div className="space-y-8">
             {EDUCATIONS.map((education, index) => (
               <EducationCard
@@ -28,4 +28,3 @@ const Education = () => {
 };
 
 export default Education;
-

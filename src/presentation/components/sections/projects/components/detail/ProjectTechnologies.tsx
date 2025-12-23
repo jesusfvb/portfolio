@@ -8,7 +8,7 @@ interface ProjectTechnologiesProps {
 const ProjectTechnologies = ({ technologies }: ProjectTechnologiesProps) => {
   return (
     <div className="mb-6">
-      <h3 className="text-xl font-semibold text-white mb-3">Tecnologías</h3>
+      <h3 className="mb-3 text-xl font-semibold text-white">Tecnologías</h3>
       <div className="flex flex-wrap gap-2">
         {technologies.map((tech, index) => {
           const techInfo = getTechInfo(tech);
@@ -26,7 +26,7 @@ const ProjectTechnologies = ({ technologies }: ProjectTechnologiesProps) => {
           return (
             <span
               key={index}
-              className="px-4 py-2 bg-[#121212] border border-[rgba(255,255,255,0.1)] rounded-full text-sm text-[#d0d0d0] transition-all duration-300 hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white hover:border-transparent"
+              className="rounded-full border border-[rgba(255,255,255,0.1)] bg-[#121212] px-4 py-2 text-sm text-[#d0d0d0] transition-all duration-300 hover:border-transparent hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white"
             >
               {tech}
             </span>
@@ -38,4 +38,3 @@ const ProjectTechnologies = ({ technologies }: ProjectTechnologiesProps) => {
 };
 
 export default ProjectTechnologies;
-

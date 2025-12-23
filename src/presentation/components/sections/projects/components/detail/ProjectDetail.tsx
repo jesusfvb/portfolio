@@ -35,7 +35,7 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
   const goToPreviousImage = () => {
     if (project.images && project.images.length > 0) {
       setCurrentImageIndex((prev) =>
-        prev > 0 ? prev - 1 : project.images!.length - 1
+        prev > 0 ? prev - 1 : project.images!.length - 1,
       );
     }
   };
@@ -43,7 +43,7 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
   const goToNextImage = () => {
     if (project.images && project.images.length > 0) {
       setCurrentImageIndex((prev) =>
-        prev < project.images!.length - 1 ? prev + 1 : 0
+        prev < project.images!.length - 1 ? prev + 1 : 0,
       );
     }
   };
@@ -54,16 +54,16 @@ const ProjectDetail = ({ project, isOpen, onClose }: ProjectDetailProps) => {
 
   return (
     <div
-      className="fixed inset-0 z-9999 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+      className="fixed inset-0 z-9999 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
-        className="relative h-full bg-[#1a1a1a] rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden border border-[rgba(255,255,255,0.1)] shadow-2xl"
+        className="relative h-full max-h-[90vh] w-full max-w-6xl overflow-hidden rounded-2xl border border-[rgba(255,255,255,0.1)] bg-[#1a1a1a] shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         <CloseButton onClose={onClose} />
 
-        <div className="flex flex-col md:flex-row h-full overflow-hidden">
+        <div className="flex h-full flex-col overflow-hidden md:flex-row">
           <ProjectImageSection
             images={project.images}
             currentImageIndex={currentImageIndex}

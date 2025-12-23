@@ -3,10 +3,7 @@ import type { ReactElement } from "react";
 /**
  * Crea un icono a partir de una URL de imagen (favicon)
  */
-export const createImageIcon = (
-  src: string,
-  alt: string
-): ReactElement => {
+export const createImageIcon = (src: string, alt: string): ReactElement => {
   return (
     <span
       style={{
@@ -32,4 +29,3 @@ export const createImageIcon = (
     </span>
   );
 };
-

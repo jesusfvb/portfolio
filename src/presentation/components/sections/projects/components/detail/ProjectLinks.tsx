@@ -16,7 +16,7 @@ const ProjectLinks = ({ project }: ProjectLinksProps) => {
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-[#6366f1] to-[#8b5cf6] text-white rounded-lg font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(99,102,241,0.4)] no-underline w-fit"
+          className="inline-flex w-fit items-center gap-2 rounded-lg bg-linear-to-r from-[#6366f1] to-[#8b5cf6] px-6 py-3 font-semibold text-white no-underline transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(99,102,241,0.4)]"
         >
           <ExternalLinkIcon size={20} />
           Ver Proyecto
@@ -36,7 +36,7 @@ const ProjectLinks = ({ project }: ProjectLinksProps) => {
               href={project.githubFrontend}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#121212] border border-[rgba(255,255,255,0.1)] text-white rounded-lg font-semibold transition-all duration-300 hover:bg-[#1a1a1a] hover:border-[#6366f1] no-underline"
+              className="inline-flex items-center gap-2 rounded-lg border border-[rgba(255,255,255,0.1)] bg-[#121212] px-6 py-3 font-semibold text-white no-underline transition-all duration-300 hover:border-[#6366f1] hover:bg-[#1a1a1a]"
             >
               <GitHubIcon size={20} />
               Frontend
@@ -48,7 +48,7 @@ const ProjectLinks = ({ project }: ProjectLinksProps) => {
               href={project.githubBackend}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#121212] border border-[rgba(255,255,255,0.1)] text-white rounded-lg font-semibold transition-all duration-300 hover:bg-[#1a1a1a] hover:border-[#6366f1] no-underline"
+              className="inline-flex items-center gap-2 rounded-lg border border-[rgba(255,255,255,0.1)] bg-[#121212] px-6 py-3 font-semibold text-white no-underline transition-all duration-300 hover:border-[#6366f1] hover:bg-[#1a1a1a]"
             >
               <GitHubIcon size={20} />
               Backend
@@ -57,22 +57,19 @@ const ProjectLinks = ({ project }: ProjectLinksProps) => {
         </div>
       ) : null}
 
-      {project.github &&
-        !project.githubFrontend &&
-        !project.githubBackend && (
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#121212] border border-[rgba(255,255,255,0.1)] text-white rounded-lg font-semibold transition-all duration-300 hover:bg-[#1a1a1a] hover:border-[#6366f1] no-underline"
-          >
-            <GitHubIcon size={20} />
-            GitHub
-          </a>
-        )}
+      {project.github && !project.githubFrontend && !project.githubBackend && (
+        <a
+          href={project.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-lg border border-[rgba(255,255,255,0.1)] bg-[#121212] px-6 py-3 font-semibold text-white no-underline transition-all duration-300 hover:border-[#6366f1] hover:bg-[#1a1a1a]"
+        >
+          <GitHubIcon size={20} />
+          GitHub
+        </a>
+      )}
     </div>
   );
 };
 
 export default ProjectLinks;
-

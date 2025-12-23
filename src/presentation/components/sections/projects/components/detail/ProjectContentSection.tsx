@@ -9,10 +9,13 @@ interface ProjectContentSectionProps {
 
 const ProjectContentSection = ({ project }: ProjectContentSectionProps) => {
   return (
-    <div className="flex-2 flex flex-col overflow-y-auto md:max-h-[90vh]">
-      <div className="p-6 md:p-8 h-full flex flex-col justify-between">
+    <div className="flex flex-2 flex-col overflow-y-auto md:max-h-[90vh]">
+      <div className="flex h-full flex-col justify-between p-6 md:p-8">
         <div>
-          <ProjectHeader title={project.title} description={project.description} />
+          <ProjectHeader
+            title={project.title}
+            description={project.description}
+          />
         </div>
 
         <div>
@@ -25,4 +28,3 @@ const ProjectContentSection = ({ project }: ProjectContentSectionProps) => {
 };
 
 export default ProjectContentSection;
-

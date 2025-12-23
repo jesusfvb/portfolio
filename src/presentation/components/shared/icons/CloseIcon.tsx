@@ -10,4 +10,3 @@ const CloseIcon = ({ size = 20, className = "" }: CloseIconProps) => {
 };
 
 export default CloseIcon;
-

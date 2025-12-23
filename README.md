@@ -15,6 +15,7 @@ Portfolio personal desarrollado con React, TypeScript y Tailwind CSS v4. Este pr
 ## 🛠️ Tecnologías Utilizadas
 
 ### Frontend
+
 - **React 19.2.0** - Biblioteca de UI
 - **TypeScript 5.9.3** - Tipado estático
 - **Tailwind CSS 4.1.17** - Framework de CSS utility-first
@@ -22,6 +23,7 @@ Portfolio personal desarrollado con React, TypeScript y Tailwind CSS v4. Este pr
 - **React Icons 5.5.0** - Iconos populares
 
 ### Herramientas de Desarrollo
+
 - **ESLint** - Linter para código JavaScript/TypeScript
 - **TypeScript ESLint** - Reglas específicas para TypeScript
 - **PostCSS** - Procesador de CSS
@@ -83,12 +85,14 @@ Para más detalles sobre la arquitectura, consulta [ARCHITECTURE.md](./ARCHITECT
 ### Pasos de Instalación
 
 1. **Clonar el repositorio**
+
 ```bash
 git clone <url-del-repositorio>
 cd porfolio_jesusfvb
 ```
 
 2. **Instalar dependencias**
+
 ```bash
 pnpm install
 # o
@@ -96,6 +100,7 @@ npm install
 ```
 
 3. **Iniciar el servidor de desarrollo**
+
 ```bash
 pnpm dev
 # o
@@ -103,34 +108,40 @@ npm run dev
 ```
 
 4. **Abrir en el navegador**
+
 ```
 http://localhost:5173
 ```
 
 ## 📜 Scripts Disponibles
 
-| Script | Descripción |
-|--------|-------------|
-| `pnpm dev` | Inicia el servidor de desarrollo con Hot Module Replacement (HMR) |
-| `pnpm build` | Compila el proyecto para producción en la carpeta `dist/` |
-| `pnpm preview` | Previsualiza la build de producción localmente |
-| `pnpm lint` | Ejecuta ESLint para verificar el código |
+| Script         | Descripción                                                       |
+| -------------- | ----------------------------------------------------------------- |
+| `pnpm dev`     | Inicia el servidor de desarrollo con Hot Module Replacement (HMR) |
+| `pnpm build`   | Compila el proyecto para producción en la carpeta `dist/`         |
+| `pnpm preview` | Previsualiza la build de producción localmente                    |
+| `pnpm lint`    | Ejecuta ESLint para verificar el código                           |
 
 ## 🎨 Secciones del Portafolio
 
 ### 🏠 Hero
+
 Sección principal con presentación personal, foto de perfil y botones de acción.
 
 ### 👤 Sobre Mí
+
 Información personal, experiencia y estadísticas destacadas.
 
 ### 💼 Proyectos
+
 Galería de proyectos realizados con tecnologías utilizadas y enlaces.
 
 ### 🛠️ Habilidades
+
 Lista de tecnologías y habilidades técnicas con iconos.
 
 ### 📧 Contacto
+
 Formulario de contacto con validación y enlaces a redes sociales.
 
 ## 🎯 Personalización
@@ -146,6 +157,7 @@ Formulario de contacto con validación y enlaces a redes sociales.
 ### Cambiar Colores y Estilos
 
 Los colores principales están definidos en las clases de Tailwind CSS. Los colores del gradiente principal son:
+
 - `#6366f1` (Indigo)
 - `#8b5cf6` (Purple)
 
@@ -160,6 +172,7 @@ Este proyecto sigue los principios de **Clean Architecture**:
 - **Presentation Layer**: Componentes React y UI
 
 Las dependencias fluyen en una sola dirección:
+
 ```
 Presentation → Application → Domain
 ```
@@ -178,14 +191,16 @@ El proyecto utiliza aliases configurados en `vite.config.ts` y `tsconfig.app.jso
 - `@/presentation/*` → `./src/presentation/*`
 
 Ejemplo de uso:
+
 ```typescript
-import { Project } from '@/domain/interfaces';
-import Header from '@/presentation/components/layout/Header';
+import { Project } from "@/domain/interfaces";
+import Header from "@/presentation/components/layout/Header";
 ```
 
 ### Tipos de Imágenes
 
 El proyecto incluye declaraciones de tipos para archivos de imagen en `src/vite-env.d.ts`:
+
 - `.jpg`, `.JPG`
 - `.jpeg`
 - `.png`
@@ -221,6 +236,7 @@ El proyecto puede desplegarse en GitHub Pages usando GitHub Actions. El workflow
    - Guarda los cambios
 
 2. **Haz push a la rama master**:
+
    ```bash
    git push origin master
    ```
@@ -256,9 +272,9 @@ Si estás desarrollando una aplicación de producción, se recomienda actualizar
 
 ```js
 export default defineConfig([
-  globalIgnores(['dist']),
+  globalIgnores(["dist"]),
   {
-    files: ['**/*.{ts,tsx}'],
+    files: ["**/*.{ts,tsx}"],
     extends: [
       // Other configs...
 
@@ -273,13 +289,13 @@ export default defineConfig([
     ],
     languageOptions: {
       parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
         tsconfigRootDir: import.meta.dirname,
       },
       // other options...
     },
   },
-])
+]);
 ```
 
 También puedes instalar [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) y [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) para reglas específicas de React.
@@ -291,6 +307,7 @@ Este proyecto es privado y propiedad de Jesús Francisco Vázquez Biltre.
 ## 👤 Autor
 
 **Jesús Francisco Vázquez Biltre**
+
 - Desarrollador Full Stack
 - Especializado en React, TypeScript y tecnologías web modernas
 

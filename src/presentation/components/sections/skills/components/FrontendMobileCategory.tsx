@@ -15,14 +15,17 @@ interface FrontendMobileCategoryProps {
   mobileSkills: Skill[];
 }
 
-const FrontendMobileCategory = ({ frontendSkills, mobileSkills }: FrontendMobileCategoryProps) => {
+const FrontendMobileCategory = ({
+  frontendSkills,
+  mobileSkills,
+}: FrontendMobileCategoryProps) => {
   const hasSkills = frontendSkills.length > 0 || mobileSkills.length > 0;
 
   if (!hasSkills) return null;
 
   return (
-    <div className="flex flex-col w-full">
-      <h3 className="text-xl font-semibold text-white mb-4 pb-2 border-b border-[rgba(255,255,255,0.1)]">
+    <div className="flex w-full flex-col">
+      <h3 className="mb-4 border-b border-[rgba(255,255,255,0.1)] pb-2 text-xl font-semibold text-white">
         Frontend & Mobile
       </h3>
       <div className="space-y-4">
@@ -34,4 +37,3 @@ const FrontendMobileCategory = ({ frontendSkills, mobileSkills }: FrontendMobile
 };
 
 export default FrontendMobileCategory;
-

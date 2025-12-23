@@ -12,14 +12,14 @@ const ProjectOverlay = ({ project }: ProjectOverlayProps) => {
   const hasBothRepos = project.githubFrontend && project.githubBackend;
 
   return (
-    <div className="absolute inset-0 bg-black/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-      <div className="flex gap-4 flex-col items-center w-full px-4">
+    <div className="absolute inset-0 flex items-center justify-center bg-black/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+      <div className="flex w-full flex-col items-center gap-4 px-4">
         {project.link && (
           <a
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-12 h-12 rounded-full bg-[#121212] flex items-center justify-center text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white"
+            className="flex h-12 w-12 items-center justify-center rounded-full bg-[#121212] text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white"
             aria-label="Ver proyecto"
             onClick={(e) => e.stopPropagation()}
           >
@@ -31,8 +31,8 @@ const ProjectOverlay = ({ project }: ProjectOverlayProps) => {
           <div
             className={`flex ${
               hasBothRepos
-                ? "justify-around w-full px-4"
-                : "gap-3 justify-center"
+                ? "w-full justify-around px-4"
+                : "justify-center gap-3"
             }`}
           >
             {project.githubFrontend && (
@@ -40,13 +40,13 @@ const ProjectOverlay = ({ project }: ProjectOverlayProps) => {
                 href={project.githubFrontend}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full bg-[#121212] flex items-center justify-center text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white group/github"
+                className="group/github flex h-12 w-12 items-center justify-center rounded-full bg-[#121212] text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white"
                 aria-label="GitHub Frontend"
                 title="Frontend"
                 onClick={(e) => e.stopPropagation()}
               >
                 <GitHubIcon size={20} className="text-white" />
-                <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-[#1a1a1a] text-xs text-white px-2 py-1 rounded opacity-0 group-hover/github:opacity-100 transition-opacity whitespace-nowrap">
+                <span className="absolute -top-8 left-1/2 -translate-x-1/2 rounded bg-[#1a1a1a] px-2 py-1 text-xs whitespace-nowrap text-white opacity-0 transition-opacity group-hover/github:opacity-100">
                   Frontend
                 </span>
               </a>
@@ -57,13 +57,13 @@ const ProjectOverlay = ({ project }: ProjectOverlayProps) => {
                 href={project.githubBackend}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full bg-[#121212] flex items-center justify-center text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white group/github"
+                className="group/github flex h-12 w-12 items-center justify-center rounded-full bg-[#121212] text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white"
                 aria-label="GitHub Backend"
                 title="Backend"
                 onClick={(e) => e.stopPropagation()}
               >
                 <GitHubIcon size={20} className="text-white" />
-                <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-[#1a1a1a] text-xs text-white px-2 py-1 rounded opacity-0 group-hover/github:opacity-100 transition-opacity whitespace-nowrap">
+                <span className="absolute -top-8 left-1/2 -translate-x-1/2 rounded bg-[#1a1a1a] px-2 py-1 text-xs whitespace-nowrap text-white opacity-0 transition-opacity group-hover/github:opacity-100">
                   Backend
                 </span>
               </a>
@@ -75,7 +75,7 @@ const ProjectOverlay = ({ project }: ProjectOverlayProps) => {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full bg-[#121212] flex items-center justify-center text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white"
+              className="flex h-12 w-12 items-center justify-center rounded-full bg-[#121212] text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white"
               aria-label="GitHub"
               onClick={(e) => e.stopPropagation()}
             >

@@ -23,4 +23,3 @@ export interface TechInfo {
   displayName: string;
   url?: string;
 }
-

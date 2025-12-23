@@ -9,7 +9,7 @@ function App() {
   const [isSkillsModalOpen, setIsSkillsModalOpen] = useState(false);
 
   return (
-    <div className="w-full min-h-screen">
+    <div className="min-h-screen w-full">
       <Header onOpenSkillsModal={() => setIsSkillsModalOpen(true)} />
       <main className="w-full">
         <Hero onOpenSkillsModal={() => setIsSkillsModalOpen(true)} />
@@ -23,8 +23,8 @@ function App() {
         isOpen={isSkillsModalOpen}
         onClose={() => setIsSkillsModalOpen(false)}
       />
-      <footer className="py-8 text-center border-t border-white/10 text-[#d0d0d0] text-sm">
-        <div className="max-w-[1200px] mx-auto px-8 md:px-4">
+      <footer className="border-t border-white/10 py-8 text-center text-sm text-[#d0d0d0]">
+        <div className="mx-auto max-w-[1200px] px-8 md:px-4">
           <p>
             &copy; {new Date().getFullYear()} Jesús Francisco Vázquez Biltre.
             Todos los derechos reservados.

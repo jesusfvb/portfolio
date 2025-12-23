@@ -10,4 +10,3 @@ export interface Project {
   githubFrontend?: string;
   githubBackend?: string;
 }
-

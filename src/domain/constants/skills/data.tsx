@@ -18,7 +18,12 @@ import {
 } from "react-icons/si";
 import type { TechIconMap } from "./types";
 import { createImageIcon } from "./helpers";
-import { ViteIcon, SpringSecurityIcon, SpringCloudIcon, JUnitIcon } from "./icons";
+import {
+  ViteIcon,
+  SpringSecurityIcon,
+  SpringCloudIcon,
+  JUnitIcon,
+} from "./icons";
 
 export const SKILLS_ICONS: Record<string, TechIconMap> = {
   "react native": {
@@ -32,7 +37,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
   expo: {
     icon: createImageIcon(
       "https://docs.expo.dev/static/images/favicon.ico",
-      "Expo"
+      "Expo",
     ),
     keywords: ["expo", "expo-dev"],
     category: "mobile",
@@ -43,7 +48,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
   "react navigation": {
     icon: createImageIcon(
       "https://reactnavigation.org/img/favicon.ico",
-      "React Navigation"
+      "React Navigation",
     ),
     keywords: ["react navigation", "react-navigation", "@react-navigation"],
     category: "mobile",
@@ -54,9 +59,13 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
   "react native reanimated": {
     icon: createImageIcon(
       "https://docs.swmansion.com/react-native-reanimated/img/favicon.ico",
-      "React Native Reanimated"
+      "React Native Reanimated",
     ),
-    keywords: ["react native reanimated", "react-native-reanimated", "reanimated"],
+    keywords: [
+      "react native reanimated",
+      "react-native-reanimated",
+      "reanimated",
+    ],
     category: "mobile",
     displayName: "React Native Reanimated",
     type: "other",
@@ -65,9 +74,13 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
   "react native gesture handler": {
     icon: createImageIcon(
       "https://docs.swmansion.com/react-native-gesture-handler/img/favicon.ico",
-      "React Native Gesture Handler"
+      "React Native Gesture Handler",
     ),
-    keywords: ["react native gesture handler", "react-native-gesture-handler", "gesture handler"],
+    keywords: [
+      "react native gesture handler",
+      "react-native-gesture-handler",
+      "gesture handler",
+    ],
     category: "mobile",
     displayName: "React Native Gesture Handler",
     type: "other",
@@ -76,7 +89,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
   nativewind: {
     icon: createImageIcon(
       "https://www.nativewind.dev/favicon.svg",
-      "NativeWind"
+      "NativeWind",
     ),
     keywords: ["nativewind", "native-wind"],
     category: "mobile",
@@ -125,10 +138,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     url: "https://www.postgresql.org",
   },
   axios: {
-    icon: createImageIcon(
-      "https://axios-http.com/assets/favicon.ico",
-      "Axios"
-    ),
+    icon: createImageIcon("https://axios-http.com/assets/favicon.ico", "Axios"),
     keywords: ["axios"],
     category: "frontend",
     displayName: "Axios",
@@ -136,10 +146,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     url: "https://axios-http.com",
   },
   "react query": {
-    icon: createImageIcon(
-      "https://tanstack.com/favicon.ico",
-      "React Query"
-    ),
+    icon: createImageIcon("https://tanstack.com/favicon.ico", "React Query"),
     keywords: [
       "react query",
       "react-query",
@@ -152,10 +159,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     url: "https://tanstack.com/query",
   },
   jest: {
-    icon: createImageIcon(
-      "https://jestjs.io/img/favicon/favicon.ico",
-      "Jest"
-    ),
+    icon: createImageIcon("https://jestjs.io/img/favicon/favicon.ico", "Jest"),
     keywords: ["jest"],
     category: "frontend",
     displayName: "Jest",
@@ -165,7 +169,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
   "react router": {
     icon: createImageIcon(
       "https://reactrouter.com/favicon.ico",
-      "React Router"
+      "React Router",
     ),
     keywords: ["react router", "react-router", "@remix-run/react-router"],
     category: "frontend",
@@ -176,7 +180,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
   zustand: {
     icon: createImageIcon(
       "https://zustand-demo.pmnd.rs/favicon.ico",
-      "Zustand"
+      "Zustand",
     ),
     keywords: ["zustand"],
     category: "frontend",
@@ -187,7 +191,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
   redux: {
     icon: createImageIcon(
       "https://redux.js.org/img/favicon/favicon.ico",
-      "Redux"
+      "Redux",
     ),
     keywords: ["redux", "@reduxjs/toolkit"],
     category: "frontend",
@@ -249,10 +253,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     url: "https://spring.io/projects/spring-cloud",
   },
   lombok: {
-    icon: createImageIcon(
-      "https://projectlombok.org/favicon.ico",
-      "Lombok"
-    ),
+    icon: createImageIcon("https://projectlombok.org/favicon.ico", "Lombok"),
     keywords: ["lombok"],
     category: "backend",
     displayName: "Lombok",
@@ -268,10 +269,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     url: "https://junit.org",
   },
   mockito: {
-    icon: createImageIcon(
-      "https://site.mockito.org/favicon.ico",
-      "Mockito"
-    ),
+    icon: createImageIcon("https://site.mockito.org/favicon.ico", "Mockito"),
     keywords: ["mockito"],
     category: "backend",
     displayName: "Mockito",
@@ -281,7 +279,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
   mapstruct: {
     icon: createImageIcon(
       "https://mapstruct.org/images/favicon.ico",
-      "MapStruct"
+      "MapStruct",
     ),
     keywords: ["mapstruct", "map struct"],
     category: "backend",
@@ -324,7 +322,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
   vscode: {
     icon: createImageIcon(
       "https://code.visualstudio.com/favicon.ico",
-      "Visual Studio Code"
+      "Visual Studio Code",
     ),
     keywords: ["vscode", "visual studio code", "vs code"],
     category: "tools",
@@ -333,10 +331,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     url: "https://code.visualstudio.com",
   },
   cursor: {
-    icon: createImageIcon(
-      "https://cursor.sh/favicon.ico",
-      "Cursor"
-    ),
+    icon: createImageIcon("https://cursor.sh/favicon.ico", "Cursor"),
     keywords: ["cursor"],
     category: "tools",
     displayName: "Cursor",
@@ -346,7 +341,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
   "intellij idea": {
     icon: createImageIcon(
       "https://www.jetbrains.com/favicon.ico",
-      "IntelliJ IDEA"
+      "IntelliJ IDEA",
     ),
     keywords: ["intellij idea", "intellij", "idea", "jetbrains intellij"],
     category: "tools",
@@ -355,10 +350,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     url: "https://www.jetbrains.com/idea",
   },
   neovim: {
-    icon: createImageIcon(
-      "https://neovim.io/favicon.ico",
-      "Neovim"
-    ),
+    icon: createImageIcon("https://neovim.io/favicon.ico", "Neovim"),
     keywords: ["neovim", "nvim"],
     category: "tools",
     displayName: "Neovim",
@@ -366,10 +358,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     url: "https://neovim.io",
   },
   vim: {
-    icon: createImageIcon(
-      "https://www.vim.org/images/vim_shortcut.ico",
-      "Vim"
-    ),
+    icon: createImageIcon("https://www.vim.org/images/vim_shortcut.ico", "Vim"),
     keywords: ["vim"],
     category: "tools",
     displayName: "Vim",
@@ -385,4 +374,3 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
   },
 };
-

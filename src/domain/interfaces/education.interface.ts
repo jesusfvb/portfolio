@@ -7,4 +7,3 @@ export interface Education {
   location?: string;
   website?: string;
 }
-

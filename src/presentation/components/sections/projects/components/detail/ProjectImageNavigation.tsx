@@ -1,11 +1,17 @@
-import { ChevronLeftIcon, ChevronRightIcon } from "@/presentation/components/shared/icons";
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from "@/presentation/components/shared/icons";
 
 interface ProjectImageNavigationProps {
   onPrevious: () => void;
   onNext: () => void;
 }
 
-const ProjectImageNavigation = ({ onPrevious, onNext }: ProjectImageNavigationProps) => {
+const ProjectImageNavigation = ({
+  onPrevious,
+  onNext,
+}: ProjectImageNavigationProps) => {
   return (
     <>
       <button
@@ -13,7 +19,7 @@ const ProjectImageNavigation = ({ onPrevious, onNext }: ProjectImageNavigationPr
           e.stopPropagation();
           onPrevious();
         }}
-        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white transition-all duration-300 hover:bg-black/80 hover:scale-110"
+        className="absolute top-1/2 left-4 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/60 text-white backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:bg-black/80"
         aria-label="Imagen anterior"
       >
         <ChevronLeftIcon size={20} />
@@ -23,7 +29,7 @@ const ProjectImageNavigation = ({ onPrevious, onNext }: ProjectImageNavigationPr
           e.stopPropagation();
           onNext();
         }}
-        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white transition-all duration-300 hover:bg-black/80 hover:scale-110"
+        className="absolute top-1/2 right-4 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/60 text-white backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:bg-black/80"
         aria-label="Siguiente imagen"
       >
         <ChevronRightIcon size={20} />
@@ -33,4 +39,3 @@ const ProjectImageNavigation = ({ onPrevious, onNext }: ProjectImageNavigationPr
 };
 
 export default ProjectImageNavigation;
-

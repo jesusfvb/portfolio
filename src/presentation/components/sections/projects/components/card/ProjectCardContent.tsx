@@ -7,11 +7,11 @@ interface ProjectCardContentProps {
 
 const ProjectCardContent = ({ project }: ProjectCardContentProps) => {
   return (
-    <div className="p-8 flex flex-col grow min-h-0">
-      <h3 className="text-2xl font-semibold mb-3 text-white">
+    <div className="flex min-h-0 grow flex-col p-8">
+      <h3 className="mb-3 text-2xl font-semibold text-white">
         {project.title}
       </h3>
-      <p className="text-[#d0d0d0] leading-relaxed mb-4 text-sm line-clamp-4 overflow-hidden">
+      <p className="mb-4 line-clamp-4 overflow-hidden text-sm leading-relaxed text-[#d0d0d0]">
         {project.description}
       </p>
       <ProjectTechStack technologies={project.technologies} />
@@ -20,4 +20,3 @@ const ProjectCardContent = ({ project }: ProjectCardContentProps) => {
 };
 
 export default ProjectCardContent;
-

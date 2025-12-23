@@ -127,4 +127,3 @@ export const useCarouselScroll = ({
     };
   }, [carouselRef, hasMoreItems, maxIndex, setCurrentIndex, setIsPaused]);
 };
-

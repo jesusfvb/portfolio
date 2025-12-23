@@ -10,7 +10,6 @@ interface HeroProps {
 }
 
 const Hero = ({ onOpenSkillsModal }: HeroProps) => {
-
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -31,40 +30,45 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center pt-20 overflow-hidden"
+      className="relative flex min-h-screen items-center overflow-hidden pt-20"
     >
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute w-[500px] h-[500px] bg-[#6366f1] rounded-full blur-[80px] opacity-30 -top-[200px] -left-[200px] animate-float"></div>
+        <div className="animate-float absolute -top-[200px] -left-[200px] h-[500px] w-[500px] rounded-full bg-[#6366f1] opacity-30 blur-[80px]"></div>
         <div
-          className="absolute w-[400px] h-[400px] bg-[#8b5cf6] rounded-full blur-[80px] opacity-30 -bottom-[150px] -right-[150px] animate-float"
+          className="animate-float absolute -right-[150px] -bottom-[150px] h-[400px] w-[400px] rounded-full bg-[#8b5cf6] opacity-30 blur-[80px]"
           style={{ animationDelay: "5s" }}
         ></div>
         <div
-          className="absolute w-[300px] h-[300px] bg-[#ec4899] rounded-full blur-[80px] opacity-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-float"
+          className="animate-float absolute top-1/2 left-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ec4899] opacity-30 blur-[80px]"
           style={{ animationDelay: "10s" }}
         ></div>
       </div>
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start w-full">
-          <div className="z-10 md:order-1 order-2">
-            <h1 className="flex flex-col gap-2 mb-6">
-              <span className="text-4xl md:text-5xl lg:text-6xl font-bold bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent leading-tight" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+        <div className="grid w-full grid-cols-1 items-start gap-16 md:grid-cols-2">
+          <div className="z-10 order-2 md:order-1">
+            <h1 className="mb-6 flex flex-col gap-2">
+              <span
+                className="bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-4xl leading-tight font-bold text-transparent md:text-5xl lg:text-6xl"
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              >
                 Desarrollador Full-Stack
               </span>
-              <span className="text-xl md:text-2xl text-[#a0a0a0] font-normal">
+              <span className="text-xl font-normal text-[#a0a0a0] md:text-2xl">
                 Jesús Francisco Vázquez Biltre
               </span>
             </h1>
-            <p className="text-lg text-[#a0a0a0] leading-relaxed mb-6 max-w-[600px]">
+            <p className="mb-6 max-w-[600px] text-lg leading-relaxed text-[#a0a0a0]">
               Apasionado por crear soluciones digitales innovadoras y
               experiencias de usuario excepcionales. Especializado en desarrollo
               web moderno con tecnologías de vanguardia.
             </p>
-            
+
             {/* Resumen de herramientas */}
             <div className="mb-8">
-              <p className="text-sm text-[#a0a0a0] mb-3">Tecnologías principales:</p>
-              <div className="flex flex-wrap gap-2 items-center">
+              <p className="mb-3 text-sm text-[#a0a0a0]">
+                Tecnologías principales:
+              </p>
+              <div className="flex flex-wrap items-center gap-2">
                 {mainTools.map((tool) => {
                   const techInfo = getTechInfo(tool);
                   if (techInfo) {
@@ -81,34 +85,36 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
                 })}
                 <button
                   onClick={onOpenSkillsModal}
-                  className="group flex items-center gap-2 px-4 py-2 bg-[#121212] border border-[rgba(255,255,255,0.1)] rounded-full text-sm font-medium text-white transition-all duration-300 hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:border-transparent hover:text-white hover:-translate-y-0.5 hover:shadow-[0_5px_15px_rgba(99,102,241,0.3)] cursor-pointer"
+                  className="group flex cursor-pointer items-center gap-2 rounded-full border border-[rgba(255,255,255,0.1)] bg-[#121212] px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-transparent hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white hover:shadow-[0_5px_15px_rgba(99,102,241,0.3)]"
                 >
                   <span>Ver más</span>
-                  <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
                 </button>
               </div>
             </div>
 
-            <div className="flex gap-4 flex-wrap md:justify-start justify-center">
+            <div className="flex flex-wrap justify-center gap-4 md:justify-start">
               <button
-                className="px-6 py-3 rounded-lg text-sm font-medium cursor-pointer transition-all duration-300 font-inherit bg-transparent text-white border-2 border-[rgba(255,255,255,0.1)] hover:bg-[#1a1a1a] hover:border-[#6366f1] w-full md:w-auto"
+                className="font-inherit w-full cursor-pointer rounded-lg border-2 border-[rgba(255,255,255,0.1)] bg-transparent px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:border-[#6366f1] hover:bg-[#1a1a1a] md:w-auto"
                 onClick={() => scrollToSection("projects")}
               >
                 Ver Proyectos
               </button>
-              <ContactButton 
-                variant="large" 
-                className="w-full md:w-auto hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(99,102,241,0.5)]"
+              <ContactButton
+                variant="large"
+                className="w-full hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(99,102,241,0.5)] md:w-auto"
               />
             </div>
           </div>
-          <div className="flex justify-center items-start md:order-2 order-1 md:-mt-8 md:pt-0 pt-4">
-            <div className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] relative">
-              <div className="relative w-full h-full overflow-hidden rounded-3xl">
+          <div className="order-1 flex items-start justify-center pt-4 md:order-2 md:-mt-8 md:pt-0">
+            <div className="relative h-[300px] w-[300px] md:h-[400px] md:w-[400px]">
+              <div className="relative h-full w-full overflow-hidden rounded-3xl">
                 <img
                   src={profileImage}
                   alt="Jesús Francisco Vázquez Biltre"
-                  className="relative w-full h-full object-cover mix-blend-lighten opacity-85"
+                  className="relative h-full w-full object-cover opacity-85 mix-blend-lighten"
                 />
                 <div className="absolute inset-0 rounded-3xl ring-1 ring-[#121212]/60"></div>
               </div>

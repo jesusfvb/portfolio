@@ -8,7 +8,7 @@ const CloseButton = ({ onClose }: CloseButtonProps) => {
   return (
     <button
       onClick={onClose}
-      className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-[#121212] border border-[rgba(255,255,255,0.1)] flex items-center justify-center text-white transition-all duration-300 hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:border-transparent hover:scale-110"
+      className="absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(255,255,255,0.1)] bg-[#121212] text-white transition-all duration-300 hover:scale-110 hover:border-transparent hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6]"
       aria-label="Cerrar"
     >
       <CloseIcon size={20} />
@@ -17,4 +17,3 @@ const CloseButton = ({ onClose }: CloseButtonProps) => {
 };
 
 export default CloseButton;
-

@@ -20,7 +20,7 @@ const SkillTypeGroup = ({ title, skills }: SkillTypeGroupProps) => {
 
   return (
     <div>
-      <h5 className="text-xs font-medium text-[#888] mb-1.5">{title}</h5>
+      <h5 className="mb-1.5 text-xs font-medium text-[#888]">{title}</h5>
       <div className="flex flex-wrap gap-3">
         {skills.map((skill) => (
           <SkillBadge
@@ -36,4 +36,3 @@ const SkillTypeGroup = ({ title, skills }: SkillTypeGroupProps) => {
 };
 
 export default SkillTypeGroup;
-

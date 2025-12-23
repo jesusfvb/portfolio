@@ -34,22 +34,22 @@ const Header = ({ onOpenSkillsModal }: HeaderProps) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-1000 transition-all duration-300 backdrop-blur-md ${
+      className={`fixed top-0 right-0 left-0 z-1000 backdrop-blur-md transition-all duration-300 ${
         isScrolled
-          ? "bg-linear-to-r from-[rgba(18,18,18,0.95)] via-[#4338ca]/70 to-[rgba(18,18,18,0.95)] border-b border-[#6366f1]/50 shadow-lg"
-          : "bg-linear-to-r from-[rgba(18,18,18,0.85)] via-[#4338ca]/60 to-[rgba(18,18,18,0.85)] border-b border-transparent"
+          ? "border-b border-[#6366f1]/50 bg-linear-to-r from-[rgba(18,18,18,0.95)] via-[#4338ca]/70 to-[rgba(18,18,18,0.95)] shadow-lg"
+          : "border-b border-transparent bg-linear-to-r from-[rgba(18,18,18,0.85)] via-[#4338ca]/60 to-[rgba(18,18,18,0.85)]"
       }`}
     >
       <div className="container">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex items-center justify-between py-4">
           <div
-            className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-[#d0d0d0] flex items-center justify-center text-lg md:text-xl font-bold cursor-pointer transition-all duration-300 hover:scale-110 hover:border-white hover:shadow-[0_0_15px_rgba(208,208,208,0.3)]"
+            className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border-2 border-[#d0d0d0] text-lg font-bold transition-all duration-300 hover:scale-110 hover:border-white hover:shadow-[0_0_15px_rgba(208,208,208,0.3)] md:h-12 md:w-12 md:text-xl"
             onClick={() => scrollToSection("hero")}
           >
-            <span 
+            <span
               className="font-bold"
               style={{
-                color: '#d0d0d0',
+                color: "#d0d0d0",
               }}
             >
               JV
@@ -57,7 +57,7 @@ const Header = ({ onOpenSkillsModal }: HeaderProps) => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex md:gap-6 md:items-center">
+          <nav className="hidden md:flex md:items-center md:gap-6">
             <NavLink sectionId="hero" scrollToSection={scrollToSection}>
               Inicio
             </NavLink>
@@ -81,23 +81,23 @@ const Header = ({ onOpenSkillsModal }: HeaderProps) => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden flex flex-col gap-1.5 bg-transparent border-none cursor-pointer p-2"
+            className="flex cursor-pointer flex-col gap-1.5 border-none bg-transparent p-2 md:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
             <span
-              className={`w-6 h-0.5 bg-white rounded transition-all duration-300 ${
-                isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
+              className={`h-0.5 w-6 rounded bg-white transition-all duration-300 ${
+                isMobileMenuOpen ? "translate-y-2 rotate-45" : ""
               }`}
             ></span>
             <span
-              className={`w-6 h-0.5 bg-white rounded transition-all duration-300 ${
+              className={`h-0.5 w-6 rounded bg-white transition-all duration-300 ${
                 isMobileMenuOpen ? "opacity-0" : ""
               }`}
             ></span>
             <span
-              className={`w-6 h-0.5 bg-white rounded transition-all duration-300 ${
-                isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
+              className={`h-0.5 w-6 rounded bg-white transition-all duration-300 ${
+                isMobileMenuOpen ? "-translate-y-2 -rotate-45" : ""
               }`}
             ></span>
           </button>
@@ -105,10 +105,10 @@ const Header = ({ onOpenSkillsModal }: HeaderProps) => {
 
         {/* Mobile Navigation */}
         <nav
-          className={`md:hidden absolute top-full left-0 right-0 flex flex-col bg-[rgba(18,18,18,0.98)] p-8 gap-6 border-t border-white/10 transition-all duration-300 ${
+          className={`absolute top-full right-0 left-0 flex flex-col gap-6 border-t border-white/10 bg-[rgba(18,18,18,0.98)] p-8 transition-all duration-300 md:hidden ${
             isMobileMenuOpen
-              ? "transform translate-y-0 opacity-100 visible"
-              : "transform -translate-y-full opacity-0 invisible"
+              ? "visible translate-y-0 transform opacity-100"
+              : "invisible -translate-y-full transform opacity-0"
           }`}
         >
           <NavLink sectionId="hero" scrollToSection={scrollToSection}>
@@ -122,16 +122,16 @@ const Header = ({ onOpenSkillsModal }: HeaderProps) => {
           </NavLink>
           <button
             onClick={handleSkillsClick}
-            className="text-[#a0a0a0] hover:text-white transition-colors duration-300 font-medium text-left"
+            className="text-left font-medium text-[#a0a0a0] transition-colors duration-300 hover:text-white"
           >
             Habilidades
           </button>
           <NavLink sectionId="education" scrollToSection={scrollToSection}>
             Educación
           </NavLink>
-          <ContactButton 
-            variant="default" 
-            className="rounded-full mt-2"
+          <ContactButton
+            variant="default"
+            className="mt-2 rounded-full"
             onClick={() => scrollToSection("contact")}
           />
         </nav>
