@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@plugin "@tailwindcss/typography";
+
 :root {
   /* Colores principales - se mantienen para compatibilidad con componentes CSS */
   --primary-color: #6366f1;
