@@ -18,7 +18,7 @@ const ProjectContentSection = ({ project }: ProjectContentSectionProps) => {
           <h2 className="mb-4 shrink-0 bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
             {project.title}
           </h2>
-          <div className="flex-1 overflow-y-auto pr-2 min-h-0">
+          <div className="flex-1 overflow-y-auto pr-2 min-h-0 scroll-smooth custom-scrollbar">
             <ProjectDescription description={description.full} />
           </div>
         </div>

@@ -173,3 +173,28 @@ button {
   background-size: 300% 300%;
   animation: gradient-shift 4s ease infinite;
 }
+
+/* Estilos personalizados para el scrollbar */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #6366f1 transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #6366f1;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #8b5cf6;
+}
