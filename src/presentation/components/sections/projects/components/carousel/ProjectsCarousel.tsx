@@ -6,8 +6,8 @@ import {
   useCarouselNavigation,
   useCarouselScroll,
   useItemsPerView,
-} from "../hooks";
-import ProjectCard from "./ProjectCard";
+} from "../../hooks";
+import ProjectCard from "../card/ProjectCard";
 
 interface ProjectsCarouselProps {
   projects: Project[];

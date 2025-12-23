@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { PROJECTS } from "@/domain/constants";
-import ProjectDetail from "./components/ProjectDetail";
-import ProjectsCarousel from "./components/ProjectsCarousel";
+import ProjectDetail from "./components/detail/ProjectDetail";
+import ProjectsCarousel from "./components/carousel/ProjectsCarousel";
 import type { Project } from "@/domain/interfaces";
 
 const Projects = () => {
