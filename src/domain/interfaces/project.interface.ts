@@ -3,6 +3,7 @@ export interface Project {
   title: string;
   description: ProjectDescription;
   technologies: string[];
+  technologiesSecondary: string[];
   banner?: string;
   images?: string[];
   link?: string;
