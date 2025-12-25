@@ -1,0 +1,1 @@
+Aplicación móvil desarrollada con React Native y TypeScript para la lectura de mangas, con servidor backend en Spring Boot que rastrea automáticamente nuevos capítulos mediante web scraping y proporciona una API REST. Utiliza MongoDB para almacenamiento persistente y Playwright para automatización de navegadores.
