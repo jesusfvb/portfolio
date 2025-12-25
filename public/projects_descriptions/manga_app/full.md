@@ -1,19 +1,19 @@
-# NeoManga - Aplicación de Lectura de Mangas
-
 Aplicación móvil completa desarrollada con **React Native** y **TypeScript** para la lectura y gestión de mangas, acompañada de un servidor backend robusto desarrollado con **Spring Boot** que automatiza el rastreo de nuevos capítulos y proporciona una API REST completa.
 
 ## Descripción General
 
-**NeoManga** (anteriormente Manga Cómoda) es una solución completa para la lectura de mangas que combina una experiencia móvil nativa con un backend inteligente que gestiona automáticamente la información de mangas desde múltiples fuentes.
+**NeoManga** es una solución completa para la lectura de mangas que combina una experiencia móvil nativa con un backend inteligente que gestiona automáticamente la información de mangas desde múltiples fuentes.
 
 ## Características Principales
 
 ### Aplicación Móvil (React Native)
 
-- **Interfaz nativa**: Aplicación desarrollada con React Native para Android e iOS
-- **TypeScript**: Código type-safe para mayor robustez y mantenibilidad
-- **Experiencia de usuario optimizada**: Interfaz diseñada para una lectura cómoda y fluida
-- **Sincronización en tiempo real**: Conexión con el backend para obtener actualizaciones automáticas
+- **Lectura Optimizada**: Sistema de lectura con zoom, gestos intuitivos y navegación fluida entre capítulos
+- **Búsqueda Avanzada**: Búsqueda rápida y eficiente de mangas con resultados en tiempo real
+- **Gestión de Favoritos**: Sistema completo para guardar y organizar mangas favoritos
+- **Historial de Lectura**: Seguimiento automático del progreso de lectura y últimos capítulos leídos
+- **Temas Personalizables**: Soporte para tema claro y oscuro para una experiencia de lectura cómoda
+- **Arquitectura Escalable**: Código organizado con arquitectura limpia, facilitando el mantenimiento y la expansión
 
 ### Servidor Backend (Spring Boot)
 
@@ -32,28 +32,43 @@ La aplicación móvil está desarrollada con React Native, permitiendo una exper
 
 #### Estructura del Proyecto
 
-La aplicación está organizada en módulos claramente definidos:
+La aplicación sigue una arquitectura limpia organizada por features:
 
 ```
 src/
-├── components/          # Componentes reutilizables (common, manga, chapter)
-├── screens/            # Pantallas principales (Home, Search, MangaDetail, ChapterReader, Library)
-├── navigation/         # Configuración de navegación con React Navigation
-├── services/           # Servicios API, almacenamiento local y caché
-├── hooks/              # Hooks personalizados (useManga, useChapter, useSearch)
-├── store/              # Gestión de estado global (Redux/Zustand)
-├── types/              # Definiciones TypeScript (manga, chapter, api)
-├── utils/              # Utilidades, formatters y validators
-└── theme/              # Configuración de temas, colores y tipografía
+├── core/              # Configuración central
+│   ├── axios/         # Configuración de Axios
+│   ├── react_query/   # Configuración de React Query
+│   └── routes/        # Navegación principal
+├── features/          # Funcionalidades por dominio
+│   ├── chapter/       # Módulo de capítulos
+│   │   ├── data/      # APIs y modelos de datos
+│   │   ├── domain/    # Lógica de negocio y hooks
+│   │   └── presentation/ # Componentes y vistas
+│   ├── manga/         # Módulo de mangas
+│   ├── settings/      # Módulo de configuración
+│   └── shared/        # Componentes y utilidades compartidas
+└── App.tsx            # Componente raíz
 ```
+
+#### Arquitectura en Capas
+
+El proyecto implementa una arquitectura limpia con tres capas principales:
+
+- **Data Layer**: APIs, modelos y almacenamiento local
+- **Domain Layer**: Lógica de negocio y hooks personalizados
+- **Presentation Layer**: Componentes React y vistas
+
+Cada feature es independiente y contiene su propia lógica, facilitando el mantenimiento y escalabilidad.
 
 #### Características Arquitectónicas
 
-- **Patrones de Diseño**: Component-Based Architecture, Custom Hooks, Service Layer y Repository Pattern
-- **Gestión de Estado**: Combinación de estado local, Context API y estado global para mangas, capítulos y preferencias
-- **Navegación**: React Navigation con Stack y Tab Navigators, soporte para Deep Linking y tipado completo
-- **Comunicación API**: Cliente HTTP configurado con interceptores, caché inteligente y manejo robusto de errores
-- **Optimizaciones**: Lazy loading, memoización, virtualización de listas, caché de imágenes y code splitting
+- **Arquitectura Limpia**: Separación clara de responsabilidades por capas (Data, Domain, Presentation)
+- **Feature-Based Organization**: Organización por funcionalidades independientes y modulares
+- **Gestión de Estado**: TanStack Query (React Query) para gestión de estado del servidor y caché
+- **Navegación**: React Navigation con Stack y Tab Navigators, soporte para Deep Linking
+- **Estilos**: NativeWind para estilos con Tailwind CSS en React Native
+- **Configuración**: React Native Config para gestión de variables de entorno
 
 ### Backend (Spring Boot)
 
@@ -76,8 +91,14 @@ src/main/java/com/manga/server/
 
 ### Frontend
 
-- **React Native**: Framework para desarrollo móvil multiplataforma
-- **TypeScript**: Lenguaje de programación con tipado estático
+- **React Native 0.83.0**: Framework para desarrollo móvil multiplataforma
+- **React 19.2.3**: Biblioteca de interfaz de usuario
+- **TypeScript 5.8.3**: Lenguaje de programación con tipado estático
+- **React Navigation**: Navegación entre pantallas con tipado completo
+- **TanStack Query (React Query)**: Gestión de estado del servidor y caché inteligente
+- **NativeWind**: Estilos con Tailwind CSS para React Native
+- **Axios**: Cliente HTTP para comunicación con la API
+- **React Native Config**: Gestión de variables de entorno
 
 ### Backend
 
@@ -144,9 +165,11 @@ MongoDB se utiliza para almacenar:
 
 ### Frontend
 
-- Node.js y npm/yarn
-- React Native CLI
-- Android Studio (para Android) o Xcode (para iOS)
+- **Node.js** >= 20
+- **pnpm** 10.26.0+ (gestor de paquetes)
+- **React Native CLI**
+- **Android Studio** (para Android)
+- **Xcode** (para iOS, solo macOS)
 
 ## Configuración y Despliegue
 
@@ -160,9 +183,12 @@ MongoDB se utiliza para almacenar:
 ### Aplicación Móvil
 
 1. Clona el repositorio de la aplicación
-2. Instala las dependencias con `npm install` o `yarn install`
-3. Para Android: ejecuta `npm run android` o `yarn android`
-4. Para iOS: instala CocoaPods con `bundle exec pod install` y luego ejecuta `npm run ios` o `yarn ios`
+2. Instala las dependencias con `pnpm install`
+3. Configura las variables de entorno (copia `.env.example` a `.env` y `.env.dev`)
+4. Para iOS: instala dependencias nativas con `cd ios && pod install && cd ..`
+5. Para desarrollo Android: ejecuta `pnpm run android:dev`
+6. Para desarrollo iOS: ejecuta `pnpm run ios:dev`
+7. Para producción: ejecuta `pnpm run android` o `pnpm run ios`
 
 ## Propósito del Proyecto
 

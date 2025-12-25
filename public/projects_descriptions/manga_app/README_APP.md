@@ -1,97 +1,216 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Manga Cómoda
 
-# Getting Started
+> 📖 **English**: This README is also available in [English](./README_EN.md)
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+Aplicación móvil de React Native para leer y gestionar mangas, desarrollada con TypeScript y arquitectura limpia.
 
-## Step 1: Start Metro
+**Manga Cómoda** es una aplicación móvil multiplataforma diseñada para proporcionar una experiencia de lectura de mangas cómoda e intuitiva. La aplicación permite a los usuarios explorar, buscar, leer y gestionar sus mangas favoritos con una interfaz moderna y fácil de usar.
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Características Principales
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+- **Lectura Optimizada**: Sistema de lectura con zoom, gestos intuitivos y navegación fluida entre capítulos
+- **Búsqueda Avanzada**: Búsqueda rápida y eficiente de mangas con resultados en tiempo real
+- **Gestión de Favoritos**: Sistema completo para guardar y organizar tus mangas favoritos
+- **Historial de Lectura**: Seguimiento automático del progreso de lectura y últimos capítulos leídos
+- **Temas Personalizables**: Soporte para tema claro y oscuro para una experiencia de lectura cómoda
+- **Arquitectura Escalable**: Código organizado con arquitectura limpia, facilitando el mantenimiento y la expansión
 
-```sh
-# Using npm
-npm start
+## 🚀 Tecnologías
 
-# OR using Yarn
-yarn start
+- **React Native** 0.83.0
+- **React** 19.2.3
+- **TypeScript** 5.8.3
+- **React Navigation** - Navegación entre pantallas
+- **React Query (TanStack Query)** - Gestión de estado del servidor
+- **NativeWind** - Estilos con Tailwind CSS
+- **Axios** - Cliente HTTP
+- **React Native Config** - Variables de entorno
+
+## 📋 Requisitos Previos
+
+- **Node.js** >= 20
+- **pnpm** 10.26.0+ (gestor de paquetes)
+- **React Native CLI**
+- **Android Studio** (para Android)
+- **Xcode** (para iOS, solo macOS)
+
+## 🛠️ Instalación
+
+1. **Clona el repositorio:**
+   ```bash
+   git clone <url-del-repositorio>
+   cd app
+   ```
+
+2. **Instala las dependencias:**
+   ```bash
+   pnpm install
+   ```
+
+3. **Configura las variables de entorno:**
+   ```bash
+   # Copia el archivo de ejemplo
+   cp .env.example .env
+   
+   # Edita .env con tus valores
+   # Para desarrollo, también crea .env.dev
+   cp .env.example .env.dev
+   ```
+
+   Para más detalles sobre la configuración de variables de entorno, consulta [README.env.md](./README.env.md).
+
+4. **Instala dependencias nativas (iOS):**
+   ```bash
+   cd ios && pod install && cd ..
+   ```
+
+## 🏃 Ejecutar la Aplicación
+
+### Desarrollo
+
+**Iniciar Metro Bundler:**
+```bash
+pnpm start
 ```
 
-## Step 2: Build and run your app
-
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+**Ejecutar en Android (desarrollo):**
+```bash
+pnpm run android:dev
 ```
 
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+**Ejecutar en iOS (desarrollo):**
+```bash
+pnpm run ios:dev
 ```
 
-Then, and every time you update your native dependencies, run:
+### Producción
 
-```sh
-bundle exec pod install
+**Android:**
+```bash
+pnpm run android
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+**iOS:**
+```bash
+pnpm run ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## 📜 Scripts Disponibles
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+- `pnpm start` - Inicia Metro bundler
+- `pnpm run android` - Ejecuta en Android (producción)
+- `pnpm run ios` - Ejecuta en iOS (producción)
+- `pnpm run android:dev` - Ejecuta en Android (desarrollo con .env.dev)
+- `pnpm run ios:dev` - Ejecuta en iOS (desarrollo con .env.dev)
+- `pnpm test` - Ejecuta los tests
+- `pnpm test:watch` - Ejecuta tests en modo watch
+- `pnpm test:coverage` - Genera reporte de cobertura
+- `pnpm lint` - Ejecuta ESLint
+- `pnpm audit` - Verifica vulnerabilidades
+- `pnpm audit:fix` - Intenta corregir vulnerabilidades automáticamente
 
-## Step 3: Modify your app
+## 📁 Estructura del Proyecto
 
-Now that you have successfully run the app, let's make changes!
+```
+src/
+├── core/              # Configuración central
+│   ├── axios/         # Configuración de Axios
+│   ├── react_query/   # Configuración de React Query
+│   └── routes/        # Navegación principal
+├── features/          # Funcionalidades por dominio
+│   ├── chapter/       # Módulo de capítulos
+│   │   ├── data/      # APIs y modelos de datos
+│   │   ├── domain/    # Lógica de negocio y hooks
+│   │   └── presentation/ # Componentes y vistas
+│   ├── manga/         # Módulo de mangas
+│   ├── settings/      # Módulo de configuración
+│   └── shared/        # Componentes y utilidades compartidas
+└── App.tsx            # Componente raíz
+```
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## 🧪 Testing
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+El proyecto utiliza Jest y React Native Testing Library para los tests.
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+**Ejecutar todos los tests:**
+```bash
+pnpm test
+```
 
-## Congratulations! :tada:
+**Ejecutar tests en modo watch:**
+```bash
+pnpm test:watch
+```
 
-You've successfully run and modified your React Native App. :partying_face:
+**Generar reporte de cobertura:**
+```bash
+pnpm test:coverage
+```
 
-### Now what?
+## 🔧 Configuración de Variables de Entorno
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+Este proyecto utiliza `react-native-config` para gestionar variables de entorno. 
 
-# Troubleshooting
+- **`.env`** - Configuración de producción (por defecto)
+- **`.env.dev`** - Configuración de desarrollo
+- **`.env.example`** - Plantilla de ejemplo
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+Para más información, consulta [README.env.md](./README.env.md).
 
-# Learn More
+## 🏗️ Arquitectura
 
-To learn more about React Native, take a look at the following resources:
+El proyecto sigue una arquitectura limpia organizada por features:
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+- **Data Layer**: APIs, modelos y almacenamiento local
+- **Domain Layer**: Lógica de negocio y hooks personalizados
+- **Presentation Layer**: Componentes React y vistas
+
+Cada feature es independiente y contiene su propia lógica, facilitando el mantenimiento y escalabilidad.
+
+## 📱 Características
+
+- 📖 Lectura de mangas con zoom y gestos
+- 🔍 Búsqueda de mangas
+- ⭐ Sistema de favoritos
+- 📚 Historial de lectura
+- 🎨 Tema claro/oscuro
+- 📱 Navegación intuitiva
+
+## 🐛 Troubleshooting
+
+### Problemas Comunes
+
+**Metro bundler no inicia:**
+```bash
+pnpm start -- --reset-cache
+```
+
+**Errores en iOS después de instalar dependencias:**
+```bash
+cd ios && pod install && cd ..
+```
+
+**Errores en Android:**
+```bash
+cd android && ./gradlew clean && cd ..
+```
+
+**Variables de entorno no se cargan:**
+- Verifica que el archivo `.env` existe en la raíz
+- Reinicia Metro bundler con `--reset-cache`
+- Para iOS, ejecuta `pod install` después de cambios
+
+## 📚 Recursos
+
+- [Documentación de React Native](https://reactnative.dev)
+- [React Navigation](https://reactnavigation.org)
+- [TanStack Query](https://tanstack.com/query)
+- [NativeWind](https://www.nativewind.dev)
+
+## 📄 Licencia
+
+Este proyecto es privado.
+
+---
+
+**Nota**: Asegúrate de tener configuradas las variables de entorno antes de ejecutar la aplicación. Consulta [README.env.md](./README.env.md) para más detalles.
