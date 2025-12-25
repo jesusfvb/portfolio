@@ -58,9 +58,11 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
               </span>
             </h1>
             <p className="mb-6 max-w-[600px] text-lg leading-relaxed text-[#a0a0a0]">
-              Apasionado por crear soluciones digitales innovadoras y
-              experiencias de usuario excepcionales. Especializado en desarrollo
-              web moderno con tecnologías de vanguardia.
+              Apasionado por la ingeniería de software y el diseño de
+              experiencias digitales. Enfocado en la creación de aplicaciones
+              modernas, equilibrando la potencia de Spring Boot con la agilidad
+              de React para entregar productos digitales innovadores y
+              escalables.
             </p>
 
             {/* Resumen de herramientas */}
