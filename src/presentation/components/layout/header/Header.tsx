@@ -2,11 +2,9 @@ import { useState, useEffect } from "react";
 import NavLink from "./components/NavLink";
 import ContactButton from "@/presentation/components/shared/ContactButton";
 
-interface HeaderProps {
-  onOpenSkillsModal: () => void;
-}
+interface HeaderProps {}
 
-const Header = ({ onOpenSkillsModal }: HeaderProps) => {
+const Header = ({}: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -25,11 +23,6 @@ const Header = ({ onOpenSkillsModal }: HeaderProps) => {
       element.scrollIntoView({ behavior: "smooth" });
       setIsMobileMenuOpen(false);
     }
-  };
-
-  const handleSkillsClick = () => {
-    onOpenSkillsModal();
-    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -114,18 +107,9 @@ const Header = ({ onOpenSkillsModal }: HeaderProps) => {
           <NavLink sectionId="hero" scrollToSection={scrollToSection}>
             Inicio
           </NavLink>
-          <NavLink sectionId="about" scrollToSection={scrollToSection}>
-            Sobre mí
-          </NavLink>
           <NavLink sectionId="projects" scrollToSection={scrollToSection}>
             Proyectos
           </NavLink>
-          <button
-            onClick={handleSkillsClick}
-            className="text-left font-medium text-[#a0a0a0] transition-colors duration-300 hover:text-white"
-          >
-            Habilidades
-          </button>
           <NavLink sectionId="education" scrollToSection={scrollToSection}>
             Educación
           </NavLink>
