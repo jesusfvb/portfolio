@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { FormErrors, FormData } from "@/domain/interfaces";
-import { ValidationService } from "@/application/services/validation.service";
+import { ValidationService } from "@/domain/services/validation.service";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState<FormData>({
