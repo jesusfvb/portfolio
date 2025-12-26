@@ -1,7 +1,7 @@
 import {
   ExternalLinkIcon,
   GitHubIcon,
-} from "@/presentation/components/shared/icons";
+} from "@/presentation/components/icons";
 import type { Project } from "@/domain/interfaces";
 
 interface ProjectLinksProps {

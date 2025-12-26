@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import { CloseIcon } from "@/presentation/components/shared/icons";
+import { CloseIcon } from "@/presentation/components/icons";
 
 interface CloseButtonProps {
   onClose?: () => void;

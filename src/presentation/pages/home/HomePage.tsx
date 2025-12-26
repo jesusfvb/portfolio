@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Header from "@/presentation/components/layout/header/Header";
-import Education from "@/presentation/components/sections/education/Education";
-import Hero from "@/presentation/components/sections/hero/Hero";
-import SkillsModal from "@/presentation/components/sections/skills/components/SkillsModal";
-import { Contact, Projects } from "@/presentation/components/sections";
+import Header from "./components/layout/header/Header";
+import Education from "./components/sections/education/Education";
+import Hero from "./components/sections/hero/Hero";
+import SkillsModal from "./components/sections/skills/components/SkillsModal";
+import { Contact, Projects } from "./components/sections";
 
 const HomePage = () => {
   const [isSkillsModalOpen, setIsSkillsModalOpen] = useState(false);

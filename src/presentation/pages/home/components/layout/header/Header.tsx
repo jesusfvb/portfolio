@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import NavLink from "./components/NavLink";
-import ContactButton from "@/presentation/components/shared/ContactButton";
+import ContactButton from "@/presentation/components/ContactButton";
 
 interface HeaderProps {}
 

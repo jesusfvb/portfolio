@@ -2,7 +2,7 @@ import type { Project } from "@/domain/interfaces";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
-} from "@/presentation/components/shared/icons";
+} from "@/presentation/components/icons";
 import { useRef } from "react";
 import {
   useCarouselAutoPlay,

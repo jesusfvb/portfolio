@@ -1,5 +1,5 @@
 import { getTechInfo } from "@/domain/constants/skills";
-import SkillBadge from "@/presentation/components/sections/skills/components/SkillBadge";
+import SkillBadge from "../../../skills/components/SkillBadge";
 import type { Project } from "@/domain/interfaces";
 
 interface ProjectTechStackProps {

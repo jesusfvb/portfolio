@@ -1,7 +1,7 @@
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
-} from "@/presentation/components/shared/icons";
+} from "@/presentation/components/icons";
 
 interface ProjectImageNavigationProps {
   onPrevious: () => void;

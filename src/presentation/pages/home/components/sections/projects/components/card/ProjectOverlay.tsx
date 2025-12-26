@@ -2,7 +2,7 @@ import type { Project } from "@/domain/interfaces";
 import {
   ExternalLinkIcon,
   GitHubIcon,
-} from "@/presentation/components/shared/icons";
+} from "@/presentation/components/icons";
 
 interface ProjectOverlayProps {
   project: Project;

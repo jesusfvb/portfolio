@@ -6,7 +6,7 @@ import {
 } from "@/domain/constants";
 import FrontendMobileCategory from "./FrontendMobileCategory";
 import SkillCategoryComponent from "./SkillCategory";
-import { CloseIcon } from "@/presentation/components/shared/icons";
+import { CloseIcon } from "@/presentation/components/icons";
 
 interface SkillsModalProps {
   isOpen: boolean;

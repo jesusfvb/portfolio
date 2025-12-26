@@ -1,5 +1,5 @@
 import type { Education } from "@/domain/interfaces";
-import { ExternalLinkIcon } from "@/presentation/components/shared/icons";
+import { ExternalLinkIcon } from "@/presentation/components/icons";
 
 interface EducationCardProps {
   education: Education;
