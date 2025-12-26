@@ -12,7 +12,7 @@ const CloseButton = ({ onClose }: CloseButtonProps) => {
     if (onClose) {
       onClose();
     } else {
-      navigate("/projects");
+      navigate("/");
     }
   };
 

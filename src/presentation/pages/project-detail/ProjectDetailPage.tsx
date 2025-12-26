@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
 import { PROJECTS } from "@/domain/constants";
-import ProjectImageSection from "./project-detail/components/ProjectImageSection";
-import ProjectContentSection from "./project-detail/components/ProjectContentSection";
-import CloseButton from "./project-detail/components/CloseButton";
-import NotFound from "./NotFound";
+import ProjectImageSection from "./components/ProjectImageSection";
+import ProjectContentSection from "./components/ProjectContentSection";
+import CloseButton from "./components/CloseButton";
+import NotFoundPage from "../not-found/NotFoundPage";
 
 const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -25,7 +25,7 @@ const ProjectDetailPage = () => {
   }, [id]);
 
   if (!project) {
-    return <NotFound />;
+    return <NotFoundPage />;
   }
 
   const goToPreviousImage = () => {
@@ -49,7 +49,7 @@ const ProjectDetailPage = () => {
   };
 
   const handleClose = () => {
-    navigate("/projects");
+    navigate("/");
   };
 
   return (
