@@ -2,7 +2,7 @@ import ProjectDescription from "./ProjectDescription";
 import ProjectTechnologies from "./ProjectTechnologies";
 import ProjectLinks from "./ProjectLinks";
 import type { Project } from "@/domain/interfaces";
-import { useProjectDescription } from "@/presentation/pages/home/components/sections/projects/hooks/useProjectDescription";
+import { useProjectDescription } from "@/domain/hooks/useProjectDescription";
 
 interface ProjectContentSectionProps {
   project: Project;

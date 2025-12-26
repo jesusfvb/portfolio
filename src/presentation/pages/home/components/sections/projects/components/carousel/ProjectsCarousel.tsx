@@ -9,7 +9,7 @@ import {
   useCarouselNavigation,
   useCarouselScroll,
   useItemsPerView,
-} from "../../hooks";
+} from "../../../../../../../../domain/hooks";
 import ProjectCard from "../card/ProjectCard";
 
 interface ProjectsCarouselProps {

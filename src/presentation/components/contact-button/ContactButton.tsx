@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { useContactButtonAnimation } from "./useContactButtonAnimation";
-import { useContactButtonStore } from "./contactButtonStore";
+import { useContactButtonStore } from "../../../domain/stores/contactButtonStore";
+import { useContactButtonAnimation } from "@/domain/hooks/useContactButtonAnimation";
 
 interface ContactButtonProps {
   text?: string;

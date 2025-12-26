@@ -1,6 +1,6 @@
-import { getTechInfo } from "@/domain/constants/skills";
+import { getTechInfo } from "@/domain/services/icon.service";
 import SkillBadge from "../skills/components/SkillBadge";
-import ContactButton from "@/presentation/components/ContactButton";
+import ContactButton from "@/presentation/components/contact-button/ContactButton";
 
 // Imagen optimizada desde public
 const profileImage = "/images/foto_de_perfil.png";

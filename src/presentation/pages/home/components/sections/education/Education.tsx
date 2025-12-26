@@ -1,4 +1,4 @@
-import { EDUCATIONS } from "@/domain/constants";
+import { EDUCATIONS } from "@/domain/constants/education.constants";
 import EducationCard from "./components/EducationCard";
 
 const Education = () => {

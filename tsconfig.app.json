@@ -33,5 +33,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "icons"]
+  "include": ["src", "icons", "vite-env.d.ts"]
 }
