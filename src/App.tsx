@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="min-h-screen w-full">
-      <Header onOpenSkillsModal={() => setIsSkillsModalOpen(true)} />
+      <Header />
       <main className="w-full">
         <Hero onOpenSkillsModal={() => setIsSkillsModalOpen(true)} />
         {/* <About /> */}
