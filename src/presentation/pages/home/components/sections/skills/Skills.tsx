@@ -1,9 +1,11 @@
 import React from "react";
-import {
-  SKILLS_ICONS,
-  type SkillCategory as SkillCategoryType,
-  type SkillType,
-} from "@/domain/constants";
+
+import { SKILLS_ICONS } from "@/domain/constants/skills/data";
+import type {
+  SkillType,
+  SkillCategory as SkillCategoryType,
+} from "@/domain/constants/skills/types";
+
 import FrontendMobileCategory from "./components/FrontendMobileCategory";
 import SkillCategoryComponent from "./components/SkillCategory";
 

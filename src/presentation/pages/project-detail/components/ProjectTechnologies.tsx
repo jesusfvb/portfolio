@@ -1,4 +1,4 @@
-import { getTechInfo } from "@/domain/constants/skills";
+import { getTechInfo } from "@/domain/services/icon.service";
 import SkillBadge from "@/presentation/pages/home/components/sections/skills/components/SkillBadge";
 
 interface ProjectTechnologiesProps {

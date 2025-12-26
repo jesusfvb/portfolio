@@ -1,4 +1,3 @@
-import type { Project } from "@/domain/interfaces";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -11,16 +10,14 @@ import {
   useItemsPerView,
 } from "../../../../../../../../domain/hooks";
 import ProjectCard from "../card/ProjectCard";
+import type { Project } from "@/domain/interfaces/project.interface";
 
 interface ProjectsCarouselProps {
   projects: Project[];
   onViewDetails: (project: Project) => void;
 }
 
-const ProjectsCarousel = ({
-  projects,
-  onViewDetails,
-}: ProjectsCarouselProps) => {
+const ProjectsCarousel = ({ projects }: ProjectsCarouselProps) => {
   const carouselRef = useRef<HTMLDivElement>(null);
   const itemsPerView = useItemsPerView();
 
@@ -75,12 +72,7 @@ const ProjectsCarousel = ({
           }}
         >
           {projects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              shouldCenter={shouldCenter}
-              onViewDetails={onViewDetails}
-            />
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
       </div>
@@ -90,14 +82,14 @@ const ProjectsCarousel = ({
         <>
           <button
             onClick={goToPrevious}
-            className="absolute top-1/2 left-0 z-10 hidden h-12 w-12 -translate-x-12 -translate-y-1/2 items-center justify-center rounded-full border border-[rgba(255,255,255,0.1)] bg-[#1a1a1a] text-white transition-all duration-300 hover:scale-110 hover:border-transparent hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] md:flex"
+            className="absolute top-1/2 left-0 z-10 hidden h-12 w-12 -translate-x-12 -translate-y-1/2 items-center justify-center rounded-full border border-[rgba(255,255,255,0.1)] bg-[#1a1a1a] text-white transition-all duration-300 hover:scale-110 hover:border-transparent hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] md:flex"
             aria-label="Proyecto anterior"
           >
             <ChevronLeftIcon size={24} />
           </button>
           <button
             onClick={goToNext}
-            className="absolute top-1/2 right-0 z-10 hidden h-12 w-12 translate-x-12 -translate-y-1/2 items-center justify-center rounded-full border border-[rgba(255,255,255,0.1)] bg-[#1a1a1a] text-white transition-all duration-300 hover:scale-110 hover:border-transparent hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] md:flex"
+            className="absolute top-1/2 right-0 z-10 hidden h-12 w-12 translate-x-12 -translate-y-1/2 items-center justify-center rounded-full border border-[rgba(255,255,255,0.1)] bg-[#1a1a1a] text-white transition-all duration-300 hover:scale-110 hover:border-transparent hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] md:flex"
             aria-label="Siguiente proyecto"
           >
             <ChevronRightIcon size={24} />

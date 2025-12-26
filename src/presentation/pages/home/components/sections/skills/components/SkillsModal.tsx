@@ -1,12 +1,10 @@
 import { useEffect } from "react";
-import {
-  SKILLS_ICONS,
-  type SkillCategory as SkillCategoryType,
-  type SkillType,
-} from "@/domain/constants";
+;
 import FrontendMobileCategory from "./FrontendMobileCategory";
 import SkillCategoryComponent from "./SkillCategory";
 import { CloseIcon } from "@/presentation/components/icons";
+import { SKILLS_ICONS } from "@/domain/constants/skills/data";
+import type { SkillType, SkillCategory as SkillCategoryType } from "@/domain/constants/skills/types";
 
 interface SkillsModalProps {
   isOpen: boolean;

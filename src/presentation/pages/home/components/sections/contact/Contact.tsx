@@ -1,7 +1,7 @@
+import { EMAIL_ADDRESS, SOCIAL_LINKS } from "@/domain/constants/contact.constants";
 import { useState } from "react";
 import { FaCopy, FaCheck, FaPaperPlane } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
-import { EMAIL_ADDRESS, SOCIAL_LINKS } from "@/domain/constants";
 
 const Contact = () => {
   const [emailCopied, setEmailCopied] = useState(false);

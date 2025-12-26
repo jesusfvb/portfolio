@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { useContactButtonStore } from "./contactButtonStore";
+import { useContactButtonStore } from "../stores/contactButtonStore";
 
 export const ROTATING_TEXTS = ["¿Tienes una idea?", "Trabajemos juntos"];
 

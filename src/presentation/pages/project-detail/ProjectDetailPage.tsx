@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
-import { PROJECTS } from "@/domain/constants";
 import ProjectImageSection from "./components/ProjectImageSection";
 import ProjectContentSection from "./components/ProjectContentSection";
 import CloseButton from "./components/CloseButton";
 import NotFoundPage from "../not-found/NotFoundPage";
+import { PROJECTS } from "@/domain/constants/projects.constants";
 
 const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();

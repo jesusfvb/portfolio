@@ -1,6 +1,6 @@
-import { getTechInfo } from "@/domain/constants/skills";
+import type { Project } from "@/domain/interfaces/project.interface";
 import SkillBadge from "../../../skills/components/SkillBadge";
-import type { Project } from "@/domain/interfaces";
+import { getTechInfo } from "@/domain/services/icon.service";
 
 interface ProjectTechStackProps {
   technologies: Project["technologies"];
@@ -32,7 +32,7 @@ const ProjectTechStack = ({ technologies }: ProjectTechStackProps) => {
           <span
             key={index}
             onClick={(e) => e.stopPropagation()}
-            className="flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.1)] bg-[#121212] px-3.5 py-1.5 text-sm text-[#d0d0d0] transition-all duration-300 hover:border-transparent hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white"
+            className="flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.1)] bg-[#121212] px-3.5 py-1.5 text-sm text-[#d0d0d0] transition-all duration-300 hover:border-transparent hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white"
             data-no-card-click
           >
             <span>{tech}</span>

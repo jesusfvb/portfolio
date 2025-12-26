@@ -1,8 +1,8 @@
 import { Link } from "react-router";
-import type { Project } from "@/domain/interfaces";
 import ProjectBanner from "./ProjectBanner";
 import ProjectOverlay from "./ProjectOverlay";
 import ProjectCardContent from "./ProjectCardContent";
+import type { Project } from "@/domain/interfaces/project.interface";
 
 interface ProjectCardProps {
   project: Project;
