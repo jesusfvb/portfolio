@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
-import { SKILLS_ICONS } from "./data";
-import type { TechInfo } from "./types";
+import { SKILLS_ICONS } from "../constants/skills/data";
+import type { TechInfo } from "../constants/skills/types";
 
 /**
  * Ordena las entradas por especificidad para búsqueda correcta
