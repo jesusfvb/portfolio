@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { PROJECTS } from "@/domain/constants";
 import ProjectDetail from "./components/detail/ProjectDetail";
-import ProjectsCarousel from "./components/carousel/ProjectsCarousel";
+import ProjectCard from "./components/card/ProjectCard";
 import type { Project } from "@/domain/interfaces";
 
 const Projects = () => {
@@ -18,13 +18,18 @@ const Projects = () => {
           Algunos de mis trabajos más recientes y destacados
         </p>
 
-        <ProjectsCarousel
-          projects={PROJECTS}
-          onViewDetails={(project) => {
-            setSelectedProject(project);
-            setIsDetailOpen(true);
-          }}
-        />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {PROJECTS.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              onViewDetails={(project) => {
+                setSelectedProject(project);
+                setIsDetailOpen(true);
+              }}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Modal de detalle del proyecto */}

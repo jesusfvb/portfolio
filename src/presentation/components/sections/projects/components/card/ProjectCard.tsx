@@ -5,23 +5,15 @@ import ProjectCardContent from "./ProjectCardContent";
 
 interface ProjectCardProps {
   project: Project;
-  shouldCenter: boolean;
   onViewDetails: (project: Project) => void;
 }
 
 const ProjectCard = ({
   project,
-  shouldCenter,
   onViewDetails,
 }: ProjectCardProps) => {
   return (
-    <div
-      className={`${
-        shouldCenter
-          ? "w-full md:w-[432px] lg:w-[412px]"
-          : "min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1.333rem)]"
-      } px-4`}
-    >
+    <div className="w-full max-w-[66.67%] mx-auto">
       <div
         onClick={(e) => {
           // Verificar si el click viene de un elemento interactivo
@@ -35,9 +27,7 @@ const ProjectCard = ({
             onViewDetails(project);
           }
         }}
-        className={`group flex h-[600px] cursor-pointer flex-col overflow-hidden rounded-xl border border-[rgba(255,255,255,0.1)] bg-[#1a1a1a] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] ${
-          shouldCenter ? "w-full" : "w-full md:w-[400px] lg:w-[380px]"
-        }`}
+        className="group flex h-[600px] w-full cursor-pointer flex-col overflow-hidden rounded-xl border border-[rgba(255,255,255,0.1)] bg-[#1a1a1a] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
       >
         <div className="relative">
           <ProjectBanner project={project} />
