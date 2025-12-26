@@ -38,3 +38,4 @@ const ProjectTechnologies = ({ technologies }: ProjectTechnologiesProps) => {
 };
 
 export default ProjectTechnologies;
+

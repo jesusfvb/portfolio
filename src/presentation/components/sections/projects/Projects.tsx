@@ -1,13 +1,7 @@
-import { useState } from "react";
 import { PROJECTS } from "@/domain/constants";
-import ProjectDetail from "./components/detail/ProjectDetail";
 import ProjectCard from "./components/card/ProjectCard";
-import type { Project } from "@/domain/interfaces";
 
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [isDetailOpen, setIsDetailOpen] = useState(false);
-
   return (
     <section id="projects" className="scroll-mt-20 bg-[#1a1a1a] py-24">
       <div className="container">
@@ -20,27 +14,10 @@ const Projects = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {PROJECTS.map((project) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              onViewDetails={(project) => {
-                setSelectedProject(project);
-                setIsDetailOpen(true);
-              }}
-            />
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
       </div>
-
-      {/* Modal de detalle del proyecto */}
-      <ProjectDetail
-        project={selectedProject}
-        isOpen={isDetailOpen}
-        onClose={() => {
-          setIsDetailOpen(false);
-          setSelectedProject(null);
-        }}
-      />
     </section>
   );
 };

@@ -15,3 +15,4 @@ const ProjectImageCounter = ({
 };
 
 export default ProjectImageCounter;
+

@@ -31,3 +31,4 @@ const ProjectImageIndicators = ({
 };
 
 export default ProjectImageIndicators;
+

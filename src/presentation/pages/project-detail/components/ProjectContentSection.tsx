@@ -2,7 +2,7 @@ import ProjectDescription from "./ProjectDescription";
 import ProjectTechnologies from "./ProjectTechnologies";
 import ProjectLinks from "./ProjectLinks";
 import type { Project } from "@/domain/interfaces";
-import { useProjectDescription } from "../../hooks/useProjectDescription";
+import { useProjectDescription } from "@/presentation/components/sections/projects/hooks/useProjectDescription";
 
 interface ProjectContentSectionProps {
   project: Project;
@@ -15,8 +15,8 @@ const ProjectContentSection = ({ project }: ProjectContentSectionProps) => {
     ...project.technologiesSecondary,
   ];
   return (
-    <div className="flex flex-2 flex-col overflow-y-auto md:max-h-[90vh]">
-      <div className="flex h-full flex-col justify-between p-6 md:p-8">
+    <div className="flex flex-2 flex-col overflow-y-auto">
+      <div className="flex min-h-[80vh] flex-col justify-between p-6 md:p-8">
         <div className="flex min-h-0 flex-1 flex-col">
           <h2 className="mb-4 shrink-0 bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
             {project.title}
@@ -36,3 +36,4 @@ const ProjectContentSection = ({ project }: ProjectContentSectionProps) => {
 };
 
 export default ProjectContentSection;
+

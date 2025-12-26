@@ -60,3 +60,4 @@ const ProjectImageSection = ({
 };
 
 export default ProjectImageSection;
+
