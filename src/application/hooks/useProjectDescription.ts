@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { loadMarkdownDescription } from "@/domain/services/description-loader.service";
-import type { ProjectDescription } from "@/domain/interfaces";
+import type { ProjectDescription } from "@/domain/interfaces/project.interface";
 
 /**
  * Hook para cargar descripciones de proyectos desde archivos markdown

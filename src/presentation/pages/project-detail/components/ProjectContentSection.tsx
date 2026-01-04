@@ -1,8 +1,8 @@
 import ProjectDescription from "./ProjectDescription";
 import ProjectTechnologies from "./ProjectTechnologies";
 import ProjectLinks from "./ProjectLinks";
-import type { Project } from "@/domain/interfaces";
-import { useProjectDescription } from "@/domain/hooks/useProjectDescription";
+import type { Project } from "@/domain/interfaces/project.interface";
+import { useProjectDescription } from "@/application/hooks";
 
 interface ProjectContentSectionProps {
   project: Project;

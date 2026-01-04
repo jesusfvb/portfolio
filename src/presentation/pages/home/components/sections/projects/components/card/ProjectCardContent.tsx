@@ -1,6 +1,6 @@
-import type { Project } from "@/domain/interfaces";
+import type { Project } from "@/domain/interfaces/project.interface";
 import ProjectTechStack from "./ProjectTechStack";
-import { useProjectDescription } from "../../../../../../../../domain/hooks/useProjectDescription";
+import { useProjectDescription } from "@/application/hooks";
 
 interface ProjectCardContentProps {
   project: Project;
