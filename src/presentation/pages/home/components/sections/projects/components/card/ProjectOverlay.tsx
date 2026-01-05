@@ -1,8 +1,5 @@
-import type { Project } from "@/domain/interfaces";
-import {
-  ExternalLinkIcon,
-  GitHubIcon,
-} from "@/presentation/components/icons";
+import type { Project } from "@/domain/interfaces/project.interface";
+import { GitHubIcon } from "@/presentation/components/icons";
 
 interface ProjectOverlayProps {
   project: Project;
@@ -14,19 +11,6 @@ const ProjectOverlay = ({ project }: ProjectOverlayProps) => {
   return (
     <div className="absolute inset-0 flex items-center justify-center bg-black/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
       <div className="flex w-full flex-col items-center gap-4 px-4">
-        {project.link && (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex h-12 w-12 items-center justify-center rounded-full bg-[#121212] text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white"
-            aria-label="Ver proyecto"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <ExternalLinkIcon size={20} className="text-white" />
-          </a>
-        )}
-
         {project.githubFrontend || project.githubBackend ? (
           <div
             className={`flex ${
