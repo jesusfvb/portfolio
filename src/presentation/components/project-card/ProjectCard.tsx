@@ -1,4 +1,4 @@
-import type { Project } from "@/domain/interfaces";
+import type { Project } from "@/domain/interfaces/project.interface";
 import ProjectBanner from "@/presentation/pages/home/components/sections/projects/components/card/ProjectBanner";
 import ProjectCardContent from "@/presentation/pages/home/components/sections/projects/components/card/ProjectCardContent";
 import ProjectOverlay from "@/presentation/pages/home/components/sections/projects/components/card/ProjectOverlay";
@@ -10,7 +10,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
-    <div className="w-full max-w-[66.67%] mx-auto">
+    <div className="mx-auto w-full max-w-[66.67%]">
       <Link
         to={`/projects/${project.id}`}
         className="group flex h-[600px] w-full cursor-pointer flex-col overflow-hidden rounded-xl border border-[rgba(255,255,255,0.1)] bg-[#1a1a1a] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
