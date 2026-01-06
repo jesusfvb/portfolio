@@ -33,7 +33,7 @@ export const PROJECTS: Project[] = [
       "/images/app_manga/android/Screenshot_1764505228.webp",
     ],
     githubFrontend: "https://github.com/jesusfvb/manga.app",
-    githubBackend: "https://github.com/jesusfvb/manga.backend.showcase",
+    githubBackend: "https://github.com/jesusfvb/manga.server",
   },
   {
     id: 2,
