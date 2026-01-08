@@ -3,6 +3,7 @@ import "@/presentation/styles/index.css";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   return <RouterProvider router={routes} />;
@@ -11,5 +12,6 @@ function App() {
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <App />
+    <Analytics />
   </StrictMode>,
 );
