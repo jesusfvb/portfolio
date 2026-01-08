@@ -3,7 +3,7 @@ import { SkillBadge } from "../Skills/components";
 import { ContactButton } from "@/presentation/shared/ui/ContactButton";
 
 // Imagen optimizada desde public
-const profileImage = "/images/foto_de_perfil.png";
+const profileImage = "/images/foto_de_perfil.webp";
 
 interface HeroProps {
   onOpenSkillsModal: () => void;
