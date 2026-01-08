@@ -3,7 +3,7 @@ import { Header } from "@/presentation/shared/layout/Header";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { NotFoundPage } from "@/presentation/features/not-found";
-import { ProjectContentSection, ProjectTitle, ProjectImageSection } from "./components";
+import { ProjectLayoutWithImages, ProjectLayoutWithoutImages } from "./components";
 
 const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -51,69 +51,14 @@ const ProjectDetailPage = () => {
       <Header />
       <div className="px-4 pt-20 md:px-6 md:pt-24">
         {hasImages ? (
-          <ProjectDetailWithImages
+          <ProjectLayoutWithImages
             project={project}
             currentImageIndex={currentImageIndex}
             imageHandlers={imageHandlers}
           />
         ) : (
-          <ProjectDetailWithoutImages project={project} />
+          <ProjectLayoutWithoutImages project={project} />
         )}
-      </div>
-    </div>
-  );
-};
-
-interface ProjectDetailWithImagesProps {
-  project: NonNullable<ReturnType<typeof PROJECTS.find>>;
-  currentImageIndex: number;
-  imageHandlers: {
-    goToPrevious: () => void;
-    goToNext: () => void;
-    selectImage: (index: number) => void;
-  };
-}
-
-const ProjectDetailWithImages = ({
-  project,
-  currentImageIndex,
-  imageHandlers,
-}: ProjectDetailWithImagesProps) => {
-  return (
-    <div className="flex min-h-[calc(100vh-5rem)] flex-col md:min-h-[calc(100vh-6rem)] md:flex-row">
-      <div className="sticky top-20 z-10 mb-4 bg-[#1a1a1a] pb-4 md:hidden">
-        <ProjectTitle title={project.title} size="sm" />
-      </div>
-
-      <div className="h-[60vh] shrink-0 pb-6 md:mr-5 md:h-[calc(100vh-6rem)] md:w-[340px] md:overflow-hidden lg:mr-7 lg:w-[450px]">
-        <ProjectImageSection
-          images={project.images}
-          currentImageIndex={currentImageIndex}
-          projectTitle={project.title}
-          onPreviousImage={imageHandlers.goToPrevious}
-          onNextImage={imageHandlers.goToNext}
-          onSelectImage={imageHandlers.selectImage}
-        />
-      </div>
-
-      <div className="flex-1 md:h-[calc(100vh-6rem)] md:overflow-y-auto">
-        <ProjectContentSection project={project} hasImages={true} />
-      </div>
-    </div>
-  );
-};
-
-interface ProjectDetailWithoutImagesProps {
-  project: NonNullable<ReturnType<typeof PROJECTS.find>>;
-}
-
-const ProjectDetailWithoutImages = ({
-  project,
-}: ProjectDetailWithoutImagesProps) => {
-  return (
-    <div className="flex min-h-[calc(100vh-5rem)] items-center justify-center md:min-h-[calc(100vh-6rem)]">
-      <div className="w-full max-w-4xl px-6 pb-8 md:px-8 md:pb-10 lg:px-10 lg:pb-12">
-        <ProjectContentSection project={project} hasImages={false} />
       </div>
     </div>
   );
