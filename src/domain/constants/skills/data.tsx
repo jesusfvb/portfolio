@@ -17,13 +17,13 @@ import {
   SiTypescript,
 } from "react-icons/si";
 import type { TechIconMap } from "./types";
-import { createImageIcon } from "./helpers";
+import { createImageIcon } from "../../services/create-image-icon";
 import {
   ViteIcon,
   SpringSecurityIcon,
   SpringCloudIcon,
   JUnitIcon,
-} from "./icons";
+} from "../../../../icons";
 
 export const SKILLS_ICONS: Record<string, TechIconMap> = {
   "react native": {
