@@ -18,11 +18,11 @@ const ProjectLayoutWithImages = ({
 }: ProjectLayoutWithImagesProps) => {
   return (
     <div className="flex min-h-[calc(100vh-5rem)] flex-col md:min-h-[calc(100vh-6rem)] md:flex-row">
-      <div className="sticky top-20 z-10 mb-4 bg-[#1a1a1a] pb-4 md:hidden">
+      <div className="fixed top-0 z-10 mb-4 bg-[#1a1a1a] pt-22 w-full pb-4 md:hidden">
         <ProjectTitle title={project.title} size="sm" />
       </div>
 
-      <div className="h-[60vh] shrink-0 pb-6 md:mr-5 md:h-[calc(100vh-6rem)] md:w-[340px] md:overflow-hidden lg:mr-7 lg:w-[450px]">
+      <div className="h-[60vh] shrink-0 pt-12 pb-6 md:mr-5 md:h-[calc(100vh-6rem)] md:w-[340px] md:overflow-hidden md:pt-0 lg:mr-7 lg:w-[450px]">
         <ProjectImageSection
           images={project.images}
           currentImageIndex={currentImageIndex}
