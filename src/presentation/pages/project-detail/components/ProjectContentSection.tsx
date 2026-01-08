@@ -55,7 +55,7 @@ const ProjectContentWithoutImages = ({
   return (
     <div className="flex h-[calc(100vh-6rem)] w-full flex-col md:h-[calc(100vh-8rem)]">
       <div className="flex min-h-full flex-col justify-between">
-        <div className="sticky top-20 z-10 bg-[#1a1a1a] pb-4 md:static md:bg-transparent md:top-auto">
+        <div className="sticky top-20 z-10 bg-[#1a1a1a] pt-4 pb-4 md:static md:bg-transparent md:top-auto">
           <h2 className="bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
             {project.title}
           </h2>
