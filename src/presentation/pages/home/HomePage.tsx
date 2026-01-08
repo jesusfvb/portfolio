@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Header from "./components/layout/header/Header";
+import { Header } from "@/presentation/components/header";
 import Education from "./components/sections/education/Education";
 import Hero from "./components/sections/hero/Hero";
 import SkillsModal from "./components/sections/skills/components/SkillsModal";

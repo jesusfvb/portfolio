@@ -1,16 +1,14 @@
-import {
-  ExternalLinkIcon,
-  GitHubIcon,
-} from "@/presentation/components/icons";
-import type { Project } from "@/domain/interfaces";
+import { ExternalLinkIcon, GitHubIcon } from "@/presentation/components/icons";
+import type { Project } from "@/domain/interfaces/project.interface";
 
 interface ProjectLinksProps {
   project: Project;
+  className?: string;
 }
 
-const ProjectLinks = ({ project }: ProjectLinksProps) => {
+const ProjectLinks = ({ project, className }: ProjectLinksProps) => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className={`flex flex-col gap-4 ${className}`}>
       {project.link && (
         <a
           href={project.link}
@@ -73,4 +71,3 @@ const ProjectLinks = ({ project }: ProjectLinksProps) => {
 };
 
 export default ProjectLinks;
-

@@ -23,7 +23,7 @@ const ProjectImageSection = ({
   const hasMultipleImages = hasImages && images.length > 1;
 
   return (
-    <div className="relative flex flex-1 items-center justify-center overflow-hidden bg-[#121212] p-10">
+    <div className="sticky top-20 flex h-full items-center justify-center overflow-hidden bg-[#121212] p-6 md:top-24 md:p-8 lg:p-10">
       {hasImages ? (
         <>
           <img
@@ -60,4 +60,3 @@ const ProjectImageSection = ({
 };
 
 export default ProjectImageSection;
-
