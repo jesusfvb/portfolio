@@ -30,7 +30,7 @@ const ProjectContentWithImages = ({
     <div className="flex h-full flex-col">
       <div className="flex min-h-full flex-col justify-between p-5 md:p-6 lg:p-8">
         <div className="flex min-h-0 flex-1 flex-col">
-          <h2 className="sticky top-20 z-10 mb-4 shrink-0 bg-[#1a1a1a] bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text pb-1 text-3xl font-bold text-transparent md:static md:bg-transparent md:text-4xl">
+          <h2 className="sticky top-20 z-10 mb-4 shrink-0 bg-[#1a1a1a] bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text pb-1 text-3xl font-bold text-transparent md:mb-2 md:static md:bg-transparent md:text-4xl">
             {project.title}
           </h2>
           <div className="custom-scrollbar min-h-0 flex-1 overflow-y-auto scroll-smooth pr-2 pt-4 md:pt-0">
@@ -38,7 +38,7 @@ const ProjectContentWithImages = ({
           </div>
         </div>
 
-        <div className="mt-6 shrink-0">
+        <div className="mt-6 shrink-0 md:mt-3">
           <ProjectTechnologies technologies={technologies} />
           <ProjectLinks project={project} />
         </div>
