@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import ProjectBanner from "./ProjectBanner";
 import ProjectCardContent from "./ProjectCardContent";
 import ProjectOverlay from "./ProjectOverlay";
+import { buildProjectRoute } from "@/domain/constants/routes.constants";
 
 interface ProjectCardProps {
   project: Project;
@@ -26,7 +27,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           if (clickedElement && clickedElement !== e.currentTarget) {
             e.preventDefault();
           } else {
-            navigate(`/projects/${project.id}`);
+            navigate(buildProjectRoute(project.id));
           }
         }}
       >

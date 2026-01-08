@@ -5,6 +5,7 @@ import ProjectContentSection from "./components/ProjectContentSection";
 import CloseButton from "./components/CloseButton";
 import NotFoundPage from "../not-found/NotFoundPage";
 import { PROJECTS } from "@/domain/constants/projects.constants";
+import { ROUTES } from "@/domain/constants/routes.constants";
 
 const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -49,7 +50,7 @@ const ProjectDetailPage = () => {
   };
 
   const handleClose = () => {
-    navigate("/");
+    navigate(ROUTES.HOME);
   };
 
   return (

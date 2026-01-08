@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { ROUTES } from "@/domain/constants/routes.constants";
 
 const NotFoundPage = () => {
   return (
@@ -15,7 +16,7 @@ const NotFoundPage = () => {
         </p>
       </div>
       <Link
-        to="/"
+        to={ROUTES.HOME}
         className="group relative inline-flex items-center gap-2 overflow-hidden rounded-lg bg-linear-to-r from-[#6366f1] to-[#8b5cf6] px-8 py-4 text-lg font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(99,102,241,0.4)] hover:scale-105"
       >
         <span className="relative z-10 text-white" style={{ color: '#ffffff' }}>Volver al inicio</span>

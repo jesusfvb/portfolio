@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router";
 import { CloseIcon } from "@/presentation/components/icons";
+import { ROUTES } from "@/domain/constants/routes.constants";
 
 interface CloseButtonProps {
   onClose?: () => void;
@@ -12,7 +13,7 @@ const CloseButton = ({ onClose }: CloseButtonProps) => {
     if (onClose) {
       onClose();
     } else {
-      navigate("/");
+      navigate(ROUTES.HOME);
     }
   };
 
