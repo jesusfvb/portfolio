@@ -1,7 +1,7 @@
-import { ErrorPage } from "@/presentation/pages/error-boundary";
-import HomePage from "@/presentation/pages/home/HomePage";
-import NotFoundPage from "@/presentation/pages/not-found/NotFoundPage";
-import ProjectDetailPage from "@/presentation/pages/project-detail/ProjectDetailPage";
+import { ErrorPage } from "@/presentation/features/error-boundary";
+import { HomePage } from "@/presentation/features/home";
+import { NotFoundPage } from "@/presentation/features/not-found";
+import { ProjectDetailPage } from "@/presentation/features/project-detail";
 import { createBrowserRouter } from "react-router";
 import { ROUTES } from "@/domain/constants/routes.constants";
 
