@@ -4,9 +4,7 @@ import { NavLink } from "./components/NavLink";
 import { ContactButton } from "@/presentation/shared/ui/ContactButton";
 import { ROUTES } from "@/domain/constants/routes.constants";
 
-interface HeaderProps {}
-
-const Header = ({}: HeaderProps) => {
+const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
