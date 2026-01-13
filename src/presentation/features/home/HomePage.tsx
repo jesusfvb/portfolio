@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Header } from "@/presentation/shared/layout/Header";
-import { Hero, ProjectsSection, Education, Contact } from "./components";
-import { SkillsModal } from "./components/Skills/components";
+import { Hero, ProjectsSection, Education, Contact, Skills } from "./components";
 
 const HomePage = () => {
   const [isSkillsModalOpen, setIsSkillsModalOpen] = useState(false);
@@ -11,13 +10,11 @@ const HomePage = () => {
       <Header />
       <main className="w-full">
         <Hero onOpenSkillsModal={() => setIsSkillsModalOpen(true)} />
-        {/* <About /> */}
         <ProjectsSection />
-        {/* <Skills /> */}
         <Contact />
         <Education />
       </main>
-      <SkillsModal
+      <Skills
         isOpen={isSkillsModalOpen}
         onClose={() => setIsSkillsModalOpen(false)}
       />
@@ -34,4 +31,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
