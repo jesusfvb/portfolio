@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { Header } from "@/presentation/shared/layout/Header";
-import { Hero, ProjectsSection, Education, Contact, Skills } from "./components";
+import {
+  Hero,
+  ProjectsSection,
+  Education,
+  Contact,
+  Skills,
+} from "./components";
 
 const HomePage = () => {
   const [isSkillsModalOpen, setIsSkillsModalOpen] = useState(false);
