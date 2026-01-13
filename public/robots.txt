@@ -1,0 +1,11 @@
+# Permitir a todos los robots rastrear el sitio
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://jesusfvb.vercel.app/sitemap.xml
+
+# Deshabilitar rastreo de archivos innecesarios
+Disallow: /node_modules/
+Disallow: /dist/
+Disallow: /.git/
