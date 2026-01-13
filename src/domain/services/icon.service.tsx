@@ -1,11 +1,11 @@
 import type { ReactElement } from "react";
 import { SKILLS_ICONS } from "../constants/skills/data";
-import type { TechInfo } from "../constants/skills/types";
+import type { TechInfo, TechIconMap } from "../constants/skills/types";
 
 /**
  * Ordena las entradas por especificidad para búsqueda correcta
  */
-const getOrderedEntries = () => {
+const getOrderedEntries = (): Array<[string, TechIconMap]> => {
   return Object.entries(SKILLS_ICONS).sort((a, b) => {
     // "react native gesture handler" debe ir antes que "react native reanimated" y "react native"
     if (a[0] === "react native gesture handler") return -1;
@@ -119,7 +119,7 @@ const getTechInfoInternal = (tech: string): TechInfo | null => {
   const orderedEntries = getOrderedEntries();
 
   for (const [key, { icon, keywords, displayName, url }] of orderedEntries) {
-    const matches = keywords.some((keyword) => techLower.includes(keyword));
+    const matches = keywords.some((keyword: string) => techLower.includes(keyword));
 
     if (matches) {
       // Verificar casos especiales

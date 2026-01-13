@@ -13,8 +13,9 @@ export async function loadMarkdownDescription(
     path: string
 ): Promise<string> {
     // Verificar si ya está en caché
-    if (descriptionCache.has(path)) {
-        return descriptionCache.get(path)!;
+    const cached = descriptionCache.get(path);
+    if (cached !== undefined) {
+        return cached;
     }
 
     try {
