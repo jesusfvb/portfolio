@@ -3,7 +3,10 @@ import { Header } from "@/presentation/shared/layout/Header";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { NotFoundPage } from "@/presentation/features/not-found";
-import { ProjectLayoutWithImages, ProjectLayoutWithoutImages } from "./components";
+import {
+  ProjectLayoutWithImages,
+  ProjectLayoutWithoutImages,
+} from "./components";
 
 const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -17,7 +20,7 @@ const ProjectDetailPage = () => {
 
   useEffect(() => {
     if (project?.images?.length) {
-      setCurrentImageIndex(0);
+      setTimeout(() => setCurrentImageIndex(0), 0);
     }
   }, [project]);
 
