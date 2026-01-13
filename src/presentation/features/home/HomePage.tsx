@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Header } from "@/presentation/shared/layout/Header";
+import { PageHead } from "@/presentation/shared/components/PageHead";
 import {
   Hero,
   ProjectsSection,
@@ -13,6 +14,7 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen w-full">
+      <PageHead />
       <Header />
       <main className="w-full">
         <Hero onOpenSkillsModal={() => setIsSkillsModalOpen(true)} />

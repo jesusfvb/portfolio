@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://jesusfvb.vercel.app/sitemap.xml
+Sitemap: https://www.jesufvb.dev/sitemap.xml
 
 # Deshabilitar rastreo de archivos innecesarios
 Disallow: /node_modules/

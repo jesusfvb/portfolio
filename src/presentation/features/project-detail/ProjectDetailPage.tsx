@@ -1,5 +1,6 @@
 import { PROJECTS } from "@/domain/constants/projects.constants";
 import { Header } from "@/presentation/shared/layout/Header";
+import { PageHead } from "@/presentation/shared/components/PageHead";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { NotFoundPage } from "@/presentation/features/not-found";
@@ -51,6 +52,13 @@ const ProjectDetailPage = () => {
 
   return (
     <div className="min-h-screen bg-[#1a1a1a]">
+      <PageHead
+        title={`${project.title} - Jesús Francisco Portfolio`}
+        description={project.description.short}
+        image={project.banner}
+        url={`https://www.jesufvb.dev/projects/${project.id}`}
+        type="article"
+      />
       <Header />
       <div className="px-4 pt-20 md:px-6 md:pt-24">
         {hasImages ? (
