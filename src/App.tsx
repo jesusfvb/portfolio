@@ -5,13 +5,9 @@ import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router";
 import { Analytics } from "@vercel/analytics/react";
 
-function App() {
-  return <RouterProvider router={routes} />;
-}
-
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={routes} />;
     <Analytics />
   </StrictMode>,
 );
