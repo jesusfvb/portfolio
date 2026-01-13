@@ -73,7 +73,7 @@ export const useContactButtonAnimation = ({
     if (text || hasHover) {
       // Si hay hover, detener la animación inmediatamente y cancelar timeouts
       if (isAnimating) {
-        setIsAnimating(false);
+        setTimeout(() => setIsAnimating(false), 0);
       }
       timeoutRefs.current.forEach((id) => clearTimeout(id));
       timeoutRefs.current = [];
@@ -127,6 +127,7 @@ export const useContactButtonAnimation = ({
       timeoutRefs.current.forEach((id) => clearTimeout(id));
       timeoutRefs.current = [];
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [text, hasHover]);
 
   return {
