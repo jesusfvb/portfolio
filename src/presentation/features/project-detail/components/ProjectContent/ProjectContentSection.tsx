@@ -1,4 +1,9 @@
-import { ProjectDescription, ProjectTechnologies, ProjectLinks, ProjectTitle } from "./";
+import {
+  ProjectDescription,
+  ProjectTechnologies,
+  ProjectLinks,
+  ProjectTitle,
+} from "./";
 import type { Project } from "@/domain/interfaces/project.interface";
 import { useProjectDescription } from "@/application/hooks";
 
@@ -33,7 +38,7 @@ const ProjectContentWithImages = ({
             size="md"
             className="hidden shrink-0 md:mb-2 md:block"
           />
-          <div className="custom-scrollbar min-h-0 flex-1 overflow-y-auto scroll-smooth pr-2 pt-4 md:pt-0">
+          <div className="custom-scrollbar min-h-0 flex-1 overflow-y-auto scroll-smooth pt-4 pr-2 md:pt-0">
             <ProjectDescription description={description} />
           </div>
         </div>
@@ -55,7 +60,7 @@ const ProjectContentWithoutImages = ({
   return (
     <div className="flex h-[calc(100vh-6rem)] w-full flex-col md:h-[calc(100vh-8rem)]">
       <div className="flex min-h-full flex-col justify-between">
-        <div className="sticky top-20 z-10 bg-[#1a1a1a] pt-4 pb-4 md:static md:bg-transparent md:top-auto">
+        <div className="sticky top-20 z-10 bg-[#1a1a1a] pt-4 pb-4 md:static md:top-auto md:bg-transparent">
           <ProjectTitle
             title={project.title}
             size="sm"
@@ -64,20 +69,26 @@ const ProjectContentWithoutImages = ({
         </div>
 
         <div className="flex min-h-0 flex-1 flex-col">
-          <div className="custom-scrollbar min-h-0 flex-1 overflow-y-auto scroll-smooth pb-2 pt-4">
+          <div className="custom-scrollbar min-h-0 flex-1 overflow-y-auto scroll-smooth pt-4 pb-2">
             <div className="mx-auto max-w-3xl">
               <ProjectDescription description={description} />
             </div>
             <div className="mx-auto mt-6 max-w-3xl md:hidden">
               <ProjectTechnologies technologies={technologies} />
-              <ProjectLinks project={project} className="items-start justify-start" />
+              <ProjectLinks
+                project={project}
+                className="items-start justify-start"
+              />
             </div>
           </div>
         </div>
 
-        <div className="mt-1 hidden shrink-0 md:flex md:sticky md:bottom-0 md:flex-col md:bg-[#1a1a1a] md:pt-4 md:pb-2">
+        <div className="mt-1 hidden shrink-0 md:sticky md:bottom-0 md:flex md:flex-col md:bg-[#1a1a1a] md:pt-4 md:pb-2">
           <ProjectTechnologies technologies={technologies} />
-          <ProjectLinks project={project} className="items-start justify-start" />
+          <ProjectLinks
+            project={project}
+            className="items-start justify-start"
+          />
         </div>
       </div>
     </div>
@@ -88,22 +99,48 @@ const ProjectContentSection = ({
   project,
   hasImages = true,
 }: ProjectContentSectionProps) => {
-  const description = useProjectDescription(project.description);
+  const {
+    data: description,
+    loading,
+    error,
+    retry,
+  } = useProjectDescription(project.description);
   const technologies = [
     ...project.technologies,
     ...project.technologiesSecondary,
   ];
 
+  const displayDescription = loading
+    ? "Cargando descripción..."
+    : error
+      ? `${description.full}`
+      : description.full;
+
   const commonProps = {
     project,
-    description: description.full,
+    description: displayDescription,
     technologies,
   };
 
-  return hasImages ? (
-    <ProjectContentWithImages {...commonProps} />
-  ) : (
-    <ProjectContentWithoutImages {...commonProps} />
+  return (
+    <div>
+      {error && (
+        <div className="mb-4 flex items-center justify-between rounded border border-red-700 bg-red-900/20 px-4 py-3 text-red-300">
+          <span className="text-sm">⚠️ Error al cargar la descripción</span>
+          <button
+            onClick={retry}
+            className="ml-4 rounded bg-red-700 px-3 py-1 text-xs font-medium transition-colors hover:bg-red-600"
+          >
+            Reintentar
+          </button>
+        </div>
+      )}
+      {hasImages ? (
+        <ProjectContentWithImages {...commonProps} />
+      ) : (
+        <ProjectContentWithoutImages {...commonProps} />
+      )}
+    </div>
   );
 };
 
