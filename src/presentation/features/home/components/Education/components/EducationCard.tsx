@@ -9,7 +9,7 @@ interface EducationCardProps {
 const EducationCard = ({ education, isLast = false }: EducationCardProps) => {
   return (
     <div
-      className={`relative border-l-2 border-[rgba(255,255,255,0.1)] pb-8 pl-8 md:pl-12 ${
+      className={`relative border-l-2 border-[rgba(255,255,255,0.1)] pb-8 ${
         isLast ? "last:border-l-0 last:pb-0" : ""
       }`}
     >

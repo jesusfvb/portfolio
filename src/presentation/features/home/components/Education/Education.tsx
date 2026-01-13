@@ -12,14 +12,16 @@ const Education = () => {
           Mi formación académica y profesional
         </p>
         <div className="mx-auto max-w-4xl">
-          <div className="space-y-8">
-            {EDUCATIONS.map((education, index) => (
-              <EducationCard
-                key={education.id}
-                education={education}
-                isLast={index === EDUCATIONS.length - 1}
-              />
-            ))}
+          <div className="flex justify-center">
+            <div className="w-full space-y-8">
+              {EDUCATIONS.map((education, index) => (
+                <EducationCard
+                  key={education.id}
+                  education={education}
+                  isLast={index === EDUCATIONS.length - 1}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
