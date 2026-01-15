@@ -58,9 +58,11 @@ const Header = () => {
     >
       <div className="container">
         <div className="flex items-center justify-between py-4">
-          <div
-            className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border-2 border-[#d0d0d0] text-lg font-bold transition-all duration-300 hover:scale-110 hover:border-white hover:shadow-[0_0_15px_rgba(208,208,208,0.3)] md:h-12 md:w-12 md:text-xl"
+          <button
             onClick={handleLogoClick}
+            className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#d0d0d0] text-lg font-bold transition-all duration-300 hover:scale-110 hover:border-white hover:shadow-[0_0_15px_rgba(208,208,208,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6366f1]"
+            aria-label="Ir al inicio"
+            title="Portfolio - Jesús Francisco Vázquez"
           >
             <span
               className="font-bold"
@@ -70,7 +72,7 @@ const Header = () => {
             >
               JV
             </span>
-          </div>
+          </button>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex md:items-center md:gap-6">
@@ -97,9 +99,10 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="flex cursor-pointer flex-col gap-1.5 border-none bg-transparent p-2 md:hidden"
+            className="flex cursor-pointer flex-col gap-1.5 border-none bg-transparent p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6366f1] rounded md:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
           >
             <span
               className={`h-0.5 w-6 rounded bg-white transition-all duration-300 ${

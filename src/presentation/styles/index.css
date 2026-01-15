@@ -29,6 +29,30 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Focus visible para accesibilidad - visible al navegar con teclado */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid #6366f1;
+  outline-offset: 2px;
+}
+
+/* Skip links - visibles al recibir focus */
+.skip-link {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  transform: translateY(-100%);
+  transition: transform 0.2s ease-out;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
 body {
   font-family:
     "Inter",
