@@ -27,6 +27,7 @@ const ProjectImageSection = ({
           <img
             src={images[currentImageIndex]}
             alt={`${projectTitle} - Imagen ${currentImageIndex + 1}`}
+            loading="lazy"
             className="max-h-full max-w-full object-contain"
           />
 

@@ -19,6 +19,7 @@ export const createImageIcon = (src: string, alt: string): ReactElement => {
         alt={alt}
         width="20"
         height="20"
+        loading="lazy"
         style={{
           objectFit: "contain",
           display: "block",

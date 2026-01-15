@@ -116,6 +116,7 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
                 <img
                   src={profileImage}
                   alt="Jesús Francisco Vázquez Biltre"
+                  loading="lazy"
                   className="relative h-full w-full object-cover opacity-85 mix-blend-lighten"
                 />
                 <div className="absolute inset-0 rounded-3xl ring-1 ring-[#121212]/60"></div>

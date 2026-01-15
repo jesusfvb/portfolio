@@ -13,6 +13,7 @@ const ProjectBanner = ({ project }: ProjectBannerProps) => {
             <img
               src={project.banner}
               alt={`${project.title} banner`}
+              loading="lazy"
               className="object-contain"
             />
           </div>
