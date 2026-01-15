@@ -73,7 +73,7 @@ const ProjectContentWithoutImages = ({
             <div className="mx-auto max-w-3xl">
               <ProjectDescription description={description} />
             </div>
-            <div className="mx-auto mt-6 max-w-3xl md:hidden">
+            <div className="mx-auto mt-6 max-w-3xl">
               <ProjectTechnologies technologies={technologies} />
               <ProjectLinks
                 project={project}
@@ -81,14 +81,6 @@ const ProjectContentWithoutImages = ({
               />
             </div>
           </div>
-        </div>
-
-        <div className="mt-1 hidden shrink-0 md:sticky md:bottom-0 md:flex md:flex-col md:bg-[#1a1a1a] md:pt-4 md:pb-2">
-          <ProjectTechnologies technologies={technologies} />
-          <ProjectLinks
-            project={project}
-            className="items-start justify-start"
-          />
         </div>
       </div>
     </div>
