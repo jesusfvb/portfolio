@@ -36,7 +36,7 @@ const ProjectContentWithImages = ({
           <ProjectTitle
             title={project.title}
             size="md"
-            className="hidden shrink-0 md:mb-2 md:block"
+            className="shrink-0 md:mb-2 md:block"
           />
           <div className="custom-scrollbar min-h-0 flex-1 overflow-y-auto scroll-smooth pt-4 pr-2 md:pt-0">
             <ProjectDescription description={description} />
