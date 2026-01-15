@@ -30,7 +30,7 @@ const ProjectContentWithImages = ({
   technologies,
 }: ProjectContentWithImagesProps) => {
   return (
-    <div className="flex h-full flex-col p-5 md:p-6 lg:p-8">
+    <div className="flex h-full flex-col overflow-hidden p-5 md:p-6 lg:p-8">
       <div className="flex min-h-full flex-col justify-between">
         <div className="flex min-h-0 flex-1 flex-col">
           <ProjectTitle
@@ -38,7 +38,7 @@ const ProjectContentWithImages = ({
             size="md"
             className="shrink-0 md:mb-2 md:block"
           />
-          <div className="custom-scrollbar min-h-0 flex-1 overflow-y-auto scroll-smooth pt-4 pr-2 md:pt-0">
+          <div className="min-h-0 flex-1 overflow-y-auto pt-4 pr-2 md:pt-0">
             <ProjectDescription description={description} />
           </div>
         </div>
@@ -60,16 +60,15 @@ const ProjectContentWithoutImages = ({
   return (
     <div className="flex h-[calc(100vh-6rem)] w-full flex-col md:h-[calc(100vh-8rem)]">
       <div className="flex min-h-full flex-col justify-between">
-        <div className="sticky top-20 z-10 bg-[#1a1a1a] pt-4 pb-4 md:static md:top-auto md:bg-transparent">
-          <ProjectTitle
-            title={project.title}
-            size="sm"
-            className="md:text-4xl"
-          />
-        </div>
-
         <div className="flex min-h-0 flex-1 flex-col">
-          <div className="custom-scrollbar min-h-0 flex-1 overflow-y-auto scroll-smooth pt-4 pb-2">
+          <div className="custom-scrollbar min-h-0 flex-1 overflow-y-auto scroll-smooth pb-2">
+            <div className="top-20 z-10 bg-[#1a1a1a] pb-4 md:top-auto md:bg-transparent">
+              <ProjectTitle
+                title={project.title}
+                size="sm"
+                className="md:text-4xl"
+              />
+            </div>
             <div className="mx-auto max-w-3xl">
               <ProjectDescription description={description} />
             </div>

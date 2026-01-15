@@ -17,10 +17,10 @@ interface RouteError {
 const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
+
   // Validar ID de la ruta
   const { isValid, projectId, error: idError } = useValidateProjectId(id);
-  
+
   // Buscar proyecto solo si el ID es válido
   const project =
     isValid && projectId ? PROJECTS.find((p) => p.id === projectId) : undefined;
@@ -54,7 +54,10 @@ const ProjectDetailPage = () => {
       <div className="min-h-screen bg-[#1a1a1a]">
         <SkipLinks />
         <Header />
-        <main id="main-content" className="flex min-h-screen items-center justify-center px-4">
+        <main
+          id="main-content"
+          className="flex min-h-screen items-center justify-center px-4"
+        >
           <div className="max-w-md text-center">
             <h1 className="mb-4 text-4xl font-bold text-white">
               {routeError.type === "invalid-id"
@@ -64,10 +67,10 @@ const ProjectDetailPage = () => {
             <p className="mb-8 text-[#d0d0d0]">{routeError.message}</p>
             <a
               href="/"
-              className="inline-flex items-center gap-2 overflow-hidden rounded-lg bg-linear-to-r from-[#6366f1] to-[#8b5cf6] px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(99,102,241,0.4)] hover:scale-105"
+              className="inline-flex items-center gap-2 overflow-hidden rounded-lg bg-linear-to-r from-[#6366f1] to-[#8b5cf6] px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-[0_10px_25px_rgba(99,102,241,0.4)]"
             >
-              <span style={{ color: '#ffffff' }}>Volver al inicio</span>
-              <span style={{ color: '#ffffff' }}>←</span>
+              <span style={{ color: "#ffffff" }}>Volver al inicio</span>
+              <span style={{ color: "#ffffff" }}>←</span>
             </a>
           </div>
         </main>
@@ -109,7 +112,7 @@ const ProjectDetailPage = () => {
         type="article"
       />
       <Header />
-      <div className="px-4 pt-20 md:px-6 md:pt-24">
+      <div className="px-4 pt-20 md:px-6 md:pt-20">
         {hasImages ? (
           <ProjectLayoutWithImages
             project={project!}

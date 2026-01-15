@@ -29,7 +29,7 @@ const ProjectLayoutWithImages = ({
         />
       </div>
 
-      <div className="flex-1 md:h-[calc(100vh-6rem)] md:overflow-y-auto">
+      <div className="custom-scrollbar flex-1 md:h-[calc(100vh-6rem)] md:overflow-y-auto">
         <ProjectContentSection project={project} hasImages={true} />
       </div>
     </div>
