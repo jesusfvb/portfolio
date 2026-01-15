@@ -28,6 +28,9 @@ const localStorageMock = {
 
 globalThis.localStorage = localStorageMock as Storage;
 
+// Mock para window.alert
+vi.stubGlobal('alert', vi.fn());
+
 // Suppress console errors en tests (opcional)
 const originalError = console.error;
 beforeAll(() => {
