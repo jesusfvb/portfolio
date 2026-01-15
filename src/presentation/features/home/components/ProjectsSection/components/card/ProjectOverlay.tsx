@@ -24,7 +24,7 @@ const ProjectOverlay = ({ project }: ProjectOverlayProps) => {
                 href={project.githubFrontend}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/github flex h-12 w-12 items-center justify-center rounded-full bg-[#121212] text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white"
+                className="group/github flex h-12 w-12 items-center justify-center rounded-full bg-[#121212] text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white"
                 aria-label="GitHub Frontend"
                 title="Frontend"
                 onClick={(e) => e.stopPropagation()}
@@ -41,7 +41,7 @@ const ProjectOverlay = ({ project }: ProjectOverlayProps) => {
                 href={project.githubBackend}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/github flex h-12 w-12 items-center justify-center rounded-full bg-[#121212] text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white"
+                className="group/github flex h-12 w-12 items-center justify-center rounded-full bg-[#121212] text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white"
                 aria-label="GitHub Backend"
                 title="Backend"
                 onClick={(e) => e.stopPropagation()}
@@ -59,7 +59,7 @@ const ProjectOverlay = ({ project }: ProjectOverlayProps) => {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-12 w-12 items-center justify-center rounded-full bg-[#121212] text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white"
+              className="flex h-12 w-12 items-center justify-center rounded-full bg-[#121212] text-white no-underline transition-all duration-300 hover:scale-110 hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white"
               aria-label="GitHub"
               onClick={(e) => e.stopPropagation()}
             >

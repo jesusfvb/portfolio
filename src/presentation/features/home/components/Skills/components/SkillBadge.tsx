@@ -25,6 +25,7 @@ const SkillBadge = ({ icon, displayName, url }: SkillBadgeProps) => {
         href={url}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label={`Ver documentación de ${displayName}`}
         className={`${badgeClasses} cursor-pointer no-underline`}
       >
         {badgeContent}
