@@ -1,4 +1,4 @@
-import routes from "@/domain/routes/routes";
+import routes from "@/domain/routes/routes.tsx";
 import "@/presentation/styles/index.css";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
