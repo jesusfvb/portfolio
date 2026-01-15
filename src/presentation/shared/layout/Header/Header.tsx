@@ -4,7 +4,11 @@ import { NavLink } from "./components/NavLink";
 import { ContactButton } from "@/presentation/shared/ui/ContactButton";
 import { ROUTES } from "@/domain/constants/routes.constants";
 
-const Header = () => {
+interface HeaderProps {
+  className?: string;
+}
+
+const Header = (props: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -50,7 +54,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 right-0 left-0 z-1000 backdrop-blur-md transition-all duration-300 ${
+      className={`${props.className} fixed top-0 right-0 left-0 z-1000 backdrop-blur-md transition-all duration-300 ${
         isScrolled
           ? "border-b border-[#6366f1]/50 bg-linear-to-r from-[rgba(18,18,18,0.95)] via-[#4338ca]/70 to-[rgba(18,18,18,0.95)] shadow-lg"
           : "border-b border-transparent bg-linear-to-r from-[rgba(18,18,18,0.85)] via-[#4338ca]/60 to-[rgba(18,18,18,0.85)]"
@@ -60,7 +64,7 @@ const Header = () => {
         <div className="flex items-center justify-between py-4">
           <button
             onClick={handleLogoClick}
-            className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#d0d0d0] text-lg font-bold transition-all duration-300 hover:scale-110 hover:border-white hover:shadow-[0_0_15px_rgba(208,208,208,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6366f1]"
+            className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#d0d0d0] text-lg font-bold transition-all duration-300 hover:scale-110 hover:border-white hover:shadow-[0_0_15px_rgba(208,208,208,0.3)] focus-visible:ring-2 focus-visible:ring-[#6366f1] focus-visible:outline-none"
             aria-label="Ir al inicio"
             title="Portfolio - Jesús Francisco Vázquez"
           >
@@ -99,7 +103,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="flex cursor-pointer flex-col gap-1.5 border-none bg-transparent p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6366f1] rounded md:hidden"
+            className="flex cursor-pointer flex-col gap-1.5 rounded border-none bg-transparent p-2 focus-visible:ring-2 focus-visible:ring-[#6366f1] focus-visible:outline-none md:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={isMobileMenuOpen}
