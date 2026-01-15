@@ -101,17 +101,24 @@ describe('ProjectDetailPage', () => {
   })
 
   describe('Manejo de errores y casos límite', () => {
-    test('debería mostrar NotFoundPage si el proyecto no existe', () => {
+    test('debería mostrar página de error si el proyecto no existe', () => {
       renderProjectPage('/projects/999')
 
-      expect(screen.getByTestId('not-found-page')).toBeInTheDocument()
-      expect(screen.getByText('Page Not Found')).toBeInTheDocument()
+      expect(screen.getByText('Proyecto no encontrado')).toBeInTheDocument()
+      expect(
+        screen.getByText(/El proyecto con ID 999 no existe/i),
+      ).toBeInTheDocument()
+      expect(screen.getByRole('link', { name: /Volver al inicio/i })).toBeInTheDocument()
     })
 
-    test('debería mostrar NotFoundPage si el ID no es un número válido', () => {
+    test('debería mostrar página de error si el ID no es un número válido', () => {
       renderProjectPage('/projects/invalid-id')
 
-      expect(screen.getByTestId('not-found-page')).toBeInTheDocument()
+      expect(screen.getByText('URL Inválida')).toBeInTheDocument()
+      expect(
+        screen.getByText(/El ID del proyecto debe ser un número/i),
+      ).toBeInTheDocument()
+      expect(screen.getByRole('link', { name: /Volver al inicio/i })).toBeInTheDocument()
     })
   })
 
