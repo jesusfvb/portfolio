@@ -18,14 +18,7 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
   };
 
   // Herramientas principales que uso
-  const mainTools = [
-    "React",
-    "React Native",
-    "Spring Boot",
-    "MongoDB",
-    "PostgreSQL",
-    "Docker",
-  ];
+  const mainTools = ["Java", "Spring Boot", "PostgreSQL", "MongoDB"];
 
   return (
     <section
@@ -51,18 +44,17 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
                 className="bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-4xl leading-tight font-bold text-transparent md:text-5xl lg:text-6xl"
                 style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
-                Desarrollador Full-Stack
+                Junior Backend Java Developer
               </span>
               <span className="text-xl font-normal text-[#a0a0a0] md:text-2xl">
                 Jesús Francisco Vázquez Biltre
               </span>
             </h1>
             <p className="mb-6 max-w-[600px] text-lg leading-relaxed text-[#a0a0a0]">
-              Apasionado por la ingeniería de software y el diseño de
-              experiencias digitales. Enfocado en la creación de aplicaciones
-              modernas, equilibrando la potencia de Spring Boot con la agilidad
-              de React para entregar productos digitales innovadores y
-              escalables.
+              Desarrollador Backend Junior especializado en Java y Spring Boot,
+              con experiencia en la creación de APIs REST seguras y bien
+              estructuradas. Me enfoco en escribir código claro, mantenible y en
+              seguir buenas prácticas de desarrollo.
             </p>
 
             {/* Resumen de herramientas */}
