@@ -156,4 +156,14 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     url: "https://react.dev",
     additionalInfo: "(básico)",
   },
+
+  "react native": {
+    icon: <FaReact style={{ color: "#61DAFB" }} />,
+    keywords: ["react native", "reactnative"],
+    category: "additional",
+    displayName: "React Native",
+    type: "framework",
+    url: "https://react.dev",
+    additionalInfo: "(básico)",
+  },
 };
