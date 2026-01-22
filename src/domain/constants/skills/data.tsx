@@ -108,7 +108,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
   },
   swagger: {
     icon: createImageIcon(
-      "https://fastapi.tiangolo.com/img/favicon.png",
+      "https://static1.smartbear.co/swagger/media/assets/swagger_fav.png",
       "Swagger",
     ),
     keywords: ["swagger", "openapi"],
