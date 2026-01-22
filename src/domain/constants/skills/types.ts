@@ -5,7 +5,8 @@ export type SkillCategory =
   | "backend"
   | "database"
   | "tools"
-  | "mobile";
+  | "mobile"
+  | "additional";
 
 export type SkillType = "language" | "framework" | "other";
 
@@ -16,6 +17,7 @@ export interface TechIconMap {
   displayName: string;
   type: SkillType;
   url?: string;
+  additionalInfo?: string;
 }
 
 export interface TechInfo {

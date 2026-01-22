@@ -8,6 +8,7 @@ interface Skill {
   displayName: string;
   type: SkillType;
   url?: string;
+  additionalInfo?: string;
 }
 
 interface SkillSubcategoryProps {

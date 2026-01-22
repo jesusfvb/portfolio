@@ -8,6 +8,7 @@ interface Skill {
   displayName: string;
   type: SkillType;
   url?: string;
+  additionalInfo?: string;
 }
 
 interface SkillTypeGroupProps {
@@ -28,6 +29,7 @@ const SkillTypeGroup = ({ title, skills }: SkillTypeGroupProps) => {
             icon={skill.icon}
             displayName={skill.displayName}
             url={skill.url}
+            additionalInfo={skill.additionalInfo}
           />
         ))}
       </div>

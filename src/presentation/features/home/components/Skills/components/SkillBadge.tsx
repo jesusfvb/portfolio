@@ -3,16 +3,25 @@ import React from "react";
 interface SkillBadgeProps {
   icon: React.ReactElement;
   displayName: string;
+  additionalInfo?: string;
   url?: string;
 }
 
-const SkillBadge = ({ icon, displayName, url }: SkillBadgeProps) => {
+const SkillBadge = ({
+  icon,
+  displayName,
+  additionalInfo,
+  url,
+}: SkillBadgeProps) => {
   const badgeContent = (
     <>
       <span className="flex items-center justify-center text-lg transition-all duration-300 group-hover:brightness-150 group-hover:contrast-125">
         {icon}
       </span>
       <span className="text-white">{displayName}</span>
+      {additionalInfo && (
+        <span className="text-sm text-[#a0a0a0]">{additionalInfo}</span>
+      )}
     </>
   );
 

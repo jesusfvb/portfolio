@@ -1,13 +1,12 @@
-import { useEffect } from "react";
 import { SKILLS_ICONS } from "@/domain/constants/skills/data";
 import type {
-  SkillType,
   SkillCategory as SkillCategoryType,
+  SkillType,
 } from "@/domain/constants/skills/types";
+import { useEffect } from "react";
 
-import FrontendMobileCategory from "./components/FrontendMobileCategory";
-import SkillCategoryComponent from "./components/SkillCategory";
 import { CloseIcon } from "@/presentation/shared/icons";
+import SkillCategoryComponent from "./components/SkillCategory";
 
 interface SkillsProps {
   isOpen: boolean;
@@ -17,9 +16,10 @@ interface SkillsProps {
 const categoryLabels: Record<SkillCategoryType, string> = {
   frontend: "Frontend",
   backend: "Backend",
-  database: "Base de Datos",
-  tools: "Herramientas",
+  database: "Bases de Datos",
+  tools: "Herramientas y Prácticas",
   mobile: "Mobile",
+  additional: "Adicional",
 };
 
 const Skills = ({ isOpen, onClose }: SkillsProps) => {
@@ -67,14 +67,13 @@ const Skills = ({ isOpen, onClose }: SkillsProps) => {
     >,
   );
 
-  // Combinar frontend y mobile en una categoría unificada
-  const frontendMobileSkills = {
-    frontend: skillsByCategory.frontend || [],
-    mobile: skillsByCategory.mobile || [],
-  };
-
   // Otras categorías (sin frontend y mobile)
-  const otherCategories: SkillCategoryType[] = ["backend", "database", "tools"];
+  const otherCategories: SkillCategoryType[] = [
+    "backend",
+    "database",
+    "tools",
+    "additional",
+  ];
 
   const availableOtherCategories = otherCategories.filter(
     (category) =>
@@ -104,24 +103,18 @@ const Skills = ({ isOpen, onClose }: SkillsProps) => {
         {/* Contenido del modal - área con scroll */}
         <div className="flex-1 overflow-y-auto">
           <div className="p-6 pt-0 md:p-8">
-            <h2 className="mb-4 bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
-              Habilidades
+            <h2 className="mb-2 bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
+              Tecnologías
             </h2>
-            <p className="mb-8 text-lg text-[#d0d0d0]">
-              Tecnologías y herramientas que domino
+            <p className="mb-8 text-base text-[#a0a0a0]">
+              Herramientas y lenguajes con los que trabajo
             </p>
-            <div className="flex flex-col gap-8">
-              <FrontendMobileCategory
-                frontendSkills={frontendMobileSkills.frontend}
-                mobileSkills={frontendMobileSkills.mobile}
-              />
-
+            <div className="flex flex-col gap-10">
               {availableOtherCategories.map((category) => (
                 <SkillCategoryComponent
-                  key={category}
                   category={category}
-                  title={categoryLabels[category]}
                   skills={skillsByCategory[category]}
+                  title={categoryLabels[category]}
                 />
               ))}
             </div>
