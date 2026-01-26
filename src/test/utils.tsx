@@ -1,38 +1,29 @@
 import React, { type ReactElement } from "react";
 import { render, type RenderOptions } from "@testing-library/react";
-import { MemoryRouter, type MemoryRouterProps } from "react-router";
 import { HelmetProvider } from "react-helmet-async";
 import userEvent from "@testing-library/user-event";
 
 interface CustomRenderOptions extends Omit<RenderOptions, "wrapper"> {
-  initialRoute?: string;
-  routerProps?: Omit<MemoryRouterProps, "initialEntries" | "children">;
+  // Opciones personalizadas si se necesitan en el futuro
 }
 
 /**
  * Custom render function que envuelve componentes con proveedores necesarios
- * - MemoryRouter para React Router
  * - HelmetProvider para react-helmet-async
  */
 export function renderWithProviders(
   ui: ReactElement,
-  {
-    initialRoute = "/",
-    routerProps = {},
-    ...renderOptions
-  }: CustomRenderOptions = {},
+  options?: CustomRenderOptions,
 ) {
   function Wrapper({ children }: { children: React.ReactNode }) {
     return (
       <HelmetProvider>
-        <MemoryRouter initialEntries={[initialRoute]} {...routerProps}>
-          {children}
-        </MemoryRouter>
+        {children}
       </HelmetProvider>
     );
   }
 
-  return render(ui, { wrapper: Wrapper, ...renderOptions });
+  return render(ui, { wrapper: Wrapper, ...options });
 }
 
 // Re-exportar todo desde testing-library para conveniencia

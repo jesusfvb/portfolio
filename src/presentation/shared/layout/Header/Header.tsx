@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router";
 import { NavLink } from "./components/NavLink";
 import { ContactButton } from "@/presentation/shared/ui/ContactButton";
-import { ROUTES } from "@/domain/constants/routes.constants";
 
 interface HeaderProps {
   className?: string;
@@ -11,9 +9,6 @@ interface HeaderProps {
 const Header = (props: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
-  const isHomePage = location.pathname === ROUTES.HOME;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,31 +20,15 @@ const Header = (props: HeaderProps) => {
   }, []);
 
   const scrollToSection = (id: string) => {
-    if (isHomePage) {
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-        setIsMobileMenuOpen(false);
-      }
-    } else {
-      // Si no estamos en home, navegar a home primero
-      navigate(ROUTES.HOME);
-      // Luego hacer scroll después de un pequeño delay
-      setTimeout(() => {
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 100);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setIsMobileMenuOpen(false);
     }
   };
 
   const handleLogoClick = () => {
-    if (isHomePage) {
-      scrollToSection("hero");
-    } else {
-      navigate(ROUTES.HOME);
-    }
+    scrollToSection("hero");
   };
 
   return (
