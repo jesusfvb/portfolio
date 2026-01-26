@@ -1,1 +1,0 @@
-Aplicación móvil multiplataforma desarrollada con React Native para lectura y gestión de mangas. Incluye lectura, búsqueda, gestión de favorito. Con un servidor backend desarrollado en Spring Boot que automatiza la detección de nuevos capítulos mediante web scraping.API REST, almacenamiento en MongoDB y automatización de navegadores con Playwright.
