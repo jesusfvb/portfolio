@@ -14,13 +14,4 @@ export const PROJECTS: Project[] = [
     githubFrontend: "https://github.com/jesusfvb/manga.app",
     githubBackend: "https://github.com/jesusfvb/manga.server",
   },
-  {
-    id: 2,
-    title: "Portfolio Personal",
-    description: "Portfolio web personal desarrollado con React 19, TypeScript y Tailwind CSS v4. Incluye diseño moderno, arquitectura limpia, carrusel de proyectos interactivo, secciones de habilidades, educación y contacto. Totalmente responsive y optimizado para rendimiento.",
-    technologies: ["React"],
-    banner: "/images/portfolio/portfolio_banner.webp",
-    github: "https://github.com/jesusfvb/portfolio",
-    liveUrl: "https://jesusfvb.vercel.app",
-  },
 ];
