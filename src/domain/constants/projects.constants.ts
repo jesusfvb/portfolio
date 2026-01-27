@@ -20,6 +20,6 @@ export const PROJECTS: Project[] = [
     description: "Portfolio web personal desarrollado con React 19, TypeScript y Tailwind CSS v4. Incluye diseño moderno, arquitectura limpia, carrusel de proyectos interactivo, secciones de habilidades, educación y contacto. Totalmente responsive y optimizado para rendimiento.",
     technologies: ["React"],
     banner: "/images/portfolio/portfolio_banner.webp",
-    github: "https://github.com/jesusfv/portfolio",
+    github: "https://github.com/jesusfvb/portfolio",
   },
 ];
