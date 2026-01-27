@@ -8,7 +8,7 @@ interface ProjectTechStackProps {
 
 const ProjectTechStack = ({ technologies }: ProjectTechStackProps) => {
   return (
-    <div className="mb-4 flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-2">
       {technologies.map((tech, index) => {
         const techInfo = getTechInfo(tech);
         if (techInfo) {
@@ -17,7 +17,6 @@ const ProjectTechStack = ({ technologies }: ProjectTechStackProps) => {
               key={index}
               onClick={(e) => e.stopPropagation()}
               className="inline-block"
-              data-no-card-click
             >
               <SkillBadge
                 icon={techInfo.icon}
@@ -32,8 +31,7 @@ const ProjectTechStack = ({ technologies }: ProjectTechStackProps) => {
           <span
             key={index}
             onClick={(e) => e.stopPropagation()}
-            className="flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.1)] bg-[#121212] px-3.5 py-1.5 text-sm text-[#d0d0d0] transition-all duration-300 hover:border-transparent hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white"
-            data-no-card-click
+            className="inline-flex items-center gap-1.5 rounded-md bg-blue-500/10 px-2.5 py-1 text-xs font-medium text-blue-400"
           >
             <span>{tech}</span>
           </span>

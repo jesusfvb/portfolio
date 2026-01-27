@@ -21,5 +21,6 @@ export const PROJECTS: Project[] = [
     technologies: ["React"],
     banner: "/images/portfolio/portfolio_banner.webp",
     github: "https://github.com/jesusfvb/portfolio",
+    liveUrl: "https://jesusfvb.vercel.app",
   },
 ];

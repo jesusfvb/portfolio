@@ -6,7 +6,7 @@ interface ProjectBannerProps {
 
 const ProjectBanner = ({ project }: ProjectBannerProps) => {
   return (
-    <div className="relative h-[200px] w-full shrink-0 overflow-hidden bg-[#121212]">
+    <div className="relative h-full w-full shrink-0 overflow-hidden rounded-l-xl bg-[#121212]">
       <div className="h-full w-full">
         {project.banner ? (
           <div className="relative h-full w-full">
@@ -14,7 +14,7 @@ const ProjectBanner = ({ project }: ProjectBannerProps) => {
               src={project.banner}
               alt={`${project.title} banner`}
               loading="lazy"
-              className="object-contain"
+              className="h-[250px] w-full object-contain"
             />
           </div>
         ) : (
