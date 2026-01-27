@@ -12,7 +12,7 @@ const Projects = () => {
           Algunos de mis trabajos más recientes y destacados
         </p>
 
-        <div className="mx-auto max-w-4xl space-y-6">
+        <div className="mx-auto max-w-6xl space-y-12 md:space-y-16">
           {PROJECTS.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}

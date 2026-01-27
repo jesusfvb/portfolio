@@ -8,13 +8,14 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
-    <div className="mx-auto w-full">
-      <div
-        className="flex h-[300px] w-full flex-row overflow-hidden rounded-xl bg-[#0a0a0a]"
-      >
-        <div className="relative w-2/5 shrink-0">
-          <ProjectBanner project={project} />
-        </div>
+    <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+      {/* Imagen del proyecto */}
+      <div className="w-full md:w-[45%] shrink-0">
+        <ProjectBanner project={project} />
+      </div>
+      
+      {/* Contenido del proyecto */}
+      <div className="flex-1">
         <ProjectCardContent project={project} />
       </div>
     </div>

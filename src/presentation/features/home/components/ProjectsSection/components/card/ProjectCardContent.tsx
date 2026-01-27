@@ -8,23 +8,22 @@ interface ProjectCardContentProps {
 
 const ProjectCardContent = ({ project }: ProjectCardContentProps) => {
   return (
-    <div className="flex h-full min-h-0 flex-col px-6 pt-0 pb-4">
-      <div className="flex flex-col justify-center flex-1">
-        {/* Título */}
-        <h3 className="mb-3 text-2xl font-bold text-white">
-          {project.title}
-        </h3>
-        
-        {/* Badges de tecnología */}
-        <ProjectTechStack technologies={project.technologies} />
-        
-        {/* Descripción */}
-        <p className="mb-5 mt-4 text-sm leading-relaxed text-gray-300">
-          {project.description}
-        </p>
+    <div className="flex h-full flex-col justify-center py-4 md:py-0">
+      {/* Título */}
+      <h3 className="mb-4 text-3xl md:text-4xl font-bold text-white">
+        {project.title}
+      </h3>
       
-        {/* Botones de acción */}
-        <div className="flex flex-wrap gap-3">
+      {/* Badges de tecnología */}
+      <ProjectTechStack technologies={project.technologies} />
+      
+      {/* Descripción */}
+      <p className="mb-6 mt-4 text-base leading-relaxed text-gray-400">
+        {project.description}
+      </p>
+      
+      {/* Botones de acción */}
+      <div className="flex flex-wrap gap-3">
         {(project.githubFrontend || project.githubBackend || project.github) && (
           <>
             {project.githubFrontend && (
@@ -84,7 +83,6 @@ const ProjectCardContent = ({ project }: ProjectCardContentProps) => {
             <span>Preview</span>
           </a>
         )}
-      </div>
       </div>
     </div>
   );
