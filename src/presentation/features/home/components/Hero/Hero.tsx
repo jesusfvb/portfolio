@@ -44,14 +44,14 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
                 className="bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-4xl leading-tight font-bold text-transparent md:text-5xl lg:text-6xl"
                 style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
-                Junior Backend Java Developer
+                Backend Java Developer
               </span>
               <span className="text-xl font-normal text-[#a0a0a0] md:text-2xl">
                 Jesús Francisco Vázquez Biltre
               </span>
             </h1>
             <p className="mb-6 max-w-[600px] text-lg leading-relaxed text-[#a0a0a0]">
-              Desarrollador Backend Junior especializado en Java y Spring Boot,
+              Desarrollador Backend especializado en Java y Spring Boot,
               con experiencia en la creación de APIs REST seguras y bien
               estructuradas. Me enfoco en escribir código claro, mantenible y en
               seguir buenas prácticas de desarrollo.
