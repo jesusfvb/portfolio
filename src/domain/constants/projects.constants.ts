@@ -3,15 +3,13 @@ import type { Project } from "../interfaces/project.interface";
 export const PROJECTS: Project[] = [
   {
     id: 1,
-    title: "NeoManga",
-    description: "Aplicación móvil multiplataforma desarrollada con React Native para lectura y gestión de mangas. Incluye lectura, búsqueda, gestión de favorito. Con un servidor backend desarrollado en Spring Boot que automatiza la detección de nuevos capítulos mediante web scraping.API REST, almacenamiento en MongoDB y automatización de navegadores con Playwright.",
+    title: "Server Mangas",
+    description: "Backend de plataforma de lectura de mangas y manhwas, desarrollado con Java y Spring Boot, que expone una API REST para la búsqueda de mangas, consulta de capítulos y entrega de imágenes.El proyecto está estructurado con casos de uso y separación de responsabilidades, priorizando mantenibilidad y escalabilidad.",
     technologies: [
-      "React Native",
       "Spring Boot",
       "MongoDB",
     ],
     banner: "/images/app_manga/AppManga Banner.webp",
-    githubFrontend: "https://github.com/jesusfvb/manga.app",
     githubBackend: "https://github.com/jesusfvb/manga.server",
   },
 ];
