@@ -1,0 +1,13 @@
+{
+  "title": "Educación",
+  "subtitle": "Mi formación académica y profesional",
+  "items": {
+    "uci": {
+      "institution": "Universidad de las Ciencias Informáticas (UCI)",
+      "degree": "Ingeniero en Ciencias Informáticas",
+      "period": "Sept 2017 - Nov 2022",
+      "description": "Formación integral en ciencias informáticas con especialización en desarrollo de software, arquitectura de sistemas, bases de datos y gestión de proyectos tecnológicos. Enfoque en tecnologías modernas y mejores prácticas de la industria.",
+      "location": "La Habana, Cuba"
+    }
+  }
+}

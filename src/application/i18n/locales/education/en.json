@@ -1,0 +1,13 @@
+{
+  "title": "Education",
+  "subtitle": "My academic and professional background",
+  "items": {
+    "uci": {
+      "institution": "Universidad de las Ciencias Informáticas (UCI)",
+      "degree": "Computer Science Engineer",
+      "period": "Sept 2017 - Nov 2022",
+      "description": "Comprehensive training in computer science with specialization in software development, systems architecture, databases, and technology project management. Focus on modern technologies and industry best practices.",
+      "location": "Havana, Cuba"
+    }
+  }
+}
