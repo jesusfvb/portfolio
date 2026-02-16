@@ -2,5 +2,14 @@
   "common": {
     "language": "Idioma",
     "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Backend Java Developer",
+    "name": "Jesús Francisco Vázquez Biltre",
+    "summary": "Desarrollador Backend especializado en Java y Spring Boot, con experiencia en la creación de APIs REST seguras y bien estructuradas. Me enfoco en escribir código claro, mantenible y en seguir buenas prácticas de desarrollo.",
+    "mainToolsLabel": "Tecnologías principales:",
+    "viewMore": "Ver más",
+    "viewProjects": "Ver Proyectos",
+    "profileAlt": "Jesús Francisco Vázquez Biltre"
   }
 }

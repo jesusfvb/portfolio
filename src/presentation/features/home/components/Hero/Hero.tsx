@@ -1,6 +1,7 @@
 import { getTechInfo } from "@/domain/services/icon.service";
 import { SkillBadge } from "../Skills/components";
 import { ContactButton } from "@/presentation/shared/ui/ContactButton";
+import { useTranslation } from "react-i18next";
 
 // Imagen optimizada desde public
 const profileImage = "/images/foto_de_perfil.webp";
@@ -10,6 +11,7 @@ interface HeroProps {
 }
 
 const Hero = ({ onOpenSkillsModal }: HeroProps) => {
+  const { t } = useTranslation();
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -44,23 +46,20 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
                 className="bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-4xl leading-tight font-bold text-transparent md:text-5xl lg:text-6xl"
                 style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
-                Backend Java Developer
+                {t("hero.title")}
               </span>
               <span className="text-xl font-normal text-[#a0a0a0] md:text-2xl">
-                Jesús Francisco Vázquez Biltre
+                {t("hero.name")}
               </span>
             </h1>
             <p className="mb-6 max-w-[600px] text-lg leading-relaxed text-[#a0a0a0]">
-              Desarrollador Backend especializado en Java y Spring Boot,
-              con experiencia en la creación de APIs REST seguras y bien
-              estructuradas. Me enfoco en escribir código claro, mantenible y en
-              seguir buenas prácticas de desarrollo.
+              {t("hero.summary")}
             </p>
 
             {/* Resumen de herramientas */}
             <div className="mb-8">
               <p className="mb-3 text-sm text-[#a0a0a0]">
-                Tecnologías principales:
+                {t("hero.mainToolsLabel")}
               </p>
               <div className="flex flex-wrap items-center gap-2">
                 {mainTools.map((tool) => {
@@ -81,7 +80,7 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
                   onClick={onOpenSkillsModal}
                   className="group flex cursor-pointer items-center gap-2 rounded-full border border-[rgba(255,255,255,0.1)] bg-[#121212] px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-transparent hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6] hover:text-white hover:shadow-[0_5px_15px_rgba(99,102,241,0.3)]"
                 >
-                  <span>Ver más</span>
+                  <span>{t("hero.viewMore")}</span>
                   <span className="transition-transform duration-300 group-hover:translate-x-1">
                     →
                   </span>
@@ -94,7 +93,7 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
                 className="font-inherit w-full cursor-pointer rounded-lg border-2 border-[rgba(255,255,255,0.1)] bg-transparent px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:border-[#6366f1] hover:bg-[#1a1a1a] md:w-auto"
                 onClick={() => scrollToSection("projects")}
               >
-                Ver Proyectos
+                {t("hero.viewProjects")}
               </button>
               <ContactButton
                 variant="large"
@@ -107,7 +106,7 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
               <div className="relative h-full w-full overflow-hidden rounded-3xl">
                 <img
                   src={profileImage}
-                  alt="Jesús Francisco Vázquez Biltre"
+                  alt={t("hero.profileAlt")}
                   loading="lazy"
                   className="relative h-full w-full object-cover opacity-85 mix-blend-lighten"
                 />
