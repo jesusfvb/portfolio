@@ -1,12 +1,14 @@
 import type { Project } from "@/domain/interfaces/project.interface";
 import ProjectTechStack from "./ProjectTechStack";
 import { GitHubIcon, ExternalLinkIcon } from "@/presentation/shared/icons";
+import { useTranslation } from "react-i18next";
 
 interface ProjectCardContentProps {
   project: Project;
 }
 
 const ProjectCardContent = ({ project }: ProjectCardContentProps) => {
+  const { t } = useTranslation();
   return (
     <div className="flex h-full flex-col justify-center py-4 md:py-0">
       {/* Título */}
@@ -32,11 +34,11 @@ const ProjectCardContent = ({ project }: ProjectCardContentProps) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 rounded-lg border border-gray-700 bg-transparent px-4 py-2 text-sm font-medium text-white no-underline hover:border-gray-600"
-                aria-label="GitHub Frontend"
+                aria-label={t("projectCard.githubFrontendAria")}
                 onClick={(e) => e.stopPropagation()}
               >
                 <GitHubIcon size={16} />
-                <span>Code (Frontend)</span>
+                <span>{t("projectCard.codeFrontend")}</span>
               </a>
             )}
             
@@ -46,11 +48,11 @@ const ProjectCardContent = ({ project }: ProjectCardContentProps) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 rounded-lg border border-gray-700 bg-transparent px-4 py-2 text-sm font-medium text-white no-underline hover:border-gray-600"
-                aria-label="GitHub Backend"
+                aria-label={t("projectCard.githubBackendAria")}
                 onClick={(e) => e.stopPropagation()}
               >
                 <GitHubIcon size={16} />
-                <span>Code (Backend)</span>
+                <span>{t("projectCard.codeBackend")}</span>
               </a>
             )}
             
@@ -60,11 +62,11 @@ const ProjectCardContent = ({ project }: ProjectCardContentProps) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 rounded-lg border border-gray-700 bg-transparent px-4 py-2 text-sm font-medium text-white no-underline hover:border-gray-600"
-                aria-label="GitHub"
+                aria-label={t("projectCard.githubAria")}
                 onClick={(e) => e.stopPropagation()}
               >
                 <GitHubIcon size={16} />
-                <span>Code</span>
+                <span>{t("projectCard.code")}</span>
               </a>
             )}
           </>
@@ -76,11 +78,11 @@ const ProjectCardContent = ({ project }: ProjectCardContentProps) => {
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 rounded-lg border border-gray-700 bg-transparent px-4 py-2 text-sm font-medium text-white no-underline hover:border-gray-600"
-            aria-label="Ver proyecto en vivo"
+            aria-label={t("projectCard.previewAria")}
             onClick={(e) => e.stopPropagation()}
           >
             <ExternalLinkIcon size={16} />
-            <span>Preview</span>
+            <span>{t("projectCard.preview")}</span>
           </a>
         )}
       </div>

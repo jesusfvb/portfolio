@@ -22,5 +22,15 @@
     "mainContent": "Saltar al contenido principal",
     "projects": "Saltar a proyectos",
     "contact": "Saltar a contacto"
+  },
+  "projectCard": {
+    "code": "Código",
+    "codeFrontend": "Código (Frontend)",
+    "codeBackend": "Código (Backend)",
+    "preview": "Vista previa",
+    "githubFrontendAria": "GitHub Frontend",
+    "githubBackendAria": "GitHub Backend",
+    "githubAria": "GitHub",
+    "previewAria": "Ver proyecto en vivo"
   }
 }
