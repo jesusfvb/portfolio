@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 /**
  * SkipLinks Component
  * 
@@ -12,10 +13,11 @@
  */
 
 const SkipLinks = () => {
+  const { t } = useTranslation();
   const skipLinks = [
-    { href: "#main-content", label: "Saltar al contenido principal" },
-    { href: "#projects", label: "Saltar a proyectos" },
-    { href: "#contact", label: "Saltar a contacto" },
+    { href: "#main-content", label: t("skipLinks.mainContent") },
+    { href: "#projects", label: t("skipLinks.projects") },
+    { href: "#contact", label: t("skipLinks.contact") },
   ];
 
   return (
