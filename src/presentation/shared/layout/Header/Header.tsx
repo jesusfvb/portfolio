@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "./components/NavLink";
 import { ContactButton } from "@/presentation/shared/ui/ContactButton";
+import { useTranslation } from "react-i18next";
+import { useLocale } from "@/application/hooks";
 
 interface HeaderProps {
   className?: string;
@@ -9,6 +11,8 @@ interface HeaderProps {
 const Header = (props: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t } = useTranslation();
+  const { currentLanguage, setLanguage, supportedLanguages } = useLocale();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -85,6 +89,26 @@ const Header = (props: HeaderProps) => {
             >
               Descargar CV
             </a>
+            <div
+              className="flex items-center gap-1 rounded-full border border-white/20 bg-white/5 p-1 text-xs font-semibold text-white"
+              aria-label={t("common.language")}
+            >
+              {supportedLanguages.map((language) => (
+                <button
+                  key={language}
+                  type="button"
+                  onClick={() => setLanguage(language)}
+                  aria-pressed={currentLanguage === language}
+                  className={`rounded-full px-2 py-1 transition-all duration-300 ${
+                    currentLanguage === language
+                      ? "bg-white text-[#121212]"
+                      : "hover:bg-white/10"
+                  }`}
+                >
+                  {language.toUpperCase()}
+                </button>
+              ))}
+            </div>
             <ContactButton variant="small" />
           </nav>
 
@@ -139,6 +163,26 @@ const Header = (props: HeaderProps) => {
           >
             Descargar CV
           </a>
+          <div
+            className="flex items-center gap-1 self-start rounded-full border border-white/20 bg-white/5 p-1 text-xs font-semibold text-white"
+            aria-label={t("common.language")}
+          >
+            {supportedLanguages.map((language) => (
+              <button
+                key={language}
+                type="button"
+                onClick={() => setLanguage(language)}
+                aria-pressed={currentLanguage === language}
+                className={`rounded-full px-2 py-1 transition-all duration-300 ${
+                  currentLanguage === language
+                    ? "bg-white text-[#121212]"
+                    : "hover:bg-white/10"
+                }`}
+              >
+                {language.toUpperCase()}
+              </button>
+            ))}
+          </div>
           <ContactButton
             variant="default"
             className="mt-2 rounded-full"
