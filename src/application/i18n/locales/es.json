@@ -11,5 +11,11 @@
     "viewMore": "Ver más",
     "viewProjects": "Ver Proyectos",
     "profileAlt": "Jesús Francisco Vázquez Biltre"
+  },
+  "error": {
+    "title": "Oops!",
+    "subtitle": "Algo salió mal",
+    "message": "Lo sentimos, ocurrió un error inesperado. Por favor, intenta recargar la página o vuelve al inicio.",
+    "backHome": "Volver al inicio"
   }
 }
