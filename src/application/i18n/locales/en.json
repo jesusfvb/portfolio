@@ -32,5 +32,16 @@
     "githubBackendAria": "GitHub Backend",
     "githubAria": "GitHub",
     "previewAria": "View live project"
+  },
+  "contactSection": {
+    "title": "Let's talk",
+    "subtitle": "Do you have a project in mind? Let's talk!",
+    "connectTitle": "Let's connect",
+    "connectMessage": "I am always open to discussing new projects, creative ideas, or opportunities to be part of your visions.",
+    "copyEmail": "Copy email",
+    "sendEmailAria": "Send email message",
+    "sendEmailTitle": "Send email message",
+    "sendMessage": "Send Message",
+    "mailSubject": "Contact from Portfolio"
   }
 }

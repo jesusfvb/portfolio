@@ -32,5 +32,16 @@
     "githubBackendAria": "GitHub Backend",
     "githubAria": "GitHub",
     "previewAria": "Ver proyecto en vivo"
+  },
+  "contactSection": {
+    "title": "Hablemos",
+    "subtitle": "¿Tienes un proyecto en mente? ¡Hablemos!",
+    "connectTitle": "Conectemos",
+    "connectMessage": "Estoy siempre abierto a discutir nuevos proyectos, ideas creativas u oportunidades para ser parte de tus visiones.",
+    "copyEmail": "Copiar email",
+    "sendEmailAria": "Enviar mensaje por email",
+    "sendEmailTitle": "Enviar mensaje por email",
+    "sendMessage": "Enviar Mensaje",
+    "mailSubject": "Contacto desde Portfolio"
   }
 }
