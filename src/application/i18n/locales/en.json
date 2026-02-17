@@ -10,6 +10,10 @@
     "downloadCV": "Download CV",
     "downloadCVTitle": "Download my CV"
   },
+  "contactButton": {
+    "idea": "Do you have an idea?",
+    "collaborate": "Let's work together"
+  },
   "hero": {
     "title": "Backend Java Developer",
     "name": "Jesús Francisco Vázquez Biltre",

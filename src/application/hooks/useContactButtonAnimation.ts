@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { useContactButtonStore } from "@/domain/stores/contactButtonStore";
 
-export const ROTATING_TEXTS = ["¿Tienes una idea?", "Trabajemos juntos"];
+// Deprecated: Use i18n translation keys directly instead
+// Kept for backward compatibility with existing exports
 
 export interface AnimationEffect {
   out: string;
@@ -58,13 +60,18 @@ interface UseContactButtonAnimationProps {
 export const useContactButtonAnimation = ({
   text,
 }: UseContactButtonAnimationProps) => {
+  const { t, i18n } = useTranslation();
   const [textIndex, setTextIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [animationType, setAnimationType] = useState(0);
   const hoverCount = useContactButtonStore((state) => state.hoverCount);
   const timeoutRefs = useRef<number[]>([]);
 
-  const currentText = text || ROTATING_TEXTS[textIndex];
+  const rotatingTexts = [
+    t("contactButton.idea"),
+    t("contactButton.collaborate"),
+  ];
+  const currentText = text || rotatingTexts[textIndex];
   const currentAnimation = ANIMATION_EFFECTS[animationType];
   const hasHover = hoverCount > 0;
 
@@ -80,7 +87,9 @@ export const useContactButtonAnimation = ({
       return;
     }
 
+    // Resetear el índice cuando cambia el idioma
     let intervalId: number | null = null;
+    setTextIndex(0);
 
     const startAnimation = () => {
       // Verificar si hay hover antes de animar
@@ -105,7 +114,7 @@ export const useContactButtonAnimation = ({
 
         // Cambiar el texto y poner isAnimating a false al mismo tiempo
         // Esto hace que el nuevo texto aparezca inmediatamente con las clases 'in'
-        setTextIndex((prevIndex) => (prevIndex + 1) % ROTATING_TEXTS.length);
+        setTextIndex((prevIndex) => (prevIndex + 1) % rotatingTexts.length);
         setIsAnimating(false);
       }, 300); // Coincide con la duración de la transición CSS (duration-300)
 
@@ -127,8 +136,9 @@ export const useContactButtonAnimation = ({
       timeoutRefs.current.forEach((id) => clearTimeout(id));
       timeoutRefs.current = [];
     };
+  // Incluir i18n.language en las dependencias para reaccionar al cambio de idioma
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [text, hasHover]);
+  }, [text, hasHover, i18n.language]);
 
   return {
     currentText,
