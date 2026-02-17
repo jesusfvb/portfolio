@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="es" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>404 - Página no encontrada | Jesús Francisco Vázquez Biltre</title>
+    <title>404 - Page Not Found | Jesús Francisco Vázquez Biltre</title>
     <style>
       * {
         margin: 0;
@@ -93,13 +93,69 @@
         }
       }
     </style>
+    <script>
+      // Translations for 404 page
+      const translations = {
+        en: {
+          title: '404 - Page Not Found | Jesús Francisco Vázquez Biltre',
+          heading: 'Page Not Found',
+          message: "We're sorry, the page you're looking for doesn't exist or has been moved.",
+          button: 'Back to Home'
+        },
+        es: {
+          title: '404 - Página no encontrada | Jesús Francisco Vázquez Biltre',
+          heading: 'Página no encontrada',
+          message: 'Lo sentimos, la página que buscas no existe o ha sido movida.',
+          button: 'Volver al inicio'
+        }
+      };
+
+      // Detect language: localStorage (user preference) > navigator.language > 'en' (default)
+      function getLanguage() {
+        // Check localStorage for saved preference
+        const stored = localStorage.getItem('portfolio:language');
+        if (stored && (stored === 'en' || stored === 'es')) {
+          return stored;
+        }
+        
+        // Check navigator language
+        const navLang = navigator.language.toLowerCase();
+        if (navLang.startsWith('es')) {
+          return 'es';
+        }
+        
+        // Default to English
+        return 'en';
+      }
+
+      // Set language on load
+      window.addEventListener('DOMContentLoaded', function() {
+        const lang = getLanguage();
+        const t = translations[lang];
+        
+        // Update page title
+        document.title = t.title;
+        
+        // Update HTML lang attribute
+        document.documentElement.lang = lang;
+        
+        // Update content
+        const heading = document.querySelector('h2');
+        const message = document.querySelector('p');
+        const button = document.querySelector('a.btn');
+        
+        if (heading) heading.textContent = t.heading;
+        if (message) message.textContent = t.message;
+        if (button) button.textContent = t.button;
+      });
+    </script>
   </head>
   <body>
     <div class="container">
       <h1>404</h1>
-      <h2>Página no encontrada</h2>
-      <p>Lo sentimos, la página que buscas no existe o ha sido movida.</p>
-      <a href="/" class="btn">Volver al inicio</a>
+      <h2>Page Not Found</h2>
+      <p>We're sorry, the page you're looking for doesn't exist or has been moved.</p>
+      <a href="/" class="btn">Back to Home</a>
     </div>
   </body>
 </html>
