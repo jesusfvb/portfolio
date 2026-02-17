@@ -14,6 +14,10 @@
     "idea": "Do you have an idea?",
     "collaborate": "Let's work together"
   },
+  "projectsSection": {
+    "title": "Projects",
+    "subtitle": "Some of my recent and highlighted work"
+  },
   "hero": {
     "title": "Backend Java Developer",
     "name": "Jesús Francisco Vázquez Biltre",

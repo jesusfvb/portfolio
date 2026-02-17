@@ -1,0 +1,8 @@
+{
+  "items": {
+    "serverMangas": {
+      "title": "Server Mangas",
+      "description": "Backend platform for reading manga and manhwa, developed with Java and Spring Boot, exposing a REST API for manga search, chapter lookup, and image delivery. The project is structured with use cases and separation of concerns, prioritizing maintainability and scalability."
+    }
+  }
+}

@@ -6,6 +6,8 @@ import enEducation from "@/application/i18n/locales/education/en.json";
 import esEducation from "@/application/i18n/locales/education/es.json";
 import enSkills from "@/application/i18n/locales/skills/en.json";
 import esSkills from "@/application/i18n/locales/skills/es.json";
+import enProjects from "@/application/i18n/locales/projects/en.json";
+import esProjects from "@/application/i18n/locales/projects/es.json";
 import { SUPPORTED_LANGUAGES } from "@/application/i18n/constants";
 
 const resources = {
@@ -14,6 +16,7 @@ const resources = {
       ...en,
       education: enEducation,
       skills: enSkills,
+      projects: enProjects,
     },
   },
   es: {
@@ -21,6 +24,7 @@ const resources = {
       ...es,
       education: esEducation,
       skills: esSkills,
+      projects: esProjects,
     },
   },
 };

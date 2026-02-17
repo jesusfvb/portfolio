@@ -14,6 +14,10 @@
     "idea": "¿Tienes una idea?",
     "collaborate": "Trabajemos juntos"
   },
+  "projectsSection": {
+    "title": "Proyectos",
+    "subtitle": "Algunos de mis trabajos más recientes y destacados"
+  },
   "hero": {
     "title": "Backend Java Developer",
     "name": "Jesús Francisco Vázquez Biltre",
