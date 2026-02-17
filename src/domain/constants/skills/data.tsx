@@ -36,7 +36,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     displayName: "Spring Security",
     type: "framework",
     url: "https://spring.io/projects/spring-security",
-    additionalInfo: "( JWT básico)",
+    additionalInfo: "",
   },
 
   "rest apis": {
@@ -75,7 +75,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     displayName: "MongoDB",
     type: "other",
     url: "https://www.mongodb.com",
-    additionalInfo: "(básico)",
+    additionalInfo: "",
   },
 
   // Herramientas y prácticas
@@ -124,7 +124,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     displayName: "JUnit",
     type: "framework",
     url: "https://junit.org",
-    additionalInfo: "(básico)",
+    additionalInfo: "",
   },
   docker: {
     icon: <FaDocker style={{ color: "#2496ED" }} />,
@@ -133,7 +133,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     displayName: "Docker",
     type: "other",
     url: "https://www.docker.com",
-    additionalInfo: "(básico)",
+    additionalInfo: "",
   },
 
   linux: {
@@ -143,7 +143,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     displayName: "Linux",
     type: "other",
     url: "https://www.linux.org",
-    additionalInfo: "(básico)",
+    additionalInfo: "",
   },
 
   // Adicional
@@ -154,7 +154,7 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     displayName: "React",
     type: "framework",
     url: "https://react.dev",
-    additionalInfo: "(básico)",
+    additionalInfo: "",
   },
 
   "react native": {
@@ -164,6 +164,6 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     displayName: "React Native",
     type: "framework",
     url: "https://react.dev",
-    additionalInfo: "(básico)",
+    additionalInfo: "",
   },
 };

@@ -4,6 +4,8 @@ import en from "@/application/i18n/locales/en.json";
 import es from "@/application/i18n/locales/es.json";
 import enEducation from "@/application/i18n/locales/education/en.json";
 import esEducation from "@/application/i18n/locales/education/es.json";
+import enSkills from "@/application/i18n/locales/skills/en.json";
+import esSkills from "@/application/i18n/locales/skills/es.json";
 import { SUPPORTED_LANGUAGES } from "@/application/i18n/constants";
 
 const resources = {
@@ -11,12 +13,14 @@ const resources = {
     translation: {
       ...en,
       education: enEducation,
+      skills: enSkills,
     },
   },
   es: {
     translation: {
       ...es,
       education: esEducation,
+      skills: esSkills,
     },
   },
 };

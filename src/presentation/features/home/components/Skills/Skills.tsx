@@ -4,6 +4,7 @@ import type {
   SkillType,
 } from "@/domain/constants/skills/types";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 import { CloseIcon } from "@/presentation/shared/icons";
 import SkillCategoryComponent from "./components/SkillCategory";
@@ -13,16 +14,9 @@ interface SkillsProps {
   onClose: () => void;
 }
 
-const categoryLabels: Record<SkillCategoryType, string> = {
-  frontend: "Frontend",
-  backend: "Backend",
-  database: "Bases de Datos",
-  tools: "Herramientas y Prácticas",
-  mobile: "Mobile",
-  additional: "Adicional",
-};
-
 const Skills = ({ isOpen, onClose }: SkillsProps) => {
+  const { t } = useTranslation();
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -94,7 +88,7 @@ const Skills = ({ isOpen, onClose }: SkillsProps) => {
           <button
             onClick={onClose}
             className="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(255,255,255,0.1)] bg-[#121212] text-white transition-all duration-300 hover:scale-110 hover:border-transparent hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#8b5cf6]"
-            aria-label="Cerrar"
+            aria-label={t("skills.closeButton")}
           >
             <CloseIcon size={20} />
           </button>
@@ -104,17 +98,18 @@ const Skills = ({ isOpen, onClose }: SkillsProps) => {
         <div className="flex-1 overflow-y-auto">
           <div className="p-6 pt-0 md:p-8">
             <h2 className="mb-2 bg-linear-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
-              Tecnologías
+              {t("skills.title")}
             </h2>
             <p className="mb-8 text-base text-[#a0a0a0]">
-              Herramientas y lenguajes con los que trabajo
+              {t("skills.subtitle")}
             </p>
             <div className="flex flex-col gap-10">
               {availableOtherCategories.map((category) => (
                 <SkillCategoryComponent
+                  key={category}
                   category={category}
                   skills={skillsByCategory[category]}
-                  title={categoryLabels[category]}
+                  title={t(`skills.categories.${category}`)}
                 />
               ))}
             </div>
@@ -127,7 +122,7 @@ const Skills = ({ isOpen, onClose }: SkillsProps) => {
             onClick={scrollToContact}
             className="font-inherit group animate-pulse-glow relative cursor-pointer overflow-hidden rounded-xl border-none bg-linear-to-r from-[#6366f1] to-[#8b5cf6] px-6 py-3 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-[0_15px_40px_rgba(99,102,241,0.5)]"
           >
-            <span className="relative z-10">Hablemos</span>
+            <span className="relative z-10">{t("skills.contactButton")}</span>
             <div className="absolute inset-0 bg-linear-to-r from-[#8b5cf6] to-[#ec4899] opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
             {/* Efecto shimmer */}
             <div

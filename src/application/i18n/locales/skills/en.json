@@ -1,0 +1,19 @@
+{
+  "title": "Technologies",
+  "subtitle": "Tools and programming languages I work with",
+  "closeButton": "Close",
+  "contactButton": "Let's talk",
+  "categories": {
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Databases",
+    "tools": "Tools and Practices",
+    "mobile": "Mobile",
+    "additional": "Additional"
+  },
+  "typeLabels": {
+    "languages": "Languages",
+    "frameworks": "Frameworks",
+    "others": "Others"
+  }
+}

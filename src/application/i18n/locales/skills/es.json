@@ -1,0 +1,19 @@
+{
+  "title": "Tecnologías",
+  "subtitle": "Herramientas y lenguajes de programación con los que trabajo",
+  "closeButton": "Cerrar",
+  "contactButton": "Hablemos",
+  "categories": {
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Bases de Datos",
+    "tools": "Herramientas y Prácticas",
+    "mobile": "Mobile",
+    "additional": "Adicional"
+  },
+  "typeLabels": {
+    "languages": "Lenguajes",
+    "frameworks": "Frameworks",
+    "others": "Otros"
+  }
+}

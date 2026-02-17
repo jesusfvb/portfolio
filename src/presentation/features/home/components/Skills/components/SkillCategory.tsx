@@ -1,6 +1,7 @@
 import React from "react";
 import SkillBadge from "./SkillBadge";
 import SkillTypeGroup from "./SkillTypeGroup";
+import { useTranslation } from "react-i18next";
 import type {
   SkillCategory as SkillCategoryType,
   SkillType,
@@ -22,6 +23,7 @@ interface SkillCategoryProps {
 }
 
 const SkillCategory = ({ category, title, skills }: SkillCategoryProps) => {
+  const { t } = useTranslation();
   if (!skills || skills.length === 0) return null;
 
   const shouldGroupByType = category === "backend";
@@ -43,12 +45,12 @@ const SkillCategory = ({ category, title, skills }: SkillCategoryProps) => {
       {shouldGroupByType ? (
         <div className="space-y-4">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            <SkillTypeGroup title="Lenguajes" skills={languages} />
+            <SkillTypeGroup title={t("skills.typeLabels.languages")} skills={languages} />
             <SkillTypeGroup title="Frameworks" skills={frameworks} />
           </div>
           {others.length > 0 && (
             <div>
-              <h4 className="mb-2 text-sm font-medium text-[#d0d0d0]">Otros</h4>
+              <h4 className="mb-2 text-sm font-medium text-[#d0d0d0]">{t("skills.typeLabels.others")}</h4>
               <div className="flex flex-wrap gap-3">
                 {others.map((skill) => (
                   <SkillBadge
