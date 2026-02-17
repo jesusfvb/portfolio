@@ -3,6 +3,13 @@
     "language": "Language",
     "contact": "Contact"
   },
+  "header": {
+    "home": "Home",
+    "projects": "Projects",
+    "education": "Education",
+    "downloadCV": "Download CV",
+    "downloadCVTitle": "Download my CV"
+  },
   "hero": {
     "title": "Backend Java Developer",
     "name": "Jesús Francisco Vázquez Biltre",

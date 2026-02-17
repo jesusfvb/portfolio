@@ -64,13 +64,13 @@ const Header = (props: HeaderProps) => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex md:items-center md:gap-6">
             <NavLink sectionId="hero" scrollToSection={scrollToSection}>
-              Inicio
+              {t("header.home")}
             </NavLink>
             {/* <NavLink sectionId="about" scrollToSection={scrollToSection}>
               Sobre mí
             </NavLink> */}
             <NavLink sectionId="projects" scrollToSection={scrollToSection}>
-              Proyectos
+              {t("header.projects")}
             </NavLink>
             {/* <button
               onClick={handleSkillsClick}
@@ -79,15 +79,16 @@ const Header = (props: HeaderProps) => {
               Habilidades
             </button> */}
             <NavLink sectionId="education" scrollToSection={scrollToSection}>
-              Educación
+              {t("header.education")}
             </NavLink>
             <a
               href="https://github.com/jesusfvb/jesusfvb/raw/main/Jesu%CC%81s_F._Va%CC%81zquez_Biltre_CV.pdf"
               download="Jesus_F_Vazquez_Biltre_CV.pdf"
               className="rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-[#6366f1] focus-visible:outline-none"
-              aria-label="Descargar CV"
+              aria-label={t("header.downloadCVTitle")}
+              title={t("header.downloadCVTitle")}
             >
-              Descargar CV
+              {t("header.downloadCV")}
             </a>
             <div
               className="flex items-center gap-1 rounded-full border border-white/20 bg-white/5 p-1 text-xs font-semibold text-white"
@@ -146,22 +147,23 @@ const Header = (props: HeaderProps) => {
           }`}
         >
           <NavLink sectionId="hero" scrollToSection={scrollToSection}>
-            Inicio
+            {t("header.home")}
           </NavLink>
           <NavLink sectionId="projects" scrollToSection={scrollToSection}>
-            Proyectos
+            {t("header.projects")}
           </NavLink>
           <NavLink sectionId="education" scrollToSection={scrollToSection}>
-            Educación
+            {t("header.education")}
           </NavLink>
           <a
             href="https://raw.githubusercontent.com/jesusfvb/jesusfvb/main/Jes%C3%BAs_F._V%C3%A1zquez_Biltre_CV.pdf"
             download="Jesus_F_Vazquez_Biltre_CV.pdf"
             className="rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-[#6366f1] focus-visible:outline-none"
             onClick={() => setIsMobileMenuOpen(false)}
-            aria-label="Descargar CV"
+            aria-label={t("header.downloadCVTitle")}
+            title={t("header.downloadCVTitle")}
           >
-            Descargar CV
+            {t("header.downloadCV")}
           </a>
           <div
             className="flex items-center gap-1 self-start rounded-full border border-white/20 bg-white/5 p-1 text-xs font-semibold text-white"
