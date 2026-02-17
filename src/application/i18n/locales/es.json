@@ -58,5 +58,8 @@
     "sendEmailTitle": "Enviar mensaje por email",
     "sendMessage": "Enviar Mensaje",
     "mailSubject": "Contacto desde Portfolio"
+  },
+  "footer": {
+    "copyright": "Todos los derechos reservados"
   }
 }

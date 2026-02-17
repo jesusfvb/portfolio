@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Header } from "@/presentation/shared/layout/Header";
 import { PageHead, SkipLinks } from "@/presentation/shared/components";
 import {
@@ -10,6 +11,7 @@ import {
 } from "./components";
 
 const HomePage = () => {
+  const { t } = useTranslation();
   const [isSkillsModalOpen, setIsSkillsModalOpen] = useState(false);
 
   return (
@@ -31,7 +33,8 @@ const HomePage = () => {
         <div className="mx-auto max-w-[1200px] px-8 md:px-4">
           <p>
             &copy; {new Date().getFullYear()} Jesús Francisco Vázquez Biltre.
-            Todos los derechos reservados.
+            {" "}
+            {t("footer.copyright")}
           </p>
         </div>
       </footer>
