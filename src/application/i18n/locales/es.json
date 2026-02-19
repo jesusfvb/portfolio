@@ -11,8 +11,7 @@
     "downloadCVTitle": "Descargar mi CV"
   },
   "contactButton": {
-    "idea": "¿Tienes una idea?",
-    "collaborate": "Trabajemos juntos"
+    "static": "Hablemos"
   },
   "projectsSection": {
     "title": "Proyectos",

@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
-import { useContactButtonStore } from "@/domain/stores/contactButtonStore";
-import { useContactButtonAnimation } from "@/application/hooks";
+import { useTranslation } from "react-i18next";
 
 interface ContactButtonProps {
   text?: string;
@@ -15,29 +13,10 @@ const ContactButton = ({
   className = "",
   onClick,
 }: ContactButtonProps) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const incrementHover = useContactButtonStore((state) => state.incrementHover);
-  const decrementHover = useContactButtonStore((state) => state.decrementHover);
-  const { currentText, isAnimating, currentAnimation } =
-    useContactButtonAnimation({
-      text,
-    });
-
-  // Actualizar el store cuando cambia el hover
-  useEffect(() => {
-    if (isHovered) {
-      incrementHover();
-    } else {
-      decrementHover();
-    }
-
-    // Limpiar al desmontar
-    return () => {
-      if (isHovered) {
-        decrementHover();
-      }
-    };
-  }, [isHovered, incrementHover, decrementHover]);
+  const { t } = useTranslation();
+  
+  // Usar texto proporcionado o el estático por defecto
+  const buttonText = text || t("contactButton.static");
 
   const scrollToContact = () => {
     const element = document.getElementById("contact");
@@ -66,17 +45,9 @@ const ContactButton = ({
   return (
     <button
       onClick={handleClick}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       className={`${baseClasses} ${variantClasses[variant]} ${className}`}
     >
-      <span
-        className={`relative z-10 inline-block transition-all duration-300 ease-in-out ${
-          isAnimating ? currentAnimation.out : currentAnimation.in
-        }`}
-      >
-        {currentText}
-      </span>
+      <span className="relative z-10">{buttonText}</span>
       <div className="absolute inset-0 bg-linear-to-r from-[#8b5cf6] to-[#ec4899] opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
       {/* Efecto shimmer */}
       <div

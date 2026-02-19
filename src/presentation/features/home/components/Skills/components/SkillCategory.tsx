@@ -46,7 +46,7 @@ const SkillCategory = ({ category, title, skills }: SkillCategoryProps) => {
         <div className="space-y-4">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <SkillTypeGroup title={t("skills.typeLabels.languages")} skills={languages} />
-            <SkillTypeGroup title="Frameworks" skills={frameworks} />
+            <SkillTypeGroup title={t("skills.typeLabels.frameworks")} skills={frameworks} />
           </div>
           {others.length > 0 && (
             <div>

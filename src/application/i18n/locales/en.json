@@ -11,8 +11,7 @@
     "downloadCVTitle": "Download my CV"
   },
   "contactButton": {
-    "idea": "Do you have an idea?",
-    "collaborate": "Let's work together"
+    "static": "Let's talk"
   },
   "projectsSection": {
     "title": "Projects",
