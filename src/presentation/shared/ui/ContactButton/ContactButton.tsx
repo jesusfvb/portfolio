@@ -37,9 +37,9 @@ const ContactButton = ({
     "cursor-pointer transition-all duration-300 border-none font-inherit bg-linear-to-r from-[#6366f1] to-[#8b5cf6] text-white hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(99,102,241,0.4)] hover:scale-105 relative overflow-hidden group animate-pulse-glow";
 
   const variantClasses = {
-    small: "px-6 py-2.5 rounded-lg text-sm font-semibold min-w-[180px]",
-    default: "px-6 py-3 rounded-lg text-base font-semibold min-w-[200px]",
-    large: "px-10 py-4 rounded-xl text-lg font-bold min-w-[240px]",
+    small: "px-6 py-2.5 rounded-lg text-sm font-semibold min-w-[140px]",
+    default: "px-6 py-3 rounded-lg text-base font-semibold min-w-[150px]",
+    large: "px-10 py-4 rounded-xl text-lg font-bold min-w-[180px]",
   };
 
   return (
