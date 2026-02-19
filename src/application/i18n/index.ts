@@ -29,9 +29,31 @@ const resources = {
   },
 };
 
+// Detectar idioma: localStorage (preferencia) > navigator.language (navegador) > 'en' (default)
+const getInitialLanguage = (): string => {
+  // Nivel 1: Verificar localStorage (preferencia del usuario)
+  if (typeof window !== "undefined") {
+    const stored = localStorage.getItem("portfolio:language");
+    if (stored === "en" || stored === "es") {
+      return stored;
+    }
+  }
+
+  // Nivel 2: Verificar idioma del navegador
+  if (typeof navigator !== "undefined") {
+    const navLang = navigator.language.toLowerCase();
+    if (navLang.startsWith("es")) {
+      return "es";
+    }
+  }
+
+  // Nivel 3: Default a inglés
+  return "en";
+};
+
 void i18next.use(initReactI18next).init({
   resources,
-  lng: "en",
+  lng: getInitialLanguage(),
   fallbackLng: "en",
   supportedLngs: SUPPORTED_LANGUAGES,
   interpolation: {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Header } from "@/presentation/shared/layout/Header";
 import { PageHead, SkipLinks } from "@/presentation/shared/components";
@@ -11,8 +11,13 @@ import {
 } from "./components";
 
 const HomePage = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isSkillsModalOpen, setIsSkillsModalOpen] = useState(false);
+
+  // Actualizar atributo lang del HTML cuando cambia el idioma
+  useEffect(() => {
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language]);
 
   return (
     <div className="min-h-screen w-full">
