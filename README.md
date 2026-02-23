@@ -1,35 +1,44 @@
 # Portfolio - Jesús Francisco Vázquez Biltre
 
-Portfolio personal desarrollado con React, TypeScript y Tailwind CSS v4. Este proyecto muestra mis habilidades, proyectos y experiencia como desarrollador Full Stack.
+Personal portfolio built with React, TypeScript, and Tailwind CSS v4. This project showcases my skills, projects, and experience as a Full Stack developer.
 
-## 🚀 Características
+---
 
-- ✨ **Diseño Moderno**: Interfaz limpia y profesional con animaciones suaves
-- 📱 **Totalmente Responsive**: Optimizado para todos los dispositivos
-- 🎨 **Tailwind CSS v4**: Utilizando las últimas características de Tailwind CSS
-- 🏗️ **Clean Architecture**: Arquitectura limpia y escalable
-- ⚡ **Rendimiento Optimizado**: Construido con Vite para tiempos de carga rápidos
-- 🔒 **TypeScript**: Tipado estático para mayor seguridad y mantenibilidad
-- 🎯 **SEO Friendly**: Estructura semántica y optimizada
+### 🌍 Language / Idioma
 
-## 🛠️ Tecnologías Utilizadas
+This documentation is available in multiple languages:
+
+- 🇪🇸 **[Español - Spanish Version](./README.es.md)**
+
+
+## 🚀 Features
+
+- ✨ **Modern Design**: Clean, professional interface with smooth animations
+- 📱 **Fully Responsive**: Optimized for all devices
+- 🎨 **Tailwind CSS v4**: Uses the latest Tailwind CSS features
+- 🏗️ **Clean Architecture**: Clean, scalable architecture
+- ⚡ **Optimized Performance**: Built with Vite for fast load times
+- 🔒 **TypeScript**: Static typing for safety and maintainability
+- 🎯 **SEO Friendly**: Semantic, optimized structure
+
+## 🛠️ Tech Stack
 
 ### Frontend
 
-- **React 19.2.0** - Biblioteca de UI
-- **TypeScript 5.9.3** - Tipado estático
-- **Tailwind CSS 4.1.17** - Framework de CSS utility-first
-- **Vite 7.2.2** - Build tool y dev server
-- **React Icons 5.5.0** - Iconos populares
+- **React 19.2.0** - UI library
+- **TypeScript 5.9.3** - Static typing
+- **Tailwind CSS 4.1.17** - Utility-first CSS framework
+- **Vite 7.2.2** - Build tool and dev server
+- **React Icons 5.5.0** - Popular icon set
 
-### Herramientas de Desarrollo
+### Dev Tools
 
-- **ESLint** - Linter para código JavaScript/TypeScript
-- **TypeScript ESLint** - Reglas específicas para TypeScript
-- **PostCSS** - Procesador de CSS
-- **Autoprefixer** - Compatibilidad de navegadores
+- **ESLint** - JavaScript/TypeScript linter
+- **TypeScript ESLint** - TypeScript-specific rules
+- **PostCSS** - CSS processor
+- **Autoprefixer** - Browser compatibility
 
-## 📁 Estructura del Proyecto
+## 📁 Project Structure
 
 ```
 src/
@@ -108,25 +117,25 @@ src/
 └── vite-env.d.ts            # Declaraciones de tipos
 ```
 
-Para más detalles sobre la arquitectura, consulta [ARCHITECTURE.md](./ARCHITECTURE.md).
+For more details about the architecture, see [ARCHITECTURE.md](./ARCHITECTURE.md).
 
-## 🚀 Instalación
+## 🚀 Installation
 
-### Prerrequisitos
+### Prerequisites
 
 - **Node.js** >= 18.0.0
-- **pnpm** (recomendado) o npm/yarn
+- **pnpm** (recommended) or npm/yarn
 
-### Pasos de Instalación
+### Installation Steps
 
-1. **Clonar el repositorio**
+1. **Clone the repository**
 
 ```bash
 git clone <url-del-repositorio>
 cd porfolio_jesusfvb
 ```
 
-2. **Instalar dependencias**
+2. **Install dependencies**
 
 ```bash
 pnpm install
@@ -134,7 +143,7 @@ pnpm install
 npm install
 ```
 
-3. **Iniciar el servidor de desarrollo**
+3. **Start the development server**
 
 ```bash
 pnpm dev
@@ -142,117 +151,117 @@ pnpm dev
 npm run dev
 ```
 
-4. **Abrir en el navegador**
+4. **Open in the browser**
 
 ```
 http://localhost:5173
 ```
 
-## 📜 Scripts Disponibles
+## 📜 Available Scripts
 
-| Script         | Descripción                                                       |
+| Script         | Description                                                       |
 | -------------- | ----------------------------------------------------------------- |
-| `pnpm dev`     | Inicia el servidor de desarrollo con Hot Module Replacement (HMR) |
-| `pnpm build`   | Compila el proyecto para producción en la carpeta `dist/`         |
-| `pnpm preview` | Previsualiza la build de producción localmente                    |
-| `pnpm lint`    | Ejecuta ESLint para verificar el código                           |
+| `pnpm dev`     | Starts the dev server with Hot Module Replacement (HMR)           |
+| `pnpm build`   | Builds the project for production in the `dist/` folder           |
+| `pnpm preview` | Previews the production build locally                             |
+| `pnpm lint`    | Runs ESLint to check the code                                     |
 
-## 🎨 Secciones del Portafolio
+## 🎨 Portfolio Sections
 
 ### 🏠 Hero
 
-Sección principal con presentación personal, foto de perfil y botones de acción.
+Main section with a personal intro, profile photo, and call-to-action buttons.
 
-### 👤 Sobre Mí
+### 👤 About Me
 
-Información personal, experiencia y estadísticas destacadas.
+Personal information, experience, and highlighted stats.
 
-### 💼 Proyectos
+### 💼 Projects
 
-Galería de proyectos realizados con tecnologías utilizadas y enlaces. Incluye:
-- **Carrusel interactivo**: Navegación fluida entre proyectos
-- **Tarjetas de proyecto**: Vista previa con imagen, título, descripción y tecnologías
-- **Modal de detalle**: Vista completa con imágenes, descripción extendida, tecnologías y enlaces
-- **Navegación de imágenes**: Para proyectos con múltiples capturas de pantalla
+Project gallery with tech stack and links. Includes:
+- **Interactive carousel**: Smooth navigation between projects
+- **Project cards**: Preview with image, title, description, and tech stack
+- **Detail modal**: Full view with images, extended description, tech, and links
+- **Image navigation**: For projects with multiple screenshots
 
-### 🛠️ Habilidades
+### 🛠️ Skills
 
-Lista de tecnologías y habilidades técnicas con iconos.
+List of technologies and technical skills with icons.
 
-### 📧 Contacto
+### 📧 Contact
 
-Formulario de contacto con validación y enlaces a redes sociales.
+Contact form with validation and social links.
 
-## 🎯 Personalización
+## 🎯 Customization
 
-### Modificar Información Personal
+### Update Personal Information
 
-1. **Foto de perfil**: Reemplaza `src/assets/1000001843.JPG` con tu propia imagen
-2. **Datos personales**: Edita los componentes en `src/presentation/components/sections/`
-3. **Proyectos**: 
-   - Actualiza `src/domain/constants/projects.constants.ts` para agregar/modificar proyectos
-   - Personaliza los componentes de tarjeta en `src/presentation/components/sections/projects/components/card/`
-   - Modifica el modal de detalle en `src/presentation/components/sections/projects/components/detail/`
-4. **Habilidades**: Modifica `src/domain/constants/skills.constants.tsx`
-5. **Información de contacto**: Edita `src/domain/constants/contact.constants.tsx`
+1. **Profile photo**: Replace `src/assets/1000001843.JPG` with your own image
+2. **Personal data**: Edit components in `src/presentation/components/sections/`
+3. **Projects**:
+  - Update `src/domain/constants/projects.constants.ts` to add or modify projects
+  - Customize card components in `src/presentation/components/sections/projects/components/card/`
+  - Modify the detail modal in `src/presentation/components/sections/projects/components/detail/`
+4. **Skills**: Update `src/domain/constants/skills.constants.tsx`
+5. **Contact info**: Edit `src/domain/constants/contact.constants.tsx`
 
-### Cambiar Colores y Estilos
+### Change Colors and Styles
 
-Los colores principales están definidos en las clases de Tailwind CSS. Los colores del gradiente principal son:
+Main colors are defined in Tailwind CSS classes. The primary gradient colors are:
 
 - `#6366f1` (Indigo)
 - `#8b5cf6` (Purple)
 
-Puedes cambiarlos buscando estas referencias en los componentes.
+You can change them by searching for these references in components.
 
-## 🏗️ Arquitectura
+## 🏗️ Architecture
 
-Este proyecto sigue los principios de **Clean Architecture**:
+This project follows **Clean Architecture** principles:
 
-- **Domain Layer**: Lógica de negocio pura, sin dependencias externas
-- **Application Layer**: Casos de uso y servicios de aplicación
-- **Presentation Layer**: Componentes React y UI
+- **Domain Layer**: Pure business logic, no external dependencies
+- **Application Layer**: Use cases and application services
+- **Presentation Layer**: React components and UI
 
-Las dependencias fluyen en una sola dirección:
+Dependencies flow in a single direction:
 
 ```
 Presentation → Application → Domain
 ```
 
-### Organización de Componentes
+### Component Organization
 
-Los componentes están organizados de forma modular y por funcionalidad:
+Components are organized modularly by functionality:
 
-- **`card/`**: Componentes relacionados con las tarjetas de proyecto (banner, contenido, overlay, etc.)
-- **`carousel/`**: Componente del carrusel de proyectos
-- **`detail/`**: Componentes del modal de detalle (imágenes, contenido, navegación, etc.)
-- **`hooks/`**: Hooks personalizados para la lógica del carrusel
+- **`card/`**: Project card components (banner, content, overlay, etc.)
+- **`carousel/`**: Projects carousel component
+- **`detail/`**: Detail modal components (images, content, navigation, etc.)
+- **`hooks/`**: Custom hooks for carousel logic
 
-Esta organización facilita el mantenimiento, la reutilización y la escalabilidad del código.
+This organization improves maintainability, reusability, and scalability.
 
-Para más información, consulta [ARCHITECTURE.md](./ARCHITECTURE.md).
+For more information, see [ARCHITECTURE.md](./ARCHITECTURE.md).
 
-## 🔧 Configuración
+## 🔧 Configuration
 
 ### Path Aliases
 
-El proyecto utiliza aliases configurados en `vite.config.ts` y `tsconfig.app.json`:
+The project uses aliases configured in `vite.config.ts` and `tsconfig.app.json`:
 
 - `@/*` → `./src/*`
 - `@/domain/*` → `./src/domain/*`
 - `@/application/*` → `./src/application/*`
 - `@/presentation/*` → `./src/presentation/*`
 
-Ejemplo de uso:
+Example usage:
 
 ```typescript
 import { Project } from "@/domain/interfaces";
 import Header from "@/presentation/components/layout/Header";
 ```
 
-### Tipos de Imágenes
+### Image Types
 
-El proyecto incluye declaraciones de tipos para archivos de imagen en `src/vite-env.d.ts`:
+The project includes type declarations for image files in `src/vite-env.d.ts`:
 
 - `.jpg`, `.JPG`
 - `.jpeg`
@@ -261,7 +270,7 @@ El proyecto incluye declaraciones de tipos para archivos de imagen en `src/vite-
 - `.svg`
 - `.webp`
 
-## 📦 Build para Producción
+## 📦 Production Build
 
 ```bash
 pnpm build
@@ -269,59 +278,59 @@ pnpm build
 
 Esto generará una carpeta `dist/` con los archivos optimizados listos para desplegar.
 
-### Previsualizar Build
+### Preview Build
 
 ```bash
 pnpm preview
 ```
 
-## 🚢 Despliegue
+## 🚢 Deployment
 
 ### GitHub Pages
 
-El proyecto puede desplegarse en GitHub Pages usando GitHub Actions. El workflow se ejecuta automáticamente al hacer push a la rama `master`.
+The project can be deployed to GitHub Pages using GitHub Actions. The workflow runs automatically when pushing to the `master` branch.
 
-#### Configuración Inicial
+#### Initial Setup
 
-1. **Habilita GitHub Pages en tu repositorio**:
-   - Ve a `Settings` → `Pages` en tu repositorio de GitHub
-   - En `Source`, selecciona `GitHub Actions`
-   - Guarda los cambios
+1. **Enable GitHub Pages in your repository**:
+  - Go to `Settings` → `Pages` in your GitHub repository
+  - In `Source`, select `GitHub Actions`
+  - Save the changes
 
-2. **Haz push a la rama master**:
+2. **Push to the master branch**:
 
    ```bash
    git push origin master
    ```
 
-3. **La GitHub Action se ejecutará automáticamente**:
-   - Ve a la pestaña `Actions` en tu repositorio
-   - Verás el workflow ejecutándose
-   - Una vez completado, tu sitio estará disponible en:
+3. **The GitHub Action runs automatically**:
+  - Go to the `Actions` tab in your repository
+  - You will see the workflow running
+  - Once completed, your site will be available at:
      - `https://tu-usuario.github.io/nombre-repositorio/`
 
-### Otras Plataformas
+### Other Platforms
 
-El proyecto también puede desplegarse en:
+The project can also be deployed to:
 
-- **Vercel**: Conecta tu repositorio y despliega automáticamente
-- **Netlify**: Arrastra la carpeta `dist/` o conecta el repositorio
-- **Cloudflare Pages**: Conecta el repositorio y configura el build command
+- **Vercel**: Connect your repo and deploy automatically
+- **Netlify**: Drag the `dist/` folder or connect the repo
+- **Cloudflare Pages**: Connect the repo and configure the build command
 
-### Variables de Entorno
+### Environment Variables
 
-Si necesitas configurar variables de entorno, crea un archivo `.env` en la raíz:
+If you need to configure environment variables, create a `.env` file in the root:
 
 ```env
 VITE_API_URL=https://api.ejemplo.com
 VITE_BASE_PATH=/
 ```
 
-Las variables deben comenzar con `VITE_` para ser accesibles en el código.
+Variables must start with `VITE_` to be accessible in code.
 
-## 🔍 Expandiendo la Configuración de ESLint
+## 🔍 Expanding ESLint Configuration
 
-Si estás desarrollando una aplicación de producción, se recomienda actualizar la configuración para habilitar reglas de linting con tipos:
+If you are building a production application, it is recommended to update the configuration to enable type-aware linting rules:
 
 ```js
 export default defineConfig([
@@ -351,26 +360,27 @@ export default defineConfig([
 ]);
 ```
 
-También puedes instalar [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) y [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) para reglas específicas de React.
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific rules.
 
-## 📝 Licencia
+## 📝 License
 
-Este proyecto es privado y propiedad de Jesús Francisco Vázquez Biltre.
+This project is private and owned by Jesús Francisco Vázquez Biltre.
 
-## 👤 Autor
+## 👤 Author
 
 **Jesús Francisco Vázquez Biltre**
 
-- Desarrollador Full Stack
-- Especializado en React, TypeScript y tecnologías web modernas
+- Full Stack Developer
+- Specialized in React, TypeScript, and modern web technologies
 
-## 🙏 Agradecimientos
+## 🙏 Acknowledgments
 
 - [React](https://react.dev/)
 - [Vite](https://vite.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [React Icons](https://react-icons.github.io/react-icons/)
 
+
 ---
 
-⭐ Si te gusta este proyecto, ¡no dudes en darle una estrella!
+⭐ If you like this project, feel free to give it a star!
