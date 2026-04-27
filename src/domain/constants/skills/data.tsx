@@ -7,6 +7,7 @@ import {
   FaReact,
 } from "react-icons/fa";
 import {
+  SiJavascript,
   SiMongodb,
   SiMysql,
   SiNestjs,
@@ -16,34 +17,49 @@ import {
 } from "react-icons/si";
 import type { TechIconMap } from "./types";
 import { createImageIcon } from "../../services/create-image-icon";
-import { SpringSecurityIcon, JUnitIcon } from "../../../../icons";
+import { JUnitIcon } from "../../../../icons";
 
 export const SKILLS_ICONS: Record<string, TechIconMap> = {
-  // Backend
-  java: {
-    icon: <FaJava style={{ color: "#ED8B00" }} />,
-    keywords: ["java"],
+  // Full Stack (TypeScript ecosystem)
+  typescript: {
+    icon: <SiTypescript style={{ color: "#3178C6" }} />,
+    keywords: ["typescript", "ts"],
     category: "backend",
-    displayName: "Java",
+    displayName: "TypeScript",
     type: "language",
-    url: "https://www.java.com",
+    url: "https://www.typescriptlang.org",
   },
-  spring: {
-    icon: <SiSpring style={{ color: "#6DB33F" }} />,
-    keywords: ["spring boot", "springboot"],
+  javascript: {
+    icon: <SiJavascript style={{ color: "#F7DF1E" }} />,
+    keywords: ["javascript", "js"],
     category: "backend",
-    displayName: "Spring Boot",
-    type: "framework",
-    url: "https://spring.io/projects/spring-boot",
+    displayName: "JavaScript",
+    type: "language",
+    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
   },
-  "spring security": {
-    icon: <SpringSecurityIcon />,
-    keywords: ["spring security", "springsecurity"],
+  react: {
+    icon: <FaReact style={{ color: "#61DAFB" }} />,
+    keywords: ["react"],
     category: "backend",
-    displayName: "Spring Security",
+    displayName: "React",
     type: "framework",
-    url: "https://spring.io/projects/spring-security",
-    additionalInfo: "",
+    url: "https://react.dev",
+  },
+  "react native": {
+    icon: <FaReact style={{ color: "#61DAFB" }} />,
+    keywords: ["react native", "reactnative"],
+    category: "backend",
+    displayName: "React Native",
+    type: "framework",
+    url: "https://react.dev",
+  },
+  nestjs: {
+    icon: <SiNestjs style={{ color: "#E0234E" }} />,
+    keywords: ["nestjs", "nest"],
+    category: "backend",
+    displayName: "NestJS",
+    type: "framework",
+    url: "https://nestjs.com",
   },
 
   "rest apis": {
@@ -153,39 +169,21 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     additionalInfo: "",
   },
 
-  // Frontend
-  typescript: {
-    icon: <SiTypescript style={{ color: "#3178C6" }} />,
-    keywords: ["typescript", "ts"],
-    category: "frontend",
-    displayName: "TypeScript",
-    type: "language",
-    url: "https://www.typescriptlang.org",
-  },
-  react: {
-    icon: <FaReact style={{ color: "#61DAFB" }} />,
-    keywords: ["react"],
-    category: "frontend",
-    displayName: "React",
-    type: "framework",
-    url: "https://react.dev",
-  },
-  nestjs: {
-    icon: <SiNestjs style={{ color: "#E0234E" }} />,
-    keywords: ["nestjs", "nest"],
-    category: "backend",
-    displayName: "NestJS",
-    type: "framework",
-    url: "https://nestjs.com",
-  },
-
-  "react native": {
-    icon: <FaReact style={{ color: "#61DAFB" }} />,
-    keywords: ["react native", "reactnative"],
+  // Adicional
+  java: {
+    icon: <FaJava style={{ color: "#ED8B00" }} />,
+    keywords: ["java"],
     category: "additional",
-    displayName: "React Native",
+    displayName: "Java",
+    type: "language",
+    url: "https://www.java.com",
+  },
+  spring: {
+    icon: <SiSpring style={{ color: "#6DB33F" }} />,
+    keywords: ["spring boot", "springboot"],
+    category: "additional",
+    displayName: "Spring Boot",
     type: "framework",
-    url: "https://react.dev",
-    additionalInfo: "",
+    url: "https://spring.io/projects/spring-boot",
   },
 };
