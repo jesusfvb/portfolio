@@ -6,7 +6,14 @@ import {
   FaLinux,
   FaReact,
 } from "react-icons/fa";
-import { SiMongodb, SiMysql, SiPostgresql, SiSpring } from "react-icons/si";
+import {
+  SiMongodb,
+  SiMysql,
+  SiNestjs,
+  SiPostgresql,
+  SiSpring,
+  SiTypescript,
+} from "react-icons/si";
 import type { TechIconMap } from "./types";
 import { createImageIcon } from "../../services/create-image-icon";
 import { SpringSecurityIcon, JUnitIcon } from "../../../../icons";
@@ -146,15 +153,30 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     additionalInfo: "",
   },
 
-  // Adicional
+  // Frontend
+  typescript: {
+    icon: <SiTypescript style={{ color: "#3178C6" }} />,
+    keywords: ["typescript", "ts"],
+    category: "frontend",
+    displayName: "TypeScript",
+    type: "language",
+    url: "https://www.typescriptlang.org",
+  },
   react: {
     icon: <FaReact style={{ color: "#61DAFB" }} />,
     keywords: ["react"],
-    category: "additional",
+    category: "frontend",
     displayName: "React",
     type: "framework",
     url: "https://react.dev",
-    additionalInfo: "",
+  },
+  nestjs: {
+    icon: <SiNestjs style={{ color: "#E0234E" }} />,
+    keywords: ["nestjs", "nest"],
+    category: "backend",
+    displayName: "NestJS",
+    type: "framework",
+    url: "https://nestjs.com",
   },
 
   "react native": {
