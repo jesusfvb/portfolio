@@ -18,9 +18,9 @@
     "subtitle": "Algunos de mis trabajos más recientes y destacados"
   },
   "hero": {
-    "title": "Backend Java Developer",
+    "title": "Full Stack Developer",
     "name": "Jesús Francisco Vázquez Biltre",
-    "summary": "Desarrollador Backend especializado en Java y Spring Boot, con experiencia en la creación de APIs REST seguras y bien estructuradas. Me enfoco en escribir código claro, mantenible y en seguir buenas prácticas de desarrollo.",
+    "summary": "Desarrollador Full Stack especializado en TypeScript, desarrollando aplicaciones web modernas con React en el frontend y NestJS en el backend. Me enfoco en escribir código claro, mantenible y en seguir buenas prácticas de desarrollo.",
     "mainToolsLabel": "Tecnologías principales:",
     "viewMore": "Ver más",
     "viewProjects": "Ver Proyectos",
