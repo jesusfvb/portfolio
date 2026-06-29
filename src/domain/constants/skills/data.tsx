@@ -7,7 +7,9 @@ import {
   FaReact,
 } from "react-icons/fa";
 import {
+  SiExpo,
   SiJavascript,
+  SiJest,
   SiMongodb,
   SiMysql,
   SiNestjs,
@@ -52,6 +54,22 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     displayName: "React Native",
     type: "framework",
     url: "https://react.dev",
+  },
+  expo: {
+    icon: <SiExpo style={{ color: "#FFFFFF" }} />,
+    keywords: ["expo", "expo sdk"],
+    category: "backend",
+    displayName: "Expo",
+    type: "framework",
+    url: "https://expo.dev",
+  },
+  jest: {
+    icon: <SiJest style={{ color: "#C21325" }} />,
+    keywords: ["jest"],
+    category: "tools",
+    displayName: "Jest",
+    type: "framework",
+    url: "https://jestjs.io",
   },
   nestjs: {
     icon: <SiNestjs style={{ color: "#E0234E" }} />,
