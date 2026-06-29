@@ -42,6 +42,7 @@
     "codeFrontend": "Código (Frontend)",
     "codeBackend": "Código (Backend)",
     "preview": "Vista previa",
+    "viewDetails": "Ver detalles",
     "githubFrontendAria": "GitHub Frontend",
     "githubBackendAria": "GitHub Backend",
     "githubAria": "GitHub",
@@ -60,5 +61,11 @@
   },
   "footer": {
     "copyright": "Todos los derechos reservados"
+  },
+  "projectDetail": {
+    "backToProjects": "Volver a proyectos",
+    "highlights": "Logros destacados",
+    "screenshots": "Capturas de pantalla",
+    "codeSnippets": "Fragmentos de código"
   }
 }

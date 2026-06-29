@@ -2,7 +2,28 @@
   "items": {
     "autoContact": {
       "title": "Auto-Contact",
-      "description": "Aplicación Android orientada a automatizar la importación de contactos de WhatsApp desde un backend externo. La app compara números con la agenda local y solo crea contactos nuevos, evitando duplicados. La arquitectura separa acciones, servicios y hooks compuestos; el estado persiste en AsyncStorage. El scheduler coordina sync manual, timer configurable, tarea en background y re-sync al volver a la app."
+      "summary": "App móvil Android desarrollada con React Native / Expo SDK 56 que sincroniza contactos desde una API REST hacia la agenda del dispositivo. Incluye auto-sync en primer plano y background, configuración persistente, paginación de API y tests unitarios.",
+      "description": "Aplicación Android orientada a automatizar la importación de contactos de WhatsApp desde un backend externo. La app compara números con la agenda local y solo crea contactos nuevos, evitando duplicados. La arquitectura separa acciones, servicios y hooks compuestos; el estado persiste en AsyncStorage. El scheduler coordina sync manual, timer configurable, tarea en background y re-sync al volver a la app.",
+      "highlights": [
+        "Arquitectura modular con hooks compuestos (`useSyncOrchestrator`) que orquestan permisos, settings, sync y scheduler.",
+        "Integración REST con paginación secuencial (500 registros/página), deduplicación y manejo de errores fail-fast.",
+        "Auto-sync multi-canal: foreground (intervalo 1 min–1 h), background (mín. 15 min Android) y resume al reabrir la app.",
+        "Panel de Settings in-app: URL del servidor, API key, límite de logs, intervalo y test de conexión.",
+        "Persistencia local con AsyncStorage y logs de actividad en tiempo real.",
+        "Tests Jest de la capa de fetch (multi-página, dedupe, errores).",
+        "Build de release con EAS (APK optimizado: minify, shrink resources, arm64)."
+      ],
+      "screenshots": {
+        "settings": "Pantalla de configuración y sync",
+        "logs": "Pantalla de logs y estado de sincronización"
+      },
+      "codeSnippets": {
+        "orchestrator": "Orquestación con hooks compuestos",
+        "pagination": "Paginación y deduplicación de la API",
+        "deduplication": "Guardado incremental sin duplicados",
+        "syncMutex": "Mutex de sync y permisos",
+        "apiUrl": "Construcción segura de URLs de API"
+      }
     }
   }
 }

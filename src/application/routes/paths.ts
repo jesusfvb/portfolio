@@ -5,6 +5,9 @@ export const ROUTES = {
   contact: "/contact",
 } as const;
 
+export const getProjectDetailRoute = (slug: string) =>
+  `${ROUTES.projects}/${slug}`;
+
 export const ROUTE_SECTIONS: Record<string, string> = {
   [ROUTES.projects]: "projects",
   [ROUTES.education]: "education",

@@ -18,6 +18,15 @@
 
   /* Bordes */
   --border-color: rgba(255, 255, 255, 0.1);
+
+  /* Altura del header fijo (logo + py-4 + nav en desktop) */
+  --header-height: 5rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --header-height: 5.5rem;
+  }
 }
 
 /* Reset básico - Tailwind ya incluye la mayoría, solo agregamos lo específico */

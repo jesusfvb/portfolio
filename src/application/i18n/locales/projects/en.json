@@ -2,7 +2,28 @@
   "items": {
     "autoContact": {
       "title": "Auto-Contact",
-      "description": "Android app designed to automate importing WhatsApp contacts from an external backend. The app compares phone numbers with the local address book and only creates new contacts, avoiding duplicates. The architecture separates actions, services, and composite hooks; state persists in AsyncStorage. The scheduler coordinates manual sync, configurable timers, background tasks, and re-sync when the app is reopened."
+      "summary": "Android mobile app built with React Native / Expo SDK 56 that syncs contacts from a REST API to the device address book. Includes foreground and background auto-sync, persistent settings, API pagination, and unit tests.",
+      "description": "Android app designed to automate importing WhatsApp contacts from an external backend. The app compares phone numbers with the local address book and only creates new contacts, avoiding duplicates. The architecture separates actions, services, and composite hooks; state persists in AsyncStorage. The scheduler coordinates manual sync, configurable timers, background tasks, and re-sync when the app is reopened.",
+      "highlights": [
+        "Modular architecture with composite hooks (`useSyncOrchestrator`) orchestrating permissions, settings, sync, and scheduler.",
+        "REST integration with sequential pagination (500 records/page), deduplication, and fail-fast error handling.",
+        "Multi-channel auto-sync: foreground (1 min–1 h interval), background (min. 15 min on Android), and resume on app reopen.",
+        "In-app Settings panel: server URL, API key, log limit, interval, and connection test.",
+        "Local persistence with AsyncStorage and real-time activity logs.",
+        "Jest tests for the fetch layer (multi-page, dedupe, errors).",
+        "Release build with EAS (optimized APK: minify, shrink resources, arm64)."
+      ],
+      "screenshots": {
+        "settings": "Settings and sync configuration screen",
+        "logs": "Activity logs and sync status screen"
+      },
+      "codeSnippets": {
+        "orchestrator": "Orchestration with composite hooks",
+        "pagination": "API pagination and deduplication",
+        "deduplication": "Incremental save without duplicates",
+        "syncMutex": "Sync mutex and permissions",
+        "apiUrl": "Safe API URL construction"
+      }
     }
   }
 }

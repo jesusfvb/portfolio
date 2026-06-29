@@ -2,6 +2,8 @@ import type { Project } from "@/domain/interfaces/project.interface";
 import ProjectTechStack from "./ProjectTechStack";
 import { GitHubIcon, ExternalLinkIcon } from "@/presentation/shared/icons";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import { getProjectDetailRoute } from "@/application/routes";
 
 interface ProjectCardContentProps {
   project: Project;
@@ -26,6 +28,13 @@ const ProjectCardContent = ({ project }: ProjectCardContentProps) => {
       
       {/* Botones de acción */}
       <div className="flex flex-wrap gap-3">
+        <Link
+          to={getProjectDetailRoute(project.slug)}
+          className="flex items-center gap-2 rounded-lg border border-[#6366f1]/50 bg-[#6366f1]/10 px-4 py-2 text-sm font-medium text-white no-underline transition-colors hover:border-[#6366f1] hover:bg-[#6366f1]/20"
+        >
+          <span>{t("projectCard.viewDetails")}</span>
+        </Link>
+
         {(project.githubFrontend || project.githubBackend || project.github) && (
           <>
             {project.githubFrontend && (
