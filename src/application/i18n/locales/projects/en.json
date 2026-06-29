@@ -1,8 +1,8 @@
 {
   "items": {
-    "serverMangas": {
-      "title": "Server Mangas",
-      "description": "Backend platform for reading manga and manhwa, developed with Java and Spring Boot, exposing a REST API for manga search, chapter lookup, and image delivery. The project is structured with use cases and separation of concerns, prioritizing maintainability and scalability."
+    "autoContact": {
+      "title": "Auto-Contact",
+      "description": "Android app designed to automate importing WhatsApp contacts from an external backend. The app compares phone numbers with the local address book and only creates new contacts, avoiding duplicates. The architecture separates actions, services, and composite hooks; state persists in AsyncStorage. The scheduler coordinates manual sync, configurable timers, background tasks, and re-sync when the app is reopened."
     }
   }
 }

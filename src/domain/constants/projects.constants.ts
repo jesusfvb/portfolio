@@ -3,13 +3,16 @@ import type { Project } from "../interfaces/project.interface";
 export const PROJECTS: Project[] = [
   {
     id: 1,
-    title: "projects.items.serverMangas.title",
-    description: "projects.items.serverMangas.description",
+    title: "projects.items.autoContact.title",
+    description: "projects.items.autoContact.description",
     technologies: [
-      "Spring Boot",
-      "MongoDB",
+      "TypeScript",
+      "React Native",
+      "Expo",
+      "REST APIs",
+      "Jest",
     ],
-    banner: "/images/app_manga/AppManga Banner.webp",
-    githubBackend: "https://github.com/jesusfvb/manga.server",
+    banner: "/projects/auto-contact/icon.png",
+    bannerFit: "contain",
   },
 ];

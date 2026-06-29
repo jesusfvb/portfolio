@@ -4,6 +4,7 @@ export interface Project {
   description: string;
   technologies: string[];
   banner?: string;
+  bannerFit?: "cover" | "contain";
   github?: string;
   githubFrontend?: string;
   githubBackend?: string;

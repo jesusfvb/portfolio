@@ -5,6 +5,8 @@ interface ProjectBannerProps {
 }
 
 const ProjectBanner = ({ project }: ProjectBannerProps) => {
+  const isIconBanner = project.bannerFit === "contain";
+
   return (
     <div className="relative w-full overflow-hidden rounded-lg border border-gray-800/50">
       <div className="w-full aspect-video bg-[#0a0a0a]">
@@ -13,7 +15,11 @@ const ProjectBanner = ({ project }: ProjectBannerProps) => {
             src={project.banner}
             alt={`${project.title} banner`}
             loading="lazy"
-            className="h-full w-full object-cover"
+            className={`h-full w-full ${
+              isIconBanner
+                ? "object-contain p-10"
+                : "object-cover"
+            }`}
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center">
