@@ -5,6 +5,8 @@ import type {
 } from "@/domain/constants/skills/types";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "@/application/routes";
 
 import { CloseIcon } from "@/presentation/shared/icons";
 import SkillCategoryComponent from "./components/SkillCategory";
@@ -16,6 +18,7 @@ interface SkillsProps {
 
 const Skills = ({ isOpen, onClose }: SkillsProps) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (isOpen) {
@@ -30,12 +33,7 @@ const Skills = ({ isOpen, onClose }: SkillsProps) => {
 
   const scrollToContact = () => {
     onClose();
-    setTimeout(() => {
-      const element = document.getElementById("contact");
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 100);
+    navigate(ROUTES.contact);
   };
 
   if (!isOpen) return null;

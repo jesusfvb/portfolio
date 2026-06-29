@@ -1,6 +1,7 @@
 import React, { type ReactElement } from "react";
 import { render, type RenderOptions } from "@testing-library/react";
 import { HelmetProvider } from "react-helmet-async";
+import { MemoryRouter } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
 
 interface CustomRenderOptions extends Omit<RenderOptions, "wrapper"> {
@@ -17,9 +18,9 @@ export function renderWithProviders(
 ) {
   function Wrapper({ children }: { children: React.ReactNode }) {
     return (
-      <HelmetProvider>
-        {children}
-      </HelmetProvider>
+      <MemoryRouter>
+        <HelmetProvider>{children}</HelmetProvider>
+      </MemoryRouter>
     );
   }
 

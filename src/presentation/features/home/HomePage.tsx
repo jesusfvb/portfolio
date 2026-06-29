@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { useScrollToSectionOnRoute } from "@/application/hooks";
 import { Header } from "@/presentation/shared/layout/Header";
 import { PageHead, SkipLinks } from "@/presentation/shared/components";
 import {
@@ -13,6 +14,7 @@ import {
 const HomePage = () => {
   const { t, i18n } = useTranslation();
   const [isSkillsModalOpen, setIsSkillsModalOpen] = useState(false);
+  useScrollToSectionOnRoute();
 
   // Actualizar atributo lang del HTML cuando cambia el idioma
   useEffect(() => {

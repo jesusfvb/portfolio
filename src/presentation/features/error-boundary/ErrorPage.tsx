@@ -1,4 +1,6 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import { ROUTES } from "@/application/routes";
 
 const ErrorPage = () => {
   const { t } = useTranslation();
@@ -16,12 +18,12 @@ const ErrorPage = () => {
         </p>
 
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <a
-            href="/"
-            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-lg border border-[rgba(255,255,255,0.2)] bg-transparent px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:border-[#6366f1] hover:bg-[#6366f1]/10"
+          <Link
+            to={ROUTES.home}
+            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-lg border border-[rgba(255,255,255,0.2)] bg-transparent px-8 py-4 text-lg font-semibold text-white no-underline transition-all duration-300 hover:-translate-y-1 hover:border-[#6366f1] hover:bg-[#6366f1]/10"
           >
             <span className="relative z-10">{t("error.backHome")}</span>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

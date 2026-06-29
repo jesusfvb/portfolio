@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { NavLink } from "./components/NavLink";
 import { ContactButton } from "@/presentation/shared/ui/ContactButton";
 import { useTranslation } from "react-i18next";
 import { useLocale } from "@/application/hooks";
+import { ROUTES } from "@/application/routes";
 
 interface HeaderProps {
   className?: string;
@@ -23,17 +25,7 @@ const Header = (props: HeaderProps) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
-    }
-  };
-
-  const handleLogoClick = () => {
-    scrollToSection("hero");
-  };
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   const cvLocale = currentLanguage === "es" ? "ES" : "EN";
   const cvDownloadUrl = `https://raw.githubusercontent.com/jesusfvb/jesusfvb/main/JESUS_VAZQUEZ_BILTRE_CV_${cvLocale}.pdf`;
@@ -49,8 +41,9 @@ const Header = (props: HeaderProps) => {
     >
       <div className="container">
         <div className="flex items-center justify-between py-4">
-          <button
-            onClick={handleLogoClick}
+          <Link
+            to={ROUTES.home}
+            onClick={closeMobileMenu}
             className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#d0d0d0] text-lg font-bold transition-all duration-300 hover:scale-110 hover:border-white hover:shadow-[0_0_15px_rgba(208,208,208,0.3)] focus-visible:ring-2 focus-visible:ring-[#6366f1] focus-visible:outline-none"
             aria-label="Ir al inicio"
             title="Portfolio - Jesús Francisco Vázquez"
@@ -63,26 +56,17 @@ const Header = (props: HeaderProps) => {
             >
               JV
             </span>
-          </button>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex md:items-center md:gap-6">
-            <NavLink sectionId="hero" scrollToSection={scrollToSection}>
+            <NavLink sectionId="hero" onNavigate={closeMobileMenu}>
               {t("header.home")}
             </NavLink>
-            {/* <NavLink sectionId="about" scrollToSection={scrollToSection}>
-              Sobre mí
-            </NavLink> */}
-            <NavLink sectionId="projects" scrollToSection={scrollToSection}>
+            <NavLink sectionId="projects" onNavigate={closeMobileMenu}>
               {t("header.projects")}
             </NavLink>
-            {/* <button
-              onClick={handleSkillsClick}
-              className="text-[#d0d0d0] hover:text-white transition-colors duration-300 font-medium"
-            >
-              Habilidades
-            </button> */}
-            <NavLink sectionId="education" scrollToSection={scrollToSection}>
+            <NavLink sectionId="education" onNavigate={closeMobileMenu}>
               {t("header.education")}
             </NavLink>
             <a
@@ -150,13 +134,13 @@ const Header = (props: HeaderProps) => {
               : "invisible -translate-y-full transform opacity-0"
           }`}
         >
-          <NavLink sectionId="hero" scrollToSection={scrollToSection}>
+          <NavLink sectionId="hero" onNavigate={closeMobileMenu}>
             {t("header.home")}
           </NavLink>
-          <NavLink sectionId="projects" scrollToSection={scrollToSection}>
+          <NavLink sectionId="projects" onNavigate={closeMobileMenu}>
             {t("header.projects")}
           </NavLink>
-          <NavLink sectionId="education" scrollToSection={scrollToSection}>
+          <NavLink sectionId="education" onNavigate={closeMobileMenu}>
             {t("header.education")}
           </NavLink>
           <a
@@ -192,7 +176,7 @@ const Header = (props: HeaderProps) => {
           <ContactButton
             variant="default"
             className="mt-2 rounded-full"
-            onClick={() => scrollToSection("contact")}
+            onClick={closeMobileMenu}
           />
         </nav>
       </div>

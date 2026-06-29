@@ -2,6 +2,8 @@ import { getTechInfo } from "@/domain/services/icon.service";
 import { SkillBadge } from "../Skills/components";
 import { ContactButton } from "@/presentation/shared/ui/ContactButton";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "@/application/routes";
 
 // Imagen optimizada desde public
 const profileImage = "/images/foto_de_perfil.webp";
@@ -12,12 +14,7 @@ interface HeroProps {
 
 const Hero = ({ onOpenSkillsModal }: HeroProps) => {
   const { t } = useTranslation();
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const navigate = useNavigate();
 
   // Herramientas principales que uso
   const mainTools = ["TypeScript", "React", "Nest", "PostgreSQL", "MongoDB"];
@@ -91,7 +88,7 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
             <div className="flex flex-wrap justify-center gap-4 md:justify-start">
               <button
                 className="font-inherit w-full cursor-pointer rounded-lg border-2 border-[rgba(255,255,255,0.1)] bg-transparent px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:border-[#6366f1] hover:bg-[#1a1a1a] md:w-auto"
-                onClick={() => scrollToSection("projects")}
+                onClick={() => navigate(ROUTES.projects)}
               >
                 {t("hero.viewProjects")}
               </button>

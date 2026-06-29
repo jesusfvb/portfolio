@@ -1,4 +1,6 @@
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "@/application/routes";
 
 interface ContactButtonProps {
   text?: string;
@@ -14,23 +16,14 @@ const ContactButton = ({
   onClick,
 }: ContactButtonProps) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   
   // Usar texto proporcionado o el estático por defecto
   const buttonText = text || t("contactButton.static");
 
-  const scrollToContact = () => {
-    const element = document.getElementById("contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   const handleClick = () => {
-    if (onClick) {
-      onClick();
-    } else {
-      scrollToContact();
-    }
+    navigate(ROUTES.contact);
+    onClick?.();
   };
 
   const baseClasses =
