@@ -4,6 +4,8 @@ import en from "@/application/i18n/locales/en.json";
 import es from "@/application/i18n/locales/es.json";
 import enEducation from "@/application/i18n/locales/education/en.json";
 import esEducation from "@/application/i18n/locales/education/es.json";
+import enCertifications from "@/application/i18n/locales/certifications/en.json";
+import esCertifications from "@/application/i18n/locales/certifications/es.json";
 import enSkills from "@/application/i18n/locales/skills/en.json";
 import esSkills from "@/application/i18n/locales/skills/es.json";
 import enProjects from "@/application/i18n/locales/projects/en.json";
@@ -15,6 +17,7 @@ const resources = {
     translation: {
       ...en,
       education: enEducation,
+      certifications: enCertifications,
       skills: enSkills,
       projects: enProjects,
     },
@@ -23,6 +26,7 @@ const resources = {
     translation: {
       ...es,
       education: esEducation,
+      certifications: esCertifications,
       skills: esSkills,
       projects: esProjects,
     },

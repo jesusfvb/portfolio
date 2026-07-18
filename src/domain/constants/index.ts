@@ -1,5 +1,6 @@
 export * from './contact.constants';
 export * from './education.constants';
+export * from './certifications.constants';
 export * from './projects.constants';
 export * from './skills/data';
 export * from './skills/types';

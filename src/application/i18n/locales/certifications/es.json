@@ -1,0 +1,23 @@
+{
+  "title": "Certificaciones",
+  "subtitle": "Cursos y credenciales profesionales",
+  "credentialIdLabel": "ID de la credencial",
+  "viewCredential": "Ver credencial",
+  "items": {
+    "nest": {
+      "title": "Nest: Desarrollo backend escalable con Node",
+      "issuer": "Udemy",
+      "issuedAt": "jun. 2026"
+    },
+    "reactNativeCli": {
+      "title": "React Native CLI: Aplicaciones para IOS y Android",
+      "issuer": "Udemy",
+      "issuedAt": "abr. 2026"
+    },
+    "springMicroservices": {
+      "title": "Microservicios y APIs REST con Spring Boot, OAuth2 y Docker",
+      "issuer": "Udemy",
+      "issuedAt": "mar. 2026"
+    }
+  }
+}

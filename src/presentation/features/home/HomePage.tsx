@@ -7,6 +7,7 @@ import {
   Hero,
   ProjectsSection,
   Education,
+  Certifications,
   Contact,
   Skills,
 } from "./components";
@@ -31,6 +32,7 @@ const HomePage = () => {
         <ProjectsSection />
         <Contact />
         <Education />
+        <Certifications />
       </main>
       <Skills
         isOpen={isSkillsModalOpen}

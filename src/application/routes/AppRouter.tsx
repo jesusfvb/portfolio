@@ -11,6 +11,7 @@ export const AppRouter = () => (
       <Route path={`${ROUTES.projects}/:slug`} element={<ProjectDetailPage />} />
       <Route path={ROUTES.projects} element={<HomePage />} />
       <Route path={ROUTES.education} element={<HomePage />} />
+      <Route path={ROUTES.certifications} element={<HomePage />} />
       <Route path={ROUTES.contact} element={<HomePage />} />
       <Route path="/404" element={<ErrorPage />} />
       <Route path="*" element={<ErrorPage />} />

@@ -69,6 +69,9 @@ const Header = (props: HeaderProps) => {
             <NavLink sectionId="education" onNavigate={closeMobileMenu}>
               {t("header.education")}
             </NavLink>
+            <NavLink sectionId="certifications" onNavigate={closeMobileMenu}>
+              {t("header.certifications")}
+            </NavLink>
             <a
               href={cvDownloadUrl}
               download={cvDownloadName}
@@ -142,6 +145,9 @@ const Header = (props: HeaderProps) => {
           </NavLink>
           <NavLink sectionId="education" onNavigate={closeMobileMenu}>
             {t("header.education")}
+          </NavLink>
+          <NavLink sectionId="certifications" onNavigate={closeMobileMenu}>
+            {t("header.certifications")}
           </NavLink>
           <a
             href={cvDownloadUrl}
