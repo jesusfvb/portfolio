@@ -51,6 +51,29 @@
         "backgroundSync": "Background sync (Workmanager)",
         "qrFlow": "QR flow → local attendance → pending sync"
       }
+    },
+    "evangelhoDiario": {
+      "title": "Evangelho Diário",
+      "summary": "Flutter app in production (iOS/Android) for daily gospel, prayers, and rosary. First version + maintenance and technical evolution.",
+      "description": "Catholic mobile app in Flutter with daily gospel, prayers, rosary, and intention submissions. I built the first version and later took over maintenance and technical evolution in production. Most of the current UI was redesigned by other collaborators; my focus was architecture, data, integrations, and store releases.",
+      "highlights": [
+        "First version of the app and product continuity on stores (iOS/Android).",
+        "Migration from Firestore to MySQL, .env configuration, and local Docker environment.",
+        "Reorganization to feature-first architecture (`app` / `core` / `features`).",
+        "Firebase Analytics integration and iOS/Android project configuration.",
+        "Stability improvements (global messaging, sync, builds) and release process."
+      ],
+      "screenshots": {
+        "home": "App home screen",
+        "gospel": "Daily gospel reading",
+        "prayers": "Prayers and spiritual content"
+      },
+      "codeSnippets": {
+        "bootstrap": "Bootstrap: .env + Firebase + Analytics",
+        "mysqlConnection": "Configurable MySQL connection",
+        "featureRoutes": "Feature-first architecture (routes)",
+        "globalMessaging": "Global messaging (UI stability)"
+      }
     }
   }
 }

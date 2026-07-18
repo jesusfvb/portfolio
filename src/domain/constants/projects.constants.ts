@@ -39,4 +39,27 @@ export const PROJECTS: Project[] = [
       "/projects/congresso-terciarios/Screenshot_exportacion de resultados.webp",
     ],
   },
+  {
+    id: 3,
+    slug: "evangelho-diario",
+    i18nKey: "evangelhoDiario",
+    title: "projects.items.evangelhoDiario.title",
+    description: "projects.items.evangelhoDiario.description",
+    technologies: [
+      "Flutter",
+      "Dart",
+      "GetX",
+      "Firebase",
+      "MySQL",
+      "Docker",
+      "SQLite",
+    ],
+    banner: "/projects/evangelho-diario/icon_app.jpg",
+    bannerFit: "contain",
+    screenshots: [
+      "/projects/evangelho-diario/Screenshot_1.webp",
+      "/projects/evangelho-diario/Screenshot_2.webp",
+      "/projects/evangelho-diario/Screenshot_3.webp",
+    ],
+  },
 ];

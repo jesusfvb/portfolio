@@ -9,6 +9,7 @@ import {
 import {
   SiDart,
   SiExpo,
+  SiFirebase,
   SiFlutter,
   SiGetx,
   SiHive,
@@ -19,6 +20,7 @@ import {
   SiNestjs,
   SiPostgresql,
   SiSpring,
+  SiSqlite,
   SiTypescript,
 } from "react-icons/si";
 import type { TechIconMap } from "./types";
@@ -98,6 +100,22 @@ export const SKILLS_ICONS: Record<string, TechIconMap> = {
     displayName: "GetX",
     type: "framework",
     url: "https://pub.dev/packages/get",
+  },
+  firebase: {
+    icon: <SiFirebase style={{ color: "#FFCA28" }} />,
+    keywords: ["firebase", "firestore"],
+    category: "backend",
+    displayName: "Firebase",
+    type: "other",
+    url: "https://firebase.google.com",
+  },
+  sqlite: {
+    icon: <SiSqlite style={{ color: "#003B57" }} />,
+    keywords: ["sqlite", "sqflite"],
+    category: "database",
+    displayName: "SQLite",
+    type: "other",
+    url: "https://www.sqlite.org",
   },
   jest: {
     icon: <SiJest style={{ color: "#C21325" }} />,

@@ -51,6 +51,29 @@
         "backgroundSync": "Sync en segundo plano (Workmanager)",
         "qrFlow": "Flujo QR → asistencia local → pendiente de sync"
       }
+    },
+    "evangelhoDiario": {
+      "title": "Evangelho Diário",
+      "summary": "App Flutter en producción (iOS/Android) para evangelio diario, oraciones y rosario. Primera versión + mantenimiento y evolución técnica.",
+      "description": "App móvil católica en Flutter con evangelio del día, oraciones, rosario y envío de intenciones. Desarrollé la primera versión y después asumí el mantenimiento y la evolución técnica en producción. La UI actual fue en gran medida rediseñada por otros colaboradores; mi foco estuvo en arquitectura, datos, integraciones y publicación en tiendas.",
+      "highlights": [
+        "Primera versión de la app y continuidad del producto en stores (iOS/Android).",
+        "Migración de Firestore a MySQL, configuración con .env y entorno local con Docker.",
+        "Reorganización a arquitectura feature-first (`app` / `core` / `features`).",
+        "Integración Firebase Analytics y configuración de proyectos iOS/Android.",
+        "Mejoras de estabilidad (mensajería global, sync, builds) y proceso de release."
+      ],
+      "screenshots": {
+        "home": "Pantalla principal de la app",
+        "gospel": "Lectura del evangelio diario",
+        "prayers": "Oraciones y contenido espiritual"
+      },
+      "codeSnippets": {
+        "bootstrap": "Bootstrap: .env + Firebase + Analytics",
+        "mysqlConnection": "Conexión MySQL configurable",
+        "featureRoutes": "Arquitectura feature-first (rutas)",
+        "globalMessaging": "Mensajería global (estabilidad UI)"
+      }
     }
   }
 }
