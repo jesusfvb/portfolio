@@ -24,6 +24,33 @@
         "syncMutex": "Mutex de sync y permisos",
         "apiUrl": "Construcción segura de URLs de API"
       }
+    },
+    "congressoTerciarios": {
+      "title": "Congresso Terciarios",
+      "summary": "App Flutter offline-first para control de asistencia por QR en congresos: Hive + sincronización híbrida (foreground/background) con MySQL y Docker.",
+      "description": "App Flutter para control de asistencia en un congreso con cientos de participantes. Escanea QR en la entrada de cada evento, opera sin red con Hive y sincroniza de forma bidireccional con MySQL cuando hay conexión. Incluye sync en primer plano (tras QR, al reconectar, cada ~5 min), Workmanager en background (~15 min) y barra de estado visible (synced / pending / syncing / error).",
+      "highlights": [
+        "App Flutter de asistencia por QR con modo offline (Hive) y sincronización bidireccional con MySQL.",
+        "Sync híbrido: auto-sync tras escaneo/reconexión, periódico en primer plano y Workmanager en background.",
+        "Arquitectura por capas `app` / `core` / `data` / `presentation` con orquestación de estado de sync visible en UI.",
+        "MySQL 8 con Docker Compose, schema, seed de eventos e importación de participantes desde CSV.",
+        "Lock de sync para evitar condiciones de carrera entre UI y background.",
+        "Arranque usable con datos locales aunque MySQL no esté disponible."
+      ],
+      "screenshots": {
+        "home": "Pantalla principal con lista de participantes y estado de sync",
+        "qrEmpty": "Lector QR listo para escanear",
+        "qrValid": "Resultado de QR válido",
+        "qrInvalid": "Resultado de QR inválido",
+        "results": "Resultados tras leer varios QRs",
+        "export": "Exportación de resultados"
+      },
+      "codeSnippets": {
+        "syncOrchestration": "Orquestación de sync (upload → download + merge)",
+        "hybridSync": "Sync híbrido en primer plano",
+        "backgroundSync": "Sync en segundo plano (Workmanager)",
+        "qrFlow": "Flujo QR → asistencia local → pendiente de sync"
+      }
     }
   }
 }

@@ -21,4 +21,22 @@ export const PROJECTS: Project[] = [
       "/projects/auto-contact/Auto-Contact2.webp",
     ],
   },
+  {
+    id: 2,
+    slug: "congresso-terciarios",
+    i18nKey: "congressoTerciarios",
+    title: "projects.items.congressoTerciarios.title",
+    description: "projects.items.congressoTerciarios.description",
+    technologies: ["Flutter", "Dart", "Hive", "MySQL", "Docker", "GetX"],
+    banner: "/projects/congresso-terciarios/icon.webp",
+    bannerFit: "contain",
+    screenshots: [
+      "/projects/congresso-terciarios/Screenshot_pantalla principal.webp",
+      "/projects/congresso-terciarios/Screenshot_lector de qr sin qr.webp",
+      "/projects/congresso-terciarios/Screenshot_lector de qr resultado balido.webp",
+      "/projects/congresso-terciarios/Screenshot_lector de qr resultado invaliod.webp",
+      "/projects/congresso-terciarios/Screenshot_resultados despues de leer barios qrs.webp",
+      "/projects/congresso-terciarios/Screenshot_exportacion de resultados.webp",
+    ],
+  },
 ];

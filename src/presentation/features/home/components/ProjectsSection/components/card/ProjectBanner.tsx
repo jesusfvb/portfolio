@@ -12,7 +12,7 @@ const ProjectBanner = ({ project }: ProjectBannerProps) => {
       <div className="w-full aspect-video bg-[#0a0a0a]">
         {project.banner ? (
           <img
-            src={project.banner}
+            src={encodeURI(project.banner)}
             alt={`${project.title} banner`}
             loading="lazy"
             className={`h-full w-full ${

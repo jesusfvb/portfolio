@@ -24,6 +24,33 @@
         "syncMutex": "Sync mutex and permissions",
         "apiUrl": "Safe API URL construction"
       }
+    },
+    "congressoTerciarios": {
+      "title": "Congresso Terciarios",
+      "summary": "Offline-first Flutter app for QR attendance control at congresses: Hive + hybrid sync (foreground/background) with MySQL and Docker.",
+      "description": "Flutter app for attendance control at a congress with hundreds of participants. It scans QR codes at each event entrance, works offline with Hive, and bidirectionally syncs with MySQL when online. Includes foreground sync (after QR, on reconnect, every ~5 min), Workmanager in the background (~15 min), and a visible sync status bar (synced / pending / syncing / error).",
+      "highlights": [
+        "Flutter QR attendance app with offline mode (Hive) and bidirectional MySQL sync.",
+        "Hybrid sync: auto-sync after scan/reconnect, periodic foreground sync, and Workmanager in the background.",
+        "Layered architecture (`app` / `core` / `data` / `presentation`) with sync state orchestration visible in the UI.",
+        "MySQL 8 with Docker Compose, schema, event seed, and CSV participant import.",
+        "Sync lock to avoid race conditions between UI and background tasks.",
+        "Usable startup with local data even when MySQL is unavailable."
+      ],
+      "screenshots": {
+        "home": "Home screen with participant list and sync status",
+        "qrEmpty": "QR scanner ready to scan",
+        "qrValid": "Valid QR scan result",
+        "qrInvalid": "Invalid QR scan result",
+        "results": "Results after scanning multiple QRs",
+        "export": "Results export screen"
+      },
+      "codeSnippets": {
+        "syncOrchestration": "Sync orchestration (upload → download + merge)",
+        "hybridSync": "Hybrid foreground sync",
+        "backgroundSync": "Background sync (Workmanager)",
+        "qrFlow": "QR flow → local attendance → pending sync"
+      }
     }
   }
 }

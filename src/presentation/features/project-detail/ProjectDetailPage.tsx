@@ -2,13 +2,11 @@ import { useEffect } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { getProjectBySlug } from "@/domain/constants/projects.utils";
-import { PROJECT_CODE_SNIPPETS } from "@/domain/constants/project-details/auto-contact.snippets";
+import { PROJECT_CODE_SNIPPETS } from "@/domain/constants/project-details";
 import { ROUTES } from "@/application/routes";
 import { Header } from "@/presentation/shared/layout/Header";
 import { PageHead } from "@/presentation/shared/components";
 import ProjectTechStack from "@/presentation/features/home/components/ProjectsSection/components/card/ProjectTechStack";
-
-const screenshotAltKeys = ["settings", "logs"] as const;
 
 const ProjectDetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -19,6 +17,11 @@ const ProjectDetailPage = () => {
     returnObjects: true,
     defaultValue: [],
   }) as string[];
+  const screenshotAlts = t(`projects.items.${project?.i18nKey}.screenshots`, {
+    returnObjects: true,
+    defaultValue: {},
+  }) as Record<string, string>;
+  const screenshotKeys = Object.keys(screenshotAlts);
 
   useEffect(() => {
     document.documentElement.lang = i18n.language;
@@ -38,7 +41,7 @@ const ProjectDetailPage = () => {
       <PageHead
         title={`${title} | Jesús Francisco Vázquez Biltre`}
         description={summary}
-        image={`https://www.jesufvb.dev${project.banner}`}
+        image={`https://www.jesufvb.dev${encodeURI(project.banner ?? "")}`}
         url={`https://www.jesufvb.dev/projects/${project.slug}`}
         type="article"
       />
@@ -60,7 +63,7 @@ const ProjectDetailPage = () => {
             {project.banner && (
               <div className="mt-6 flex h-32 w-32 shrink-0 items-center justify-center rounded-3xl border border-white/10 bg-[#0a0a0a] p-4">
                 <img
-                  src={project.banner}
+                  src={encodeURI(project.banner)}
                   alt={title}
                   className="h-full w-full object-contain"
                   loading="eager"
@@ -94,10 +97,8 @@ const ProjectDetailPage = () => {
                     className="overflow-hidden rounded-xl border border-gray-800/50 bg-[#0a0a0a]"
                   >
                     <img
-                      src={screenshot}
-                      alt={t(
-                        `projects.items.${project.i18nKey}.screenshots.${screenshotAltKeys[index] ?? "settings"}`,
-                      )}
+                      src={encodeURI(screenshot)}
+                      alt={screenshotAlts[screenshotKeys[index]] ?? title}
                       loading="lazy"
                       className="h-full w-full object-cover"
                     />

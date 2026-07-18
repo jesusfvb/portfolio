@@ -1,7 +1,6 @@
-export interface ProjectCodeSnippet {
-  id: string;
-  code: string;
-}
+import type { ProjectCodeSnippet } from "./types";
+
+export type { ProjectCodeSnippet };
 
 export const AUTO_CONTACT_SNIPPETS: ProjectCodeSnippet[] = [
   {
@@ -93,7 +92,3 @@ export const AUTO_CONTACT_SNIPPETS: ProjectCodeSnippet[] = [
 }`,
   },
 ];
-
-export const PROJECT_CODE_SNIPPETS: Record<string, ProjectCodeSnippet[]> = {
-  "auto-contact": AUTO_CONTACT_SNIPPETS,
-};
