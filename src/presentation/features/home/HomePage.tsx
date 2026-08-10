@@ -30,9 +30,9 @@ const HomePage = () => {
       <main id="main-content" className="w-full">
         <Hero onOpenSkillsModal={() => setIsSkillsModalOpen(true)} />
         <ProjectsSection />
-        <Contact />
         <Education />
         <Certifications />
+        <Contact />
       </main>
       <Skills
         isOpen={isSkillsModalOpen}

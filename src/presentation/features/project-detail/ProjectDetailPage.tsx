@@ -6,6 +6,7 @@ import { PROJECT_CODE_SNIPPETS } from "@/domain/constants/project-details";
 import { ROUTES } from "@/application/routes";
 import { Header } from "@/presentation/shared/layout/Header";
 import { PageHead } from "@/presentation/shared/components";
+import { ContactButton } from "@/presentation/shared/ui/ContactButton";
 import ProjectTechStack from "@/presentation/features/home/components/ProjectsSection/components/card/ProjectTechStack";
 
 const ProjectDetailPage = () => {
@@ -128,7 +129,7 @@ const ProjectDetailPage = () => {
           )}
 
           {snippets && snippets.length > 0 && (
-            <section>
+            <section className="mb-12">
               <h2 className="mb-6 text-2xl font-bold text-white">
                 {t("projectDetail.codeSnippets")}
               </h2>
@@ -151,6 +152,16 @@ const ProjectDetailPage = () => {
               </div>
             </section>
           )}
+
+          <section className="rounded-xl border border-[rgba(255,255,255,0.1)] bg-[#1a1a1a] px-6 py-8 mb-12 text-center md:px-10">
+            <h2 className="mb-2 text-2xl font-bold text-white">
+              {t("projectDetail.ctaTitle")}
+            </h2>
+            <p className="mb-6 text-base text-[#d0d0d0]">
+              {t("projectDetail.ctaSubtitle")}
+            </p>
+            <ContactButton variant="default" />
+          </section>
         </div>
       </main>
 

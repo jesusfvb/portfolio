@@ -59,10 +59,7 @@ const Header = (props: HeaderProps) => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex md:items-center md:gap-6">
-            <NavLink sectionId="hero" onNavigate={closeMobileMenu}>
-              {t("header.home")}
-            </NavLink>
+          <nav className="hidden md:flex md:items-center md:gap-4">
             <NavLink sectionId="projects" onNavigate={closeMobileMenu}>
               {t("header.projects")}
             </NavLink>
@@ -137,9 +134,6 @@ const Header = (props: HeaderProps) => {
               : "invisible -translate-y-full transform opacity-0"
           }`}
         >
-          <NavLink sectionId="hero" onNavigate={closeMobileMenu}>
-            {t("header.home")}
-          </NavLink>
           <NavLink sectionId="projects" onNavigate={closeMobileMenu}>
             {t("header.projects")}
           </NavLink>
