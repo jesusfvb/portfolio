@@ -14,8 +14,8 @@ interface PageHeadProps {
  * Incluye soporte para Open Graph y Twitter Cards
  */
 export const PageHead = ({
-  title = "Jesús Francisco Vázquez Biltre - Full Stack Developer",
-  description = "Portfolio personal de Jesús Francisco Vázquez Biltre. Desarrollador Full Stack con experiencia en React, React Native, Spring Boot y más.",
+  title = "Jesús Francisco Vázquez Biltre - Software Developer",
+  description = "Portfolio personal de Jesús Francisco Vázquez Biltre. Software Developer con experiencia en aplicaciones web y móviles, APIs REST, bases de datos y ciclo de desarrollo de software.",
   image = "https://www.jesufvb.dev/og-image.webp",
   url = "https://www.jesufvb.dev",
   type = "website",
@@ -47,7 +47,7 @@ export const PageHead = ({
 
       {/* SEO adicional */}
       <meta name="theme-color" content="#1a1a1a" />
-      <meta name="keywords" content="desarrollador, full stack, react, typescript, tailwind, portfolio" />
+      <meta name="keywords" content="software developer, desarrollador, web, mobile, APIs, bases de datos, typescript, portfolio" />
       <meta name="author" content="Jesús Francisco Vázquez Biltre" />
     </Helmet>
   );

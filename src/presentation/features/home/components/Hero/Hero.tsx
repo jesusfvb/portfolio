@@ -17,7 +17,7 @@ const Hero = ({ onOpenSkillsModal }: HeroProps) => {
   const navigate = useNavigate();
 
   // Herramientas principales que uso
-  const mainTools = ["TypeScript", "React", "Nest", "PostgreSQL", "MongoDB"];
+  const mainTools = ["TypeScript", "React", "Nest", "PostgreSQL"];
 
   return (
     <section

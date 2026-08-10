@@ -19,9 +19,9 @@
     "subtitle": "Some of my recent and highlighted work"
   },
   "hero": {
-    "title": "Full Stack Developer",
+    "title": "Software Developer",
     "name": "Jesús Francisco Vázquez Biltre",
-    "summary": "Full Stack Developer specialized in TypeScript, building modern web applications with React on the frontend and NestJS on the backend. I focus on writing clean, maintainable code and following good development practices.",
+    "summary": "Software Developer with experience building web and mobile applications, backend services, REST APIs, and database-driven solutions. I work across the software development lifecycle — from architecture and database design to frontend, mobile, integrations, testing, and deployment — focusing on clean, maintainable, and scalable software.",
     "mainToolsLabel": "Main technologies:",
     "viewMore": "See more",
     "viewProjects": "View Projects",
